@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<info xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
+    <!--
+    SPDX-FileCopyrightText: Vũ Xuân Bình <binh9aqktk@gmail.com>
+    SPDX-License-Identifier: CC0-1.0
+    -->
+    <id>musicnc</id>
+    <name>Music N C</name>
+    <summary>Nghe nhạc</summary>
+    <description><![CDATA[Nghe nhạc]]></description>
+    <version>0.0.1</version>
+    <licence>agpl</licence>
+    <author mail="binh9aqktk@gmail.com" homepage="https://github.com/satthuno999">Vũ Xuân Bình</author>
+    <namespace>MusicNC</namespace>
+    <category>multimedia</category>
+    <bugs>https://github.com/satthuno999</bugs>
+    <dependencies>
+        <nextcloud min-version="24" max-version="24"/>
+    </dependencies>
+    <navigations>
+        <navigation>
+            <name>Music N C</name>
+            <route>musicnc.page.index</route>
+        </navigation>
+    </navigations>
+</info>
