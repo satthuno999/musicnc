@@ -22,7 +22,7 @@ import CLeft from './components/CLeft.vue'
 	</main>
 </template>
 
-<script>
+<script setup lang="ts">
 import AppContent from '@nextcloud/vue/dist/Components/AppContent'
 import AppNavigation from '@nextcloud/vue/dist/Components/AppNavigation'
 export default {
