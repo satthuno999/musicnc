@@ -1,6 +1,4 @@
 <script setup>
-import { ref } from 'vue'
-
 import CDarkMode from './CDarkMode.vue'
 </script>
 
@@ -67,10 +65,9 @@ import CDarkMode from './CDarkMode.vue'
 					<img src="https://avatars.githubusercontent.com/thuongtruong1009?v=2&s=37"
 						alt="avatar"
 						class="rounded-full mr-2">
-					<p class="text-sm cursor-pointer">thuongtruong1009</p>
+					<p class="text-sm cursor-pointer">spark</p>
 				</div>
 			</a>
-			
 		</div>
 	</div>
 </template>
