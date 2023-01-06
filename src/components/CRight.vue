@@ -3,19 +3,19 @@ import { reactive } from 'vue'
 const tags = reactive([
 	{
 		name: 'Chill',
-		icon: '/img/snow.png',
+		icon: './img/snow.png',
 	}, {
 		name: 'Hot',
-		icon: '/img/star.png',
+		icon: './img/star.png',
 	}, {
 		name: 'Piano instrumental',
-		icon: '/img/piano.png',
+		icon: './img/piano.png',
 	}, {
 		name: 'Jazz',
-		icon: '/img/jazz.png',
+		icon: './img/jazz.png',
 	}, {
 		name: 'Acoustic',
-		icon: '/img/ghitar.png',
+		icon: './img/ghitar.png',
 	},
 ])
 </script>

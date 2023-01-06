@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from 'vue'
-import { RouterLink } from 'vue-router'
 
 import CDarkMode from './CDarkMode.vue'
 </script>
@@ -71,9 +70,7 @@ import CDarkMode from './CDarkMode.vue'
 					<p class="text-sm cursor-pointer">thuongtruong1009</p>
 				</div>
 			</a>
-			<RouterLink to="/about">
-				<i class="fas fa-chevron-right text-gray-400" />
-			</RouterLink>
+			
 		</div>
 	</div>
 </template>
