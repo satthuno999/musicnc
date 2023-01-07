@@ -1,6 +1,6 @@
 <script setup>
-import CBetween from './components/CBetween.vue'
-import CRight from './components/CRight.vue'
+import CBetween from '../components/CBetween.vue'
+import CRight from '../components/CRight.vue'
 </script>
 
 <template>

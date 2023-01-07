@@ -1,25 +1,27 @@
 <script setup>
-import { ref } from 'vue'
+import { ref } from "vue"
 
 const inputValue = ref(0)
-const rangeBackground = ref('')
+const rangeBackground = ref("")
 const onChange = (e) => {
-	inputValue.value = e.target.value
-	const buf = (100 - inputValue.value) / 4 + parseInt(inputValue.value)
-	rangeBackground.value = `background: linear-gradient(to right, #8D53EC 0%, #8D53EC ${inputValue.value}%, #777 ${inputValue.value}%, #777 ${buf}%, #444 ${buf}%, #444 100%)`
+    inputValue.value = e.target.value
+    let buf = (100 - inputValue.value) / 4 + parseInt(inputValue.value)
+    rangeBackground.value = `background: linear-gradient(to right, #8D53EC 0%, #8D53EC ${inputValue.value}%, #777 ${inputValue.value}%, #777 ${buf}%, #444 ${buf}%, #444 100%)`
 }
 </script>
 
 <template>
-	<div class="wrap w-full px-2 pb-4">
-		<input v-model="inputValue"
-			type="range"
-			min="1"
-			max="100"
-			class="range"
-			:style="rangeBackground"
-			@change="onChange($event)">
-	</div>
+    <div class="wrap w-full px-2 pb-4">
+        <input
+            v-model="inputValue"
+            type="range"
+            min="1"
+            max="100"
+            class="range"
+            :style="rangeBackground"
+            @change="onChange($event)"
+        />
+    </div>
 </template>
 
 <style scoped>

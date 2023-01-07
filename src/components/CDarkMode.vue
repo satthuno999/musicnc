@@ -1,41 +1,44 @@
 <template>
-	<div class="mode-toggle flex items-center"
-		:class="isDark ? 'justify-end bg-white' : 'justify-start bg-[#262626]'"
-		@click="onThemeChange">
-		<div class="toggle">
-			<div class="dark-mode"
-				:class="isDark ? 'before:bg-black' : 'before:bg-[#a5abba]'" />
-		</div>
-	</div>
+  <div
+    class="mode-toggle flex items-center"
+    :class="isDark ? 'justify-end bg-white' : 'justify-start bg-[#262626]'"
+    @click="onThemeChange"
+  >
+    <div class="toggle">
+      <div
+        class="dark-mode"
+        :class="isDark ? 'before:bg-black' : 'before:bg-[#a5abba]'"
+      ></div>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref } from "vue";
 
-// eslint-disable-next-line no-undef
-const isDark = ref < boolean > (false)
+const isDark = ref<boolean>(false);
 
 const onThemeChange = () => {
-	isDark.value = !isDark.value
+  isDark.value = !isDark.value;
 
-	if (localStorage.getItem('color-theme')) {
-		if (localStorage.getItem('color-theme') === 'light') {
-			document.documentElement.classList.add('dark')
-			localStorage.setItem('color-theme', 'dark')
-		} else {
-			document.documentElement.classList.remove('dark')
-			localStorage.setItem('color-theme', 'light')
-		}
-	} else {
-		if (document.documentElement.classList.contains('dark')) {
-			document.documentElement.classList.remove('dark')
-			localStorage.setItem('color-theme', 'light')
-		} else {
-			document.documentElement.classList.add('dark')
-			localStorage.setItem('color-theme', 'dark')
-		}
-	}
-}
+  if (localStorage.getItem("color-theme")) {
+    if (localStorage.getItem("color-theme") === "light") {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("color-theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("color-theme", "light");
+    }
+  } else {
+    if (document.documentElement.classList.contains("dark")) {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("color-theme", "light");
+    } else {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("color-theme", "dark");
+    }
+  }
+};
 </script>
 
 <style scoped>
