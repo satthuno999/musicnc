@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RouterView } from 'vue-router'
+// import { RouterView } from 'vue-router'
 import CLeft from './components/CLeft.vue'
 </script>
 
