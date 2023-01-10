@@ -1,28 +1,39 @@
-<?php
-declare(strict_types=1);
-// SPDX-FileCopyrightText: Vũ Xuân Bình <binh9aqktk@gmail.com>
-// SPDX-License-Identifier: AGPL-3.0-or-later
+<?php declare(strict_types=1);
 
-namespace OCA\MusicNC\Controller;
+/**
+ * ownCloud - Music app
+ *
+ * This file is licensed under the Affero General Public License version 3 or
+ * later. See the COPYING file.
+ *
+ * @author Morris Jobke <hey@morrisjobke.de>
+ * @author Pauli Järvinen <pauli.jarvinen@gmail.com>
+ * @copyright Morris Jobke 2013, 2014
+ * @copyright Pauli Järvinen 2019
+ */
 
-use OCA\MusicNC\AppInfo\Application;
+namespace OCA\Music\Controller;
+
 use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\IRequest;
-use OCP\Util;
 
 class PageController extends Controller {
-	public function __construct(IRequest $request) {
-		parent::__construct(Application::APP_ID, $request);
+	private $l10n;
+
+	public function __construct($appname,
+								IRequest $request,
+								$l10n) {
+		parent::__construct($appname, $request);
+		$this->l10n = $l10n;
 	}
 
 	/**
 	 * @NoAdminRequired
 	 * @NoCSRFRequired
 	 */
-	public function index(): TemplateResponse {
-		Util::addScript(Application::APP_ID, 'musicnc-main');
-
-		return new TemplateResponse(Application::APP_ID, 'main');
+	public function index() {
+		$userLang = $this->l10n->getLanguageCode();
+		return new TemplateResponse($this->appName, 'main', ['lang' => $userLang]);
 	}
 }
