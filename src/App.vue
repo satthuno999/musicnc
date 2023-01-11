@@ -48,7 +48,7 @@
 					@click="saveNote">
 			</div>
 			<div v-else id="emptycontent">
-				<div class="icon-file" />
+				<div class="icon-file" ></div>
 				<h2>{{
 				 t('musicnc', 'Create a note to get started') }}</h2>
 			</div>
