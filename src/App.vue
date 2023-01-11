@@ -4,7 +4,7 @@
     SPDX-License-Identifier: AGPL-3.0-or-later
     -->
 	<div id="content" class="app-musicnc">
-		<AppNavigation>
+		<NCAppNavigation>
 			<AppNavigationNew v-if="!loading"
 				:text="t('musicnc', 'New note')"
 				:disabled="false"
@@ -33,7 +33,7 @@
 					</template>
 				</AppNavigationItem>
 			</ul>
-		</AppNavigation>
+		</NCAppNavigation>
 		<AppContent>
 			<div v-if="currentNote">
 				<input ref="title"
@@ -59,7 +59,7 @@
 <script>
 import ActionButton from '@nextcloud/vue/dist/Components/ActionButton'
 import AppContent from '@nextcloud/vue/dist/Components/AppContent'
-import AppNavigation from '@nextcloud/vue/dist/Components/AppNavigation'
+import NCAppNavigation from '@nextcloud/vue/dist/Components/NCAppNavigation'
 import AppNavigationItem from '@nextcloud/vue/dist/Components/AppNavigationItem'
 import AppNavigationNew from '@nextcloud/vue/dist/Components/AppNavigationNew'
 
