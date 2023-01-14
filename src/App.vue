@@ -1,26 +1,144 @@
-<script setup>
-// import { RouterLink, RouterView } from "vue-router";
-import CLeft from "./components/CLeft.vue";
-// import HelloWorld from "./components/HelloWorld.vue";
-</script>
-
 <template>
-  <main class="bg-[#e9e9e9] dark:bg-[#888] px-[12%] py-5 min-h-screen grid justify-center items-center">
-    <div
-      class="main-conntainer border-1 border-solid border-[#d9d9d9] shadow-lg shadow-gray-300 dark:shadow-gray-600 dark:border-none grid grid-cols-4 rounded-3xl">
-      <CLeft class="col-span-1 bg-white" />
-    </div>
-    <div class="text-center text-xs text-gray-400 dark:text-gray-600">
-      <p>
-        Copyright 2022-PRESENT <sup>&copy;</sup>
-        <a href="">SPARK</a>.
-        <a href="">All rights reserved</a>!
-      </p>
-    </div>
-  </main>
+	<div id="app" tabindex="0" @keypress.space="spacePause">
+		<v-app>
+			<app-bar />
+			<side-nav />
+			<v-main>
+				<router-view />
+				<!-- <BottomPlayer @openPlayer="openPlayer" /> -->
+				<!-- <SmallScreenPlayer :open="playerOpen" @close="closePlayer" /> -->
+			</v-main>
+			<!-- <LyricsDrawer /> -->
+		</v-app>
+		<!-- <AudioPlayer /> -->
+	</div>
 </template>
 
-<style>
-@import "./assets/base.css";
-@import "./assets/_variables.css";
+<script>
+import { mapGetters } from 'vuex'
+// import AudioPlayer from './components/player/AudioPlayer.vue'
+// import BottomPlayer from './components/player/BottomPlayer.vue'
+// import SmallScreenPlayer from './components/player/SmallScreenPlayer.vue'
+// import LyricsDrawer from './components/UI/LyricsDrawer.vue'
+export default {
+	name: 'App',
+	components: { BottomPlayer, AudioPlayer, SmallScreenPlayer, LyricsDrawer },
+	data() {
+		return {
+			isLoading: false,
+			playerOpen: false,
+		}
+	},
+	computed: {
+		...mapGetters('player', ['isPlaying', 'currentPlaying']),
+	},
+	mounted() {
+		this.$store.dispatch('fetchFavourites')
+	},
+	methods: {
+		closePlayer() {
+			this.playerOpen = false
+		},
+		openPlayer() {
+			this.playerOpen = true
+		},
+		togglePlay() {
+			if (this.currentPlaying.title && this.currentPlaying.artist) {
+				this.$store.dispatch('player/setIsPlaying', {
+					isPlaying: !this.isPlaying,
+				})
+			}
+		},
+		spacePause(e) {
+			if (e.target.tagName.toUpperCase() == 'INPUT') return
+			this.togglePlay()
+			e.preventDefault()
+		},
+	},
+}
+</script>
+
+<style lang="scss">
+::-webkit-scrollbar {
+  width: 11px;
+}
+
+::-webkit-scrollbar-track {
+  background: #202020;
+  border-left: 1px solid #2c2c2c;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3e3e3e;
+  border: solid 2px #202020;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b3b3b3;
+}
+
+.theme--dark.v-application {
+  background: var(--v-background-base) !important;
+
+  ::-webkit-scrollbar {
+    width: 11px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #202020;
+    border-left: 1px solid #2c2c2c;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #3e3e3e;
+    border: solid 2px #202020;
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+  }
+}
+
+.theme--light.v-application {
+  ::-webkit-scrollbar-track {
+    background: #e6e6e6;
+    border-left: 1px solid #dadada;
+  }
+
+  ::-webkit-scrollbar {
+    width: 11px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #b0b0b0;
+    border: solid 2px #e6e6e6;
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4c4c4d;
+  }
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-items-end {
+  align-items: flex-end;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+body {
+  overflow-x: hidden;
+}
 </style>
