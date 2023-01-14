@@ -22,6 +22,8 @@ import './registerServiceWorker'
 // eslint-disable-next-line
 __webpack_public_path__ = generateFilePath(appName, '', 'js/')
 
+Vue.config.productionTip = false;
+
 Vue.component("side-nav", SideNav);
 Vue.component("app-bar", AppBar);
 Vue.component("bottom-player", BottomPlayer);
