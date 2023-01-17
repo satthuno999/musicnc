@@ -54,4 +54,4 @@ declare(strict_types=1);
                 background-color: var(--color-main-background);
             }
         </style>
-<div id="app"></div>
+<div id="content"></div>
