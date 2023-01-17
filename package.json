@@ -38,6 +38,8 @@
     "@nextcloud/browserslist-config": "^2.2.0",
     "@nextcloud/eslint-config": "^8.0.0",
     "@nextcloud/stylelint-config": "^2.1.2",
-    "@nextcloud/webpack-vue-config": "^5.2.1"
+    "@nextcloud/webpack-vue-config": "^5.2.1",
+    "vite-plugin-windicss": "^1.8.10",
+    "tailwindcss": "^3.2.4"
   }
 }
