@@ -1,12 +1,12 @@
 <script setup>
-import CDarkMode from "./CDarkMode.vue";
+// import CDarkMode from "./CDarkMode.vue";
 </script>
 
 <template>
   <div class="left-nav-container rounded-l-3xl dark:bg-$dark_strong text-gray-500  dark:text-gray-400">
     <div class="p-6">
       <div class="flex justify-between items-center">
-        <CDarkMode />
+        <!-- <CDarkMode /> -->
         <i class="fas fa-stream js-hide-navbar cursor-pointer"></i>
       </div>
       <div class="logo py-7">
