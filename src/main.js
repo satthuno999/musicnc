@@ -6,6 +6,7 @@
 import { generateFilePath } from '@nextcloud/router'
 
 import Vue from 'vue'
+// eslint-disable-next-line import/extensions
 import App from './App'
 
 // eslint-disable-next-line
