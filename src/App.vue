@@ -25,5 +25,5 @@ import CLeft from "./components/CLeft.vue"
 <style>
 @import "./assets/base.css";
 @import "./assets/_variables.css";
-@import "./assets/font-awesome/all.min.css";
+@import "./assets/fontawesome-free-6.2.1-web/css/all.min.css";
 </style>
