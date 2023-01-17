@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div class="mode-toggle flex items-center" :class="isDark ? 'justify-end bg-white' : 'justify-start bg-[#262626]'"
     @click="onThemeChange">
     <div class="toggle">
@@ -75,4 +75,4 @@ const onThemeChange = () => {
   transition: border-radius 0.5s ease, width 0.5s ease, height 0.5s ease,
     left 0.5s ease, transform 0.5s ease;
 }
-</style>
+</style> -->

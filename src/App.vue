@@ -1,6 +1,6 @@
-<!-- <script setup lang="ts">
+<script setup lang="ts">
 import CLeft from "./components/CLeft.vue"
-</script> -->
+</script>
 <template>
 	<!--
     SPDX-FileCopyrightText: Vũ Xuân Bình <binh9aqktk@gmail.com>
@@ -24,7 +24,7 @@ import CLeft from "./components/CLeft.vue"
 	</div>
 </template>
 
-<!-- <style>
+<style>
 @import "./assets/base.css";
 @import "./assets/_variables.css";
-</style> -->
+</style>
