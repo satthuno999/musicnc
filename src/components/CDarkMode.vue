@@ -1,14 +1,8 @@
 <template>
-  <div
-    class="mode-toggle flex items-center"
-    :class="isDark ? 'justify-end bg-white' : 'justify-start bg-[#262626]'"
-    @click="onThemeChange"
-  >
+  <div class="mode-toggle flex items-center" :class="isDark ? 'justify-end bg-white' : 'justify-start bg-[#262626]'"
+    @click="onThemeChange">
     <div class="toggle">
-      <div
-        class="dark-mode"
-        :class="isDark ? 'before:bg-black' : 'before:bg-[#a5abba]'"
-      ></div>
+      <div class="dark-mode" :class="isDark ? 'before:bg-black' : 'before:bg-[#a5abba]'"></div>
     </div>
   </div>
 </template>

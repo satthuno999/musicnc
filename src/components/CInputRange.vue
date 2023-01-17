@@ -12,30 +12,21 @@ const onChange = (e) => {
 
 <template>
     <div class="wrap w-full px-2 pb-4">
-        <input
-            v-model="inputValue"
-            type="range"
-            min="1"
-            max="100"
-            class="range"
-            :style="rangeBackground"
-            @change="onChange($event)"
-        />
+        <input v-model="inputValue" type="range" min="1" max="100" class="range" :style="rangeBackground"
+            @change="onChange($event)" />
     </div>
 </template>
 
 <style scoped>
 .range {
     -webkit-appearance: none;
-    background: linear-gradient(
-        to right,
-        #777 0%,
-        #777 50%,
-        #777 62.5%,
-        #777 32.5%,
-        #444 30.5%,
-        #444 100%
-    );
+    background: linear-gradient(to right,
+            #777 0%,
+            #777 50%,
+            #777 62.5%,
+            #777 32.5%,
+            #444 30.5%,
+            #444 100%);
     cursor: pointer;
     height: 0.5rem;
     margin: 0;
@@ -44,6 +35,7 @@ const onChange = (e) => {
     width: 100%;
     border-radius: 0.5rem;
 }
+
 .wrap.hover .range {
     height: 8px;
 }
@@ -57,6 +49,7 @@ const onChange = (e) => {
     transition: 0.1s ease-in;
     width: 0;
 }
+
 /* .wrap:hover .range::-webkit-slider-thumb, */
 .wrap .range::-webkit-slider-thumb,
 .wrap.hover .range::-webkit-slider-thumb {
