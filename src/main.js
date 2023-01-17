@@ -14,6 +14,6 @@ __webpack_public_path__ = generateFilePath(appName, '', 'js/')
 Vue.mixin({ methods: { t, n } })
 
 export default new Vue({
-	el: '#app',
+	el: '#content',
 	render: h => h(App),
 })
