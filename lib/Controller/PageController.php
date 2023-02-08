@@ -23,6 +23,6 @@ class PageController extends Controller {
 	public function index(): TemplateResponse {
 		Util::addScript(Application::APP_ID, 'musicnc-main');
 
-		return new TemplateResponse(Application::APP_ID, 'main');
+		return new TemplateResponse(Application::APP_ID, '/views/folders');
 	}
 }
