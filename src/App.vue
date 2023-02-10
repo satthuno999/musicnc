@@ -9,6 +9,10 @@ import CLeft from "./components/CLeft.vue"
 	<div id="content"
 		class="app-musicnc bg-[#e9e9e9] dark:bg-[#888] px-[12%] py-5 min-h-screen grid justify-center items-center">
 		<div class="main-conntainer border-1 border-solid border-[#d9d9d9] shadow-lg shadow-gray-300 dark:shadow-gray-600 dark:border-none grid grid-cols-4 rounded-3xl">
+			<div>
+				<router-link to="/">Home</router-link>
+				<router-link to="/about">About</router-link>
+			</div>
 			<CLeft class="col-span-1 bg-white" />
 			<!-- <RouterView class="col-span-3 bg-[#E7E8F3]" /> -->
 		</div>
