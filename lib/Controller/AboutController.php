@@ -11,7 +11,7 @@ use OCP\AppFramework\Http\TemplateResponse;
 use OCP\IRequest;
 use OCP\Util;
 
-class PageController extends Controller {
+class AboutController extends Controller {
 	public function __construct(IRequest $request) {
 		parent::__construct(Application::APP_ID, $request);
 	}
@@ -21,8 +21,8 @@ class PageController extends Controller {
 	 * @NoCSRFRequired
 	 */
 	public function index(): TemplateResponse {
-		Util::addScript(Application::APP_ID, 'musicnc-main');
+        $params = [ 'message' => 'Hello Nextcloud App!' ];
 
-		return new TemplateResponse(Application::APP_ID, 'main');
+		return new TemplateResponse(Application::APP_ID, 'main',params, 'blank');
 	}
 }
