@@ -3,21 +3,20 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-import { generateFilePath } from '@nextcloud/router'
+import { generateFilePath } from "@nextcloud/router";
 
-import Vue from 'vue'
+import Vue from "vue";
 // eslint-disable-next-line import/extensions
-import App from './App'
-import router from "./router";
-
+import App from "./App";
+import { router } from "./routes";
 
 // eslint-disable-next-line
-__webpack_public_path__ = generateFilePath(appName, '', 'js/')
+__webpack_public_path__ = generateFilePath(appName, "", "js/");
 
-Vue.mixin({ methods: { t, n } })
-Vue.use(router);
+Vue.mixin({ methods: { t, n } });
 
 export default new Vue({
+  router,
   el: "#content",
   render: (h) => h(App),
 });
