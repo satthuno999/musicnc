@@ -1,4 +1,5 @@
 <script setup>
+import { ref } from "vue";
 import { RouterLink } from "vue-router";
 </script>
 
@@ -14,9 +15,8 @@ import { RouterLink } from "vue-router";
       </div>
       <nav class="relative">
         <li>
-          <a href="#"><i class="fas fa-home"></i><nav>
-            <router-link to="/">Home</router-link>
-          </nav></a>
+          <i class="fas fa-home"></i>
+          <router-link to="/">Home</router-link>
         </li>
         <li>
           <a href="#"><i class="fas fa-chart-line"></i>Trend</a>
