@@ -1,13 +1,12 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import About from "./components/About.vue";
-import Home from "./components/HelloWorld.vue";
+import About from "./views/About.vue";
+import Home from "./views/HelloWorld.vue";
 
 Vue.use(VueRouter);
-
-export const router = new VueRouter({
-  routes: [
-    { path: "/", component: Home },
-    { path: "/about", component: About },
-  ],
+const router = new VueRouter({
+  history: VueRouter.createWebHashHistory(),
+  routes,
 });
+
+export default router
