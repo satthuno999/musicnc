@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import CLeft from "./components/CLeft.vue"
+import { RouterView } from "vue-router"
 </script>
 <template>
 	<!--
@@ -11,11 +12,7 @@ import CLeft from "./components/CLeft.vue"
 		<div
 			class="main-conntainer border-1 border-solid border-[#d9d9d9] shadow-lg shadow-gray-300 dark:shadow-gray-600 dark:border-none grid grid-cols-4 rounded-3xl">
 			<CLeft class="col-span-1 bg-white" />
-			<nav>
-				<router-link to="/">Home</router-link>
-				<router-link to="/about">About</router-link>
-			</nav>
-			<router-view />
+			<RouterView class="col-span-3 bg-[#E7E8F3]" />
 		</div>
 		<div class="text-center text-xs text-gray-400 dark:text-gray-600">
 			<p>
