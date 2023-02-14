@@ -14,9 +14,9 @@ import { router } from "./routes";
 __webpack_public_path__ = generateFilePath(appName, "", "js/");
 
 Vue.mixin({ methods: { t, n } });
+Vue.use(router);
 
 export default new Vue({
-  router,
   el: "#content",
   render: (h) => h(App),
 });
