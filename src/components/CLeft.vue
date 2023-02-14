@@ -1,3 +1,7 @@
+<script setup>
+import { RouterLink } from "vue-router";
+</script>
+
 <template>
   <div class="left-nav-container rounded-l-3xl dark:bg-$dark_strong text-gray-500  dark:text-gray-400">
     <div class="p-6">
@@ -10,7 +14,9 @@
       </div>
       <nav class="relative">
         <li>
-          <a href="#"><i class="fas fa-home"></i>Home</a>
+          <a href="#"><i class="fas fa-home"></i><nav>
+            <router-link to="/">Home</router-link>
+          </nav></a>
         </li>
         <li>
           <a href="#"><i class="fas fa-chart-line"></i>Trend</a>
@@ -50,7 +56,7 @@
         <div class="user-avt flex items-center">
           <img src="https://avatars.githubusercontent.com/satthuno999?v=2&s=37" alt="avatar"
             class="rounded-full mr-2" />
-          <p class="text-sm cursor-pointer">satthuno99</p>
+          <p class="text-sm cursor-pointer"><router-link to="/about">satthuno99</router-link></p>
         </div>
       </a>
       <RouterLink to="/about"><i class="fas fa-chevron-right text-gray-400"></i></RouterLink>
