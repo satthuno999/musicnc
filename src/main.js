@@ -6,9 +6,8 @@
 import { generateFilePath } from "@nextcloud/router";
 
 import Vue from "vue";
-// eslint-disable-next-line import/extensions
 import App from "./App";
-import { router } from "./routes";
+import router from "./routers/router";
 
 // eslint-disable-next-line
 __webpack_public_path__ = generateFilePath(appName, "", "js/");

@@ -4,9 +4,13 @@ import About from "./views/About.vue";
 import Home from "./views/HelloWorld.vue";
 
 Vue.use(VueRouter);
+const routes = [
+  { path: "/", component: Home },
+  { path: "/about", component: About },
+];
 const router = new VueRouter({
   history: VueRouter.createWebHashHistory(),
   routes,
 });
 
-export default router
+export default router;
