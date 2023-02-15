@@ -10,10 +10,7 @@
   "license": "agpl",
   "private": true,
   "scripts": {
-    "test": "node node_modules/gulp-cli/bin/gulp.js karma",
-    "prebuild": "npm install && node_modules/bower/bin/bower install && node_modules/bower/bin/bower update",
-    "build": "node node_modules/gulp-cli/bin/gulp.js",
-    "lastbuild": "webpack --node-env production --progress",
+    "build": "webpack --node-env production --progress",
     "dev": "webpack --node-env development --progress",
     "watch": "webpack --node-env development --progress --watch",
     "serve": "webpack --node-env development serve --progress",
