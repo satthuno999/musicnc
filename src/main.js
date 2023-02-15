@@ -5,14 +5,15 @@
 
 import { generateFilePath } from "@nextcloud/router";
 
-import Vue from "vue";
+import  Vue  from "vue";
 import App from "./App";
 import router from "./routers/router";
 
 // eslint-disable-next-line
 __webpack_public_path__ = generateFilePath(appName, "", "js/");
 
-Vue.mixin({ methods: { t, n } });
+// Vue.mixin({ methods: { t, n } });
+
 export default new Vue({
   router,
   // el: "#content",
