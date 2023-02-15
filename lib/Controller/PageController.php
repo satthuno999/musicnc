@@ -21,7 +21,7 @@ class PageController extends Controller {
 	 * @NoCSRFRequired
 	 */
 	public function index(): TemplateResponse {
-		// Util::addScript(Application::APP_ID, 'musicnc-main');
+		Util::addScript(Application::APP_ID, 'musicnc-main');
 
 		return new TemplateResponse(Application::APP_ID, 'main');
 	}
