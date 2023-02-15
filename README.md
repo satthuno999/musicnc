@@ -3,7 +3,7 @@ SPDX-FileCopyrightText: Vũ Xuân Bình <binh9aqktk@gmail.com>
 SPDX-License-Identifier: CC0-1.0
 -->
 
-# Music N C
+# K M A M U S I C
 Place this app in **nextcloud/apps/**
 
 ## Building the app

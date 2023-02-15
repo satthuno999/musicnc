@@ -3,15 +3,15 @@ declare(strict_types=1);
 // SPDX-FileCopyrightText: Vũ Xuân Bình <binh9aqktk@gmail.com>
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-namespace OCA\MusicNC\Tests\Integration\Controller;
+namespace OCA\KMAMUSIC\Tests\Integration\Controller;
 
 use OCP\AppFramework\App;
 use OCP\IRequest;
 use PHPUnit\Framework\TestCase;
 
-use OCA\MusicNC\Db\Note;
-use OCA\MusicNC\Db\NoteMapper;
-use OCA\MusicNC\Controller\NoteController;
+use OCA\KMAMUSIC\Db\Note;
+use OCA\KMAMUSIC\Db\NoteMapper;
+use OCA\KMAMUSIC\Controller\NoteController;
 
 class NoteIntegrationTest extends TestCase {
 	private NoteController $controller;
@@ -19,7 +19,7 @@ class NoteIntegrationTest extends TestCase {
 	private string $userId = 'john';
 
 	public function setUp(): void {
-		$app = new App('musicnc');
+		$app = new App('kmamusic');
 		$container = $app->getContainer();
 
 		// only replace the user id

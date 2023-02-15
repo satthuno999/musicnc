@@ -3,10 +3,10 @@ declare(strict_types=1);
 // SPDX-FileCopyrightText: Vũ Xuân Bình <binh9aqktk@gmail.com>
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-namespace OCA\MusicNC\Controller;
+namespace OCA\KMAMUSIC\Controller;
 
-use OCA\MusicNC\AppInfo\Application;
-use OCA\MusicNC\Service\NoteService;
+use OCA\KMAMUSIC\AppInfo\Application;
+use OCA\KMAMUSIC\Service\NoteService;
 use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http\DataResponse;
 use OCP\IRequest;

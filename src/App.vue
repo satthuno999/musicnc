@@ -3,18 +3,18 @@
     SPDX-FileCopyrightText: Vũ Xuân Bình <binh9aqktk@gmail.com>
     SPDX-License-Identifier: AGPL-3.0-or-later
     -->
-	<div id="content" class="app-musicnc">
+	<div id="content" class="app-kmamusic">
 		<AppNavigation>
 			<AppNavigationNew v-if="!loading"
-				:text="t('musicnc', 'New note')"
+				:text="t('kmamusic', 'New note')"
 				:disabled="false"
-				button-id="new-musicnc-button"
+				button-id="new-kmamusic-button"
 				button-class="icon-add"
 				@click="newNote" />
 			<ul>
 				<AppNavigationItem v-for="note in notes"
 					:key="note.id"
-					:title="note.title ? note.title : t('musicnc', 'New note')"
+					:title="note.title ? note.title : t('kmamusic', 'New note')"
 					:class="{active: currentNoteId === note.id}"
 					@click="openNote(note)">
 					<template slot="actions">
@@ -22,13 +22,13 @@
 							icon="icon-close"
 							@click="cancelNewNote(note)">
 							{{
-							t('musicnc', 'Cancel note creation') }}
+							t('kmamusic', 'Cancel note creation') }}
 						</ActionButton>
 						<ActionButton v-else
 							icon="icon-delete"
 							@click="deleteNote(note)">
 							{{
-							 t('musicnc', 'Delete note') }}
+							 t('kmamusic', 'Delete note') }}
 						</ActionButton>
 					</template>
 				</AppNavigationItem>
@@ -43,14 +43,14 @@
 				<textarea ref="content" v-model="currentNote.content" :disabled="updating" />
 				<input type="button"
 					class="primary"
-					:value="t('musicnc', 'Save')"
+					:value="t('kmamusic', 'Save')"
 					:disabled="updating || !savePossible"
 					@click="saveNote">
 			</div>
 			<div v-else id="emptycontent">
 				<div class="icon-file" />
 				<h2>{{
-				 t('musicnc', 'Create a note to get started') }}</h2>
+				 t('kmamusic', 'Create a note to get started') }}</h2>
 			</div>
 		</AppContent>
 	</div>
@@ -110,7 +110,7 @@ export default {
 	 */
 	async mounted() {
 		try {
-			const response = await axios.get(generateUrl('/apps/musicnc/notes'))
+			const response = await axios.get(generateUrl('/apps/kmamusic/notes'))
 			this.notes = response.data
 		} catch (e) {
 			console.error(e)
@@ -176,7 +176,7 @@ export default {
 		async createNote(note) {
 			this.updating = true
 			try {
-				const response = await axios.post(generateUrl('/apps/musicnc/notes'), note)
+				const response = await axios.post(generateUrl('/apps/kmamusic/notes'), note)
 				const index = this.notes.findIndex((match) => match.id === this.currentNoteId)
 				this.$set(this.notes, index, response.data)
 				this.currentNoteId = response.data.id
@@ -193,7 +193,7 @@ export default {
 		async updateNote(note) {
 			this.updating = true
 			try {
-				await axios.put(generateUrl(`/apps/musicnc/notes/${note.id}`), note)
+				await axios.put(generateUrl(`/apps/kmamusic/notes/${note.id}`), note)
 			} catch (e) {
 				console.error(e)
 				showError(t('notestutorial', 'Could not update the note'))
@@ -206,15 +206,15 @@ export default {
 		 */
 		async deleteNote(note) {
 			try {
-				await axios.delete(generateUrl(`/apps/musicnc/notes/${note.id}`))
+				await axios.delete(generateUrl(`/apps/kmamusic/notes/${note.id}`))
 				this.notes.splice(this.notes.indexOf(note), 1)
 				if (this.currentNoteId === note.id) {
 					this.currentNoteId = null
 				}
-				showSuccess(t('musicnc', 'Note deleted'))
+				showSuccess(t('kmamusic', 'Note deleted'))
 			} catch (e) {
 				console.error(e)
-				showError(t('musicnc', 'Could not delete the note'))
+				showError(t('kmamusic', 'Could not delete the note'))
 			}
 		},
 	},

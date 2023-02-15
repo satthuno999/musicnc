@@ -3,7 +3,7 @@ declare(strict_types=1);
 // SPDX-FileCopyrightText: Vũ Xuân Bình <binh9aqktk@gmail.com>
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-namespace OCA\MusicNC\Db;
+namespace OCA\KMAMUSIC\Db;
 
 use OCP\AppFramework\Db\DoesNotExistException;
 use OCP\AppFramework\Db\Entity;
@@ -16,7 +16,7 @@ use OCP\IDBConnection;
  */
 class NoteMapper extends QBMapper {
 	public function __construct(IDBConnection $db) {
-		parent::__construct($db, 'musicnc', Note::class);
+		parent::__construct($db, 'kmamusic', Note::class);
 	}
 
 	/**
@@ -27,7 +27,7 @@ class NoteMapper extends QBMapper {
 		/* @var $qb IQueryBuilder */
 		$qb = $this->db->getQueryBuilder();
 		$qb->select('*')
-			->from('musicnc')
+			->from('kmamusic')
 			->where($qb->expr()->eq('id', $qb->createNamedParameter($id, IQueryBuilder::PARAM_INT)))
 			->andWhere($qb->expr()->eq('user_id', $qb->createNamedParameter($userId)));
 		return $this->findEntity($qb);
@@ -41,7 +41,7 @@ class NoteMapper extends QBMapper {
 		/* @var $qb IQueryBuilder */
 		$qb = $this->db->getQueryBuilder();
 		$qb->select('*')
-			->from('musicnc')
+			->from('kmamusic')
 			->where($qb->expr()->eq('user_id', $qb->createNamedParameter($userId)));
 		return $this->findEntities($qb);
 	}
