@@ -1,5 +1,5 @@
 /**
- * Nextcloud Cookbook app
+ * Nextcloud  app
  * Vue frontend entry file
  * ---------------------------
  * @license AGPL3 or later
@@ -12,8 +12,8 @@ import Vue from "vue"
 
 import * as ModalDialogs from "vue-modal-dialogs"
 
-import helpers from "cookbook/js/helper"
-import setupLogging from "cookbook/js/logging"
+import helpers from "musicnc/js/helper";
+import setupLogging from "musicnc/js/logging"
 
 import router from "./router"
 import store from "./store"
@@ -23,7 +23,7 @@ import AppMain from "./components/AppMain.vue"
 // eslint-disable-next-line camelcase,no-undef
 if (__webpack_use_dev_server__ || false) {
     // eslint-disable-next-line camelcase,no-undef
-    __webpack_public_path__ = "http://127.0.0.1:3000/apps/cookbook/js/"
+    __webpack_public_path__ = "http://127.0.0.1:3000/apps/musicnc/js/";
 }
 
 // Fetch Nextcloud nonce identifier for dynamic script loading

@@ -5,9 +5,7 @@
 </template>
 
 <script>
-import api from "cookbook/js/api-interface"
-import helpers from "cookbook/js/helper"
-import { showSimpleAlertModal } from "cookbook/js/modals"
+import helpers from "musicnc/js/helper"
 
 import RecipeList from "./RecipeList.vue"
 
@@ -52,76 +50,6 @@ export default {
                 helpers.goTo(`/category/${val[0]}`)
             }
         })
-    },
-    methods: {
-        async setup() {
-            // TODO: This is a mess of different implementation styles, needs cleanup
-            if (this.query === "name") {
-                // Search by name
-                // TODO
-            } else if (this.query === "tags") {
-                // Search by tags
-                const $this = this
-                const tags = this.$route.params.value
-                try {
-                    const response = await api.recipes.allWithTag(tags)
-                    $this.results = response.data
-                } catch (e) {
-                    $this.results = []
-                    await showSimpleAlertModal(
-                        // prettier-ignore
-                        t("cookbook", "Failed to load recipes with keywords: {tags}",
-                            {
-                                tags,
-                            }
-                        )
-                    )
-                    if (e && e instanceof Error) {
-                        throw e
-                    }
-                }
-            } else if (this.query === "cat") {
-                // Search by category
-                const $this = this
-                const cat = this.$route.params.value
-                try {
-                    const response = await api.recipes.allInCategory(cat)
-                    $this.results = response.data
-                } catch (e) {
-                    $this.results = []
-                    await showSimpleAlertModal(
-                        // prettier-ignore
-                        t("cookbook", "Failed to load category {category} recipes",
-                            {
-                                category: cat,
-                            }
-                        )
-                    )
-                    if (e && e instanceof Error) {
-                        throw e
-                    }
-                }
-            } else {
-                // General search
-                const $this = this
-                try {
-                    const response = await api.recipes.search(
-                        $this.$route.params.value
-                    )
-                    $this.results = response.data
-                } catch (e) {
-                    $this.results = []
-                    await showSimpleAlertModal(
-                        t("cookbook", "Failed to load search results")
-                    )
-                    if (e && e instanceof Error) {
-                        throw e
-                    }
-                }
-                this.$store.dispatch("setPage", { page: "search" })
-            }
-            this.$store.dispatch("setPage", { page: "search" })
-        },
     },
 }
 </script>

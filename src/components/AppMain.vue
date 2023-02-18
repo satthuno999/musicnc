@@ -15,8 +15,6 @@
                 @click="closeNavigation"
             />
         </NcAppContent>
-        <dialogs-wrapper></dialogs-wrapper>
-        <SettingsDialog />
     </NcContent>
 </template>
 
@@ -24,7 +22,7 @@
 import isMobile from "@nextcloud/vue/dist/Mixins/isMobile"
 import NcAppContent from "@nextcloud/vue/dist/Components/NcAppContent"
 import NcContent from "@nextcloud/vue/dist/Components/NcContent"
-import AppControls from "cookbook/components/AppControls/AppControls.vue"
+import AppControls from "musicnc/components/AppControls/AppControls.vue"
 import { emit, subscribe, unsubscribe } from "@nextcloud/event-bus"
 import AppNavi from "./AppNavi.vue"
 import SettingsDialog from "./SettingsDialog.vue"

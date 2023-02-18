@@ -1,4 +1,4 @@
-import api from "cookbook/js/api-interface"
+import api from "musicnc/js/api-interface"
 
 import { generateUrl } from "@nextcloud/router"
 
