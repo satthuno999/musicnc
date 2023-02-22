@@ -1,4 +1,4 @@
-import { showSimpleAlertModal } from "musicnc/js/modals"
+import { showSimpleAlertModal } from "./modals"
 
 // Check if two routes point to the same component but have different content
 function shouldReloadContent(url1, url2) {

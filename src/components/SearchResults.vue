@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import helpers from "./js/helper"
+import helpers from "../js/helper"
 
 import RecipeList from "./RecipeList.vue"
 
