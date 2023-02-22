@@ -19,6 +19,7 @@
     "stylelint": "stylelint css/*.css css/*.scss src/**/*.scss src/**/*.vue",
     "stylelint:fix": "stylelint css/*.css css/*.scss src/**/*.scss src/**/*.vue --fix"
   },
+  "main": "src/main.js",
   "dependencies": {
     "@nextcloud/axios": "^2.0.0",
     "@nextcloud/event-bus": "3.0.2",

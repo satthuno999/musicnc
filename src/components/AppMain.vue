@@ -13,7 +13,7 @@
                 class="navigation-overlay"
                 :class="{ 'stay-open': isNavigationOpen }"
                 @click="closeNavigation"
-            />
+            ></div>
         </NcAppContent>
     </NcContent>
 </template>
