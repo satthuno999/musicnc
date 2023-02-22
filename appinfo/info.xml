@@ -9,7 +9,7 @@
     <name>K M A M U S I C</name>
     <summary>Nghe nhạc</summary>
     <description><![CDATA[Nghe nhạc]]></description>
-    <version>0.0.1</version>
+    <version>0.1.1</version>
     <licence>agpl</licence>
     <author mail="binh9aqktk@gmail.com" homepage="https://github.com/satthuno999">Vũ Xuân Bình</author>
     <namespace>musicnc</namespace>
@@ -21,7 +21,7 @@
     <navigations>
         <navigation>
             <name>K M A M U S I C</name>
-            <route>musicnc.page.index</route>
+            <route>musicnc.main.index</route>
         </navigation>
     </navigations>
 </info>
