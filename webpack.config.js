@@ -14,11 +14,11 @@ const { merge } = require('webpack-merge')
 const buildMode = process.env.NODE_ENV
 const isDev = buildMode === 'development'
 
-function cookbookConfig (env) {
+function musicncConfig (env) {
     const config = merge(webpackConfig, {
         context: path.resolve(__dirname),
         entry: {
-            guest: path.resolve(path.join('src', 'guest.js')),
+            guest: path.resolve(path.join('src', 'main.js')),
         },
         // You can add this to allow access in the network. You will have to adopt the public path in main.js as well!
         // devServer: {
@@ -42,4 +42,4 @@ function cookbookConfig (env) {
     return config
 }
 
-module.exports = cookbookConfig
+module.exports = musicncConfig
