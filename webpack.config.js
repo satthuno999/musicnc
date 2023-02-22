@@ -18,7 +18,7 @@ function musicncConfig (env) {
     const config = merge(webpackConfig, {
         context: path.resolve(__dirname),
         entry: {
-            guest: path.resolve(path.join('src', 'main.js')),
+            guest: path.resolve(path.join('src', 'guest.js')),
         },
         // You can add this to allow access in the network. You will have to adopt the public path in main.js as well!
         // devServer: {
