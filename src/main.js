@@ -12,8 +12,8 @@ import Vue from "vue"
 
 import * as ModalDialogs from "vue-modal-dialogs"
 
-import helpers from "musicnc/js/helper";
-import setupLogging from "musicnc/js/logging"
+import helpers from "./js/helper";
+import setupLogging from "./js/logging"
 
 import router from "./router"
 import store from "./store"
