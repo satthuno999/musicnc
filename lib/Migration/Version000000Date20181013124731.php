@@ -3,7 +3,7 @@ declare(strict_types=1);
 // SPDX-FileCopyrightText: Vũ Xuân Bình <binh9aqktk@gmail.com>
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-namespace OCA\KMAMUSIC\Migration;
+namespace OCA\musicnc\Migration;
 
 use Closure;
 use OCP\DB\ISchemaWrapper;
@@ -22,8 +22,8 @@ class Version000000Date20181013124731 extends SimpleMigrationStep {
 		/** @var ISchemaWrapper $schema */
 		$schema = $schemaClosure();
 
-		if (!$schema->hasTable('kmamusic')) {
-			$table = $schema->createTable('kmamusic');
+		if (!$schema->hasTable('musicnc')) {
+			$table = $schema->createTable('musicnc');
 			$table->addColumn('id', 'integer', [
 				'autoincrement' => true,
 				'notnull' => true,
@@ -42,7 +42,7 @@ class Version000000Date20181013124731 extends SimpleMigrationStep {
 			]);
 
 			$table->setPrimaryKey(['id']);
-			$table->addIndex(['user_id'], 'kmamusic_user_id_index');
+			$table->addIndex(['user_id'], 'musicnc_user_id_index');
 		}
 		return $schema;
 	}

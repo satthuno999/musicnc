@@ -3,16 +3,16 @@ declare(strict_types=1);
 // SPDX-FileCopyrightText: Vũ Xuân Bình <binh9aqktk@gmail.com>
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-namespace OCA\KMAMUSIC\Tests\Unit\Service;
+namespace OCA\musicnc\Tests\Unit\Service;
 
-use OCA\KMAMUSIC\Service\NoteNotFound;
+use OCA\musicnc\Service\NoteNotFound;
 use PHPUnit\Framework\TestCase;
 
 use OCP\AppFramework\Db\DoesNotExistException;
 
-use OCA\KMAMUSIC\Db\Note;
-use OCA\KMAMUSIC\Service\NoteService;
-use OCA\KMAMUSIC\Db\NoteMapper;
+use OCA\musicnc\Db\Note;
+use OCA\musicnc\Service\NoteService;
+use OCA\musicnc\Db\NoteMapper;
 
 class NoteServiceTest extends TestCase {
 	private NoteService $service;

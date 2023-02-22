@@ -1,15 +1,15 @@
 <?php
 
-namespace OCA\KMAMUSIC\AppInfo;
+namespace OCA\musicnc\AppInfo;
 
-use OCA\KMAMUSIC\Search\Provider;
+use OCA\musicnc\Search\Provider;
 use OCP\AppFramework\App;
 use OCP\AppFramework\Bootstrap\IBootContext;
 use OCP\AppFramework\Bootstrap\IBootstrap;
 use OCP\AppFramework\Bootstrap\IRegistrationContext;
 
 class Application extends App {
-	public const APP_ID = 'kmamusic';
+	public const APP_ID = 'musicnc';
 
 	public function __construct(array $urlParams = []) {
 		parent::__construct(self::APP_ID, $urlParams);

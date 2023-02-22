@@ -1,4 +1,4 @@
-import api from "musicnc/js/api-interface"
+import api from "./api-interface"
 
 import { generateUrl } from "@nextcloud/router"
 

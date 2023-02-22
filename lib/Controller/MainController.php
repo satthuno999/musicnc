@@ -44,7 +44,7 @@ class MainController extends Controller {
 			// Check if the user folder can be accessed
 			$this->userFolder->getFolder();
 		} catch (UserFolderNotWritableException $ex) {
-			Util::addScript('kmamusic', 'kmamusic-guest');
+			Util::addScript('musicnc', 'musicnc-guest');
 			return new TemplateResponse($this->appName, 'invalid_guest');
 		}
 		/*
@@ -55,7 +55,7 @@ class MainController extends Controller {
 
 		$this->dbCacheService->triggerCheck();
 
-		Util::addScript('kmamusic', 'kmamusic-main');
+		Util::addScript('musicnc', 'musicnc-main');
 		return new TemplateResponse($this->appName, 'index');  // templates/index.php
 	}
 }

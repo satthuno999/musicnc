@@ -1,5 +1,5 @@
 <template>
-    <NcContent app-name="app-kmamusic">
+    <NcContent app-name="app-musicnc">
         <AppNavi class="app-navigation" />
         <NcAppContent>
             <div>

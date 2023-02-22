@@ -3,16 +3,16 @@ declare(strict_types=1);
 // SPDX-FileCopyrightText: Vũ Xuân Bình <binh9aqktk@gmail.com>
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-namespace OCA\KMAMUSIC\Tests\Unit\Controller;
+namespace OCA\musicnc\Tests\Unit\Controller;
 
 use PHPUnit\Framework\TestCase;
 
 use OCP\AppFramework\Http;
 use OCP\IRequest;
 
-use OCA\KMAMUSIC\Service\NoteNotFound;
-use OCA\KMAMUSIC\Service\NoteService;
-use OCA\KMAMUSIC\Controller\NoteController;
+use OCA\musicnc\Service\NoteNotFound;
+use OCA\musicnc\Service\NoteService;
+use OCA\musicnc\Controller\NoteController;
 
 class NoteControllerTest extends TestCase {
 	protected NoteController $controller;
