@@ -239,7 +239,7 @@ export default {
 		width: 100%;
 	}
 
-	#app-content > .currentnote {
+	#currentnote {
 		margin-top: 30px;
 	}
 </style>
