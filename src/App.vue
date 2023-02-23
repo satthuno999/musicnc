@@ -35,7 +35,7 @@
 			</ul>
 		</AppNavigation>
 		<AppContent>
-			<div v-if="currentNote">
+			<div v-if="currentNote" id="currentnote">
 				<input ref="title"
 					v-model="currentNote.title"
 					type="text"
@@ -237,5 +237,9 @@ export default {
 	textarea {
 		flex-grow: 1;
 		width: 100%;
+	}
+
+	#app-content > .currentnote {
+		margin-top: 30px;
 	}
 </style>
