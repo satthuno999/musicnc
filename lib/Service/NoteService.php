@@ -3,15 +3,15 @@ declare(strict_types=1);
 // SPDX-FileCopyrightText: Vũ Xuân Bình <binh9aqktk@gmail.com>
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-namespace OCA\musicnc\Service;
+namespace OCA\MusicNC\Service;
 
 use Exception;
 
 use OCP\AppFramework\Db\DoesNotExistException;
 use OCP\AppFramework\Db\MultipleObjectsReturnedException;
 
-use OCA\musicnc\Db\Note;
-use OCA\musicnc\Db\NoteMapper;
+use OCA\MusicNC\Db\Note;
+use OCA\MusicNC\Db\NoteMapper;
 
 class NoteService {
 	private NoteMapper $mapper;

@@ -1,9 +1,5 @@
-<?php
-declare(strict_types=1);
 // SPDX-FileCopyrightText: Vũ Xuân Bình <binh9aqktk@gmail.com>
 // SPDX-License-Identifier: AGPL-3.0-or-later
+const babelConfig = require('@nextcloud/babel-config')
 
-namespace OCA\MusicNC\Service;
-
-class NoteNotFound extends \Exception {
-}
+module.exports = babelConfig
