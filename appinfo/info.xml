@@ -18,10 +18,22 @@
     <dependencies>
         <nextcloud min-version="24" max-version="24"/>
     </dependencies>
+    
+	<repair-steps>
+		<pre-migration>
+			<step>OCA\MusicNC\Migration\PreMigration</step>
+		</pre-migration>
+		<post-migration>
+			<step>OCA\MusicNC\Migration\BogusTrackRemoval</step>
+			<step>OCA\MusicNC\Migration\DiskNumberMigration</step>
+			<step>OCA\MusicNC\Migration\TimestampInit</step>
+		</post-migration>
+	</repair-steps>
     <navigations>
         <navigation>
             <name>Music N C</name>
             <route>musicnc.page.index</route>
+			<order>10</order>
         </navigation>
     </navigations>
 </info>
