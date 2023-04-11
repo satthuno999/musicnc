@@ -43,7 +43,7 @@ The modern web browsers ship with a wide variety of built-in audio codecs which 
 
 _Note: In order to be playable in the Music app, the file type has to be mapped to a MIME type `audio/*` on your cloud instance. Neither ownCloud nor Nextcloud has these mappings by default for the file types AAC, AIFF, AU, or CAF. To add these mappings, run:_
 
-	./occ music:register-mime-types
+	./occ musicnc:register-mime-types
 
 ## Usage hints
 
@@ -77,17 +77,17 @@ Reset all data stored to the music database. Target either specified user(s) or 
 
 **Warning:** This command will erase user-created data! It will remove all playlists as playlists are linked against the track metadata.
 
-	./occ music:reset-database USERNAME1 USERNAME2 ...
-	./occ music:reset-database --group=USERGROUP1 --group==USERGROUP2 ...
-	./occ music:reset-database --all
+	./occ musicnc:reset-database USERNAME1 USERNAME2 ...
+	./occ musicnc:reset-database --group=USERGROUP1 --group==USERGROUP2 ...
+	./occ musicnc:reset-database --all
 
 #### Reset cache
 
 Music app caches some results for performance reasons. Normally, there should be no reason to reset this cache manually, but it might be desiredable e.g. when running performance tests. Target either specified user(s) or user group(s) or all users.
 
-	./occ music:reset-cache USERNAME1 USERNAME2 ...
-	./occ music:reset-cache --group=USERGROUP1 --group==USERGROUP2 ...
-	./occ music:reset-cache --all
+	./occ musicnc:reset-cache USERNAME1 USERNAME2 ...
+	./occ musicnc:reset-cache --group=USERGROUP1 --group==USERGROUP2 ...
+	./occ musicnc:reset-cache --all
 
 ### Ampache and Subsonic
 

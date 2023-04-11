@@ -32,7 +32,7 @@ class PodcastUpdate extends BaseCommand {
 
 	protected function doConfigure() : void {
 		$this
-			->setName('music:podcast-update')
+			->setName('musicnc:podcast-update')
 			->setDescription('update podcast channels of one or more users from their sources')
 			->addOption(
 				'older-than',

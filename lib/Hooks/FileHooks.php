@@ -32,7 +32,7 @@ class FileHooks {
 	 * @param Node $node pointing to the file or folder
 	 */
 	public static function deleted(Node $node) {
-		$app = \OC::$server->query(Music::class);
+		$app = \OC::$server->query(musicnc::class);
 		$container = $app->getContainer();
 		$scanner = $container->query('Scanner');
 
@@ -56,7 +56,7 @@ class FileHooks {
 		// File::fopen, this hook gets triggered immediately after the opening succeeds,
 		// before anything is actually written and while the file is *exlusively locked
 		// because of the write mode*. See #638.
-		$app = \OC::$server->query(Music::class);
+		$app = \OC::$server->query(musicnc::class);
 		$container = $app->getContainer();
 		try {
 			self::handleUpdated($node, $container);

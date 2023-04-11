@@ -29,7 +29,7 @@ class Cleanup extends Command {
 
 	protected function configure() {
 		$this
-			->setName('music:cleanup')
+			->setName('musicnc:cleanup')
 			->setDescription('clean up orphaned DB entries (this happens also periodically on the background)')
 		;
 	}

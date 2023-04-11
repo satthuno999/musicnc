@@ -31,7 +31,7 @@ class ResetDatabase extends BaseCommand {
 
 	protected function doConfigure() : void {
 		$this
-			->setName('music:reset-database')
+			->setName('musicnc:reset-database')
 			->setDescription('drop metadata indexed by the music app (artists, albums, tracks, playlists)');
 	}
 

@@ -39,7 +39,7 @@ class Provider extends \OCP\Search\Provider {
 	private $logger;
 
 	public function __construct() {
-		$app = \OC::$server->query(Music::class);
+		$app = \OC::$server->query(musicnc::class);
 		$c = $app->getContainer();
 
 		$this->artistMapper = $c->query('ArtistMapper');

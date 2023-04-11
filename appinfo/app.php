@@ -16,7 +16,7 @@ namespace OCA\MusicNC\App;
 
 use \OCP\AppFramework\IAppContainer;
 
-$app = \OC::$server->query(Music::class);
+$app = \OC::$server->query(musicnc::class);
 
 $c = $app->getContainer();
 $appName = $c->query('AppName');

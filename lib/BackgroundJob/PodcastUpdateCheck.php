@@ -26,7 +26,7 @@ class PodcastUpdateCheck extends TimedJob {
 	 * Check podcast updates on the background
 	 */
 	public function run($arguments) {
-		$app = \OC::$server->query(Music::class);
+		$app = \OC::$server->query(musicnc::class);
 
 		$container = $app->getContainer();
 

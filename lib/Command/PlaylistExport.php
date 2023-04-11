@@ -46,7 +46,7 @@ class PlaylistExport extends BaseCommand {
 
 	protected function doConfigure() : void {
 		$this
-			->setName('music:playlist-export')
+			->setName('musicnc:playlist-export')
 			->setDescription('export user playlist(s) to file(s)')
 			->addOption(
 				'list-id',

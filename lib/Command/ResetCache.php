@@ -29,7 +29,7 @@ class ResetCache extends BaseCommand {
 
 	protected function doConfigure() : void {
 		$this
-			->setName('music:reset-cache')
+			->setName('musicnc:reset-cache')
 			->setDescription('drop data cached by the music app for performance reasons');
 	}
 

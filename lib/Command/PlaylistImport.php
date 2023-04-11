@@ -49,7 +49,7 @@ class PlaylistImport extends BaseCommand {
 
 	protected function doConfigure() : void {
 		$this
-			->setName('music:playlist-import')
+			->setName('musicnc:playlist-import')
 			->setDescription('import user playlist(s) from file(s)')
 			->addOption(
 				'file',

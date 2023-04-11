@@ -44,7 +44,7 @@
   * Based on the [Aurora.js](https://github.com/audiocogs/aurora.js/) (no plugins required)
   * Limitations: no seeking, no adjusting of playback speed, possible glitches, may not work with all files
   * Corresponding file extensions must be mapped to MIME types `audio/*`, see below
-- Command `occ music:register-mime-types` to add MIME type mappings for those supported audio file types which
+- Command `occ musicnc:register-mime-types` to add MIME type mappings for those supported audio file types which
   are not mapped by default on OC and NC: .aac, .au, .aif, .aiff, .aifc, .caf
 
 ### Changed
@@ -223,7 +223,7 @@
 - Updated the getID3 library to development version 1.9.21-202111211051
   [#600](https://github.com/owncloud/music/issues/600)
   [#921](https://github.com/owncloud/music/issues/921)
-- Enable using wildcards in file names on `occ music:playlist-import`
+- Enable using wildcards in file names on `occ musicnc:playlist-import`
   [#832](https://github.com/owncloud/music/issues/832)
 - Never use the library root folder name as an album or an artist name (in case no metadata is available)
 
@@ -344,7 +344,7 @@ A mistake made when creating the release package 1.3.0 broke the application pre
   * Searching/filtering in the podcasts view by channel and episode titles
   * Subsonic API including methods `getPodcasts`, `getNewestPodcasts`, `refreshPodcasts`, `createPodcastChannel`, `deletePodcastChannel`
   * Ampache API including methods `podcasts`, `podcast`, `podcast_create`, `podcast_delete`, `podcast_episodes`, `podcast_episode`, `update_podcast`
-  * `occ` commands `music:podcast-add`, `music:podcast-reset`, `music:podcast-update`
+  * `occ` commands `musicnc:podcast-add`, `musicnc:podcast-reset`, `musicnc:podcast-update`
 - Subsonic method `getTopSongs`
 
 ### Changed
@@ -876,7 +876,7 @@ A mistake made when creating the release package 1.3.0 broke the application pre
 ## 0.5.5 - 2017-12-10
 - fix Content Security Policy error being printed to browser console when starting playback on Chrome (#498)
 - fix playing files which have '%' character followed by two digits in their name by using URL encoding (#299)
-- enable running the background cleanup task on request with the `occ music:cleanup` command
+- enable running the background cleanup task on request with the `occ musicnc:cleanup` command
 - fix range requests on the endpoint `/api/file/{fileId}`
 - fix files music player not being used on Chromium installations with no audio codecs (regression introduced in v0.5.4)
 - remove any "broken" track entries in the background cleanup task (#588)

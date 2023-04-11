@@ -31,7 +31,7 @@ class PodcastReset extends BaseCommand {
 
 	protected function doConfigure() : void {
 		$this
-			->setName('music:podcast-reset')
+			->setName('musicnc:podcast-reset')
 			->setDescription('remove all podcast channels of one or more users')
 		;
 	}

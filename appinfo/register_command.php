@@ -16,7 +16,7 @@
 
 use OCA\MusicNC\App\Music;
 
-$app = \OC::$server->query(Music::class);
+$app = \OC::$server->query(musicnc::class);
 $c = $app->getContainer();
 
 $application->add(new OCA\MusicNC\Command\Scan(

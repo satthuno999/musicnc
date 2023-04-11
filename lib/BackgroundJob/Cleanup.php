@@ -27,7 +27,7 @@ class Cleanup extends TimedJob {
 	 * Run background cleanup task
 	 */
 	public function run($arguments) {
-		$app = \OC::$server->query(Music::class);
+		$app = \OC::$server->query(musicnc::class);
 
 		$container = $app->getContainer();
 

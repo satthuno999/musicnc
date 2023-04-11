@@ -16,7 +16,7 @@ namespace OCA\MusicNC;
 
 use \OCA\MusicNC\App\Music;
 
-$app = \OC::$server->query(Music::class);
+$app = \OC::$server->query(musicnc::class);
 
 $app->registerRoutes($this, ['routes' => [
 	// page

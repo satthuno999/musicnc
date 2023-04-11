@@ -39,7 +39,7 @@ class PodcastAdd extends BaseCommand {
 
 	protected function doConfigure() : void {
 		$this
-			->setName('music:podcast-add')
+			->setName('musicnc:podcast-add')
 			->setDescription('add a podcast channel from an RSS feed')
 			->addOption(
 					'rss',

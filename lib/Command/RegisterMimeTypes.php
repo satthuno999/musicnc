@@ -38,7 +38,7 @@ class RegisterMimeTypes extends Command {
 
 	protected function configure() {
 		$this
-			->setName('music:register-mime-types')
+			->setName('musicnc:register-mime-types')
 			->setDescription('map following file extensions as audio MIME types: ' . \json_encode(\array_keys($this->mimeMappings)));
 		;
 	}
