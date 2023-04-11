@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <info>
-	<id>music</id>
-	<name>Music</name>
+	<id>musicnc</id>
+	<name>Musicnc</name>
 	<summary>Music player, library viewer, and server</summary>
 	<description><![CDATA[A stand-alone music player app and a "lite" player for the Files app
 
