@@ -1,12 +1,22 @@
 <?php declare(strict_types=1);
 
+/**
+ * ownCloud - Music app
+ *
+ * This file is licensed under the Affero General Public License version 3 or
+ * later. See the COPYING file.
+ *
+ * @author Pauli Järvinen <pauli.jarvinen@gmail.com>
+ * @copyright Pauli Järvinen 2016 - 2021
+ */
+
 namespace OCA\MusicNC\Db;
 
 use OCP\AppFramework\Db\DoesNotExistException;
-use OCP\AppFramework\Db\Mapper;
 use OCP\AppFramework\Db\MultipleObjectsReturnedException;
 use OCP\IDBConnection;
 
+use OCA\MusicNC\AppFramework\Db\CompatibleMapper;
 use OCA\MusicNC\AppFramework\Db\UniqueConstraintViolationException;
 use OCA\MusicNC\Utility\Util;
 
@@ -16,7 +26,7 @@ use OCA\MusicNC\Utility\Util;
  * @phpstan-method EntityType findEntity(string $sql, array $params)
  * @phpstan-method EntityType[] findEntities(string $sql, array $params, ?int $limit=null, ?int $offset=null)
  */
-abstract class BaseMapper extends Mapper {
+abstract class BaseMapper extends CompatibleMapper {
 	const SQL_DATE_FORMAT = 'Y-m-d H:i:s.v';
 
 	protected $nameColumn;
@@ -217,7 +227,7 @@ abstract class BaseMapper extends Mapper {
 
 	/**
 	 * {@inheritDoc}
-	 * @see \OCP\AppFramework\Db\Mapper::insert()
+	 * @see CompatibleMapper::insert()
 	 * @phpstan-param EntityType $entity
 	 * @phpstan-return EntityType
 	 */
@@ -243,7 +253,7 @@ abstract class BaseMapper extends Mapper {
 
 	/**
 	 * {@inheritDoc}
-	 * @see \OCP\AppFramework\Db\Mapper::update()
+	 * @see CompatibleMapper::update()
 	 * @phpstan-param EntityType $entity
 	 * @phpstan-return EntityType
 	 */

@@ -1,6 +1,14 @@
 <?php declare(strict_types=1);
-// SPDX-FileCopyrightText: Vũ Xuân Bình <binh9aqktk@gmail.com>
-// SPDX-License-Identifier: AGPL-3.0-or-later
+
+/**
+ * ownCloud - Music app
+ *
+ * This file is licensed under the Affero General Public License version 3 or
+ * later. See the COPYING file.
+ *
+ * @author Pauli Järvinen <pauli.jarvinen@gmail.com>
+ * @copyright Pauli Järvinen 2017
+ */
 
 namespace OCA\MusicNC\Migration;
 
@@ -30,7 +38,7 @@ class PreMigration implements IRepairStep {
 	 * @inheritdoc
 	 */
 	public function run(IOutput $output) {
-		$installedVersion = $this->config->getAppValue('music', 'installed_version');
+		$installedVersion = $this->config->getAppValue('Musicnc', 'installed_version');
 
 		// Drop obsolete tables created by previous versions if they still exist.
 		// No need to check version numbers here.

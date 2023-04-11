@@ -1063,7 +1063,7 @@ msgstr ""
 "\"{{issueTrackerUrl}}\" target=\"_blank\">Issue Tracker</a>."
 
 #: ../templates/partials/settingsview.php:13
-msgid "This setting specifies the folder which will be scanned for music."
+msgid "This setting specifies the folder which will be scanned for musicnc."
 msgstr "Diese Einstellung spezifiziert den zu durchsuchenden Musikordner."
 
 #: ../js/app/controllers/maincontroller.js:164

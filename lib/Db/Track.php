@@ -1,5 +1,17 @@
 <?php declare(strict_types=1);
 
+/**
+ * ownCloud - Music app
+ *
+ * This file is licensed under the Affero General Public License version 3 or
+ * later. See the COPYING file.
+ *
+ * @author Morris Jobke <hey@morrisjobke.de>
+ * @author Pauli Järvinen <pauli.jarvinen@gmail.com>
+ * @copyright Morris Jobke 2013, 2014
+ * @copyright Pauli Järvinen 2016 - 2022
+ */
+
 namespace OCA\MusicNC\Db;
 
 use OCA\MusicNC\Utility\Util;
@@ -101,7 +113,7 @@ class Track extends Entity {
 
 	public function getUri(IURLGenerator $urlGenerator) : string {
 		return $urlGenerator->linkToRoute(
-			'music.shivaApi.track',
+			'musicnc.shivaApi.track',
 			['trackId' => $this->id]
 		);
 	}
@@ -110,7 +122,7 @@ class Track extends Entity {
 		return [
 			'id' => $this->artistId,
 			'uri' => $urlGenerator->linkToRoute(
-				'music.shivaApi.artist',
+				'musicnc.shivaApi.artist',
 				['artistId' => $this->artistId]
 			)
 		];
@@ -120,7 +132,7 @@ class Track extends Entity {
 		return [
 			'id' => $this->albumId,
 			'uri' => $urlGenerator->linkToRoute(
-				'music.shivaApi.album',
+				'musicnc.shivaApi.album',
 				['albumId' => $this->albumId]
 			)
 		];
@@ -159,7 +171,7 @@ class Track extends Entity {
 			'album' => $this->getAlbumWithUri($urlGenerator),
 			'length' => $this->getLength(),
 			'files' => [$this->getMimetype() => $urlGenerator->linkToRoute(
-				'music.api.download',
+				'musicnc.api.download',
 				['fileId' => $this->getFileId()]
 			)],
 			'bitrate' => $this->getBitrate(),
@@ -243,7 +255,7 @@ class Track extends Entity {
 			'isVideo' => false,
 			'albumId' => 'album-' . $albumId,
 			'artistId' => 'artist-' . $this->getArtistId(),
-			'type' => 'music',
+			'type' => 'Musicnc',
 			'created' => Util::formatZuluDateTime($this->getCreated()),
 			'track' => $this->getAdjustedTrackNumber(false), // DSub would get confused of playlist numbering, https://github.com/owncloud/music/issues/994
 			'starred' => Util::formatZuluDateTime($this->getStarred()),

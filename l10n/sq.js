@@ -26,7 +26,7 @@ OC.L10N.register(
     "Scanning music …" : "Po skanohet muzika…",
     "Shuffle" : "Përzieji",
     "Some not playable tracks were skipped." : "Disa pjesë që s’luheshin dot u anashkaluan.",
-    "This setting specifies the folder which will be scanned for music." : "Ky rregullim përcakton dosjen që do të kontrollohet për muzikë.",
+    "This setting specifies the folder which will be scanned for musicnc." : "Ky rregullim përcakton dosjen që do të kontrollohet për muzikë.",
     "Tracks" : "Pjesë",
     "Unknown album" : "Album i panjohur",
     "Unknown artist" : "Artist i panjohur",

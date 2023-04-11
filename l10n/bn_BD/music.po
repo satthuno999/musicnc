@@ -120,7 +120,7 @@ msgid "Some not playable tracks were skipped."
 msgstr "বাজানোর অনুপযোগী কিছু ট্র্যাক এড়িয়ে যাওয়া হয়েছে।"
 
 #: ../templates/fake-template.php:11
-msgid "This setting specifies the folder which will be scanned for music."
+msgid "This setting specifies the folder which will be scanned for musicnc."
 msgstr "এই নিয়ামকটি গান খুজে বের করার জন্য ফোল্ডার নির্ধারণ করে।"
 
 #: ../templates/fake-template.php:8

@@ -38,7 +38,7 @@ class TimestampInit implements IRepairStep {
 	 * @inheritdoc
 	 */
 	public function run(IOutput $output) {
-		$installedVersion = $this->config->getAppValue('musicnc', 'installed_version');
+		$installedVersion = $this->config->getAppValue('Musicnc', 'installed_version');
 
 		// Music version 0.18.0 added the `created` and `updated` columns to all library entity tables
 		if (\version_compare($installedVersion, '0.18.0', '<')) {

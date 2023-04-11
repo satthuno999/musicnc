@@ -19,7 +19,7 @@ OC.L10N.register(
     "Revoke API password" : "Ezeztatu API pasahitza",
     "Shuffle" : "Nahastu",
     "Some not playable tracks were skipped." : "Erreproduzitu ezin ziren pista batzuk saltatu egin dira.",
-    "This setting specifies the folder which will be scanned for music." : "Hemen musika bilatuko den karpetak zehazten dira.",
+    "This setting specifies the folder which will be scanned for musicnc." : "Hemen musika bilatuko den karpetak zehazten dira.",
     "Tracks" : "Pistak",
     "Unknown album" : "Diska ezezaguna",
     "Unknown artist" : "Artista ezezaguna",

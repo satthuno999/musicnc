@@ -26,7 +26,7 @@ OC.L10N.register(
     "Scanning music …" : "סורק מוזיקה...",
     "Shuffle" : "ערבב",
     "Some not playable tracks were skipped." : "מספר קטעי מוסיקה לא תקינים דולגו",
-    "This setting specifies the folder which will be scanned for music." : "ההגדרות של התיקייה עליה תבוצע סריקת המוזיקה",
+    "This setting specifies the folder which will be scanned for musicnc." : "ההגדרות של התיקייה עליה תבוצע סריקת המוזיקה",
     "Tracks" : "קטעי מוסיקה",
     "Unknown album" : "אלבום לא ידוע",
     "Unknown artist" : "אמן לא ידוע",

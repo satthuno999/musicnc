@@ -1,4 +1,4 @@
-# Cloned from ../l10n\fi_FI\music.po by duplicate-lang.py
+# Cloned from ../l10n\fi_FI\musicnc.po by duplicate-lang.py
 #
 # Translators:
 # Jiri Grönroos <jiri.gronroos@iki.fi>, 2013-2015
@@ -1145,7 +1145,7 @@ msgstr ""
 "<a href=\"{{issueTrackerUrl}}\" target=\"_blank\">seurantaan</a>."
 
 #: ../templates/partials/views/settingsview.php:13
-msgid "This setting specifies the folder which will be scanned for music."
+msgid "This setting specifies the folder which will be scanned for musicnc."
 msgstr "Tämä asetus määrittää kansion, josta musiikkia etsitään."
 
 #: ../js/app/controllers/maincontroller.js:181

@@ -120,7 +120,7 @@ msgid "Some not playable tracks were skipped."
 msgstr "Bəzi oxunulabilməyən musiqilər ötürülüb."
 
 #: ../templates/fake-template.php:11
-msgid "This setting specifies the folder which will be scanned for music."
+msgid "This setting specifies the folder which will be scanned for musicnc."
 msgstr "Bu quraşdırma qovluğu təyin edir hansı ki, musiqi üçün tədqiq ediləcək."
 
 #: ../templates/fake-template.php:8

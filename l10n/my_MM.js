@@ -19,7 +19,7 @@ OC.L10N.register(
     "Revoke API password" : "API စကားဝှက်ကိုပြန်ရုတ်သိမ်း",
     "Shuffle" : "ရောမွှေ",
     "Some not playable tracks were skipped." : "တချို့ သော အပုဒ်များ ဖွင့်မရ၍ ကျော်ခဲ့သည်။",
-    "This setting specifies the folder which will be scanned for music." : "ဒီ အထူးပြု ဆက်တင် ရှိ ဖိုဒါ မှ တေးသီချင်း ကိုရှာဖွေပါလိမ့်မည်။",
+    "This setting specifies the folder which will be scanned for musicnc." : "ဒီ အထူးပြု ဆက်တင် ရှိ ဖိုဒါ မှ တေးသီချင်း ကိုရှာဖွေပါလိမ့်မည်။",
     "Tracks" : "အပုဒ်များ",
     "Unknown album" : "အမည်မသိ သီချင်းခွေ",
     "Unknown artist" : "အမည်မသိ အဆိုတော်",

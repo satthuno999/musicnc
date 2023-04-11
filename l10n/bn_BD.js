@@ -19,7 +19,7 @@ OC.L10N.register(
     "Revoke API password" : "API কুটশব্দ বাতিল কর",
     "Shuffle" : "এলোমেলো কর",
     "Some not playable tracks were skipped." : "বাজানোর অনুপযোগী কিছু ট্র্যাক এড়িয়ে যাওয়া হয়েছে।",
-    "This setting specifies the folder which will be scanned for music." : "এই নিয়ামকটি গান খুজে বের করার জন্য ফোল্ডার নির্ধারণ করে।",
+    "This setting specifies the folder which will be scanned for musicnc." : "এই নিয়ামকটি গান খুজে বের করার জন্য ফোল্ডার নির্ধারণ করে।",
     "Tracks" : "ট্র্যাকসমূহ",
     "Unknown album" : "অজানা অ্যালবাম",
     "Unknown artist" : "অজানা শিল্পী",

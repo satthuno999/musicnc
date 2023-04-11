@@ -127,7 +127,7 @@ msgid "Some not playable tracks were skipped."
 msgstr "一部の再生不可能なトラックをスキップしました。"
 
 #: ../templates/fake-template.php:11
-msgid "This setting specifies the folder which will be scanned for music."
+msgid "This setting specifies the folder which will be scanned for musicnc."
 msgstr "この設定では、音楽ファイルをスキャンするフォルダーを指定します。"
 
 #: ../templates/fake-template.php:8

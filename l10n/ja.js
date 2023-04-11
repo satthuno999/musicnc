@@ -26,7 +26,7 @@ OC.L10N.register(
     "Scanning music …" : "ミュージックをスキャン中...",
     "Shuffle" : "シャッフル",
     "Some not playable tracks were skipped." : "一部の再生不可能なトラックをスキップしました。",
-    "This setting specifies the folder which will be scanned for music." : "この設定では、音楽ファイルをスキャンするフォルダーを指定します。",
+    "This setting specifies the folder which will be scanned for musicnc." : "この設定では、音楽ファイルをスキャンするフォルダーを指定します。",
     "Tracks" : "トラック",
     "Unknown album" : "不明なアルバム",
     "Unknown artist" : "不明なアーティスト",

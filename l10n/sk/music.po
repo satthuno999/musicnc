@@ -1,4 +1,4 @@
-# Cloned from ../l10n\sk_SK\music.po by duplicate-lang.py
+# Cloned from ../l10n\sk_SK\musicnc.po by duplicate-lang.py
 # 
 # Translators:
 # Marián Hvolka <marian.hvolka@stuba.sk>, 2013-2015
@@ -122,7 +122,7 @@ msgid "Some not playable tracks were skipped."
 msgstr "Niektoré neprehrateľné skladby boli vynechané."
 
 #: ../templates/fake-template.php:11
-msgid "This setting specifies the folder which will be scanned for music."
+msgid "This setting specifies the folder which will be scanned for musicnc."
 msgstr "Toto nastavenie určuje priečinok, v ktorom bude vyhľadaná hudba."
 
 #: ../templates/fake-template.php:8

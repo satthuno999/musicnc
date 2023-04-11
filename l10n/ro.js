@@ -19,7 +19,7 @@ OC.L10N.register(
     "Revoke API password" : "Revocă parola API",
     "Shuffle" : "Amestecă",
     "Some not playable tracks were skipped." : "Unele piese care nu pot fi redate au fost sărite.",
-    "This setting specifies the folder which will be scanned for music." : "Această setare specifică directorul în care se vor căuta fișiere audio.",
+    "This setting specifies the folder which will be scanned for musicnc." : "Această setare specifică directorul în care se vor căuta fișiere audio.",
     "Tracks" : "Piese",
     "Unknown album" : "Album necunoscut",
     "Unknown artist" : "Artist necunoscut",

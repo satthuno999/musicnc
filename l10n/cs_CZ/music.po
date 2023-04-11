@@ -126,7 +126,7 @@ msgid "Some not playable tracks were skipped."
 msgstr "Některé stopy byly přeskočeny, protože se nedají přehrát."
 
 #: ../templates/fake-template.php:11
-msgid "This setting specifies the folder which will be scanned for music."
+msgid "This setting specifies the folder which will be scanned for musicnc."
 msgstr "Toto nastavení určuje adresář, ve kterém bude hledána hudba."
 
 #: ../templates/fake-template.php:8

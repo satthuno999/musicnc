@@ -26,7 +26,7 @@ OC.L10N.register(
     "Scanning music …" : "Skannataan musiikkia …",
     "Shuffle" : "Sekoita",
     "Some not playable tracks were skipped." : "Ohitettiin joitain sellaisia kappaleita, joita ei voi toistaa.",
-    "This setting specifies the folder which will be scanned for music." : "Tämä asetus määrittää kansion, josta musiikkia etsitään.",
+    "This setting specifies the folder which will be scanned for musicnc." : "Tämä asetus määrittää kansion, josta musiikkia etsitään.",
     "Tracks" : "Kappaleet",
     "Unknown album" : "Tuntematon albumi",
     "Unknown artist" : "Tuntematon esittäjä",

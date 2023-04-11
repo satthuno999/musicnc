@@ -26,7 +26,7 @@ OC.L10N.register(
     "Scanning music …" : "Hledám hudbu …",
     "Shuffle" : "Promíchat",
     "Some not playable tracks were skipped." : "Některé stopy byly přeskočeny, protože se nedají přehrát.",
-    "This setting specifies the folder which will be scanned for music." : "Toto nastavení určuje adresář, ve kterém bude hledána hudba.",
+    "This setting specifies the folder which will be scanned for musicnc." : "Toto nastavení určuje adresář, ve kterém bude hledána hudba.",
     "Tracks" : "Stopy",
     "Unknown album" : "Neznámé album",
     "Unknown artist" : "Neznámý umělec",

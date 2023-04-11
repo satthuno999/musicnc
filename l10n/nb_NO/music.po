@@ -123,7 +123,7 @@ msgid "Some not playable tracks were skipped."
 msgstr "Noen ikke-spillbare spor ble hoppet over."
 
 #: ../templates/fake-template.php:11
-msgid "This setting specifies the folder which will be scanned for music."
+msgid "This setting specifies the folder which will be scanned for musicnc."
 msgstr "Denne innstillingen spesifiserer mappen som vil bli skannet for musikk."
 
 #: ../templates/fake-template.php:8

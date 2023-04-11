@@ -1,5 +1,17 @@
 <?php declare(strict_types=1);
 
+/**
+ * ownCloud - Music app
+ *
+ * This file is licensed under the Affero General Public License version 3 or
+ * later. See the COPYING file.
+ *
+ * @author Morris Jobke <hey@morrisjobke.de>
+ * @author Pauli Järvinen <pauli.jarvinen@gmail.com>
+ * @copyright Morris Jobke 2013, 2014
+ * @copyright Pauli Järvinen 2017 - 2021
+ */
+
 namespace OCA\MusicNC\Db;
 
 use OCP\IL10N;
@@ -35,7 +47,7 @@ class Artist extends Entity {
 
 	public function getUri(IURLGenerator $urlGenerator) {
 		return $urlGenerator->linkToRoute(
-			'music.shivaApi.artist',
+			'musicnc.shivaApi.artist',
 			['artistId' => $this->id]
 		);
 	}
@@ -52,7 +64,7 @@ class Artist extends Entity {
 	public function coverToAPI(IURLGenerator $urlGenerator) {
 		$coverUrl = null;
 		if ($this->getCoverFileId() > 0) {
-			$coverUrl = $urlGenerator->linkToRoute('music.api.artistCover',
+			$coverUrl = $urlGenerator->linkToRoute('musicnc.api.artistCover',
 					['artistId' => $this->getId()]);
 		}
 		return $coverUrl;

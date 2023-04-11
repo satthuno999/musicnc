@@ -1,5 +1,17 @@
 <?php declare(strict_types=1);
 
+/**
+ * ownCloud - Music app
+ *
+ * This file is licensed under the Affero General Public License version 3 or
+ * later. See the COPYING file.
+ *
+ * @author Gregory Baudet <gregory.baudet@gmail.com>
+ * @author Pauli Järvinen <pauli.jarvinen@gmail.com>
+ * @copyright Gregory Baudet 2018
+ * @copyright Pauli Järvinen 2019
+ */
+
 namespace OCA\MusicNC\Migration;
 
 use OCP\IConfig;
@@ -28,7 +40,7 @@ class BogusTrackRemoval implements IRepairStep {
 	 * @inheritdoc
 	 */
 	public function run(IOutput $output) {
-		$installedVersion = $this->config->getAppValue('musicnc', 'installed_version');
+		$installedVersion = $this->config->getAppValue('Musicnc', 'installed_version');
 
 		// Music version 0.9.3 and older may have scanned playlist files as tracks,
 		// depending on the MIME type configuration of the cloud.

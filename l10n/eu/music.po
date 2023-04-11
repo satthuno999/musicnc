@@ -121,7 +121,7 @@ msgid "Some not playable tracks were skipped."
 msgstr "Erreproduzitu ezin ziren pista batzuk saltatu egin dira."
 
 #: ../templates/fake-template.php:11
-msgid "This setting specifies the folder which will be scanned for music."
+msgid "This setting specifies the folder which will be scanned for musicnc."
 msgstr "Hemen musika bilatuko den karpetak zehazten dira."
 
 #: ../templates/fake-template.php:8

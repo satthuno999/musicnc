@@ -19,7 +19,7 @@ OC.L10N.register(
     "Revoke API password" : "Zneplatniť heslo API",
     "Shuffle" : "Zamiešať",
     "Some not playable tracks were skipped." : "Niektoré neprehrateľné skladby boli vynechané.",
-    "This setting specifies the folder which will be scanned for music." : "Toto nastavenie určuje priečinok, v ktorom bude vyhľadaná hudba.",
+    "This setting specifies the folder which will be scanned for musicnc." : "Toto nastavenie určuje priečinok, v ktorom bude vyhľadaná hudba.",
     "Tracks" : "Skladby",
     "Unknown album" : "Neznámy album",
     "Unknown artist" : "Neznámy umelec",

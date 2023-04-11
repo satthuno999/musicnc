@@ -26,7 +26,7 @@ OC.L10N.register(
     "Scanning music …" : "Skanna tónlist …",
     "Shuffle" : "Stokka",
     "Some not playable tracks were skipped." : "Sumum óspilanlegum hljóðsporum var sleppt.",
-    "This setting specifies the folder which will be scanned for music." : "Þetta tilgreinir möppuna þar sem leitað verður að tónlist.",
+    "This setting specifies the folder which will be scanned for musicnc." : "Þetta tilgreinir möppuna þar sem leitað verður að tónlist.",
     "Tracks" : "Hljóðspor",
     "Unknown album" : "Óþekkt albúm",
     "Unknown artist" : "Óþekktur flytjandi",

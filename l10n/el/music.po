@@ -124,7 +124,7 @@ msgid "Some not playable tracks were skipped."
 msgstr "Μερικά μη αναγνώσιμα τραγούδια έχουν παρακαμφθεί."
 
 #: ../templates/fake-template.php:11
-msgid "This setting specifies the folder which will be scanned for music."
+msgid "This setting specifies the folder which will be scanned for musicnc."
 msgstr "Αυτή η ρύθμιση προσδιορίζει το φάκελο που θα σαρωθεί για μουσική."
 
 #: ../templates/fake-template.php:8

@@ -122,7 +122,7 @@ msgid "Some not playable tracks were skipped."
 msgstr "재생할 수 없는 곡을 건너뛰었습니다."
 
 #: ../templates/fake-template.php:11
-msgid "This setting specifies the folder which will be scanned for music."
+msgid "This setting specifies the folder which will be scanned for musicnc."
 msgstr "이 설정은 음악을 검색할 폴더를 지정합니다."
 
 #: ../templates/fake-template.php:8

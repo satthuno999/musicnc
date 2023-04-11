@@ -1007,7 +1007,7 @@ msgstr ""
 "href=\"{{issueTrackerUrl}}\" target=\"_blank\">问题追踪器</a>中汇报Bug。"
 
 #: ../templates/partials/views/settingsview.php:13
-msgid "This setting specifies the folder which will be scanned for music."
+msgid "This setting specifies the folder which will be scanned for musicnc."
 msgstr "将会在此设置指定的文件夹中扫描音乐文件。"
 
 #: ../js/app/controllers/maincontroller.js:164

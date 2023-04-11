@@ -46,7 +46,7 @@ class DiskNumberMigration implements IRepairStep {
 	 * @inheritdoc
 	 */
 	public function run(IOutput $output) {
-		$installedVersion = $this->config->getAppValue('musicnc', 'installed_version');
+		$installedVersion = $this->config->getAppValue('Musicnc', 'installed_version');
 
 		if (\version_compare($installedVersion, '0.13.0', '<=')) {
 			try {

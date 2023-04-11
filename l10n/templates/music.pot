@@ -932,7 +932,7 @@ msgid "This may be desirable after changing the excluded paths, or if the databa
 msgstr ""
 
 #: ../templates/partials/views/settingsview.php:13
-msgid "This setting specifies the folder which will be scanned for music."
+msgid "This setting specifies the folder which will be scanned for musicnc."
 msgstr ""
 
 #: ../js/app/controllers/maincontroller.js:181

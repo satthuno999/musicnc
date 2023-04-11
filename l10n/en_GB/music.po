@@ -120,8 +120,8 @@ msgid "Some not playable tracks were skipped."
 msgstr "Some unplayable tracks were skipped."
 
 #: ../templates/fake-template.php:11
-msgid "This setting specifies the folder which will be scanned for music."
-msgstr "This setting specifies the folder which will be scanned for music."
+msgid "This setting specifies the folder which will be scanned for musicnc."
+msgstr "This setting specifies the folder which will be scanned for musicnc."
 
 #: ../templates/fake-template.php:8
 msgid "Tracks"

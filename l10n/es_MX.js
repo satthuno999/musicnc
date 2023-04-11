@@ -19,7 +19,7 @@ OC.L10N.register(
     "Revoke API password" : "Revocar contraseña de API",
     "Shuffle" : "Mezclar",
     "Some not playable tracks were skipped." : "Algunas pistas no reproducibles fueron omitidas.",
-    "This setting specifies the folder which will be scanned for music." : "Esta configuración especifica la carpeta que será analizada en busca de música.",
+    "This setting specifies the folder which will be scanned for musicnc." : "Esta configuración especifica la carpeta que será analizada en busca de música.",
     "Tracks" : "Pistas",
     "Unknown album" : "Álbum desconocido",
     "Unknown artist" : "Artista desconocido",

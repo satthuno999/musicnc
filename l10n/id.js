@@ -19,7 +19,7 @@ OC.L10N.register(
     "Revoke API password" : "Cabut sandi API",
     "Shuffle" : "Acak",
     "Some not playable tracks were skipped." : "Beberapa trek yang tidak diputar akan dilewati.",
-    "This setting specifies the folder which will be scanned for music." : "Pengaturan ini menentukan folder yang akan dipindai untuk musik.",
+    "This setting specifies the folder which will be scanned for musicnc." : "Pengaturan ini menentukan folder yang akan dipindai untuk musik.",
     "Tracks" : "Trek",
     "Unknown album" : "Album tidak diketahui",
     "Unknown artist" : "Pembuat tidak diketahui",

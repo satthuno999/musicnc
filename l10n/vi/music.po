@@ -123,7 +123,7 @@ msgid "Some not playable tracks were skipped."
 msgstr "Một số bài không thể phát đã được bỏ qua"
 
 #: ../templates/fake-template.php:11
-msgid "This setting specifies the folder which will be scanned for music."
+msgid "This setting specifies the folder which will be scanned for musicnc."
 msgstr "Thiết lập này xác định thư mục đó sẽ được quét để tìm nhạc."
 
 #: ../templates/fake-template.php:8

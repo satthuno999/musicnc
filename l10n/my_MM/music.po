@@ -119,7 +119,7 @@ msgid "Some not playable tracks were skipped."
 msgstr "တချို့ သော အပုဒ်များ ဖွင့်မရ၍ ကျော်ခဲ့သည်။"
 
 #: ../templates/fake-template.php:11
-msgid "This setting specifies the folder which will be scanned for music."
+msgid "This setting specifies the folder which will be scanned for musicnc."
 msgstr "ဒီ အထူးပြု ဆက်တင် ရှိ ဖိုဒါ မှ တေးသီချင်း ကိုရှာဖွေပါလိမ့်မည်။"
 
 #: ../templates/fake-template.php:8

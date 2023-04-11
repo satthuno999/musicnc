@@ -120,7 +120,7 @@ msgid "Some not playable tracks were skipped."
 msgstr "Sommige onspeelbare snitte is oorgeslaan."
 
 #: ../templates/fake-template.php:11
-msgid "This setting specifies the folder which will be scanned for music."
+msgid "This setting specifies the folder which will be scanned for musicnc."
 msgstr "Hierdie instelling spesifiseer die te skandeerde vouer vir musiek. "
 
 #: ../templates/fake-template.php:8

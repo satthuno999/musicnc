@@ -1,4 +1,4 @@
-# Cloned from ../l10n\th_TH\music.po by duplicate-lang.py
+# Cloned from ../l10n\th_TH\musicnc.po by duplicate-lang.py
 # 
 # Translators:
 # Sunchai Paejaroenchai, 2015,2017
@@ -121,7 +121,7 @@ msgid "Some not playable tracks were skipped."
 msgstr "บางเพลงที่ไม่สามารถเล่นได้จะถูกข้ามไป"
 
 #: ../templates/fake-template.php:11
-msgid "This setting specifies the folder which will be scanned for music."
+msgid "This setting specifies the folder which will be scanned for musicnc."
 msgstr "ตั้งค่าเพื่อระบุโฟลเดอร์ที่จะสแกนหาเพลงฟัง"
 
 #: ../templates/fake-template.php:8

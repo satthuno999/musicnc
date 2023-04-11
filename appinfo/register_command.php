@@ -1,5 +1,19 @@
 <?php
 
+/**
+ * ownCloud - Music app
+ *
+ * This file is licensed under the Affero General Public License version 3 or
+ * later. See the COPYING file.
+ *
+ * @author Leizh <leizh@free.fr>
+ * @author Morris Jobke <hey@morrisjobke.de>
+ * @author Pauli Järvinen <pauli.jarvinen@gmail.com>
+ * @copyright Leizh 2014
+ * @copyright Morris Jobke 2014
+ * @copyright Pauli Järvinen 2017 - 2022
+ */
+
 use OCA\MusicNC\App\Music;
 
 $app = \OC::$server->query(Music::class);

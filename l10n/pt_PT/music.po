@@ -124,7 +124,7 @@ msgid "Some not playable tracks were skipped."
 msgstr "Foram ignoradas algumas faixas com problemas"
 
 #: ../templates/fake-template.php:11
-msgid "This setting specifies the folder which will be scanned for music."
+msgid "This setting specifies the folder which will be scanned for musicnc."
 msgstr "Esta definição especifica a pasta onde vai ser rastreada a música."
 
 #: ../templates/fake-template.php:8

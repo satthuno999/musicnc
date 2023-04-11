@@ -26,7 +26,7 @@ OC.L10N.register(
     "Scanning music …" : "Poteka preiskovanje glasbe ...",
     "Shuffle" : "Premešaj",
     "Some not playable tracks were skipped." : "Nekateri posnetki, ki jih ni mogoče predvajati, so bili preskočeni.",
-    "This setting specifies the folder which will be scanned for music." : "Nastavitev določa mapo, ki bo preiskana za glasbo.",
+    "This setting specifies the folder which will be scanned for musicnc." : "Nastavitev določa mapo, ki bo preiskana za glasbo.",
     "Tracks" : "Sledi",
     "Unknown album" : "Neznan album",
     "Unknown artist" : "Neznan izvajalec",

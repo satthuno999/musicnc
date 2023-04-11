@@ -1,4 +1,4 @@
-# Cloned from ../l10n\cs_CZ\music.po by duplicate-lang.py
+# Cloned from ../l10n\cs_CZ\musicnc.po by duplicate-lang.py
 # 
 # Translators:
 # Adam Kettner <cetnerix@gmail.com>, 2017
@@ -127,7 +127,7 @@ msgid "Some not playable tracks were skipped."
 msgstr "Některé stopy byly přeskočeny, protože se nedají přehrát."
 
 #: ../templates/fake-template.php:11
-msgid "This setting specifies the folder which will be scanned for music."
+msgid "This setting specifies the folder which will be scanned for musicnc."
 msgstr "Toto nastavení určuje adresář, ve kterém bude hledána hudba."
 
 #: ../templates/fake-template.php:8

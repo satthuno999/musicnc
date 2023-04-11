@@ -121,7 +121,7 @@ msgid "Some not playable tracks were skipped."
 msgstr "部份無法播放的曲目已跳過"
 
 #: ../templates/fake-template.php:11
-msgid "This setting specifies the folder which will be scanned for music."
+msgid "This setting specifies the folder which will be scanned for musicnc."
 msgstr "我們會在這個資料夾內掃描音樂檔案"
 
 #: ../templates/fake-template.php:8

@@ -1,4 +1,4 @@
-# Cloned from ../l10n\hu_HU\music.po by duplicate-lang.py
+# Cloned from ../l10n\hu_HU\musicnc.po by duplicate-lang.py
 # 
 # Translators:
 # bela erdei <bela@dandre.hu>, 2013
@@ -124,7 +124,7 @@ msgid "Some not playable tracks were skipped."
 msgstr "Néhány szám kimaradt, amit a rendszer nem tud lejátszani."
 
 #: ../templates/fake-template.php:11
-msgid "This setting specifies the folder which will be scanned for music."
+msgid "This setting specifies the folder which will be scanned for musicnc."
 msgstr "Ez a beállítás határozza meg, hogy melyik mappát figyelje a rendszer, amikor az zenei tartalmakat keresi."
 
 #: ../templates/fake-template.php:8

@@ -19,7 +19,7 @@ OC.L10N.register(
     "Revoke API password" : "API-jelszó visszavonása",
     "Shuffle" : "Keverés",
     "Some not playable tracks were skipped." : "Néhány szám kimaradt, amit a rendszer nem tud lejátszani.",
-    "This setting specifies the folder which will be scanned for music." : "Ez a beállítás határozza meg, hogy melyik mappát figyelje a rendszer, amikor az zenei tartalmakat keresi.",
+    "This setting specifies the folder which will be scanned for musicnc." : "Ez a beállítás határozza meg, hogy melyik mappát figyelje a rendszer, amikor az zenei tartalmakat keresi.",
     "Tracks" : "Számok",
     "Unknown album" : "Ismeretlen album",
     "Unknown artist" : "Ismeretlen előadó",

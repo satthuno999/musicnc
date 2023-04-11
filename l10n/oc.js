@@ -19,7 +19,7 @@ OC.L10N.register(
     "Revoke API password" : "Revocar lo senhal de l'API",
     "Shuffle" : "Lectura aleatòria",
     "Some not playable tracks were skipped." : "Certanas pistas pas jogables son estadas ignoradas.",
-    "This setting specifies the folder which will be scanned for music." : "Aqueste paramètre especifica quin dorsièr serà balejat per trobar de musica.",
+    "This setting specifies the folder which will be scanned for musicnc." : "Aqueste paramètre especifica quin dorsièr serà balejat per trobar de musica.",
     "Tracks" : "Pistas",
     "Unknown album" : "Album desconegut",
     "Unknown artist" : "Artista desconegut",

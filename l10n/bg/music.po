@@ -1,4 +1,4 @@
-# Cloned from ../l10n\bg_BG\music.po by duplicate-lang.py
+# Cloned from ../l10n\bg_BG\musicnc.po by duplicate-lang.py
 # 
 # Translators:
 # George Kamenov, 2014
@@ -122,7 +122,7 @@ msgid "Some not playable tracks were skipped."
 msgstr "Някои невъзпроизведими песни бяха пропуснати."
 
 #: ../templates/fake-template.php:11
-msgid "This setting specifies the folder which will be scanned for music."
+msgid "This setting specifies the folder which will be scanned for musicnc."
 msgstr "Тази настройка задава папката, която ще бъде сканирана за музика."
 
 #: ../templates/fake-template.php:8

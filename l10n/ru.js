@@ -26,7 +26,7 @@ OC.L10N.register(
     "Scanning music …" : "Сканирую музыку…",
     "Shuffle" : "Перемешать",
     "Some not playable tracks were skipped." : "Некоторые не проигрываемые композиции были пропущены.",
-    "This setting specifies the folder which will be scanned for music." : "Эта настройка определяет каталог, в котором будет проведено сканирование музыки.",
+    "This setting specifies the folder which will be scanned for musicnc." : "Эта настройка определяет каталог, в котором будет проведено сканирование музыки.",
     "Tracks" : "Композиции",
     "Unknown album" : "Неизвестный альбом",
     "Unknown artist" : "Неизвестный исполнитель",

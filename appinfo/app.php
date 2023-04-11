@@ -1,5 +1,17 @@
 <?php
 
+/**
+ * ownCloud - Music app
+ *
+ * This file is licensed under the Affero General Public License version 3 or
+ * later. See the COPYING file.
+ *
+ * @author Morris Jobke <hey@morrisjobke.de>
+ * @author Pauli Järvinen <pauli.jarvinen@gmail.com>
+ * @copyright Morris Jobke 2013, 2014
+ * @copyright Pauli Järvinen 2017 - 2023
+ */
+
 namespace OCA\MusicNC\App;
 
 use \OCP\AppFramework\IAppContainer;
@@ -16,17 +28,11 @@ $appName = $c->query('AppName');
 	return [
 		'id' => $appName,
 		'order' => 10,
-		'name' => $c->query('L10N')->t('Music'),
-		'href' => $c->query('URLGenerator')->linkToRoute('music.page.index'),
-		'icon' => \OCA\MusicNC\Utility\HtmlUtil::getSvgPath('music')
+		'name' => $c->query('L10N')->t('Musicnc'),
+		'href' => $c->query('URLGenerator')->linkToRoute('musicnc.page.index'),
+		'icon' => \OCA\MusicNC\Utility\HtmlUtil::getSvgPath('Musicnc')
 	];
 });
-
-/**
- * register regular tasks
- */
-\OC::$server->getJobList()->add('OC\BackgroundJob\Legacy\RegularJob', ['OCA\MusicNC\Backgroundjob\Cleanup', 'run']);
-\OC::$server->getJobList()->add('OC\BackgroundJob\Legacy\RegularJob', ['OCA\MusicNC\Backgroundjob\PodcastUpdateCheck', 'run']);
 
 /**
  * register hooks
@@ -49,8 +55,8 @@ $c->getServer()->getSearch()->registerProvider(
 function adjustCsp(IAppContainer $container) {
 	/** @var \OCP\IConfig $config */
 	$config = $container->query('Config');
-	$radioSources = $config->getSystemValue('music.allowed_radio_src', ['http://*:*', 'https://*:*']);
-	$enableHls = $config->getSystemValue('music.enable_radio_hls', true);
+	$radioSources = $config->getSystemValue('musicnc.allowed_radio_src', ['http://*:*', 'https://*:*']);
+	$enableHls = $config->getSystemValue('musicnc.enable_radio_hls', true);
 
 	if (\is_string($radioSources)) {
 		$radioSources = [$radioSources];

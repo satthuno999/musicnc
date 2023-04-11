@@ -26,7 +26,7 @@ OC.L10N.register(
     "Scanning music …" : "Scansione della musica...",
     "Shuffle" : "Mescola",
     "Some not playable tracks were skipped." : "Alcune tracce non riproducibili sono state saltate.",
-    "This setting specifies the folder which will be scanned for music." : "Questa impostazione specifica la cartella che sarà analizzata alla ricerca di musica.",
+    "This setting specifies the folder which will be scanned for musicnc." : "Questa impostazione specifica la cartella che sarà analizzata alla ricerca di musica.",
     "Tracks" : "Tracce",
     "Unknown album" : "Album sconosciuto",
     "Unknown artist" : "Artista sconosciuto",

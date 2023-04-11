@@ -26,7 +26,7 @@ OC.L10N.register(
     "Scanning music …" : "Skanner musikk ...",
     "Shuffle" : "Tilfeldig",
     "Some not playable tracks were skipped." : "Noen ikke-spillbare spor ble hoppet over.",
-    "This setting specifies the folder which will be scanned for music." : "Denne innstillingen spesifiserer mappen som vil bli skannet for musikk.",
+    "This setting specifies the folder which will be scanned for musicnc." : "Denne innstillingen spesifiserer mappen som vil bli skannet for musikk.",
     "Tracks" : "Spor",
     "Unknown album" : "Ukjent album",
     "Unknown artist" : "Ukjent artist",

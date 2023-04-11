@@ -19,7 +19,7 @@ OC.L10N.register(
     "Revoke API password" : "API şifrəsini sil",
     "Shuffle" : "Qarışdırmaq",
     "Some not playable tracks were skipped." : "Bəzi oxunulabilməyən musiqilər ötürülüb.",
-    "This setting specifies the folder which will be scanned for music." : "Bu quraşdırma qovluğu təyin edir hansı ki, musiqi üçün tədqiq ediləcək.",
+    "This setting specifies the folder which will be scanned for musicnc." : "Bu quraşdırma qovluğu təyin edir hansı ki, musiqi üçün tədqiq ediləcək.",
     "Tracks" : "Musiqi",
     "Unknown album" : "Bəlli olmayan albom",
     "Unknown artist" : "Bəlli olmayan artist",

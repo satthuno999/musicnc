@@ -26,7 +26,7 @@ OC.L10N.register(
     "Scanning music …" : "กำลังสแกนเพลง...",
     "Shuffle" : "สับเปลี่ยน",
     "Some not playable tracks were skipped." : "บางเพลงที่ไม่สามารถเล่นได้จะถูกข้ามไป",
-    "This setting specifies the folder which will be scanned for music." : "ตั้งค่าเพื่อระบุโฟลเดอร์ที่จะสแกนหาเพลงฟัง",
+    "This setting specifies the folder which will be scanned for musicnc." : "ตั้งค่าเพื่อระบุโฟลเดอร์ที่จะสแกนหาเพลงฟัง",
     "Tracks" : "เพลง",
     "Unknown album" : "ไม่ทราบอัลบั้ม",
     "Unknown artist" : "ไม่รู้จักศิลปิน",

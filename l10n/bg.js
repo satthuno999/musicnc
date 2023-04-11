@@ -19,7 +19,7 @@ OC.L10N.register(
     "Revoke API password" : "Премахни API паролата",
     "Shuffle" : "Разбъркай",
     "Some not playable tracks were skipped." : "Някои невъзпроизведими песни бяха пропуснати.",
-    "This setting specifies the folder which will be scanned for music." : "Тази настройка задава папката, която ще бъде сканирана за музика.",
+    "This setting specifies the folder which will be scanned for musicnc." : "Тази настройка задава папката, която ще бъде сканирана за музика.",
     "Tracks" : "Песни",
     "Unknown album" : "Непознат албум",
     "Unknown artist" : "Непознат изпълнител",

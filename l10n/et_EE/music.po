@@ -121,7 +121,7 @@ msgid "Some not playable tracks were skipped."
 msgstr "Mõned mittemängitavad lood jäeti vahele."
 
 #: ../templates/fake-template.php:11
-msgid "This setting specifies the folder which will be scanned for music."
+msgid "This setting specifies the folder which will be scanned for musicnc."
 msgstr "See seade määrab kausta, kust muusikat otsitakse."
 
 #: ../templates/fake-template.php:8

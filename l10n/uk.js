@@ -26,7 +26,7 @@ OC.L10N.register(
     "Scanning music …" : "Сканування музики …",
     "Shuffle" : "Перемішати",
     "Some not playable tracks were skipped." : "Деякі треки, що не відтворюються, були пропущені.",
-    "This setting specifies the folder which will be scanned for music." : "Цей параметр вказує теку, в якій буде проведено пошук музики.",
+    "This setting specifies the folder which will be scanned for musicnc." : "Цей параметр вказує теку, в якій буде проведено пошук музики.",
     "Tracks" : "Доріжки",
     "Unknown album" : "Невідомий альбом",
     "Unknown artist" : "Невідомий виконавець",

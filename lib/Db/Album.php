@@ -1,5 +1,17 @@
 <?php declare(strict_types=1);
 
+/**
+ * ownCloud - Music app
+ *
+ * This file is licensed under the Affero General Public License version 3 or
+ * later. See the COPYING file.
+ *
+ * @author Morris Jobke <hey@morrisjobke.de>
+ * @author Pauli Järvinen <pauli.jarvinen@gmail.com>
+ * @copyright Morris Jobke 2013, 2014
+ * @copyright Pauli Järvinen 2017 - 2022
+ */
+
 namespace OCA\MusicNC\Db;
 
 use OCP\IL10N;
@@ -65,7 +77,7 @@ class Album extends Entity {
 	 */
 	public function getUri(IURLGenerator $urlGenerator) : string {
 		return $urlGenerator->linkToRoute(
-			'music.shivaApi.album',
+			'musicnc.shivaApi.album',
 			['albumId' => $this->id]
 		);
 	}
@@ -81,7 +93,7 @@ class Album extends Entity {
 			$artists[] = [
 				'id' => $artistId,
 				'uri' => $urlGenerator->linkToRoute(
-					'music.shivaApi.artist',
+					'musicnc.shivaApi.artist',
 					['artistId' => $artistId]
 				)
 			];
@@ -145,7 +157,7 @@ class Album extends Entity {
 	public function coverToAPI(IURLGenerator $urlGenerator) : ?string {
 		$coverUrl = null;
 		if ($this->getCoverFileId() > 0) {
-			$coverUrl = $urlGenerator->linkToRoute('music.api.albumCover',
+			$coverUrl = $urlGenerator->linkToRoute('musicnc.api.albumCover',
 					['albumId' => $this->getId()]);
 		}
 		return $coverUrl;
@@ -161,7 +173,7 @@ class Album extends Entity {
 	 */
 	public function coverToCollection(IURLGenerator $urlGenerator, ?string $cachedCoverHash) : ?string {
 		if (!empty($cachedCoverHash)) {
-			return $urlGenerator->linkToRoute('music.api.cachedCover', ['hash' => $cachedCoverHash]);
+			return $urlGenerator->linkToRoute('musicnc.api.cachedCover', ['hash' => $cachedCoverHash]);
 		} elseif ($this->getCoverFileId() > 0) {
 			return $this->coverToAPI($urlGenerator);
 		} else {

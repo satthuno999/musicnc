@@ -1,4 +1,17 @@
 <?php declare(strict_types=1);
+
+/**
+ * ownCloud - Music app
+ *
+ * This file is licensed under the Affero General Public License version 3 or
+ * later. See the COPYING file.
+ *
+ * @author Morris Jobke <hey@morrisjobke.de>
+ * @author Pauli Järvinen <pauli.jarvinen@gmail.com>
+ * @copyright Morris Jobke 2013, 2014
+ * @copyright Pauli Järvinen 2016 - 2022
+ */
+
 namespace OCA\MusicNC\Db;
 
 use OCA\MusicNC\Utility\Util;
@@ -37,7 +50,8 @@ class AlbumMapper extends BaseMapper {
 	 */
 	protected function formatSortingClause(int $sortBy) : ?string {
 		if ($sortBy === SortBy::Parent) {
-			return 'ORDER BY LOWER(`album_artist_name`), LOWER(`*PREFIX*music_albums`.`name`)';
+			// Note: the alternative form "LOWER(`album_artist_name`) wouldn't work on PostgreSQL, see https://github.com/owncloud/music/issues/1046
+			return 'ORDER BY LOWER(`artist`.`name`), LOWER(`*PREFIX*music_albums`.`name`)';
 		} else {
 			return parent::formatSortingClause($sortBy);
 		}

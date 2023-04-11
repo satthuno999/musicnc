@@ -120,7 +120,7 @@ msgid "Some not playable tracks were skipped."
 msgstr "Sumum óspilanlegum hljóðsporum var sleppt."
 
 #: ../templates/fake-template.php:11
-msgid "This setting specifies the folder which will be scanned for music."
+msgid "This setting specifies the folder which will be scanned for musicnc."
 msgstr "Þetta tilgreinir möppuna þar sem leitað verður að tónlist."
 
 #: ../templates/fake-template.php:8

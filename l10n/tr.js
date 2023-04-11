@@ -26,7 +26,7 @@ OC.L10N.register(
     "Scanning music …" : "Müzik taranıyor ...",
     "Shuffle" : "Karıştır",
     "Some not playable tracks were skipped." : "Bazı oynatılamayan parçalar atlandı.",
-    "This setting specifies the folder which will be scanned for music." : "Bu ayar, müzik için taranacak klasörü belirtir.",
+    "This setting specifies the folder which will be scanned for musicnc." : "Bu ayar, müzik için taranacak klasörü belirtir.",
     "Tracks" : "Parçalar",
     "Unknown album" : "Bilinmeyen albüm",
     "Unknown artist" : "Bilinmeyen sanatçı",

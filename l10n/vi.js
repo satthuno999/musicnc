@@ -19,7 +19,7 @@ OC.L10N.register(
     "Revoke API password" : "Hủy password API",
     "Shuffle" : "Ngẫu nhiên",
     "Some not playable tracks were skipped." : "Một số bài không thể phát đã được bỏ qua",
-    "This setting specifies the folder which will be scanned for music." : "Thiết lập này xác định thư mục đó sẽ được quét để tìm nhạc.",
+    "This setting specifies the folder which will be scanned for musicnc." : "Thiết lập này xác định thư mục đó sẽ được quét để tìm nhạc.",
     "Tracks" : "Bài",
     "Unknown album" : "Không tìm thấy album",
     "Unknown artist" : "Không tìm thấy nghệ sĩ",
