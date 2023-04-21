@@ -6,7 +6,7 @@ OC.L10N.register(
     "Album Covers" : "Caràtules d'àlbums",
     "List View" : "Vista de llista",
     "Welcome to" : "Us donem la benvinguda a",
-    "Audio Player" : "Audio Player",
+    "Audio Player" : "Music",
     "Add new tracks to playlist by drag and drop" : "Afegeix pistes noves a la llista de reproducció arrossegant i deixant anar",
     "Scan for new audio files" : "Escaneja fitxers d'àudio nous",
     "Add new tracks to library" : "Afegeix pistes noves a la biblioteca",

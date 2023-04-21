@@ -5,8 +5,8 @@
  * This file is licensed under the Affero General Public License version 3 or
  * later. See the LICENSE.md file.
  *
- * @author Marcel Scherello <audioplayer@scherello.de>
- * @copyright 2016-2021 Marcel Scherello
+ * @author S P A R K <audioplayer@scherello.de>
+ * @copyright 2016-2021 S P A R K
  */
  ?>
 <div id="view-toggle" class="icon-toggle-<?php p($_['musicnc_view']); ?>">
@@ -24,6 +24,7 @@
                 <option value="Title"><?php p($l->t('Titles')); ?></option>
 				<option value="Tags"><?php p($l->t('Tags')); ?></option>
 				<option value="Year"><?php p($l->t('Years')); ?></option>
+				<option value="LIKE">Yêu thích</option>
 			</select>
 			<button  class="icon-add hidden" id="addPlaylist"></button>
 		</div>

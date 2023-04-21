@@ -6,7 +6,7 @@ OC.L10N.register(
     "Album Covers" : "Album Covers",
     "List View" : "List View",
     "Welcome to" : "Welcome to",
-    "Audio Player" : "Audio Player",
+    "Audio Player" : "Music",
     "Add new tracks to playlist by drag and drop" : "Add new tracks to playlist by drag and drop",
     "Scan for new audio files" : "Scan for new audio files",
     "Add new tracks to library" : "Add new tracks to library",

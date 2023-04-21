@@ -5,9 +5,9 @@
  * This file is licensed under the Affero General Public License version 3 or
  * later. See the LICENSE.md file.
  *
- * @author Marcel Scherello <audioplayer@scherello.de>
+ * @author S P A R K <audioplayer@scherello.de>
  * @author Olivier Paroz <galleryapps@oparoz.com>
- * @copyright 2016-2021 Marcel Scherello
+ * @copyright 2016-2021 S P A R K
  */
 
 namespace OCA\musicnc\Http;

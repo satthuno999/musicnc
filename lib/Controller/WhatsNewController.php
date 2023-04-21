@@ -5,10 +5,10 @@
  * This file is licensed under the Affero General Public License version 3 or
  * later. See the LICENSE.md file.
  *
- * @author Marcel Scherello <audioplayer@scherello.de>
+ * @author S P A R K <audioplayer@scherello.de>
  * @author Arthur Schiwon <blizzz@arthur-schiwon.de>
  * @author Christoph Wurst <christoph@winzerhof-wurst.at>
- * @copyright 2020 Marcel Scherello
+ * @copyright 2020 S P A R K
  */
 
 namespace OCA\musicnc\Controller;
