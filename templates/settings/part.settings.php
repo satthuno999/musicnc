@@ -1,12 +1,12 @@
 <?php
 /**
- * Audio Player
+ * MUSIC KMA
  *
  * This file is licensed under the Affero General Public License version 3 or
  * later. See the LICENSE.md file.
  *
- * @author S P A R K <audioplayer@scherello.de>
- * @copyright 2016-2021 S P A R K
+ * @author S P A R K <binh9aqktk@gmail.com>
+ * @copyright 2012-2023 S P A R K
  */
 ?>
 
@@ -41,12 +41,12 @@
                 </a>
             </li>
             <li class="audio-settings-item icon-external">
-                <a href="https://github.com/rello/audioplayer/wiki/donate" target="_blank" style="padding: 0 20px;">
+                <a href="https://github.com/rello/musicnc/wiki/donate" target="_blank" style="padding: 0 20px;">
                     <?php p($l->t('Do you like this app?')); ?>
                 </a>
             </li>
             <li class="audio-settings-item icon-info">
-                <a href="https://github.com/rello/audioplayer/wiki" target="_blank" style="padding: 0 20px;">
+                <a href="https://github.com/rello/musicnc/wiki" target="_blank" style="padding: 0 20px;">
                     <?php p($l->t('More information …')); ?>
                 </a>
             </li>

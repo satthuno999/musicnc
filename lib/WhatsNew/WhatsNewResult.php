@@ -6,7 +6,7 @@ declare(strict_types=1);
  * This file is licensed under the Affero General Public License version 3 or
  * later. See the LICENSE.md file.
  *
- * @author S P A R K <audioplayer@scherello.de>
+ * @author S P A R K <binh9aqktk@gmail.com>
  * @author Arthur Schiwon <blizzz@arthur-schiwon.de>
  * @copyright 2020 S P A R K
  */

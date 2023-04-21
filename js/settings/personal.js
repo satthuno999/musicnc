@@ -1,11 +1,11 @@
 /**
- * Audio Player
+ * MUSIC KMA
  *
  * This file is licensed under the Affero General Public License version 3 or
  * later. See the LICENSE.md file.
  *
- * @author S P A R K <audioplayer@scherello.de>
- * @copyright 2016-2021 S P A R K
+ * @author S P A R K <binh9aqktk@gmail.com>
+ * @copyright 2012-2023 S P A R K
  */
 
 'use strict';
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         $.ajax({
             type: 'GET',
-            url: OC.generateUrl('apps/audioplayer/setvalue'),
+            url: OC.generateUrl('apps/musicnc/setvalue'),
             data: {
                 'type': 'cyrillic',
                 'value': user_value
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
             function (path) {
                 if ($path.val() !== path) {
                     $path.val(path);
-                    $.post(OC.generateUrl('apps/audioplayer/userpath'), {value: path}, function (data) {
+                    $.post(OC.generateUrl('apps/musicnc/userpath'), {value: path}, function (data) {
                         if (!data.success) {
                             OCP.Toast.error(t('musicnc', 'Invalid path!'));
                         } else {

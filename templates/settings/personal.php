@@ -1,12 +1,12 @@
 <?php
 /**
- * Audio Player
+ * MUSIC KMA
  *
  * This file is licensed under the Affero General Public License version 3 or
  * later. See the LICENSE.md file.
  *
- * @author S P A R K <audioplayer@scherello.de>
- * @copyright 2016-2021 S P A R K
+ * @author S P A R K <binh9aqktk@gmail.com>
+ * @copyright 2012-2023 S P A R K
  */
 
 script('musicnc', 'settings/personal');
@@ -31,7 +31,7 @@ script('musicnc', 'settings/personal');
         <p>
             <em><?php p($l->t('Activate this setting if cyrillic characters are not recognized correctly. This makes the indexing slower!')); ?></em>
         </p>
-        <p><em><a href="https://github.com/Rello/audioplayer/wiki/Cyrillic-symbol-handling"
+        <p><em><a href="https://github.com/Rello/musicnc/wiki/Cyrillic-symbol-handling"
                   target="_blank"><?php p($l->t('More information …')); ?></a></em></p>
         <br>
     </div>
@@ -41,7 +41,7 @@ script('musicnc', 'settings/personal');
         <br>
         <label for="browser_support"><?php p($l->t('Formats not supported by the browser')); ?>:</label>
         &nbsp;<em id="browser_no"></em>
-        <p><em><a href="https://github.com/Rello/audioplayer/wiki/Audio-Files-and-MIME-Types#browser-support"
+        <p><em><a href="https://github.com/Rello/musicnc/wiki/Audio-Files-and-MIME-Types#browser-support"
                   target="_blank"><?php p($l->t('More information …')); ?></a></em></p>
     </div>
 </div>

@@ -58,7 +58,7 @@ class Version2102Date20200712213332 extends SimpleMigrationStep
         $query->insert('musicnc_whats_new')
             ->values([
                 'version' => $query->createNamedParameter('2.11.0'),
-                'data' => $query->createNamedParameter('{"changelogURL":"https:\/\/github.com\/rello\/audioplayer\/blob\/master\/CHANGELOG.md","whatsNew":{
+                'data' => $query->createNamedParameter('{"changelogURL":"https:\/\/github.com\/rello\/musicnc\/blob\/master\/CHANGELOG.md","whatsNew":{
 "en":{"regular":["Hardware media buttons","Better repeat/shuffle","AIF mime type","Remember playback position"],"admin":["New Features apply to users"]},
 "de":{"regular":["Hardware Medien Tasten","Besserer Repeat/Shuffle","AIF mime type","Titelposition werden gespeichert"],"admin":["Nur User Features"]}
 }}'),

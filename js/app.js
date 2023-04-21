@@ -1,12 +1,12 @@
 /**
- * Audio Player
+ * MUSIC KMA
  *
  * This file is licensed under the Affero General Public License version 3 or
  * later. See the LICENSE.md file.
  *
- * @author S P A R K <audioplayer@scherello.de>
+ * @author S P A R K <binh9aqktk@gmail.com>
  * @author Sebastian Doell <sebastian@libasys.de>
- * @copyright 2016-2021 S P A R K
+ * @copyright 2012-2023 S P A R K
  * @copyright 2015 Sebastian Doell
  */
 
@@ -35,7 +35,7 @@ OCA.musicnc.Core = {
         OCA.musicnc.Core.initialDocumentTitle = document.title;
         OCA.musicnc.UI.EmptyContainer = document.getElementById('empty-container');
         OCA.musicnc.UI.PlaylistContainer = $('#playlist-container'); //keep for bar-ui as it is still using jquery
-        OCA.musicnc.UI.getAudiostreamUrl = OC.generateUrl('apps/audioplayer/getaudiostream') + '?t=';
+        OCA.musicnc.UI.getAudiostreamUrl = OC.generateUrl('apps/musicnc/getaudiostream') + '?t=';
 
         if (decodeURI(location.hash).length > 1) {
             OCA.musicnc.Core.processSearchResult();
@@ -181,7 +181,7 @@ OCA.musicnc.Cover = {
 
         $.ajax({
             type: 'GET',
-            url: OC.generateUrl('apps/audioplayer/getcategoryitemcovers'),
+            url: OC.generateUrl('apps/musicnc/getcategoryitemcovers'),
             data: {category: category, categoryId: categoryId},
             success: function (jsondata) {
                 document.getElementById('loading').style.display = 'none';
@@ -194,7 +194,7 @@ OCA.musicnc.Cover = {
     },
 
     buildCoverRow: function (aAlbums) {
-        let getcoverUrl = OC.generateUrl('apps/audioplayer/getcover/');
+        let getcoverUrl = OC.generateUrl('apps/musicnc/getcover/');
         let divRow = document.createElement('div');
         divRow.classList.add('coverrow');
 
@@ -358,7 +358,7 @@ OCA.musicnc.Category = {
 
         $.ajax({
             type: 'GET',
-            url: OC.generateUrl('apps/audioplayer/getcategoryitems'),
+            url: OC.generateUrl('apps/musicnc/getcategoryitems'),
             data: {category: category},
             success: function (jsondata) {
                 if (jsondata.status === 'success') {
@@ -473,7 +473,7 @@ OCA.musicnc.Category = {
 
         OCA.musicnc.Core.AjaxCallStatus = $.ajax({
             type: 'GET',
-            url: OC.generateUrl('apps/audioplayer/gettracks'),
+            url: OC.generateUrl('apps/musicnc/gettracks'),
             data: {category: category, categoryId: categoryItem},
             success: function (jsondata) {
                 document.getElementById('loading').style.display = 'none';
@@ -608,7 +608,7 @@ OCA.musicnc.UI = {
 
     addTitleClickEvents: function (callback) {
         let albumWrapper = document.querySelector('.albumwrapper');
-        let getcoverUrl = OC.generateUrl('apps/audioplayer/getcover/');
+        let getcoverUrl = OC.generateUrl('apps/musicnc/getcover/');
         let category = document.getElementById('playlist-container').dataset.playlist.split('-');
 
         let playlist = albumWrapper.getElementsByTagName('li');
@@ -653,7 +653,7 @@ OCA.musicnc.UI = {
         }
 
         //in every case, update the playbar and medaservices
-        let coverUrl = OC.generateUrl('apps/audioplayer/getcover/');
+        let coverUrl = OC.generateUrl('apps/musicnc/getcover/');
         let currentTrack = OCA.musicnc.Player.getCurrentPlayingTrackInfo();
         if (currentTrack) {
 
@@ -772,7 +772,7 @@ OCA.musicnc.UI = {
         } else {
             let html = '<span class="no-songs-found">' + t('musicnc', 'Welcome to') + ' ' + t('musicnc', 'Audio Player') + '</span>';
             html += '<span class="no-songs-found"><i class="ioc ioc-refresh" title="' + t('musicnc', 'Scan for new audio files') + '" id="scanAudiosFirst"></i> ' + t('musicnc', 'Add new tracks to library') + '</span>';
-            html += '<a class="no-songs-found" href="https://github.com/rello/audioplayer/wiki" target="_blank">' + t('musicnc', 'Help') + '</a>';
+            html += '<a class="no-songs-found" href="https://github.com/rello/musicnc/wiki" target="_blank">' + t('musicnc', 'Help') + '</a>';
             OCA.musicnc.UI.EmptyContainer.innerHTML = html;
         }
     },
@@ -973,7 +973,7 @@ OCA.musicnc.Backend = {
         let params = 'trackid=' + trackid + '&isFavorite=' + isFavorite;
 
         let xhr = new XMLHttpRequest();
-        xhr.open('GET', OC.generateUrl('apps/audioplayer/setfavorite' + '?' + params, true));
+        xhr.open('GET', OC.generateUrl('apps/musicnc/setfavorite' + '?' + params, true));
         xhr.setRequestHeader('requesttoken', OC.requestToken);
         xhr.setRequestHeader('OCS-APIREQUEST', 'true');
         xhr.send();
@@ -982,7 +982,7 @@ OCA.musicnc.Backend = {
     getUserValue: function (user_type, callback) {
         let params = 'type=' + user_type;
         let xhr = new XMLHttpRequest();
-        xhr.open('GET', OC.generateUrl('apps/audioplayer/getvalue' + '?' + params, true));
+        xhr.open('GET', OC.generateUrl('apps/musicnc/getvalue' + '?' + params, true));
         xhr.setRequestHeader('requesttoken', OC.requestToken);
         xhr.setRequestHeader('OCS-APIREQUEST', 'true');
 
@@ -1008,7 +1008,7 @@ OCA.musicnc.Backend = {
             }
             $.ajax({
                 type: 'GET',
-                url: OC.generateUrl('apps/audioplayer/setvalue'),
+                url: OC.generateUrl('apps/musicnc/setvalue'),
                 data: {
                     'type': user_type,
                     'value': user_value
@@ -1024,7 +1024,7 @@ OCA.musicnc.Backend = {
         if (track_id) {
             $.ajax({
                 type: 'GET',
-                url: OC.generateUrl('apps/audioplayer/setstatistics'),
+                url: OC.generateUrl('apps/musicnc/setstatistics'),
                 data: {'track_id': track_id},
                 success: function () {
                 }
@@ -1036,7 +1036,7 @@ OCA.musicnc.Backend = {
 
     checkNewTracks: function () {
         let xhr = new XMLHttpRequest();
-        xhr.open('POST', OC.generateUrl('apps/audioplayer/checknewtracks'));
+        xhr.open('POST', OC.generateUrl('apps/musicnc/checknewtracks'));
         xhr.setRequestHeader('requesttoken', OC.requestToken);
         xhr.setRequestHeader('OCS-APIREQUEST', 'true');
         xhr.onreadystatechange = function () {
@@ -1053,7 +1053,7 @@ OCA.musicnc.Backend = {
         options = options || {};
         $.ajax({
             type: 'GET',
-            url: OC.generateUrl('apps/audioplayer/whatsnew'),
+            url: OC.generateUrl('apps/musicnc/whatsnew'),
             data: {'format': 'json'},
             success: options.success || function (data, statusText, xhr) {
                 OCA.musicnc.UI.whatsNewSuccess(data, statusText, xhr);
@@ -1064,13 +1064,13 @@ OCA.musicnc.Backend = {
     whatsnewDismiss: function (version) {
         //let data = {version: encodeURIComponent(version)};
         //let xhr = new XMLHttpRequest();
-        //xhr.open('POST', OC.generateUrl('apps/audioplayer/whatsnew'));
+        //xhr.open('POST', OC.generateUrl('apps/musicnc/whatsnew'));
         //xhr.setRequestHeader('requesttoken', OC.requestToken);
         //xhr.setRequestHeader('OCS-APIREQUEST', 'true');
         //xhr.send(JSON.stringify(data));
         $.ajax({
             type: 'POST',
-            url: OC.generateUrl('apps/audioplayer/whatsnew'),
+            url: OC.generateUrl('apps/musicnc/whatsnew'),
             data: {version: encodeURIComponent(version)}
         })
 
@@ -1085,7 +1085,7 @@ OCA.musicnc.Backend = {
 OCA.musicnc.Playlists = {
     addSongToPlaylist: function (plId, songId) {
         let sort = parseInt($('#myPlayList li[data-id="' + plId + '"]').find('.counter').text());
-        return $.post(OC.generateUrl('apps/audioplayer/addtracktoplaylist'), {
+        return $.post(OC.generateUrl('apps/musicnc/addtracktoplaylist'), {
             playlistid: plId,
             songid: songId,
             sorting: (sort + 1)
@@ -1096,7 +1096,7 @@ OCA.musicnc.Playlists = {
     },
 
     newPlaylist: function (playlistName) {
-        $.post(OC.generateUrl('apps/audioplayer/addplaylist'), {
+        $.post(OC.generateUrl('apps/musicnc/addplaylist'), {
             playlist: playlistName
         }, function (jsondata) {
             if (jsondata.status === 'success') {
@@ -1148,7 +1148,7 @@ OCA.musicnc.Playlists = {
         let saveForm = $('.plclone[data-id="' + playlistId + '"]');
         let playlistName = saveForm.find('input[name="playlist"]').val();
 
-        $.post(OC.generateUrl('apps/audioplayer/updateplaylist'), {
+        $.post(OC.generateUrl('apps/musicnc/updateplaylist'), {
             plId: playlistId,
             newname: playlistName
         }, function (jsondata) {
@@ -1175,7 +1175,7 @@ OCA.musicnc.Playlists = {
                 });
 
                 if (idsInOrder.length !== 0) {
-                    $.post(OC.generateUrl('apps/audioplayer/sortplaylist'), {
+                    $.post(OC.generateUrl('apps/musicnc/sortplaylist'), {
                         playlistid: plId,
                         songids: idsInOrder.join(';')
                     }, function (jsondata) {
@@ -1210,7 +1210,7 @@ OCA.musicnc.Playlists = {
             t('musicnc', 'Delete playlist'),
             function (e) {
                 if (e) {
-                    $.post(OC.generateUrl('apps/audioplayer/removeplaylist'), {
+                    $.post(OC.generateUrl('apps/musicnc/removeplaylist'), {
                         playlistid: plId
                     }, function (jsondata) {
                         if (jsondata.status === 'success') {
@@ -1264,7 +1264,7 @@ OCA.musicnc.Playlists = {
         let trackid = $(evt.target).attr('data-trackid');
         let playlistId = $(evt.target).attr('data-listid');
 
-        $.post(OC.generateUrl('apps/audioplayer/removetrackfromplaylist'), {
+        $.post(OC.generateUrl('apps/musicnc/removetrackfromplaylist'), {
             'playlistid': playlistId,
             'trackid': trackid
         }, function (jsondata) {

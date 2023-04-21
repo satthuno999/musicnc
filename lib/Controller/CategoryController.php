@@ -1,12 +1,12 @@
 <?php
 /**
- * Audio Player
+ * MUSIC KMA
  *
  * This file is licensed under the Affero General Public License version 3 or
  * later. See the LICENSE.md file.
  *
- * @author S P A R K <audioplayer@scherello.de>
- * @copyright 2016-2021 S P A R K
+ * @author S P A R K <binh9aqktk@gmail.com>
+ * @copyright 2012-2023 S P A R K
  */
 
 namespace OCA\musicnc\Controller;
@@ -105,7 +105,7 @@ class CategoryController extends Controller
             $aPlaylists[] = array('id' => 'X2', 'name' => $this->l10n->t('Recently Added'));
             $aPlaylists[] = array('id' => 'X3', 'name' => $this->l10n->t('Recently Played'));
             $aPlaylists[] = array('id' => 'X4', 'name' => $this->l10n->t('Most Played'));
-            //https://github.com/Rello/audioplayer/issues/442
+            //https://github.com/Rello/musicnc/issues/442
             $aPlaylists[] = array('id' => 'X5', 'name' => $this->l10n->t('50 Random Tracks'));
             $aPlaylists[] = array('id' => '', 'name' => '');
 

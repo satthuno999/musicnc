@@ -15,7 +15,7 @@
 - [SONOS player](https://github.com/rello/musicnc_sonos) via add-on
 - Use the Recognize app to classify genres by machine learning
 
-See [README](https://github.com/rello/audioplayer/blob/master/README.md) file for all supported MIME types and additional information.]]></description>
+See [README](https://github.com/rello/musicnc/blob/master/README.md) file for all supported MIME types and additional information.]]></description>
 	<version>3.3.1</version>
 	<licence>agpl</licence>
 	<author>S P A R K</author>
@@ -24,16 +24,16 @@ See [README](https://github.com/rello/audioplayer/blob/master/README.md) file fo
 		<filesystem/>
 	</types>
 	<documentation>
-		<user>https://github.com/rello/audioplayer/wiki#user-documentation</user>
-		<admin>https://github.com/rello/audioplayer/wiki#admin-documentation</admin>
+		<user>https://github.com/rello/musicnc/wiki#user-documentation</user>
+		<admin>https://github.com/rello/musicnc/wiki#admin-documentation</admin>
 	</documentation>
 	<category>multimedia</category>
-	<website>https://rello.github.io/audioplayer</website>
-	<discussion>https://help.nextcloud.com/c/apps/audioplayer</discussion>
-	<bugs>https://github.com/rello/audioplayer/issues</bugs>
+	<website>https://rello.github.io/musicnc</website>
+	<discussion>https://help.nextcloud.com/c/apps/musicnc</discussion>
+	<bugs>https://github.com/rello/musicnc/issues</bugs>
 	<repository type="git">https://github.com/rello/musicnc.git</repository>
-	<screenshot>https://raw.githubusercontent.com/rello/audioplayer/master/screenshots/musicnc_logo.png</screenshot>
-	<screenshot>https://raw.githubusercontent.com/rello/audioplayer/master/screenshots/musicnc_screen.png</screenshot>
+	<screenshot>https://raw.githubusercontent.com/rello/musicnc/master/screenshots/musicnc_logo.png</screenshot>
+	<screenshot>https://raw.githubusercontent.com/rello/musicnc/master/screenshots/musicnc_screen.png</screenshot>
 	<dependencies>
 		<nextcloud min-version="21" max-version="26"/>
 	</dependencies>

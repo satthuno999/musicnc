@@ -1,12 +1,12 @@
 /**
- * Audio Player
+ * MUSIC KMA
  *
  * This file is licensed under the Affero General Public License version 3 or
  * later. See the LICENSE.md file.
  *
- * @author S P A R K <audioplayer@scherello.de>
+ * @author S P A R K <binh9aqktk@gmail.com>
  * @author Sebastian Doell <sebastian@libasys.de>
- * @copyright 2016-2021 S P A R K
+ * @copyright 2012-2023 S P A R K
  * @copyright 2015 Sebastian Doell
  */
 
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         imgFrame.after($('<div/>').attr('id', 'id3'));
-        var ajaxurl = OC.generateUrl('apps/audioplayer/getpublicaudioinfo?token={token}', {'token': token}, {escape: false});
+        var ajaxurl = OC.generateUrl('apps/musicnc/getpublicaudioinfo?token={token}', {'token': token}, {escape: false});
 
         $.ajax({
             type: 'GET',

@@ -1,11 +1,11 @@
 /**
- * Audio Player
+ * MUSIC KMA
  *
  * This file is licensed under the Affero General Public License version 3 or
  * later. See the LICENSE.md file.
  *
- * @author S P A R K <audioplayer@scherello.de>
- * @copyright 2016-2021 S P A R K
+ * @author S P A R K <binh9aqktk@gmail.com>
+ * @copyright 2012-2023 S P A R K
  */
 
 'use strict';
@@ -60,7 +60,7 @@ OCA.musicnc.Settings = {
 
         $.ajax({
             type: 'GET',
-            url: OC.generateUrl('apps/audioplayer/resetmedialibrary'),
+            url: OC.generateUrl('apps/musicnc/resetmedialibrary'),
             success: function (jsondata) {
                 if (jsondata.status === 'success') {
                     OCP.Toast.success(t('musicnc', 'Resetting finished!'));
@@ -71,7 +71,7 @@ OCA.musicnc.Settings = {
 
     prepareScanDialog: function () {
         $('body').append('<div id="audios_import"></div>');
-        $('#audios_import').load(OC.generateUrl('apps/audioplayer/getimporttpl'), function () {
+        $('#audios_import').load(OC.generateUrl('apps/musicnc/getimporttpl'), function () {
             OCA.musicnc.Settings.openScanDialog();
         });
     },
@@ -112,7 +112,7 @@ OCA.musicnc.Settings = {
     },
 
     startScan: function () {
-        var scanUrl = OC.generateUrl('apps/audioplayer/scanforaudiofiles');
+        var scanUrl = OC.generateUrl('apps/musicnc/scanforaudiofiles');
         var source = new OC.EventSource(scanUrl);
         source.listen('progress', OCA.musicnc.Settings.updateScanProgress);
         source.listen('done', OCA.musicnc.Settings.scanDone);
@@ -123,7 +123,7 @@ OCA.musicnc.Settings = {
         OCA.musicnc.Settings.percentage = 0;
         $.ajax({
             type: 'GET',
-            url: OC.generateUrl('apps/audioplayer/scanforaudiofiles'),
+            url: OC.generateUrl('apps/musicnc/scanforaudiofiles'),
             data: {
                 'scanstop': true
             },
@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function () {
     {
         settings_link = OC.generateUrl('settings/personal?sectionid=audioplayer');
     } else { //Nextcloud
-        settings_link = OC.generateUrl('settings/user/audioplayer');
+        settings_link = OC.generateUrl('settings/user/musicnc');
     }
 
     $('#sonos').on('click', function () {

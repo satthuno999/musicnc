@@ -1,12 +1,12 @@
 /**
- * Audio Player
+ * MUSIC KMA
  *
  * This file is licensed under the Affero General Public License version 3 or
  * later. See the LICENSE.md file.
  *
- * @author S P A R K <audioplayer@scherello.de>
+ * @author S P A R K <binh9aqktk@gmail.com>
  * @author Sebastian Doell <sebastian@libasys.de>
- * @copyright 2016-2021 S P A R K
+ * @copyright 2012-2023 S P A R K
  * @copyright 2015 Sebastian Doell
  */
 'use strict';
@@ -29,12 +29,12 @@ function playFile(file, data) {
         dirLoad = dirLoad + '/';
     }
     if (token !== '') {
-        musicnc.location = OC.generateUrl('apps/audioplayer/getpublicaudiostream?token={token}&file={file}', {
+        musicnc.location = OC.generateUrl('apps/musicnc/getpublicaudiostream?token={token}&file={file}', {
             'token': token,
             'file': dirLoad + file
         }, {escape: false});
     } else {
-        musicnc.location = OC.generateUrl('apps/audioplayer/getaudiostream?file={file}', {'file': dirLoad + file}, {escape: true});
+        musicnc.location = OC.generateUrl('apps/musicnc/getaudiostream?file={file}', {'file': dirLoad + file}, {escape: true});
     }
     musicnc.mime = data.$file.attr('data-mime');
     data.$file.find('.thumbnail').html('<i class="ioc ioc-volume-up"  style="color:#fff;margin-left:5px; text-align:center;line-height:32px;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;font-size: 24px;"></i>');

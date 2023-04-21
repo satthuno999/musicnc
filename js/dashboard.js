@@ -1,10 +1,10 @@
 /**
- * Audio Player
+ * MUSIC KMA
  *
  * This file is licensed under the Affero General Public License version 3 or
  * later. See the LICENSE.md file.
  *
- * @author S P A R K <audioplayer@scherello.de>
+ * @author S P A R K <binh9aqktk@gmail.com>
  * @copyright 2021 S P A R K
  */
 /** global: OC */
@@ -139,7 +139,7 @@ OCA.musicnc.Player = {
 
     indicateCurrentPlayingTrack: function () {
         //in every case, update the playbar and medaservices
-        var coverUrl = OC.generateUrl('apps/audioplayer/getcover/');
+        var coverUrl = OC.generateUrl('apps/musicnc/getcover/');
         var currentTrack = this.html5Audio.children[this.currentTrackIndex];
 
         if (currentTrack) {
@@ -308,7 +308,7 @@ OCA.musicnc.Dashboard = {
 
         $.ajax({
             type: 'GET',
-            url: OC.generateUrl('apps/audioplayer/getcategoryitems'),
+            url: OC.generateUrl('apps/musicnc/getcategoryitems'),
             data: {category: category},
             success: function (jsondata) {
                 if (jsondata.status === 'success') {
@@ -342,7 +342,7 @@ OCA.musicnc.Dashboard = {
 
         OCA.musicnc.Dashboard.AjaxCallStatus = $.ajax({
             type: 'GET',
-            url: OC.generateUrl('apps/audioplayer/gettracks'),
+            url: OC.generateUrl('apps/musicnc/gettracks'),
             data: {category: category, categoryId: categoryItem},
             success: function (jsondata) {
                 //document.getElementById('loading').style.display = 'none';
@@ -357,7 +357,7 @@ OCA.musicnc.Dashboard = {
                             jsondata.data = [];
                             break;
                         } else {
-                            streamUrl = OC.generateUrl('apps/audioplayer/getaudiostream') + '?t=' + itemData['id'];
+                            streamUrl = OC.generateUrl('apps/musicnc/getaudiostream') + '?t=' + itemData['id'];
                         }
 
                         let canPlayMime

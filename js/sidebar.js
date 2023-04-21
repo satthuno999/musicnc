@@ -1,11 +1,11 @@
 /**
- * Audio Player
+ * MUSIC KMA
  *
  * This file is licensed under the Affero General Public License version 3 or
  * later. See the LICENSE.md file.
  *
- * @author S P A R K <audioplayer@scherello.de>
- * @copyright 2016-2021 S P A R K
+ * @author S P A R K <binh9aqktk@gmail.com>
+ * @copyright 2012-2023 S P A R K
  */
 
 'use strict';
@@ -42,7 +42,7 @@ OCA.musicnc.Sidebar = {
         if (appsidebar.dataset.trackid === trackid) {
             OCA.musicnc.Sidebar.hideSidebar();
         } else {
-            var getcoverUrl = OC.generateUrl('apps/audioplayer/getcover/');
+            var getcoverUrl = OC.generateUrl('apps/musicnc/getcover/');
             var trackData = $('li[data-trackid=\'' + trackid + '\']');
             var cover = trackData.attr('data-cover');
             var sidebarThumbnail = $('#sidebarThumbnail');
@@ -156,7 +156,7 @@ OCA.musicnc.Sidebar = {
 
         $.ajax({
             type: 'GET',
-            url: OC.generateUrl('apps/audioplayer/getaudioinfo'),
+            url: OC.generateUrl('apps/musicnc/getaudioinfo'),
             data: {trackid: trackid},
             success: function (jsondata) {
                 var table;
@@ -216,7 +216,7 @@ OCA.musicnc.Sidebar = {
 
         $.ajax({
             type: 'POST',
-            url: OC.generateUrl('apps/audioplayer/getplaylists'),
+            url: OC.generateUrl('apps/musicnc/getplaylists'),
             data: {trackid: trackid},
             success: function (jsondata) {
                 var table;
