@@ -21,6 +21,7 @@ OC.L10N.register(
     "Cancel" : "Hủy",
     "Close" : "Đóng",
     "Settings" : "Cài đặt",
-    "Advanced Settings" : "Cài đặt nâng cao"
+    "Advanced Settings" : "Cài đặt nâng cao",
+    "Welcome to ":"Chào mừng đến với"
 },
 "nplurals=1; plural=0;");

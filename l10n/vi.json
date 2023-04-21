@@ -19,6 +19,7 @@
     "Cancel" : "Hủy",
     "Close" : "Đóng",
     "Settings" : "Cài đặt",
-    "Advanced Settings" : "Cài đặt nâng cao"
+    "Advanced Settings" : "Cài đặt nâng cao",
+    "Scan for new audio files":"Cập nhật file âm thanh"
 },"pluralForm" :"nplurals=1; plural=0;"
 }
