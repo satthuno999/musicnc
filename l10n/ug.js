@@ -1,12 +1,16 @@
 OC.L10N.register(
-    "music",
+    "audioplayer",
     {
-    "Description" : "چۈشەندۈرۈش",
-    "Music" : "نەغمە",
-    "Next" : "كېيىنكى",
-    "Pause" : "ۋاقىتلىق توختا",
-    "Play" : "چال",
-    "Previous" : "ئالدىنقى",
-    "Repeat" : "قايتىلا"
+    "Selected" : "Selected",
+    "Help" : "ياردەم",
+    "Tags" : "بەلگەلەر",
+    "Title" : "ماۋزۇ",
+    "Favorite" : "يىغقۇچ",
+    "Remove" : "چىقىرىۋەت",
+    "Favorites" : "يىغقۇچ",
+    "URL" : "URL",
+    "Cancel" : "ۋاز كەچ",
+    "Close" : "ياپ",
+    "Settings" : "تەڭشەكلەر"
 },
-"nplurals=1; plural=0;");
+"nplurals=2; plural=(n != 1);");

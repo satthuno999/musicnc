@@ -1,13 +1,14 @@
 OC.L10N.register(
-    "music",
+    "audioplayer",
     {
-    "Description" : "Keterangan",
-    "Music" : "Muzik",
-    "Next" : "Seterus",
-    "Pause" : "Jeda",
-    "Play" : "Main",
-    "Previous" : "Sebelum",
-    "Repeat" : "Ulang",
-    "Shuffle" : "Kocok"
+    "Selected" : "Selected",
+    "Help" : "Bantuan",
+    "Title" : "Judul",
+    "Remove" : "Buang",
+    "Favorites" : "Favorites",
+    "URL" : "URL",
+    "Cancel" : "Batal",
+    "Close" : "Tutup",
+    "Settings" : "Tetapan"
 },
 "nplurals=1; plural=0;");

@@ -1,93 +1,80 @@
-<?php declare(strict_types=1);
-
+<?php
 /**
- * ownCloud - Music app
+ * Audio Player
  *
  * This file is licensed under the Affero General Public License version 3 or
- * later. See the COPYING file.
+ * later. See the LICENSE.md file.
  *
- * @author Morris Jobke <hey@morrisjobke.de>
- * @author Leizh <leizh@free.fr>
- * @author Pauli Järvinen <pauli.jarvinen@gmail.com>
- * @copyright Morris Jobke 2013, 2014
- * @copyright Leizh 2014
- * @copyright Pauli Järvinen 2018 - 2021
+ * @author Marcel Scherello <audioplayer@scherello.de>
+ * @copyright 2020 Marcel Scherello
  */
 
-namespace OCA\MusicNC\Search;
+declare(strict_types=1);
 
-use OCA\MusicNC\App\Music;
-use OCA\MusicNC\Db\MatchMode;
+namespace OCA\musicnc\Search;
 
-class Provider extends \OCP\Search\Provider {
+use OCA\musicnc\Controller\DbController;
+use OCP\IL10N;
+use OCP\IURLGenerator;
+use OCP\IUser;
+use OCP\Search\IProvider;
+use OCP\Search\ISearchQuery;
+use OCP\Search\SearchResult;
+use OCP\Search\SearchResultEntry;
 
-	/* Limit the maximum number of matches because the Provider API is limited and does
-	 * not support pagination. The core paginates the results to 30 item pages, but it
-	 * obtains all the items from the Providers again on creation of each page.
-	 * If there were thousands of mathces, we would end up doing lot of unnecessary work.
-	 */
-	const MAX_RESULTS_PER_TYPE = 100;
+class Provider implements IProvider
+{
 
-	private $artistMapper;
-	private $albumMapper;
-	private $trackMapper;
-	private $urlGenerator;
-	private $userId;
-	private $l10n;
-	private $resultTypeNames;
-	private $resultTypePaths;
-	private $logger;
+    /** @var IL10N */
+    private $l10n;
 
-	public function __construct() {
-		$app = \OC::$server->query(musicnc::class);
-		$c = $app->getContainer();
+    /** @var IURLGenerator */
+    private $urlGenerator;
 
-		$this->artistMapper = $c->query('ArtistMapper');
-		$this->albumMapper = $c->query('AlbumMapper');
-		$this->trackMapper = $c->query('TrackMapper');
-		$this->urlGenerator = $c->query('URLGenerator');
-		$this->userId = $c->query('UserId');
-		$this->l10n = $c->query('L10N');
-		$this->logger = $c->query('Logger');
+    private $DBController;
 
-		$this->resultTypeNames = [
-			'music_artist' => $this->l10n->t('Artist'),
-			'music_album' => $this->l10n->t('Album'),
-			'music_track' => $this->l10n->t('Track')
-		];
+    public function __construct(IL10N $l10n,
+                                IURLGenerator $urlGenerator,
+                                DBController $DBController)
+    {
+        $this->l10n = $l10n;
+        $this->urlGenerator = $urlGenerator;
+        $this->DBController = $DBController;
+    }
 
-		$basePath = $this->urlGenerator->linkToRoute('musicnc.page.index');
-		$this->resultTypePaths = [
-			'music_artist' => $basePath . "#/artist/",
-			'music_album' => $basePath . "#/album/",
-			'music_track' => $basePath . "#/track/"
-		];
-	}
+    public function getId(): string
+    {
+        return 'audioplayer';
+    }
 
-	private function createResult($entity, $title, $type) {
-		$link = $this->resultTypePaths[$type] . $entity->id;
-		$titlePrefix = $this->l10n->t('Musicnc') . ' - ' . $this->resultTypeNames[$type] . ': ';
-		return new Result($entity->id, $titlePrefix . $title, $link, $type);
-	}
+    public function search(IUser $user, ISearchQuery $query): SearchResult
+    {
+        $datasets = $this->DBController->search($query->getTerm());
+        $result = [];
 
-	public function search($query) {
-		$results=[];
+        foreach ($datasets as $dataset) {
+            $result[] = new SearchResultEntry(
+                '',
+                $this->l10n->t('Audio Player') . ' - ' . $dataset['name'],
+                '',
+                $this->urlGenerator->linkToRoute('musicnc.page.index') . '#' . $dataset['id'],
+                $this->urlGenerator->imagePath('audioplayer', 'app-dark.svg')
+            );
+        }
 
-		$artists = $this->artistMapper->findAllByName($query, $this->userId, MatchMode::Substring, self::MAX_RESULTS_PER_TYPE);
-		foreach ($artists as $artist) {
-			$results[] = $this->createResult($artist, $artist->name, 'music_artist');
-		}
+        return SearchResult::complete(
+            $this->l10n->t('Audioplayer'),
+            $result
+        );
+    }
 
-		$albums = $this->albumMapper->findAllByName($query, $this->userId, MatchMode::Substring, self::MAX_RESULTS_PER_TYPE);
-		foreach ($albums as $album) {
-			$results[] = $this->createResult($album, $album->name, 'music_album');
-		}
+    public function getName(): string
+    {
+        return $this->l10n->t('Audioplayer');
+    }
 
-		$tracks = $this->trackMapper->findAllByName($query, $this->userId, MatchMode::Substring, self::MAX_RESULTS_PER_TYPE);
-		foreach ($tracks as $track) {
-			$results[] = $this->createResult($track, $track->title, 'music_track');
-		}
-
-		return $results;
-	}
+    public function getOrder(string $route, array $routeParameters): int
+    {
+        return 10;
+    }
 }

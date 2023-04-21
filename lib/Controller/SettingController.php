@@ -1,191 +1,179 @@
-<?php declare(strict_types=1);
-
+<?php
 /**
- * ownCloud - Music app
+ * Audio Player
  *
  * This file is licensed under the Affero General Public License version 3 or
- * later. See the COPYING file.
+ * later. See the LICENSE.md file.
  *
- * @author Morris Jobke <hey@morrisjobke.de>
- * @author Pauli Järvinen <pauli.jarvinen@gmail.com>
- * @copyright Morris Jobke 2013, 2014
- * @copyright Pauli Järvinen 2017 - 2023
+ * @author Marcel Scherello <audioplayer@scherello.de>
+ * @copyright 2016-2021 Marcel Scherello
  */
 
-namespace OCA\MusicNC\Controller;
+namespace OCA\musicnc\Controller;
 
 use OCP\AppFramework\Controller;
-use OCP\AppFramework\Http;
 use OCP\AppFramework\Http\JSONResponse;
 use OCP\IRequest;
-use OCP\IURLGenerator;
-use OCP\Security\ISecureRandom;
+use OCP\IConfig;
+use OCP\Files\IRootFolder;
+use OCP\ITagManager;
+use OCP\IDBConnection;
+use OCP\ISession;
 
-use OCA\MusicNC\AppFramework\Core\Logger;
-use OCA\MusicNC\Db\AmpacheUserMapper;
-use OCA\MusicNC\Http\ErrorResponse;
-use OCA\MusicNC\Utility\AppInfo;
-use OCA\MusicNC\Utility\LibrarySettings;
-use OCA\MusicNC\Utility\Scanner;
-use OCA\MusicNC\Utility\Util;
-
+/**
+ * Controller class for main page.
+ */
 class SettingController extends Controller {
-	const DEFAULT_PASSWORD_LENGTH = 10;
-	/* Character set without look-alike characters. Similar but even more stripped set would be found
-	 * on Nextcloud as ISecureRandom::CHAR_HUMAN_READABLE but that's not availalbe on ownCloud. */
-	const API_KEY_CHARSET = 'abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789';
-
-	private $ampacheUserMapper;
-	private $scanner;
+	
 	private $userId;
-	private $librarySettings;
-	private $secureRandom;
-	private $urlGenerator;
-	private $logger;
+    private $config;
+	private $rootFolder;
+    private $tagger;
+    private $tagManager;
+    private $db;
+    private $session;
+    private $DBController;
 
-	public function __construct(string $appName,
-								IRequest $request,
-								AmpacheUserMapper $ampacheUserMapper,
-								Scanner $scanner,
-								?string $userId,
-								LibrarySettings $librarySettings,
-								ISecureRandom $secureRandom,
-								IURLGenerator $urlGenerator,
-								Logger $logger) {
+    public function __construct(
+        $appName,
+        IRequest $request,
+        $userId,
+        IConfig $config,
+        IDBConnection $db,
+        ITagManager $tagManager,
+        IRootFolder $rootFolder,
+        ISession $session,
+        DbController $DBController
+    )
+    {
 		parent::__construct($appName, $request);
-
-		$this->ampacheUserMapper = $ampacheUserMapper;
-		$this->scanner = $scanner;
-		$this->userId = $userId ?? ''; // ensure non-null to satisfy Scrutinizer; the null case should happen only when the user has already logged out
-		$this->librarySettings = $librarySettings;
-		$this->secureRandom = $secureRandom;
-		$this->urlGenerator = $urlGenerator;
-		$this->logger = $logger;
+		$this->appName = $appName;
+		$this->userId = $userId;
+        $this->config = $config;
+        $this->db = $db;
+        $this->tagManager = $tagManager;
+        $this->tagger = null;
+        $this->rootFolder = $rootFolder;
+        $this->session = $session;
+        $this->DBController = $DBController;
 	}
 
-	/**
-	 * @NoAdminRequired
-	 * @NoCSRFRequired
-	 * @UseSession to keep the session reserved while execution in progress
-	 */
-	public function userPath(string $value) {
-		$prevPath = $this->librarySettings->getPath($this->userId);
-		$success = $this->librarySettings->setPath($this->userId, $value);
+    /**
+     * @param $type
+     * @param $value
+     * @return JSONResponse
+     */
+    public function admin($type, $value)
+    {
+        //\OCP\Util::writeLog('audioplayer', 'settings save: '.$type.$value, \OCP\Util::DEBUG);
+        $this->config->setAppValue($this->appName, $type, $value);
+        return new JSONResponse(array('success' => 'true'));
+    }
 
-		if ($success) {
-			$this->scanner->updatePath($prevPath, $value, $this->userId);
+    /**
+     * @NoAdminRequired
+     * @param $type
+     * @param $value
+     * @return JSONResponse
+     * @throws \OCP\PreConditionNotMetException
+     */
+	public function setValue($type, $value) {
+		//\OCP\Util::writeLog('audioplayer', 'settings save: '.$type.$value, \OCP\Util::DEBUG);
+        $this->config->setUserValue($this->userId, $this->appName, $type, $value);
+		return new JSONResponse(array('success' => 'true'));
+	}
+
+    /**
+     * @NoAdminRequired
+     * @param $type
+     * @return JSONResponse
+     */
+	public function getValue($type) {
+        $value = $this->config->getUserValue($this->userId, $this->appName, $type);
+
+		//\OCP\Util::writeLog('audioplayer', 'settings load: '.$type.$value, \OCP\Util::DEBUG);
+
+		if ($value !== '') {
+			$result = [
+					'status' => 'success',
+					'value' => $value
+				];
+		} else {
+			$result = [
+					'status' => 'false',
+					'value' =>'nodata'
+				];
 		}
-
-		return new JSONResponse(['success' => $success]);
+        return new JSONResponse($result);
 	}
 
-	/**
-	 * @NoAdminRequired
-	 * @NoCSRFRequired
-	 */
-	public function userExcludedPaths(array $value) {
-		$success = $this->librarySettings->setExcludedPaths($this->userId, $value);
-		return new JSONResponse(['success' => $success]);
+    /**
+     * @NoAdminRequired
+     * @param $value
+     * @return JSONResponse
+     * @throws \OCP\PreConditionNotMetException
+     */
+	public function userPath($value) {
+		$path = $value;
+			try {
+				$this->rootFolder->getUserFolder($this -> userId)->get($path);
+			} catch (\OCP\Files\NotFoundException $e) {
+				return new JSONResponse(array('success' => false));
+			}
+			
+			if ($path[0] !== '/') {
+				$path = '/'.$path;
+			}
+			if ($path[strlen($path) - 1] !== '/') {
+				$path .= '/';
+			}
+        $this->config->setUserValue($this->userId, $this->appName, 'path', $path);
+		return new JSONResponse(array('success' => true));
 	}
 
-	/**
-	 * @NoAdminRequired
-	 * @NoCSRFRequired
-	 */
-	public function enableScanMetadata(bool $value) {
-		$this->librarySettings->setScanMetadataEnabled($this->userId, $value);
-		return new JSONResponse(['success' => true]);
-	}
+    /**
+     * @NoAdminRequired
+     * @param $trackid
+     * @param $isFavorite
+     * @return bool
+     */
+    public function setFavorite($trackid, $isFavorite)
+    {
+        $this->tagger = $this->tagManager->load('files');
+        $fileId = $this->DBController->getFileId($trackid);
 
-	/**
-	 * @NoAdminRequired
-	 * @NoCSRFRequired
-	 */
-	public function ignoredArticles(array $value) {
-		$this->librarySettings->setIgnoredArticles($this->userId, $value);
-		return new JSONResponse(['success' => true]);
-	}
+        if ($isFavorite === "true") {
+            $return = $this->tagger->removeFromFavorites($fileId);
+        } else {
+            $return = $this->tagger->addToFavorites($fileId);
+        }
+        return $return;
+    }
 
-	/**
-	 * @NoAdminRequired
-	 * @NoCSRFRequired
-	 */
-	public function getAll() {
-		return [
-			'path' => $this->librarySettings->getPath($this->userId),
-			'excludedPaths' => $this->librarySettings->getExcludedPaths($this->userId),
-			'scanMetadata' => $this->librarySettings->getScanMetadataEnabled($this->userId),
-			'ignoredArticles' => $this->librarySettings->getIgnoredArticles($this->userId),
-			'ampacheUrl' => $this->getAmpacheUrl(),
-			'subsonicUrl' => $this->getSubsonicUrl(),
-			'ampacheKeys' => $this->getUserKeys(),
-			'appVersion' => AppInfo::getVersion(),
-			'user' => $this->userId
-		];
-	}
+    /**
+     * @NoAdminRequired
+     * @param $track_id
+     * @return int|string
+     * @throws \Exception
+     */
+    public function setStatistics($track_id) {
+        $date = new \DateTime();
+        $playtime = $date->getTimestamp();
 
-	/**
-	 * @NoAdminRequired
-	 * @NoCSRFRequired
-	 */
-	public function getUserKeys() {
-		return $this->ampacheUserMapper->getAll($this->userId);
-	}
+        $SQL='SELECT `id`, `playcount` FROM `*PREFIX*musicnc_stats` WHERE `user_id`= ? AND `track_id`= ?';
+        $stmt = $this->db->prepare($SQL);
+        $stmt->execute(array($this->userId, $track_id));
+        $row = $stmt->fetch();
+        if (isset($row['id'])) {
+            $playcount = $row['playcount'] + 1;
+            $stmt = $this->db->prepare( 'UPDATE `*PREFIX*musicnc_stats` SET `playcount`= ?, `playtime`= ? WHERE `id` = ?');
+            $stmt->execute(array($playcount, $playtime, $row['id']));
+            return 'update';
+        } else {
+            $stmt = $this->db->prepare( 'INSERT INTO `*PREFIX*musicnc_stats` (`user_id`,`track_id`,`playtime`,`playcount`) VALUES(?,?,?,?)' );
+            $stmt->execute(array($this->userId, $track_id, $playtime, 1));
+            return $this->db->lastInsertId('*PREFIX*musicnc_stats');
+        }
+    }
 
-	private function getAmpacheUrl() {
-		return \str_replace('/server/xml.server.php', '',
-				$this->urlGenerator->getAbsoluteURL($this->urlGenerator->linkToRoute('musicnc.ampache.xmlApi')));
-	}
-
-	private function getSubsonicUrl() {
-		return \str_replace('/rest/dummy', '',
-				$this->urlGenerator->getAbsoluteURL($this->urlGenerator->linkToRoute(
-						'musicnc.subsonic.handleRequest', ['method' => 'dummy'])));
-	}
-
-	private function storeUserKey($description, $password) {
-		$hash = \hash('sha256', $password);
-		$description = Util::truncate($description, 64); // some DB setups can't truncate automatically to column max size
-		return $this->ampacheUserMapper->addUserKey($this->userId, $hash, $description);
-	}
-
-	/**
-	 * @NoAdminRequired
-	 */
-	public function createUserKey($length, $description) {
-		if ($length == null || $length < self::DEFAULT_PASSWORD_LENGTH) {
-			$length = self::DEFAULT_PASSWORD_LENGTH;
-		}
-
-		$password = $this->secureRandom->generate($length, self::API_KEY_CHARSET);
-
-		$id = $this->storeUserKey($description, $password);
-
-		if ($id === null) {
-			return new ErrorResponse(Http::STATUS_INTERNAL_SERVER_ERROR, 'Error while saving the credentials');
-		}
-
-		return new JSONResponse(['id' => $id, 'password' => $password, 'description' => $description], Http::STATUS_CREATED);
-	}
-
-	/**
-	 * The CORS-version of the key creation function is targeted for external clients. We need separate function
-	 * because the CORS middleware blocks the normal internal access on Nextcloud versions older than 25 as well
-	 * as on ownCloud 10.0, at least (but not on OC 10.4+).
-	 *
-	 * @NoAdminRequired
-	 * @CORS
-	 */
-	public function createUserKeyCors($length, $description) {
-		return $this->createUserKey($length, $description);
-	}
-
-	/**
-	 * @NoAdminRequired
-	 * @NoCSRFRequired
-	 */
-	public function removeUserKey($id) {
-		$this->ampacheUserMapper->removeUserKey($this->userId, (int)$id);
-		return new JSONResponse(['success' => true]);
-	}
 }

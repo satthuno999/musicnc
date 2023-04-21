@@ -1,12 +1,19 @@
 OC.L10N.register(
-    "music",
+    "audioplayer",
     {
-    "Description" : "Disgrifiad",
-    "Music" : "Cerddoriaeth",
-    "Next" : "Nesaf",
-    "Pause" : "Seibio",
-    "Play" : "Chwarae",
-    "Previous" : "Blaenorol",
-    "Repeat" : "Ailadrodd"
+    "Selected" : "Selected",
+    "Help" : "Cymorth",
+    "Tags" : "Tagiau",
+    "Saved" : "Wedi'u cadw",
+    "Title" : "Teitl",
+    "Year" : "Blwyddyn",
+    "Favorite" : "Ffefryn",
+    "Remove" : "Gwaredu",
+    "Favorites" : "Ffefrynnau",
+    "Unknown" : "Anhysbys",
+    "URL" : "URL",
+    "Cancel" : "Diddymu",
+    "Close" : "Cau",
+    "Settings" : "Gosodiadau"
 },
 "nplurals=4; plural=(n==1) ? 0 : (n==2) ? 1 : (n != 8 && n != 11) ? 2 : 3;");

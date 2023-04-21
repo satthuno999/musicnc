@@ -1,31 +1,22 @@
-<?php declare(strict_types=1);
-
+<?php
 /**
- * ownCloud - Music app
+ * Audio Player
  *
  * This file is licensed under the Affero General Public License version 3 or
- * later. See the COPYING file.
+ * later. See the LICENSE.md file.
  *
- * @author Pauli Järvinen <pauli.jarvinen@gmail.com>
- * @copyright Pauli Järvinen 2018
+ * @author Marcel Scherello <audioplayer@scherello.de>
+ * @copyright 2016-2021 Marcel Scherello
  */
-
-namespace OCA\MusicNC\Hooks;
+ 
+namespace OCA\musicnc\Hooks;
+use OCA\musicnc\Controller;
 
 class UserHooks {
-	private $userManager;
-	private $maintenance;
-
-	public function __construct($userManager, $maintenance) {
-		$this->userManager = $userManager;
-		$this->maintenance = $maintenance;
-	}
-
-	public function register() {
-		$maintenance = $this->maintenance;
-		$callback = function ($user) use ($maintenance) {
-			$maintenance->resetAllData($user->getUID());
-		};
-		$this->userManager->listen('\OC\User', 'postDelete', $callback);
-	}
+	public static function deleteUser($params) {
+		$userId = $params['uid'];
+		$app = new \OCA\musicnc\AppInfo\Application();
+        	$container = $app->getContainer();
+        $container->query(\OCA\musicnc\Controller\DbController::class)->resetMediaLibrary($userId, null, true);
+	}    
 }

@@ -1,39 +1,85 @@
-<?php declare(strict_types=1);
-
+<?php
 /**
- * ownCloud - Music app
+ * Audio Player
  *
  * This file is licensed under the Affero General Public License version 3 or
- * later. See the COPYING file.
+ * later. See the LICENSE.md file.
  *
- * @author Morris Jobke <hey@morrisjobke.de>
- * @author Pauli Järvinen <pauli.jarvinen@gmail.com>
- * @copyright Morris Jobke 2013, 2014
- * @copyright Pauli Järvinen 2019
+ * @author Marcel Scherello <audioplayer@scherello.de>
+ * @author Sebastian Doell <sebastian@libasys.de>
+ * @copyright 2016-2021 Marcel Scherello
+ * @copyright 2015 Sebastian Doell
  */
 
-namespace OCA\MusicNC\Controller;
+namespace OCA\musicnc\Controller;
 
+use OCA\musicnc\Event\LoadAdditionalScriptsEvent;
 use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\IRequest;
+use OCP\IConfig;
+use OCP\IL10N;
+use OCP\AppFramework\Http\ContentSecurityPolicy;
+use OCP\EventDispatcher\IEventDispatcher;
 
-class PageController extends Controller {
-	private $l10n;
+/**
+ * Controller class for main page.
+ */
+class PageController extends Controller
+{
 
-	public function __construct($appname,
-								IRequest $request,
-								$l10n) {
-		parent::__construct($appname, $request);
-		$this->l10n = $l10n;
-	}
+    private $userId;
+    private $l10n;
+    private $configManager;
+    /** @var IEventDispatcher */
+    protected $eventDispatcher;
 
-	/**
-	 * @NoAdminRequired
-	 * @NoCSRFRequired
-	 */
-	public function index() {
-		$userLang = $this->l10n->getLanguageCode();
-		return new TemplateResponse($this->appName, 'main', ['lang' => $userLang]);
-	}
+
+    public function __construct(
+        $appName,
+        IRequest $request,
+        $userId,
+        IConfig $configManager,
+        IEventDispatcher $eventDispatcher,
+        IL10N $l10n
+    )
+    {
+        parent::__construct($appName, $request);
+        $this->appName = $appName;
+        $this->userId = $userId;
+        $this->configManager = $configManager;
+        $this->l10n = $l10n;
+        $this->eventDispatcher = $eventDispatcher;
+    }
+
+    /**
+     * @NoAdminRequired
+     * @NoCSRFRequired
+     * @throws \OCP\PreConditionNotMetException
+     */
+    public function index()
+    {
+
+        if ($this->configManager->getAppValue('musicnc_sonos', 'enabled') === "yes" AND $this->configManager->getAppValue('musicnc_sonos', 'sonos') === "checked") {
+            $musicnc_sonos = $this->configManager->getUserValue($this->userId, 'musicnc_sonos', 'sonos') ?: false;
+        } else {
+            $musicnc_sonos = false;
+        }
+
+        $event = new LoadAdditionalScriptsEvent();
+        $this->eventDispatcher->dispatchTyped($event);
+
+        $response = new TemplateResponse('audioplayer', 'index');
+        $csp = new ContentSecurityPolicy();
+        $csp->addAllowedMediaDomain('*'); //required for external m3u playlists
+        $response->setContentSecurityPolicy($csp);
+        $response->setParams([
+            'musicnc_navigationShown' => $this->configManager->getUserValue($this->userId, $this->appName, 'navigation'),
+            'musicnc_view' => $this->configManager->getUserValue($this->userId, $this->appName, 'view') ?: 'pictures',
+            'musicnc_volume' => $this->configManager->getUserValue($this->userId, $this->appName, 'volume') ?: '1',
+            'musicnc_repeat' => $this->configManager->getUserValue($this->userId, $this->appName, 'repeat') ?: 'none',
+            'musicnc_sonos' => $musicnc_sonos,
+        ]);
+        return $response;
+    }
 }
