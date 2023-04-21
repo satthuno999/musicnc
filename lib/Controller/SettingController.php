@@ -65,7 +65,7 @@ class SettingController extends Controller {
      */
     public function admin($type, $value)
     {
-        //\OCP\Util::writeLog('audioplayer', 'settings save: '.$type.$value, \OCP\Util::DEBUG);
+        //\OCP\Util::writeLog('musicnc', 'settings save: '.$type.$value, \OCP\Util::DEBUG);
         $this->config->setAppValue($this->appName, $type, $value);
         return new JSONResponse(array('success' => 'true'));
     }
@@ -78,7 +78,7 @@ class SettingController extends Controller {
      * @throws \OCP\PreConditionNotMetException
      */
 	public function setValue($type, $value) {
-		//\OCP\Util::writeLog('audioplayer', 'settings save: '.$type.$value, \OCP\Util::DEBUG);
+		//\OCP\Util::writeLog('musicnc', 'settings save: '.$type.$value, \OCP\Util::DEBUG);
         $this->config->setUserValue($this->userId, $this->appName, $type, $value);
 		return new JSONResponse(array('success' => 'true'));
 	}
@@ -91,7 +91,7 @@ class SettingController extends Controller {
 	public function getValue($type) {
         $value = $this->config->getUserValue($this->userId, $this->appName, $type);
 
-		//\OCP\Util::writeLog('audioplayer', 'settings load: '.$type.$value, \OCP\Util::DEBUG);
+		//\OCP\Util::writeLog('musicnc', 'settings load: '.$type.$value, \OCP\Util::DEBUG);
 
 		if ($value !== '') {
 			$result = [

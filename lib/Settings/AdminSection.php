@@ -35,7 +35,7 @@ class AdminSection implements IIconSection
      */
     public function getIcon()
     {
-        return $this->urlGenerator->imagePath('audioplayer', 'app-dark.svg');
+        return $this->urlGenerator->imagePath('musicnc', 'app-dark.svg');
     }
 
     /**
@@ -45,7 +45,7 @@ class AdminSection implements IIconSection
      */
     public function getID()
     {
-        return 'audioplayer';
+        return 'musicnc';
     }
 
     /**

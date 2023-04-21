@@ -9,12 +9,12 @@
  */
 
  .icon-musicnc {
-        @include icon-color('app-dark', 'audioplayer', $color-black, 1);
+        @include icon-color('app-dark', 'musicnc', $color-black, 1);
  }
 
  body.dark .icon-musicnc,
  body.theme--dark .icon-musicnc {
-        @include icon-color('app', 'audioplayer', $color-black, 1);
+        @include icon-color('app', 'musicnc', $color-black, 1);
  }
 
 .panel--content .APplayerButton {
@@ -64,19 +64,19 @@
 }
 
 .panel--content .APbutton.APprevious {
-        @include icon-color('previous', 'audioplayer', $color-black, 1);
+        @include icon-color('previous', 'musicnc', $color-black, 1);
 }
 
 .panel--content .APbutton.APnext {
-        @include icon-color('next', 'audioplayer', $color-black, 1);
+        @include icon-color('next', 'musicnc', $color-black, 1);
 }
 
 .panel--content .APbutton.APplay-pause {
-        @include icon-color('play', 'audioplayer', $color-black, 1);
+        @include icon-color('play', 'musicnc', $color-black, 1);
 }
 
 .panel--content .APbutton.APplay-pause.playing {
-        @include icon-color('pause', 'audioplayer', $color-black, 1);
+        @include icon-color('pause', 'musicnc', $color-black, 1);
 }
 
 .panel--content .APbutton.APprevious,

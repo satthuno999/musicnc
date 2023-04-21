@@ -437,7 +437,7 @@
   opacity: 0.33;
   background-image: url(../img/volume.svg);
   /*filter: var(--background-invert-if-dark);
-  @include icon-color('volume', 'audioplayer', $color-black, 1);*/
+  @include icon-color('volume', 'musicnc', $color-black, 1);*/
 }
 
 .sm2-inline-button.menu {

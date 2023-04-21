@@ -44,7 +44,7 @@ class Provider implements IProvider
 
     public function getId(): string
     {
-        return 'audioplayer';
+        return 'musicnc';
     }
 
     public function search(IUser $user, ISearchQuery $query): SearchResult
@@ -58,19 +58,19 @@ class Provider implements IProvider
                 $this->l10n->t('Audio Player') . ' - ' . $dataset['name'],
                 '',
                 $this->urlGenerator->linkToRoute('musicnc.page.index') . '#' . $dataset['id'],
-                $this->urlGenerator->imagePath('audioplayer', 'app-dark.svg')
+                $this->urlGenerator->imagePath('musicnc', 'app-dark.svg')
             );
         }
 
         return SearchResult::complete(
-            $this->l10n->t('Audioplayer'),
+            $this->l10n->t('musicnc'),
             $result
         );
     }
 
     public function getName(): string
     {
-        return $this->l10n->t('Audioplayer');
+        return $this->l10n->t('musicnc');
     }
 
     public function getOrder(string $route, array $routeParameters): int

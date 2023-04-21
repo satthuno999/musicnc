@@ -59,7 +59,7 @@ OCA.musicnc.Player = {
                 OCA.musicnc.UI.indicateCurrentPlayingTrack();
             }).catch(function(error) {
                 document.getElementById('playerPlay').classList.replace('icon-loading','play-pause');
-                OCP.Toast.error(t('audioplayer', 'Playback error'));
+                OCP.Toast.error(t('musicnc', 'Playback error'));
             });
         }
     },
@@ -228,7 +228,7 @@ OCA.musicnc.Player = {
             document.getElementById('startTime').innerHTML = OCA.musicnc.Player.formatSecondsToTime(player.currentTime) + '&nbsp;/&nbsp;';
             document.getElementById('endTime').innerHTML = OCA.musicnc.Player.formatSecondsToTime(player.duration) + '&nbsp;&nbsp;';
         } else {
-            // document.getElementById('startTime').innerHTML = t('audioplayer', 'loading');
+            // document.getElementById('startTime').innerHTML = t('musicnc', 'loading');
             // document.getElementById('endTime').innerHTML = '';
         }
 

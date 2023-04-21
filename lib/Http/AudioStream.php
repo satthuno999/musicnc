@@ -40,7 +40,7 @@ class AudioStream
 		$this -> mimeType = $fileInfo['mimetype'];
 		$this -> mTime = $fileInfo['mtime'];
 		$this -> iSize = $fileInfo['size'];
-        //\OCP\Util::writeLog('audioplayer','path:'.$filePath,\OCP\Util::DEBUG);
+        //\OCP\Util::writeLog('musicnc','path:'.$filePath,\OCP\Util::DEBUG);
 
 	}
 
@@ -99,7 +99,7 @@ class AudioStream
             header("Content-Length: $length");
 			http_response_code(206);
 			header("Content-Range: bytes ".$this->iStart."-".$this->iEnd."/".$this->iSize);
-			//\OCP\Util::writeLog('audioplayer','SEQ:'.$this->iStart."-".$this->iEnd."/".$this->iSize.'length:'.$length,\OCP\Util::DEBUG);
+			//\OCP\Util::writeLog('musicnc','SEQ:'.$this->iStart."-".$this->iEnd."/".$this->iSize.'length:'.$length,\OCP\Util::DEBUG);
 		} else {
 			header("Content-Length: " . $this -> iSize);
 			$this->isStream = false;

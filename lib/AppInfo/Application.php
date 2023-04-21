@@ -23,7 +23,7 @@ use OCP\Util;
 
 class Application extends App implements IBootstrap
 {
-    public const APP_ID = 'audioplayer';
+    public const APP_ID = 'musicnc';
 
     public function __construct(array $urlParams = [])
     {

@@ -73,8 +73,8 @@ class MusicController extends Controller
             $fileid = $share->getNodeId();
             $fileowner = $share->getShareOwner();
 
-            //\OCP\Util::writeLog('audioplayer', 'fileid: '.$fileid, \OCP\Util::DEBUG);
-            //\OCP\Util::writeLog('audioplayer', 'fileowner: '.$fileowner, \OCP\Util::DEBUG);
+            //\OCP\Util::writeLog('musicnc', 'fileid: '.$fileid, \OCP\Util::DEBUG);
+            //\OCP\Util::writeLog('musicnc', 'fileowner: '.$fileowner, \OCP\Util::DEBUG);
 
             $SQL = "SELECT `AT`.`title`,`AG`.`name` AS `genre`,`AB`.`name` AS `album`,`AT`.`artist_id`,
 					`AT`.`length`,`AT`.`bitrate`,`AT`.`year`,`AA`.`name` AS `artist`,

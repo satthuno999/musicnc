@@ -69,7 +69,7 @@ class PageController extends Controller
         $event = new LoadAdditionalScriptsEvent();
         $this->eventDispatcher->dispatchTyped($event);
 
-        $response = new TemplateResponse('audioplayer', 'index');
+        $response = new TemplateResponse('musicnc', 'index');
         $csp = new ContentSecurityPolicy();
         $csp->addAllowedMediaDomain('*'); //required for external m3u playlists
         $response->setContentSecurityPolicy($csp);

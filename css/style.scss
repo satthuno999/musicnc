@@ -34,7 +34,7 @@
   width: 30px;
   top: 115px;
   left: 5px;
-  @include icon-color('albumplay', 'audioplayer', '#FFFFFF', 1);
+  @include icon-color('albumplay', 'musicnc', '#FFFFFF', 1);
   background-size: 30px;
   opacity: 0.5;
   cursor: pointer;
@@ -107,7 +107,7 @@ i#scanAudiosFirst {
   line-height: 44px;
   padding-left: 40px;
   background-size: 18px 18px;
-  @include icon-color('albums', 'audioplayer', '#CCCCCC', 1);
+  @include icon-color('albums', 'musicnc', '#CCCCCC', 1);
   background-repeat: no-repeat;
   background-position: 11px;
   margin: 6px 0;

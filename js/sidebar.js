@@ -94,7 +94,7 @@ OCA.musicnc.Sidebar = {
             id: 'tabHeaderAddons',
             class: 'addonsTabView',
             tabindex: '9',
-            name: t('audioplayer', 'Add-ons'),
+            name: t('musicnc', 'Add-ons'),
             action: OCA.musicnc.Sidebar.addonsTabView,
         });
 
@@ -102,7 +102,7 @@ OCA.musicnc.Sidebar = {
             id: 'tabHeaderMetadata',
             class: 'metadataTabView',
             tabindex: '1',
-            name: t('audioplayer', 'Metadata'),
+            name: t('musicnc', 'Metadata'),
             action: OCA.musicnc.Sidebar.metadataTabView,
         });
 
@@ -110,7 +110,7 @@ OCA.musicnc.Sidebar = {
             id: 'tabHeaderPlaylists',
             class: 'playlistsTabView',
             tabindex: '2',
-            name: t('audioplayer', 'Playlists'),
+            name: t('musicnc', 'Playlists'),
             action: OCA.musicnc.Sidebar.playlistsTabView,
         });
 
@@ -152,7 +152,7 @@ OCA.musicnc.Sidebar = {
 
         OCA.musicnc.Sidebar.resetView();
         $('#tabHeaderMetadata').addClass('selected');
-        $('#metadataTabView').removeClass('hidden').html('<div style="text-align:center; word-wrap:break-word;" class="get-metadata"><p><img src="' + OC.imagePath('core', 'loading.gif') + '"><br><br></p><p>' + t('audioplayer', 'Reading data') + '</p></div>');
+        $('#metadataTabView').removeClass('hidden').html('<div style="text-align:center; word-wrap:break-word;" class="get-metadata"><p><img src="' + OC.imagePath('core', 'loading.gif') + '"><br><br></p><p>' + t('musicnc', 'Reading data') + '</p></div>');
 
         $.ajax({
             type: 'GET',
@@ -172,7 +172,7 @@ OCA.musicnc.Sidebar = {
                     var audioinfo = jsondata.data;
                     for (m in audioinfo) {
                         tablerow = $('<div>').css('display', 'table-row');
-                        tablekey = $('<div>').addClass('key').text(t('audioplayer', m));
+                        tablekey = $('<div>').addClass('key').text(t('musicnc', m));
                         tablevalue = $('<div>').addClass('value')
                             .text(audioinfo[m]);
                         if (m === 'Path') {
@@ -199,7 +199,7 @@ OCA.musicnc.Sidebar = {
                         }
                     }
                 } else {
-                    table = '<div style="margin-left: 2em;" class="get-metadata"><p>' + t('audioplayer', 'No data') + '</p></div>';
+                    table = '<div style="margin-left: 2em;" class="get-metadata"><p>' + t('musicnc', 'No data') + '</p></div>';
                 }
 
                 $('#metadataTabView').html(table);
@@ -212,7 +212,7 @@ OCA.musicnc.Sidebar = {
 
         OCA.musicnc.Sidebar.resetView();
         $('#tabHeaderPlaylists').addClass('selected');
-        $('#playlistsTabView').removeClass('hidden').html('<div style="text-align:center; word-wrap:break-word;" class="get-metadata"><p><img src="' + OC.imagePath('core', 'loading.gif') + '"><br><br></p><p>' + t('audioplayer', 'Reading data') + '</p></div>');
+        $('#playlistsTabView').removeClass('hidden').html('<div style="text-align:center; word-wrap:break-word;" class="get-metadata"><p><img src="' + OC.imagePath('core', 'loading.gif') + '"><br><br></p><p>' + t('musicnc', 'Reading data') + '</p></div>');
 
         $.ajax({
             type: 'POST',
@@ -234,7 +234,7 @@ OCA.musicnc.Sidebar = {
                             'class': 'icon icon-delete toolTip',
                             'data-listid': audioinfo[m].playlist_id,
                             'data-trackid': trackid,
-                            'title': t('audioplayer', 'Remove')
+                            'title': t('musicnc', 'Remove')
                         }).on('click', OCA.musicnc.Playlists.removeSongFromPlaylist);
 
                         tablerow = $('<div>').css('display', 'table-row').attr({'data-id': audioinfo[m].playlist_id});
@@ -246,7 +246,7 @@ OCA.musicnc.Sidebar = {
                         table.append(tablerow);
                     }
                 } else {
-                    table = '<div style="margin-left: 2em;" class="get-metadata"><p>' + t('audioplayer', 'No playlist entry') + '</p></div>';
+                    table = '<div style="margin-left: 2em;" class="get-metadata"><p>' + t('musicnc', 'No playlist entry') + '</p></div>';
                 }
 
                 $('#playlistsTabView').html(table);
@@ -259,10 +259,10 @@ OCA.musicnc.Sidebar = {
         OCA.musicnc.Sidebar.resetView();
         $('#tabHeaderAddons').addClass('selected');
         var html = '<div style="margin-left: 2em; background-position: initial;" class="icon-info">';
-        html += '<p style="margin-left: 2em;">' + t('audioplayer', 'Available Audio Player Add-Ons:') + '</p>';
+        html += '<p style="margin-left: 2em;">' + t('musicnc', 'Available Audio Player Add-Ons:') + '</p>';
         html += '<p style="margin-left: 2em;"><br></p>';
         html += '<a href="https://github.com/rello/musicnc_sonos"  target="_blank" >';
-        html += '<p style="margin-left: 2em;">- ' + t('audioplayer', 'SONOS playback') + '</p>';
+        html += '<p style="margin-left: 2em;">- ' + t('musicnc', 'SONOS playback') + '</p>';
         html += '</a></div>';
         $('#addonsTabView').removeClass('hidden').html(html);
     },

@@ -199,7 +199,7 @@ class DbController extends Controller
         } elseif ($hook === null) {
             $output->writeln("Reset finished");
         } else {
-            $this->logger->info('Library of "' . $userId . '" reset due to user deletion', array('app' => 'audioplayer'));
+            $this->logger->info('Library of "' . $userId . '" reset due to user deletion', array('app' => 'musicnc'));
         }
         return true;
     }
@@ -217,7 +217,7 @@ class DbController extends Controller
         if ($userId !== null) {
             $this->userId = $userId;
         }
-        $this->logger->debug('deleteFromDB: ' . $file_id, array('app' => 'audioplayer'));
+        $this->logger->debug('deleteFromDB: ' . $file_id, array('app' => 'musicnc'));
 
         $stmt = $this->db->prepare('SELECT `album_id`, `id` FROM `*PREFIX*musicnc_tracks` WHERE `file_id` = ?  AND `user_id` = ?');
         $stmt->execute(array($file_id, $this->userId));
@@ -642,15 +642,15 @@ class DbController extends Controller
         //$this->session->set($type, $value);
         $SQL = 'SELECT `configvalue` FROM `*PREFIX*preferences` WHERE `userid`= ? AND `appid`= ? AND `configkey`= ?';
         $stmt = $this->db->prepare($SQL);
-        $stmt->execute(array($this->userId, 'audioplayer', $type));
+        $stmt->execute(array($this->userId, 'musicnc', $type));
         $row = $stmt->fetch();
         if (isset($row['configvalue'])) {
             $stmt = $this->db->prepare('UPDATE `*PREFIX*preferences` SET `configvalue`= ? WHERE `userid`= ? AND `appid`= ? AND `configkey`= ?');
-            $stmt->execute(array($value, $this->userId, 'audioplayer', $type));
+            $stmt->execute(array($value, $this->userId, 'musicnc', $type));
             return 'update';
         } else {
             $stmt = $this->db->prepare('INSERT INTO `*PREFIX*preferences` (`userid`,`appid`,`configkey`,`configvalue`) VALUES(?,?,?,?)');
-            $stmt->execute(array($this->userId, 'audioplayer', $type, $value));
+            $stmt->execute(array($this->userId, 'musicnc', $type, $value));
             return 'insert';
         }
     }
@@ -665,7 +665,7 @@ class DbController extends Controller
         //return $this->session->get($type);
         $SQL = 'SELECT `configvalue` FROM `*PREFIX*preferences` WHERE `userid`= ? AND `appid`= ? AND `configkey`= ?';
         $stmt = $this->db->prepare($SQL);
-        $stmt->execute(array($this->userId, 'audioplayer', $type));
+        $stmt->execute(array($this->userId, 'musicnc', $type));
         $row = $stmt->fetch();
         return $row['configvalue'];
     }

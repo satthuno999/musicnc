@@ -26,8 +26,8 @@ OCA.musicnc.Settings = {
 
     openResetDialog: function () {
         OC.dialogs.confirm(
-            t('audioplayer', 'Are you sure?') + ' ' + t('audioplayer', 'All library entries will be deleted!'),
-            t('audioplayer', 'Reset library'),
+            t('musicnc', 'Are you sure?') + ' ' + t('musicnc', 'All library entries will be deleted!'),
+            t('musicnc', 'Reset library'),
             function (e) {
                 if (e === true) {
                     OCA.musicnc.Settings.resetLibrary();
@@ -63,7 +63,7 @@ OCA.musicnc.Settings = {
             url: OC.generateUrl('apps/audioplayer/resetmedialibrary'),
             success: function (jsondata) {
                 if (jsondata.status === 'success') {
-                    OCP.Toast.success(t('audioplayer', 'Resetting finished!'));
+                    OCP.Toast.success(t('musicnc', 'Resetting finished!'));
                 }
             }
         });

@@ -25,9 +25,9 @@ class LoadAdditionalScripts implements IEventListener
     public function handle(Event $event): void
     {
         if ($event instanceof BeforeTemplateRenderedEvent) {
-            Util::addScript('audioplayer', 'viewer/viewer');
-            Util::addScript('audioplayer', 'sharing/sharing');
-            Util::addStyle('audioplayer', '3rdparty/fontello/css/fontello');
+            Util::addScript('musicnc', 'viewer/viewer');
+            Util::addScript('musicnc', 'sharing/sharing');
+            Util::addStyle('musicnc', '3rdparty/fontello/css/fontello');
         } else {
             return;
         }

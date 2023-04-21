@@ -11,15 +11,15 @@
 
 use OCP\Util;
 
-Util::addStyle('audioplayer', 'bar-ui');
-Util::addStyle('audioplayer', 'style');
+Util::addStyle('musicnc', 'bar-ui');
+Util::addStyle('musicnc', 'style');
 Util::addStyle('files', 'detailsView');
-Util::addStyle('audioplayer', '3rdparty/fontello/css/fontello');
-Util::addScript('audioplayer', 'app');
-Util::addScript('audioplayer', 'sidebar');
-Util::addScript('audioplayer', 'settings/settings');
+Util::addStyle('musicnc', '3rdparty/fontello/css/fontello');
+Util::addScript('musicnc', 'app');
+Util::addScript('musicnc', 'sidebar');
+Util::addScript('musicnc', 'settings/settings');
 if ($_['musicnc_sonos'] !== 'checked') {
-    Util::addScript('audioplayer', 'player');
+    Util::addScript('musicnc', 'player');
 }
 
 ?>

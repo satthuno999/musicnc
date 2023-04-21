@@ -16,11 +16,11 @@
             OC.Plugins.register('OCA.Search.Core', this);
         },
         attach: function(search) {
-            search.setRenderer('audioplayer', this.renderResult);
+            search.setRenderer('musicnc', this.renderResult);
         },
         renderResult: function($row, item) {
             $row.find('td.icon')
-                .css('background-image', 'url(' + OC.imagePath('audioplayer', 'app-dark') + ')')
+                .css('background-image', 'url(' + OC.imagePath('musicnc', 'app-dark') + ')')
                 .css('opacity', '.4');
             return $row;
         }

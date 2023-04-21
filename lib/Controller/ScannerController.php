@@ -104,7 +104,7 @@ class ScannerController extends Controller
     public function getImportTpl()
     {
         $params = [];
-        return new TemplateResponse('audioplayer', 'part.import', $params, '');
+        return new TemplateResponse('musicnc', 'part.import', $params, '');
     }
 
     /**
@@ -131,7 +131,7 @@ class ScannerController extends Controller
             $this->occJob = true;
             $this->userId = $userId;
             $languageCode = $this->configManager->getUserValue($userId, 'core', 'lang');
-            $this->l10n = $this->languageFactory->get('audioplayer', $languageCode);
+            $this->l10n = $this->languageFactory->get('musicnc', $languageCode);
         } else {
             $output = new NullOutput();
         }
@@ -271,7 +271,7 @@ class ScannerController extends Controller
 
         # catch issue when getID3 does not bring a result in case of corrupt file or fpm-timeout
         if (!isset($this->ID3Tags['bitrate']) AND !isset($this->ID3Tags['playtime_string'])) {
-            $this->logger->debug('Error with getID3. Does not seem to be a valid audio file: ' . $audio->getPath(), array('app' => 'audioplayer'));
+            $this->logger->debug('Error with getID3. Does not seem to be a valid audio file: ' . $audio->getPath(), array('app' => 'musicnc'));
             $output->writeln("       Error with getID3. Does not seem to be a valid audio file", OutputInterface::VERBOSITY_VERBOSE);
             return 'error';
         }
@@ -340,7 +340,7 @@ class ScannerController extends Controller
 
         $return = $this->DBController->writeTrackToDB($this->userId, $aTrack);
         if ($return['dublicate'] === 1) {
-            $this->logger->debug('Duplicate file: ' . $audio->getPath(), array('app' => 'audioplayer'));
+            $this->logger->debug('Duplicate file: ' . $audio->getPath(), array('app' => 'musicnc'));
             $output->writeln("       This title is a duplicate and already existing", OutputInterface::VERBOSITY_VERBOSE);
             return 'duplicate';
         }
@@ -365,7 +365,7 @@ class ScannerController extends Controller
         ];
         $return = $this->DBController->writeStreamToDB($this->userId, $aStream);
         if ($return['dublicate'] === 1) {
-            $this->logger->debug('Duplicate file: ' . $stream->getPath(), array('app' => 'audioplayer'));
+            $this->logger->debug('Duplicate file: ' . $stream->getPath(), array('app' => 'musicnc'));
             $output->writeln("       This title is a duplicate and already existing", OutputInterface::VERBOSITY_VERBOSE);
             return 'duplicate';
         }
@@ -635,7 +635,7 @@ class ScannerController extends Controller
             $availability =  $audio->getStorage()->getAvailability();
             if (!$availability['available']) {
                 $output->writeln("Some external storage is not available", OutputInterface::VERBOSITY_VERBOSE);
-                $this->logger->debug('Some external storage is not available', array('app' => 'audioplayer'));
+                $this->logger->debug('Some external storage is not available', array('app' => 'musicnc'));
             } else {
                 $handle = $audio->fopen('rb');
                 if (is_resource($handle) && @fseek($handle, -24, SEEK_END) === 0) {
@@ -643,7 +643,7 @@ class ScannerController extends Controller
                 } else {
                     if (!$this->noFseek) {
                         $output->writeln("Attention: Only slow indexing due to server config. See Audio Player wiki on GitHub for details.", OutputInterface::VERBOSITY_VERBOSE);
-                        $this->logger->debug('Attention: Only slow indexing due to server config. See Audio Player wiki on GitHub for details.', array('app' => 'audioplayer'));
+                        $this->logger->debug('Attention: Only slow indexing due to server config. See Audio Player wiki on GitHub for details.', array('app' => 'musicnc'));
                         $this->noFseek = true;
                     }
                     $fileName = $audio->getStorage()->getLocalFile($audio->getInternalPath());
@@ -668,7 +668,7 @@ class ScannerController extends Controller
      */
     private function convertCyrillic($ThisFileInfo)
     {
-        //$this->logger->debug('cyrillic handling activated', array('app' => 'audioplayer'));
+        //$this->logger->debug('cyrillic handling activated', array('app' => 'musicnc'));
         // Check, if this tag was win1251 before the incorrect "8859->utf" convertion by the getid3 lib
         foreach (array('id3v1', 'id3v2') as $ttype) {
             $ruTag = 0;
@@ -706,7 +706,7 @@ class ScannerController extends Controller
     private function getID3Value($ID3Value, $defaultValue = null)
     {
         $c = count($ID3Value);
-        //	\OCP\Util::writeLog('audioplayer', 'album: '.$this->ID3Tags['comments']['album'][0], \OCP\Util::DEBUG);
+        //	\OCP\Util::writeLog('musicnc', 'album: '.$this->ID3Tags['comments']['album'][0], \OCP\Util::DEBUG);
         for ($i = 0; $i < $c; $i++) {
             if (isset($this->ID3Tags['comments'][$ID3Value[$i]][0]) and rawurlencode($this->ID3Tags['comments'][$ID3Value[$i]][0]) !== '%FF%FE') {
                 return preg_replace('/[\x00-\x1F\x7F\xA0]/u', '', $this->ID3Tags['comments'][$ID3Value[$i]][0]);

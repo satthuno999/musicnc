@@ -420,7 +420,7 @@ class CategoryController extends Controller
             $file = array_shift($nodes);
 
             if ($file === null) {
-                $this->logger->debug('removed/unshared file found => remove '.$row['fid'], array('app' => 'audioplayer'));
+                $this->logger->debug('removed/unshared file found => remove '.$row['fid'], array('app' => 'musicnc'));
                 $this->DBController->deleteFromDB($row['fid'], $this->userId);
                 continue;
             }
@@ -452,7 +452,7 @@ class CategoryController extends Controller
         $x = 0;
         $title = null;
         $userView = $this->rootFolder->getUserFolder($this->userId);
-        //$this->logger->debug('removed/unshared file found => remove '.$row['fid'], array('app' => 'audioplayer'));
+        //$this->logger->debug('removed/unshared file found => remove '.$row['fid'], array('app' => 'musicnc'));
 
         $streamfile = $userView->getById($fileId);
         $file_type = $streamfile[0]->getMimetype();

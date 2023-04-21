@@ -32,7 +32,7 @@ class FileHooks {
 		$view = \OC\Files\Filesystem::getView();
 		$node = $view->getFileInfo($params['path']);
 
-        #$this->logger->debug('Hook delete id: '.$node->getId(), array('app' => 'audioplayer'));
+        #$this->logger->debug('Hook delete id: '.$node->getId(), array('app' => 'musicnc'));
 		if ($node->getType() === FileInfo::TYPE_FILE) {
 			$app = new \OCA\musicnc\AppInfo\Application();
         	$container = $app->getContainer();

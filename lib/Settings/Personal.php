@@ -38,10 +38,10 @@ class Personal implements ISettings
     {
 
         $parameters = [
-            'musicnc_cyrillic' => $this->configManager->getUserValue($this->userId, 'audioplayer', 'cyrillic'),
-            'musicnc_path' => $this->configManager->getUserValue($this->userId, 'audioplayer', 'path'),
+            'musicnc_cyrillic' => $this->configManager->getUserValue($this->userId, 'musicnc', 'cyrillic'),
+            'musicnc_path' => $this->configManager->getUserValue($this->userId, 'musicnc', 'path'),
         ];
-        return new TemplateResponse('audioplayer', 'settings/personal', $parameters, '');
+        return new TemplateResponse('musicnc', 'settings/personal', $parameters, '');
     }
 
     /**
@@ -60,7 +60,7 @@ class Personal implements ISettings
      */
     public function getSection()
     {
-        return 'audioplayer';
+        return 'musicnc';
     }
 
     /**
@@ -70,7 +70,7 @@ class Personal implements ISettings
      */
     public function getSectionID()
     {
-        return 'audioplayer';
+        return 'musicnc';
     }
 
     /**

@@ -38,7 +38,7 @@ class Widget implements IWidget
      */
     public function getId(): string
     {
-        return 'audioplayer';
+        return 'musicnc';
     }
 
     /**
@@ -78,7 +78,7 @@ class Widget implements IWidget
      */
     public function load(): void
     {
-        Util::addScript('audioplayer', 'dashboard');
-        Util::addStyle('audioplayer', 'dashboard');
+        Util::addScript('musicnc', 'dashboard');
+        Util::addStyle('musicnc', 'dashboard');
     }
 }

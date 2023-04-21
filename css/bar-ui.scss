@@ -407,20 +407,20 @@
 .play-pause,
 .play-pause:hover,
 .paused .play-pause:hover {
-  @include icon-color('play', 'audioplayer', $color-black, 1);
+  @include icon-color('play', 'musicnc', $color-black, 1);
   background-size: 90%;
   background-position: 40% 53%;
 }
 
 .playing .play-pause {
-  @include icon-color('pause', 'audioplayer', $color-black, 1);
+  @include icon-color('pause', 'musicnc', $color-black, 1);
   background-size: 90%;
   background-position: 50% 53%;
   opacity: 1;
 }
 
 .sm2-volume-control {
-  @include icon-color('volume', 'audioplayer', $color-black, 1);
+  @include icon-color('volume', 'musicnc', $color-black, 1);
 }
 
 .sm2-volume-control,
@@ -432,21 +432,21 @@
 .sm2-inline-button.volume-shade {
   filter: alpha(opacity=33); /* <= IE 8 */
   opacity: 0.33;
-  @include icon-color('volume', 'audioplayer', $color-black, 1);
+  @include icon-color('volume', 'musicnc', $color-black, 1);
 }
 
 .sm2-inline-button.menu {
-  @include icon-color('list2', 'audioplayer', $color-black, 1);
+  @include icon-color('list2', 'musicnc', $color-black, 1);
   background-size: 58%;
   background-position: 54% 51%;
 }
 
 .sm2-inline-button.previous {
-  @include icon-color('previous', 'audioplayer', $color-black, 1);
+  @include icon-color('previous', 'musicnc', $color-black, 1);
 }
 
 .sm2-inline-button.next {
-  @include icon-color('next', 'audioplayer', $color-black, 1);
+  @include icon-color('next', 'musicnc', $color-black, 1);
 }
 
 .sm2-inline-button.previous,
@@ -461,19 +461,19 @@
 }
 
 .sm2-inline-button.shuffle {
-  @include icon-color('shuffle', 'audioplayer', $color-black, 1);
+  @include icon-color('shuffle', 'musicnc', $color-black, 1);
   background-size: 45%;
   background-position: 50% 50%;
 }
 
 .sm2-inline-button.repeat {
-  @include icon-color('repeat', 'audioplayer', $color-black, 1);
+  @include icon-color('repeat', 'musicnc', $color-black, 1);
   background-position: 50% 43%;
   background-size: 54%;
 }
 
 .sm2-inline-button.repeat-single {
-  @include icon-color('repeat-single', 'audioplayer', $color-black, 1);
+  @include icon-color('repeat-single', 'musicnc', $color-black, 1);
     background-position: 50% 43%;
     background-size: 54%;
 }
@@ -488,7 +488,7 @@
   height: 100%;
   top: 0;
   left: 0;
-  @include icon-color('spinner', 'audioplayer', $color-black, 1);
+  @include icon-color('spinner', 'musicnc', $color-black, 1);
   background-size: 72%;
   background-position: 50%;
   background-repeat: no-repeat;

@@ -40,46 +40,46 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (jsondata.status === 'success') {
                     var $id3 = $('#id3');
                     if (jsondata.data.title !== '') {
-                        $id3.append($('<div/>').append($('<b/>').text(t('audioplayer', 'Title') + ': ')).append($('<span/>').text(jsondata.data.title)));
+                        $id3.append($('<div/>').append($('<b/>').text(t('musicnc', 'Title') + ': ')).append($('<span/>').text(jsondata.data.title)));
                     }
                     if (jsondata.data.subtitle !== '') {
-                        $id3.append($('<div/>').append($('<b/>').text(t('audioplayer', 'Subtitle') + ': ')).append($('<span/>').text(jsondata.data.subtitle)));
+                        $id3.append($('<div/>').append($('<b/>').text(t('musicnc', 'Subtitle') + ': ')).append($('<span/>').text(jsondata.data.subtitle)));
                     }
                     if (jsondata.data.artist !== '') {
-                        $id3.append($('<div/>').append($('<b/>').text(t('audioplayer', 'Artist') + ': ')).append($('<span/>').text(jsondata.data.artist)));
+                        $id3.append($('<div/>').append($('<b/>').text(t('musicnc', 'Artist') + ': ')).append($('<span/>').text(jsondata.data.artist)));
                     }
                     if (jsondata.data.albumartist !== '') {
-                        $id3.append($('<div/>').append($('<b/>').text(t('audioplayer', 'Album Artist') + ': ')).append($('<span/>').text(jsondata.data.albumartist)));
+                        $id3.append($('<div/>').append($('<b/>').text(t('musicnc', 'Album Artist') + ': ')).append($('<span/>').text(jsondata.data.albumartist)));
                     }
                     if (jsondata.data.composer !== '') {
-                        $id3.append($('<div/>').append($('<b/>').text(t('audioplayer', 'Composer') + ': ')).append($('<span/>').text(jsondata.data.composer)));
+                        $id3.append($('<div/>').append($('<b/>').text(t('musicnc', 'Composer') + ': ')).append($('<span/>').text(jsondata.data.composer)));
                     }
                     if (jsondata.data.album !== '') {
-                        $id3.append($('<div/>').append($('<b/>').text(t('audioplayer', 'Album') + ': ')).append($('<span/>').text(jsondata.data.album)));
+                        $id3.append($('<div/>').append($('<b/>').text(t('musicnc', 'Album') + ': ')).append($('<span/>').text(jsondata.data.album)));
                     }
                     if (jsondata.data.genre !== '') {
-                        $id3.append($('<div/>').append($('<b/>').text(t('audioplayer', 'Genre') + ': ')).append($('<span/>').text(jsondata.data.genre)));
+                        $id3.append($('<div/>').append($('<b/>').text(t('musicnc', 'Genre') + ': ')).append($('<span/>').text(jsondata.data.genre)));
                     }
                     if (jsondata.data.year !== '') {
-                        $id3.append($('<div/>').append($('<b/>').text(t('audioplayer', 'Year') + ': ')).append($('<span/>').text(jsondata.data.year)));
+                        $id3.append($('<div/>').append($('<b/>').text(t('musicnc', 'Year') + ': ')).append($('<span/>').text(jsondata.data.year)));
                     }
                     if (jsondata.data.number !== '') {
-                        $id3.append($('<div/>').append($('<b/>').text(t('audioplayer', 'Disc') + '-' + t('audioplayer', 'Track') + ': ')).append($('<span/>').text(jsondata.data.disc + '-' + jsondata.data.number)));
+                        $id3.append($('<div/>').append($('<b/>').text(t('musicnc', 'Disc') + '-' + t('musicnc', 'Track') + ': ')).append($('<span/>').text(jsondata.data.disc + '-' + jsondata.data.number)));
                     }
                     if (jsondata.data.length !== '') {
-                        $id3.append($('<div/>').append($('<b/>').text(t('audioplayer', 'Length') + ': ')).append($('<span/>').text(jsondata.data.length)));
+                        $id3.append($('<div/>').append($('<b/>').text(t('musicnc', 'Length') + ': ')).append($('<span/>').text(jsondata.data.length)));
                     }
                     if (jsondata.data.bitrate !== '') {
-                        $id3.append($('<div/>').append($('<b/>').text(t('audioplayer', 'Bitrate') + ': ')).append($('<span/>').text(jsondata.data.bitrate + ' kbps')));
+                        $id3.append($('<div/>').append($('<b/>').text(t('musicnc', 'Bitrate') + ': ')).append($('<span/>').text(jsondata.data.bitrate + ' kbps')));
                     }
                     if (jsondata.data.mimetype !== '') {
-                        $id3.append($('<div/>').append($('<b/>').text(t('audioplayer', 'MIME type') + ': ')).append($('<span/>').text(jsondata.data.mimetype)));
+                        $id3.append($('<div/>').append($('<b/>').text(t('musicnc', 'MIME type') + ': ')).append($('<span/>').text(jsondata.data.mimetype)));
                     }
                     if (jsondata.data.isrc !== '') {
-                        $id3.append($('<div/>').append($('<b/>').text(t('audioplayer', 'ISRC') + ': ')).append($('<span/>').text(jsondata.data.isrc)));
+                        $id3.append($('<div/>').append($('<b/>').text(t('musicnc', 'ISRC') + ': ')).append($('<span/>').text(jsondata.data.isrc)));
                     }
                     if (jsondata.data.copyright !== '') {
-                        $id3.append($('<div/>').append($('<span/>').text(t('audioplayer', 'Copyright') + ' © ')).append($('<span/>').text(jsondata.data.copyright)));
+                        $id3.append($('<div/>').append($('<span/>').text(t('musicnc', 'Copyright') + ' © ')).append($('<span/>').text(jsondata.data.copyright)));
                     }
                     $('.directDownload').css({'padding-top': '20px'});
                     $('.publicpreview').css({'padding-top': '20px'});

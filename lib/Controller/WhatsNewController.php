@@ -79,7 +79,7 @@ class WhatsNewController extends Controller
 
             $resultData = [
                 'changelogURL' => $whatsNew['changelogURL'],
-                'product' => 'Audioplayer',
+                'product' => 'musicnc',
                 'version' => $currentVersion,
             ];
             do {

@@ -9,7 +9,7 @@
  * @copyright 2016-2021 Marcel Scherello
  */
 
-script('audioplayer', 'settings/personal');
+script('musicnc', 'settings/personal');
 ?>
 
 <div class="section" id="audioplayer">

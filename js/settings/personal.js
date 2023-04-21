@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 'value': user_value
             },
             success: function () {
-                OCP.Toast.success(t('audioplayer', 'Saved'));
+                OCP.Toast.success(t('musicnc', 'Saved'));
             }
         });
     });
@@ -37,15 +37,15 @@ document.addEventListener('DOMContentLoaded', function () {
     var $path = $('#audio-path');
     $path.on('click', function () {
         OC.dialogs.filepicker(
-            t('audioplayer', 'Select a single folder with audio files'),
+            t('musicnc', 'Select a single folder with audio files'),
             function (path) {
                 if ($path.val() !== path) {
                     $path.val(path);
                     $.post(OC.generateUrl('apps/audioplayer/userpath'), {value: path}, function (data) {
                         if (!data.success) {
-                            OCP.Toast.error(t('audioplayer', 'Invalid path!'));
+                            OCP.Toast.error(t('musicnc', 'Invalid path!'));
                         } else {
-                            OCP.Toast.success(t('audioplayer', 'Saved'));
+                            OCP.Toast.success(t('musicnc', 'Saved'));
                         }
                     });
                 }
