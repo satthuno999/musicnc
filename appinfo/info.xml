@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <info xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
 	<id>musicnc</id>
-	<name>Audio Player</name>
+	<name>Nghe Nhạc Thôi</name>
 	<summary>play / stream / organize</summary>
 	<description><![CDATA[A music player for FLAC, MP3, MP4, AIF, AAC, streams, … with playlist support and SONOS integration.
 
@@ -12,10 +12,10 @@
 - Favorites, Search & Collaborative Tag integration
 - Specifying media folder (with exclude functionality)
 - Hardware media keys & Chrome/Android/macOS integration
-- [SONOS player](https://github.com/rello/musicnc_sonos) via add-on
+- [SONOS player](https://github.com/satthuno999/musicnc_sonos) via add-on
 - Use the Recognize app to classify genres by machine learning
 
-See [README](https://github.com/rello/musicnc/blob/master/README.md) file for all supported MIME types and additional information.]]></description>
+See [README](https://github.com/satthuno999/musicnc/blob/master/README.md) file for all supported MIME types and additional information.]]></description>
 	<version>3.3.1</version>
 	<licence>agpl</licence>
 	<author>S P A R K</author>
@@ -24,16 +24,16 @@ See [README](https://github.com/rello/musicnc/blob/master/README.md) file for al
 		<filesystem/>
 	</types>
 	<documentation>
-		<user>https://github.com/rello/musicnc/wiki#user-documentation</user>
-		<admin>https://github.com/rello/musicnc/wiki#admin-documentation</admin>
+		<user>https://github.com/satthuno999/musicnc/wiki#user-documentation</user>
+		<admin>https://github.com/satthuno999/musicnc/wiki#admin-documentation</admin>
 	</documentation>
 	<category>multimedia</category>
-	<website>https://rello.github.io/musicnc</website>
+	<website>https://satthuno999.github.io/musicnc</website>
 	<discussion>https://help.nextcloud.com/c/apps/musicnc</discussion>
-	<bugs>https://github.com/rello/musicnc/issues</bugs>
-	<repository type="git">https://github.com/rello/musicnc.git</repository>
-	<screenshot>https://raw.githubusercontent.com/rello/musicnc/master/screenshots/musicnc_logo.png</screenshot>
-	<screenshot>https://raw.githubusercontent.com/rello/musicnc/master/screenshots/musicnc_screen.png</screenshot>
+	<bugs>https://github.com/satthuno999/musicnc/issues</bugs>
+	<repository type="git">https://github.com/satthuno999/musicnc.git</repository>
+	<screenshot>https://raw.githubusercontent.com/satthuno999/musicnc/master/screenshots/musicnc_logo.png</screenshot>
+	<screenshot>https://raw.githubusercontent.com/satthuno999/musicnc/master/screenshots/musicnc_screen.png</screenshot>
 	<dependencies>
 		<nextcloud min-version="21" max-version="26"/>
 	</dependencies>

@@ -105,7 +105,7 @@ class CategoryController extends Controller
             $aPlaylists[] = array('id' => 'X2', 'name' => $this->l10n->t('Recently Added'));
             $aPlaylists[] = array('id' => 'X3', 'name' => $this->l10n->t('Recently Played'));
             $aPlaylists[] = array('id' => 'X4', 'name' => $this->l10n->t('Most Played'));
-            //https://github.com/Rello/musicnc/issues/442
+            //https://github.com/satthuno999/musicnc/issues/442
             $aPlaylists[] = array('id' => 'X5', 'name' => $this->l10n->t('50 Random Tracks'));
             $aPlaylists[] = array('id' => '', 'name' => '');
 

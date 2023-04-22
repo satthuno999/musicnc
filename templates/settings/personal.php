@@ -31,7 +31,7 @@ script('musicnc', 'settings/personal');
         <p>
             <em><?php p($l->t('Activate this setting if cyrillic characters are not recognized correctly. This makes the indexing slower!')); ?></em>
         </p>
-        <p><em><a href="https://github.com/Rello/musicnc/wiki/Cyrillic-symbol-handling"
+        <p><em><a href="https://github.com/satthuno999/musicnc/wiki/Cyrillic-symbol-handling"
                   target="_blank"><?php p($l->t('More information …')); ?></a></em></p>
         <br>
     </div>
@@ -41,7 +41,7 @@ script('musicnc', 'settings/personal');
         <br>
         <label for="browser_support"><?php p($l->t('Formats not supported by the browser')); ?>:</label>
         &nbsp;<em id="browser_no"></em>
-        <p><em><a href="https://github.com/Rello/musicnc/wiki/Audio-Files-and-MIME-Types#browser-support"
+        <p><em><a href="https://github.com/satthuno999/musicnc/wiki/Audio-Files-and-MIME-Types#browser-support"
                   target="_blank"><?php p($l->t('More information …')); ?></a></em></p>
     </div>
 </div>

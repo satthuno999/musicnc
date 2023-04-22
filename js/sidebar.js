@@ -261,7 +261,7 @@ OCA.musicnc.Sidebar = {
         var html = '<div style="margin-left: 2em; background-position: initial;" class="icon-info">';
         html += '<p style="margin-left: 2em;">' + t('musicnc', 'Available Audio Player Add-Ons:') + '</p>';
         html += '<p style="margin-left: 2em;"><br></p>';
-        html += '<a href="https://github.com/rello/musicnc_sonos"  target="_blank" >';
+        html += '<a href="https://github.com/satthuno999/musicnc_sonos"  target="_blank" >';
         html += '<p style="margin-left: 2em;">- ' + t('musicnc', 'SONOS playback') + '</p>';
         html += '</a></div>';
         $('#addonsTabView').removeClass('hidden').html(html);

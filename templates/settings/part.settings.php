@@ -41,12 +41,12 @@
                 </a>
             </li>
             <li class="audio-settings-item icon-external">
-                <a href="https://github.com/rello/musicnc/wiki/donate" target="_blank" style="padding: 0 20px;">
+                <a href="https://github.com/satthuno999/musicnc/wiki/donate" target="_blank" style="padding: 0 20px;">
                     <?php p($l->t('Do you like this app?')); ?>
                 </a>
             </li>
             <li class="audio-settings-item icon-info">
-                <a href="https://github.com/rello/musicnc/wiki" target="_blank" style="padding: 0 20px;">
+                <a href="https://github.com/satthuno999/musicnc/wiki" target="_blank" style="padding: 0 20px;">
                     <?php p($l->t('More information …')); ?>
                 </a>
             </li>
