@@ -1,9 +1,9 @@
 # Jekyll configuration
-repository: rello/musicnc
+repository: satthuno999/musicnc
 theme: jekyll-theme-cayman
 timezone: Europe/Berlin
 name: "Music"
 title: "Music"
 description: "Audio Player for Nextcloud and ownCloud"
-url: "https://rello.github.io/musicnc"
+url: "https://satthuno999.github.io/musicnc"
 author: "S P A R K"

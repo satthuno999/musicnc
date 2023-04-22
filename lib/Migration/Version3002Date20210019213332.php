@@ -58,7 +58,7 @@ class Version3002Date20210019213332 extends SimpleMigrationStep
         $query->insert('musicnc_whats_new')
             ->values([
                 'version' => $query->createNamedParameter('3.2.1'),
-                'data' => $query->createNamedParameter('{"changelogURL":"https:\/\/github.com\/rello\/musicnc\/blob\/master\/CHANGELOG.md","whatsNew":{
+                'data' => $query->createNamedParameter('{"changelogURL":"https:\/\/github.com\/satthuno999\/musicnc\/blob\/master\/CHANGELOG.md","whatsNew":{
 "en":{"regular":["Collaborative tags support","Dashboard widget"],"admin":["New Features apply to users"]},
 "de":{"regular":["Collaborative tags support","Dashboard widget"],"admin":["Nur User Features"]}
 }}'),

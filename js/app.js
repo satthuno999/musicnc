@@ -772,7 +772,10 @@ OCA.musicnc.UI = {
         } else {
             let html = '<span class="no-songs-found">' + t('musicnc', 'Welcome to') + ' ' + t('musicnc', 'Audio Player') + '</span>';
             html += '<span class="no-songs-found"><i class="ioc ioc-refresh" title="' + t('musicnc', 'Scan for new audio files') + '" id="scanAudiosFirst"></i> ' + t('musicnc', 'Add new tracks to library') + '</span>';
-            html += '<a class="no-songs-found" href="https://github.com/rello/musicnc/wiki" target="_blank">' + t('musicnc', 'Help') + '</a>';
+            html +=
+              '<a class="no-songs-found" href="https://github.com/satthuno999/musicnc/wiki" target="_blank">' +
+              t("musicnc", "Help") +
+              "</a>";
             OCA.musicnc.UI.EmptyContainer.innerHTML = html;
         }
     },
