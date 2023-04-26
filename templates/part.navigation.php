@@ -6,7 +6,7 @@
  * later. See the LICENSE.md file.
  *
  * @author S P A R K <binh9aqktk@gmail.com>
- * @copyright 2012-2023 S P A R K
+ * @copyright 2022-2023 S P A R K
  */
  ?>
 <div id="view-toggle" class="icon-toggle-<?php p($_['musicnc_view']); ?>">
@@ -28,10 +28,12 @@
 			</select>
 			<button  class="icon-add hidden" id="addPlaylist"></button>
 		</div>
+		<div>Radio</div>
+		<div>Poscast</div>
 		<ul id="myCategory">
 		</ul>
         <!--my playlist clone -->
-<li class="plclone" id="pl-clone" data-pl="">
+		<li class="plclone" id="pl-clone" data-pl="">
 			<div id="playlist_controls">	
 				<input type="text" name="playlist" id="playlist" value=""  />
 				<button class="icon-checkmark"></button>
@@ -39,7 +41,7 @@
 			</div>
 		</li>	
 		<!--my playlist clone -->
-<div class="ap_hidden" id="newPlaylist">
+		<div class="ap_hidden" id="newPlaylist">
 			<div id="newPlaylist_controls">
 				<input type="text" name="newPlaylistTxt" id="newPlaylistTxt" placeholder="<?php p($l->t('Create new playlist')); ?>" /> 
 				<button class="icon-checkmark" id="newPlaylistBtn_ok"></button>

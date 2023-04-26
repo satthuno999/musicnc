@@ -6,7 +6,7 @@
  * later. See the LICENSE.md file.
  *
  * @author S P A R K <binh9aqktk@gmail.com>
- * @copyright 2012-2023 S P A R K
+ * @copyright 2022-2023 S P A R K
  */
 
 namespace OCA\musicnc\Controller;
