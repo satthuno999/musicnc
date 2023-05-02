@@ -9,7 +9,6 @@
  * @copyright 2022-2023 S P A R K
  * 
  */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 /**
  * MUSIC KMA
  *
@@ -33,20 +32,23 @@ body {
   background-color: transparent;
   border: none;
   margin: 0;
-  opacity: 0.5;
+  opacity: 0.8;
   z-index: 100;
   padding: 15px 15px;
   background-position: 15px 19px;
-  cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .view-nav #view-toggle {
   flex: 1 1 60%;
+  cursor: pointer;
 }
 .view-nav .theme-toggle-cl {
   flex: 1;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 
 #theme-toggle {
@@ -56,8 +58,8 @@ body {
   content: "";
   display: inline-block;
   cursor: pointer;
-  height: 80px;
-  width: 80px;
+  height: 20px;
+  width: 20px;
   border-radius: 50%;
   transition: all 0.3s ease-in-out;
 }
@@ -66,7 +68,7 @@ body {
 }
 #theme-toggle:checked + label {
   background-color: transparent;
-  box-shadow: inset -18px -16px 1px 1px #fff;
+  box-shadow: inset -4.5px -4px 1px 1px #fff;
 }
 
 body[data-themes=dark] .text-sun {
