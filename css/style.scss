@@ -1104,6 +1104,7 @@ li.activeHover {
 #sm2-bar-ui {
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
+  transition: width 0.5s ease-in-out;
 }
 
 @media only screen and (max-width: 768px) {
