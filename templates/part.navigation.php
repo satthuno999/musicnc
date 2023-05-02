@@ -14,12 +14,8 @@
 		<?php $_['musicnc_view'] === 'pictures' ? p($l->t('Album Covers')) : p($l->t('List View')); ?>
 	</div>
 	<div>
-		<input type="checkbox" class="checkbox" id="theme-toggle">
-		<label for="checkbox" class="theme-togglelabel">
-			<i class="fas fa-moon"></i>
-			<i class="fas fa-sun"></i>
-			<span class="ball"></span>
-		</label>
+		<input type="checkbox" id="theme-toggle">
+		<label for="theme-toggle"></label>
 	</div>
 </div>
 <div id="category_area">

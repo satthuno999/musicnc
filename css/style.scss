@@ -11,6 +11,11 @@
  */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @import 'mixin';
+
+body{
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
 .ap_hidden {
   display: none !important;
 
@@ -25,49 +30,70 @@
   padding: 15px 40px;
   background-position: 15px 19px;
   cursor: pointer;
+
+  display: flex;
+  justify-content: space-between;
 }
 
-.theme-toggle {
-  opacity: 0;
-  position: absolute;
 
-  &:checked+.theme-toggle-label .ball {
-      transform: translateX(24px);
+#hybrid {
+  visibility: hidden;
+}
+
+#theme-toggle {
+  visibility: hidden;
+}
+
+#theme-toggle+label {
+  content: '';
+  display: inline-block;
+  cursor: pointer;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+}
+
+#theme-toggle:not(:checked)+label {
+  background-color: gold;
+}
+
+#theme-toggle:checked+label {
+  background-color: transparent;
+  box-shadow: inset -18px -16px 1px 1px #fff;
+}
+
+.intro-text {
+  top: 180px;
+  font-size: 1.6em;
+  font-family: monospace;
+}
+
+[class*=text-] {
+  font-size: 1.2em;
+  font-weight: 600;
+  transition: color 500ms ease-in;
+}
+
+body[data-theme=dark] {
+  .text-sun {
+    color: #222;
+  }
+
+  .text-moon {
+    color: #fff;
   }
 }
 
-.theme-toggle-label {
-  background-color: #111;
-  width: 50px;
-  height: 26px;
-  border-radius: 50px;
-  position: relative;
-  padding: 5px;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+body[data-theme=light] {
+  .text-sun {
+    color: #000;
+  }
 
-  .ball {
-      background-color: #fff;
-      width: 22px;
-      height: 22px;
-      position: absolute;
-      left: 2px;
-      top: 2px;
-      border-radius: 50%;
-      transition: transform 0.2s linear;
-    }
+  .text-moon {
+    color: #ddd;
+  }
 }
-
-.fa-moon {
-  color: #f1c40f;
-}
-
-.fa-sun {
-  color: #f39c12;
-}
-
 
 #AlbumPlay {
   position: absolute;
@@ -90,7 +116,7 @@
   margin-top: 30px !important;
 }
 
-#audio-settings li > a {
+#audio-settings li>a {
   line-height: 30px;
   min-height: 30px;
 }
@@ -273,7 +299,7 @@ i#scanAudiosFirst {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  cursor:inherit;
+  cursor: inherit;
 }
 
 #myCategory li span.pl-name-play {
@@ -283,7 +309,7 @@ i#scanAudiosFirst {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  cursor:inherit;
+  cursor: inherit;
 }
 
 #albenoverview li:hover,
@@ -297,7 +323,7 @@ i#scanAudiosFirst {
   position: absolute;
   width: 24px;
   text-align: center;
-  cursor:inherit;
+  cursor: inherit;
 }
 
 .ui-state-highlight {
@@ -370,16 +396,16 @@ i#scanAudiosFirst {
 }
 
 #playlist-container {
-    margin: 0;
-    width: 98%;
-    position: relative;
-    float: left;
-    display: inline;
-    height: auto;
-    padding-top: 50px;
-    padding-left: 10px;
-    padding-bottom: 30px;
-    background-color: var(--color-main-background);
+  margin: 0;
+  width: 98%;
+  position: relative;
+  float: left;
+  display: inline;
+  height: auto;
+  padding-top: 50px;
+  padding-left: 10px;
+  padding-bottom: 30px;
+  background-color: var(--color-main-background);
 }
 
 #individual-playlist {
@@ -387,7 +413,8 @@ i#scanAudiosFirst {
   margin-right: auto;
 }
 
-#individual-playlist > li, #individual-playlist-header span {
+#individual-playlist>li,
+#individual-playlist-header span {
   height: 24px;
   line-height: 24px;
 }
@@ -694,7 +721,8 @@ i#scanAudiosFirst {
 
 }
 
-.songcontainer .open-arrow:after, .songcontainer .open-arrow:before {
+.songcontainer .open-arrow:after,
+.songcontainer .open-arrow:before {
   position: absolute;
   border: solid transparent;
   content: " ";
@@ -790,7 +818,7 @@ i#scanAudiosFirst {
 
 .songcontainer .songlist {
   position: relative;
-    /*float: left;*/
+  /*float: left;*/
   padding-left: 20px;
   display: block;
 }
@@ -844,11 +872,11 @@ i#scanAudiosFirst {
 }
 
 .albumwrapper li:hover * {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .albumwrapper li:hover:not(.isActive) {
-    background: var(--color-background-hover);
+  background: var(--color-background-hover);
 }
 
 .isActive {
@@ -862,9 +890,9 @@ input[type=range].volume-slider {
 }
 
 .volume-slider::-moz-range-progress {
-    background-color: #0082c9;
-    padding: 2px;
-    border-radius: 5px;
+  background-color: #0082c9;
+  padding: 2px;
+  border-radius: 5px;
 }
 
 input[type=range].volume-slider:focus {

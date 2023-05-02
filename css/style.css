@@ -21,6 +21,10 @@
  * @copyright 2022-2023 S P A R K
  * 
  */
+body {
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
 .ap_hidden {
   display: none !important;
 }
@@ -34,45 +38,61 @@
   padding: 15px 40px;
   background-position: 15px 19px;
   cursor: pointer;
-}
-
-.theme-toggle {
-  opacity: 0;
-  position: absolute;
-}
-.theme-toggle:checked + .theme-toggle-label .ball {
-  transform: translateX(24px);
-}
-
-.theme-toggle-label {
-  background-color: #111;
-  width: 50px;
-  height: 26px;
-  border-radius: 50px;
-  position: relative;
-  padding: 5px;
-  cursor: pointer;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
-.theme-toggle-label .ball {
-  background-color: #fff;
-  width: 22px;
-  height: 22px;
-  position: absolute;
-  left: 2px;
-  top: 2px;
+
+#hybrid {
+  visibility: hidden;
+}
+
+#theme-toggle {
+  visibility: hidden;
+}
+
+#theme-toggle + label {
+  content: "";
+  display: inline-block;
+  cursor: pointer;
+  height: 80px;
+  width: 80px;
   border-radius: 50%;
-  transition: transform 0.2s linear;
+  transition: all 0.3s ease-in-out;
 }
 
-.fa-moon {
-  color: #f1c40f;
+#theme-toggle:not(:checked) + label {
+  background-color: gold;
 }
 
-.fa-sun {
-  color: #f39c12;
+#theme-toggle:checked + label {
+  background-color: transparent;
+  box-shadow: inset -18px -16px 1px 1px #fff;
+}
+
+.intro-text {
+  top: 180px;
+  font-size: 1.6em;
+  font-family: monospace;
+}
+
+[class*=text-] {
+  font-size: 1.2em;
+  font-weight: 600;
+  transition: color 500ms ease-in;
+}
+
+body[data-theme=dark] .text-sun {
+  color: #222;
+}
+body[data-theme=dark] .text-moon {
+  color: #fff;
+}
+
+body[data-theme=light] .text-sun {
+  color: #000;
+}
+body[data-theme=light] .text-moon {
+  color: #ddd;
 }
 
 #AlbumPlay {
@@ -394,7 +414,8 @@ i#scanAudiosFirst {
   margin-right: auto;
 }
 
-#individual-playlist > li, #individual-playlist-header span {
+#individual-playlist > li,
+#individual-playlist-header span {
   height: 24px;
   line-height: 24px;
 }
@@ -699,7 +720,8 @@ i#scanAudiosFirst {
   top: -15px;
 }
 
-.songcontainer .open-arrow:after, .songcontainer .open-arrow:before {
+.songcontainer .open-arrow:after,
+.songcontainer .open-arrow:before {
   position: absolute;
   border: solid transparent;
   content: " ";
