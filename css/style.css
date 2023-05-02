@@ -46,11 +46,12 @@ body {
   align-items: center;
 }
 .view-nav #view-toggle {
-  flex: 1 1 60%;
+  flex: auto;
   cursor: pointer;
 }
 .view-nav .theme-toggle-cl {
   flex: 1;
+  justify-content: right;
   display: flex;
   align-items: center;
   cursor: pointer;
