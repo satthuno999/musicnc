@@ -35,21 +35,23 @@ body {
   margin: 0;
   opacity: 0.5;
   z-index: 100;
-  padding: 15px 40px;
+  padding: 15px 15px;
   background-position: 15px 19px;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
-
-#hybrid {
-  visibility: hidden;
+.view-nav #view-toggle {
+  flex: 1 1 60%;
+}
+.view-nav .theme-toggle-cl {
+  flex: 1;
 }
 
 #theme-toggle {
   visibility: hidden;
 }
-
 #theme-toggle + label {
   content: "";
   display: inline-block;
@@ -59,39 +61,25 @@ body {
   border-radius: 50%;
   transition: all 0.3s ease-in-out;
 }
-
 #theme-toggle:not(:checked) + label {
   background-color: gold;
 }
-
 #theme-toggle:checked + label {
   background-color: transparent;
   box-shadow: inset -18px -16px 1px 1px #fff;
 }
 
-.intro-text {
-  top: 180px;
-  font-size: 1.6em;
-  font-family: monospace;
-}
-
-[class*=text-] {
-  font-size: 1.2em;
-  font-weight: 600;
-  transition: color 500ms ease-in;
-}
-
-body[data-theme=dark] .text-sun {
+body[data-themes=dark] .text-sun {
   color: #222;
 }
-body[data-theme=dark] .text-moon {
+body[data-themes=dark] .text-moon {
   color: #fff;
 }
 
-body[data-theme=light] .text-sun {
+body[data-themes=light] .text-sun {
   color: #000;
 }
-body[data-theme=light] .text-moon {
+body[data-themes=light] .text-moon {
   color: #ddd;
 }
 

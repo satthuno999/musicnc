@@ -12,7 +12,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @import 'mixin';
 
-body{
+body {
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
@@ -27,55 +27,48 @@ body{
   margin: 0;
   opacity: 0.5;
   z-index: 100;
-  padding: 15px 40px;
+  padding: 15px 15px;
   background-position: 15px 19px;
   cursor: pointer;
 
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  #view-toggle {
+    flex: 1 1 60%;
+  }
+
+  .theme-toggle-cl {
+    flex: 1;
+  }
 }
 
 
-#hybrid {
-  visibility: hidden;
-}
 
 #theme-toggle {
   visibility: hidden;
+
+  &+label {
+    content: '';
+    display: inline-block;
+    cursor: pointer;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:not(:checked)+label {
+    background-color: gold;
+  }
+
+  &:checked+label {
+    background-color: transparent;
+    box-shadow: inset -18px -16px 1px 1px #fff;
+  }
 }
 
-#theme-toggle+label {
-  content: '';
-  display: inline-block;
-  cursor: pointer;
-  height: 80px;
-  width: 80px;
-  border-radius: 50%;
-  transition: all 0.3s ease-in-out;
-}
-
-#theme-toggle:not(:checked)+label {
-  background-color: gold;
-}
-
-#theme-toggle:checked+label {
-  background-color: transparent;
-  box-shadow: inset -18px -16px 1px 1px #fff;
-}
-
-.intro-text {
-  top: 180px;
-  font-size: 1.6em;
-  font-family: monospace;
-}
-
-[class*=text-] {
-  font-size: 1.2em;
-  font-weight: 600;
-  transition: color 500ms ease-in;
-}
-
-body[data-theme=dark] {
+body[data-themes=dark] {
   .text-sun {
     color: #222;
   }
@@ -85,7 +78,7 @@ body[data-theme=dark] {
   }
 }
 
-body[data-theme=light] {
+body[data-themes=light] {
   .text-sun {
     color: #000;
   }

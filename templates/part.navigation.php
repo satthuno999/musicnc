@@ -13,7 +13,7 @@
 	<div id="view-toggle" class="icon-toggle-<?php p($_['musicnc_view']); ?>">
 		<?php $_['musicnc_view'] === 'pictures' ? p($l->t('Album Covers')) : p($l->t('List View')); ?>
 	</div>
-	<div>
+	<div class="theme-toggle-cl">
 		<input type="checkbox" id="theme-toggle">
 		<label for="theme-toggle"></label>
 	</div>
