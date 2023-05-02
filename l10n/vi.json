@@ -20,6 +20,8 @@
     "Close" : "Đóng",
     "Settings" : "Cài đặt",
     "Advanced Settings" : "Cài đặt nâng cao",
-    "Scan for new audio files":"Cập nhật file âm thanh"
+    "Scan for new audio files":"Cập nhật file âm thanh",
+    "Album Covers": "Khối",
+    "List View": "Danh sách"
 },"pluralForm" :"nplurals=1; plural=0;"
 }
