@@ -48,9 +48,10 @@ body {
 .view-nav #view-toggle {
   flex: auto;
   cursor: pointer;
+  background-position: right;
 }
 .view-nav .theme-toggle-cl {
-  flex: 1;
+  flex: 2;
   justify-content: right;
   display: flex;
   align-items: center;
