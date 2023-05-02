@@ -29,7 +29,8 @@ if ($_['musicnc_sonos'] !== 'checked') {
 <input type="hidden" id="musicnc_sonos" value="<?php p($_['musicnc_sonos']); ?>">
 <input type="hidden" id="musicnc_repeat" value="<?php p($_['musicnc_repeat']); ?>">
 
-<div id="app-navigation" class="shadow-gray-300 dark:shadow-gray-600 dark:border-none" <?php if ($_['musicnc_navigationShown'] === 'false') echo 'class="hidden"'; ?>>
+<div id="app-navigation" class="shadow-gray-300 dark:shadow-gray-600 dark:border-none" <?php if ($_['musicnc_navigationShown'] === 'false')
+    echo 'class="hidden"'; ?>>
 
     <?php print_unescaped($this->inc('part.navigation')); ?>
 
@@ -42,8 +43,7 @@ if ($_['musicnc_sonos'] !== 'checked') {
         <i class="ioc-spinner ioc-spin"></i>
     </div>
 
-    <?php if ($_['musicnc_sonos'] !== 'checked') print_unescaped($this->inc('part.audio')); ?>
-    <?php if ($_['musicnc_sonos'] === 'checked') print_unescaped($this->inc('part.sonos-bar')); ?>
+
 
     <div id="searchresults" class="hidden" data-appfilter="audioplayer"></div>
 
@@ -53,4 +53,10 @@ if ($_['musicnc_sonos'] !== 'checked') {
 
 <div id="app-sidebar" class="app-sidebar details-view scroll-container disappear" data-trackid="">
     <?php print_unescaped($this->inc('part.sidebar')); ?>
+</div>
+<div>
+    <?php if ($_['musicnc_sonos'] !== 'checked')
+        print_unescaped($this->inc('part.audio')); ?>
+    <?php if ($_['musicnc_sonos'] === 'checked')
+        print_unescaped($this->inc('part.sonos-bar')); ?>
 </div>
