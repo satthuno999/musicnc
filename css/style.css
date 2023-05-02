@@ -1122,6 +1122,9 @@ li.activeHover {
   border-bottom-left-radius: 10px;
   transition: width 0.5s ease-in-out;
 }
+#sm2-bar-ui.full-width {
+  position: sticky !important;
+}
 
 @media only screen and (max-width: 768px) {
   #app-navigation-toggle_alternative {

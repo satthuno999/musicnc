@@ -1106,6 +1106,10 @@ li.activeHover {
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
   transition: width 0.5s ease-in-out;
+
+  &.full-width {
+      position: sticky !important;
+  }
 }
 
 @media only screen and (max-width: 768px) {

@@ -1022,7 +1022,7 @@ OCA.musicnc.UI = {
   },
 
   resizePlaylist: function () {
-    document.getElementById("sm2-bar-ui").style.width =
+    document.getElementById("app-player-audio").style.width =
       document.getElementById("content").offsetWidth + "px";
     document.getElementById("progressBar").width =
       document.getElementById("progressContainer").offsetWidth;
@@ -1679,7 +1679,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .addEventListener("click", OCA.musicnc.UI.sortPlaylist);
 
   window.setTimeout(function () {
-    document.getElementById("sm2-bar-ui").style.width =
+    document.getElementById("app-player-audio").style.width =
       document.getElementById("content").offsetWidth + "px";
     document.getElementById("progressBar").width =
       document.getElementById("progressContainer").offsetWidth;
