@@ -871,6 +871,10 @@ OCA.musicnc.UI = {
     if(el){
         body.setAttribute("data-themes","dark");
     }
+    else{
+        body.setAttribute("data-themes", "light");
+
+    }
   },
   handleTitleClicked: function (coverUrl, playlist, element) {
     let canPlayMimeType = OCA.musicnc.Core.canPlayMimeType;
