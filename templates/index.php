@@ -23,12 +23,13 @@ if ($_['musicnc_sonos'] !== 'checked') {
 }
 
 ?>
+<script src="https://cdn.tailwindcss.com"></script>
 <input type="hidden" name="id" value="">
 <input type="hidden" id="musicnc_volume" value="<?php p($_['musicnc_volume']); ?>">
 <input type="hidden" id="musicnc_sonos" value="<?php p($_['musicnc_sonos']); ?>">
 <input type="hidden" id="musicnc_repeat" value="<?php p($_['musicnc_repeat']); ?>">
 
-<div id="app-navigation" <?php if ($_['musicnc_navigationShown'] === 'false') echo 'class="hidden"'; ?>>
+<div id="app-navigation" class="shadow-gray-300 dark:shadow-gray-600 dark:border-none" <?php if ($_['musicnc_navigationShown'] === 'false') echo 'class="hidden"'; ?>>
 
     <?php print_unescaped($this->inc('part.navigation')); ?>
 
@@ -36,7 +37,7 @@ if ($_['musicnc_sonos'] !== 'checked') {
 
 </div>
 
-<div id="app-content">
+<div id="app-content" class="shadow-gray-300 dark:shadow-gray-600 dark:border-none">
     <div id="loading">
         <i class="ioc-spinner ioc-spin"></i>
     </div>
