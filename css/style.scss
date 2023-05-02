@@ -218,7 +218,7 @@ i#scanAudiosFirst {
 
 #app-navigation {
   overflow-y: auto;
-  height: 90%;
+  height: 90% !important;
   flex: 1 1 20%;
 }
 
@@ -608,7 +608,7 @@ i#scanAudiosFirst {
 #app-content {
   padding-left: 0;
   overflow: hidden;
-  height: 80%;
+  height: 90%;
   flex: 1 1 60%;
 }
 
@@ -1094,6 +1094,16 @@ li.activeHover {
 
 .whatsNewPopover::after {
   content: none;
+}
+
+#app-player-audio {
+  flex-basis: 100%;
+  height: 100%;
+}
+
+#sm2-bar-ui {
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 @media only screen and (max-width: 768px) {

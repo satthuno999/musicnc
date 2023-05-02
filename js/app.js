@@ -1023,7 +1023,7 @@ OCA.musicnc.UI = {
 
   resizePlaylist: function () {
     document.getElementById("sm2-bar-ui").style.width =
-      document.getElementById("playlist-container").offsetWidth + "px";
+      document.getElementById("content").offsetWidth + "px";
     document.getElementById("progressBar").width =
       document.getElementById("progressContainer").offsetWidth;
     if (document.querySelector(".is-active")) {
