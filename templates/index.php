@@ -23,7 +23,6 @@ if ($_['musicnc_sonos'] !== 'checked') {
 }
 
 ?>
-<script src="https://cdn.tailwindcss.com"></script>
 <input type="hidden" name="id" value="">
 <input type="hidden" id="musicnc_volume" value="<?php p($_['musicnc_volume']); ?>">
 <input type="hidden" id="musicnc_sonos" value="<?php p($_['musicnc_sonos']); ?>">
