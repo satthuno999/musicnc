@@ -859,8 +859,8 @@ OCA.musicnc.UI = {
     } else {
       classes.remove("icon-toggle-pictures");
       classes.add("icon-toggle-filelist");
-      div.innerText = "Danh sách";
-      t("musicnc", "List View");
+      div.innerText = t("List View");
+      //;
       OCA.musicnc.Backend.setUserValue("view", "filelist");
     }
     if (document.querySelector("#myCategory .active")) {
