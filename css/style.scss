@@ -17,6 +17,7 @@ body {
 
 #content {
   flex-wrap: wrap;
+  display: flex !important;
 }
 
 .ap_hidden {
@@ -1028,7 +1029,7 @@ li.activeHover {
 }
 
 #app-sidebar {
-  height: 90%;
+  height: 90% !important;
   flex: 1 1 20%;
 }
 
