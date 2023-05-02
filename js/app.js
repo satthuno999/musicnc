@@ -853,12 +853,14 @@ OCA.musicnc.UI = {
     if (classes.contains("icon-toggle-filelist")) {
       classes.remove("icon-toggle-filelist");
       classes.add("icon-toggle-pictures");
-      div.innerText = t("musicnc", "Album Covers");
+      div.innerText = "Khối";
+      //t("musicnc", "Album Covers")
       OCA.musicnc.Backend.setUserValue("view", "pictures");
     } else {
       classes.remove("icon-toggle-pictures");
       classes.add("icon-toggle-filelist");
-      div.innerText = t("musicnc", "List View");
+      div.innerText = "Danh sách";
+      t("musicnc", "List View");
       OCA.musicnc.Backend.setUserValue("view", "filelist");
     }
     if (document.querySelector("#myCategory .active")) {
