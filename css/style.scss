@@ -76,26 +76,6 @@ body {
   }
 }
 
-body[data-themes=dark] {
-  .text-sun {
-    color: #222;
-  }
-
-  .text-moon {
-    color: #fff;
-  }
-}
-
-body[data-themes=light] {
-  .text-sun {
-    color: #000;
-  }
-
-  .text-moon {
-    color: #ddd;
-  }
-}
-
 #AlbumPlay {
   position: absolute;
   display: block;
@@ -1102,13 +1082,14 @@ li.activeHover {
   height: 100%;
 }
 
+
 #sm2-bar-ui {
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
   transition: width 0.5s ease-in-out;
 
   &.full-width {
-      position: sticky !important;
+    position: sticky !important;
   }
 }
 
@@ -1269,4 +1250,58 @@ li.activeHover {
     background-color: rgba(255, 255, 255, 0.2);
   }
 
+}
+
+
+//darktheme
+body[data-themes=dark] {
+  color: #fff;
+
+  .text-sun {
+    color: #222;
+  }
+
+  .text-moon {
+    color: #fff;
+  }
+
+  #app-navigation {
+    background-color: rgba(17, 23, 39, 0.9);
+  }
+
+  #sm2-bar-ui {
+    background-color: rgba(17, 23, 39, 0.9);
+  }
+
+  div#sm2-bar-ui * {
+    background-color: transparent;
+  }
+
+  #app-content {
+    background-color: #0b1320;
+  }
+
+  div#app-content * {
+    background-color: transparent;
+  }
+
+  #individual-playlist {
+    li span {
+      &.interpret,
+      &.album-indi,
+      &.time{
+        color: #dbdbdb;
+      }
+    }
+  }
+}
+
+body[data-themes=light] {
+  .text-sun {
+    color: #000;
+  }
+
+  .text-moon {
+    color: #ddd;
+  }
 }

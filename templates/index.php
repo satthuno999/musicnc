@@ -28,7 +28,7 @@ if ($_['musicnc_sonos'] !== 'checked') {
 <input type="hidden" id="musicnc_sonos" value="<?php p($_['musicnc_sonos']); ?>">
 <input type="hidden" id="musicnc_repeat" value="<?php p($_['musicnc_repeat']); ?>">
 
-<div id="app-navigation" class="shadow-gray-300 dark:shadow-gray-600 dark:border-none" <?php if ($_['musicnc_navigationShown'] === 'false')
+<div id="app-navigation" <?php if ($_['musicnc_navigationShown'] === 'false')
     echo 'class="hidden"'; ?>>
 
     <?php print_unescaped($this->inc('part.navigation')); ?>
