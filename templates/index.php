@@ -44,7 +44,7 @@ if ($_['musicnc_sonos'] !== 'checked') {
     </div>
 
 
-
+ 
     <div id="searchresults" class="hidden" data-appfilter="audioplayer"></div>
 
     <?php print_unescaped($this->inc('part.container')); ?>
@@ -54,7 +54,7 @@ if ($_['musicnc_sonos'] !== 'checked') {
 <div id="app-sidebar" class="app-sidebar details-view scroll-container disappear" data-trackid="">
     <?php print_unescaped($this->inc('part.sidebar')); ?>
 </div>
-<div>
+<div id="app-player-audio">
     <?php if ($_['musicnc_sonos'] !== 'checked')
         print_unescaped($this->inc('part.audio')); ?>
     <?php if ($_['musicnc_sonos'] === 'checked')
