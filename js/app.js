@@ -866,11 +866,11 @@ OCA.musicnc.UI = {
     }
   },
   handleThemeToggleClicked: function (){
-    let el = document.getElementById("theme-toggle").value;
-    let theme = document.body.getAttribute("data-themes");
-
-    console.log(el);
-    console.log(theme);
+    let el = document.getElementById("theme-toggle").checked;
+    let body = document.body;
+    if(el){
+        body.setAttribute("data-themes","dark");
+    }
   },
   handleTitleClicked: function (coverUrl, playlist, element) {
     let canPlayMimeType = OCA.musicnc.Core.canPlayMimeType;
