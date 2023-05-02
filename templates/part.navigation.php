@@ -28,10 +28,12 @@
 			</select>
 			<button  class="icon-add hidden" id="addPlaylist"></button>
 		</div>
-		<div>Radio</div>
-		<div>Poscast</div>
+		
 		<ul id="myCategory">
 		</ul>
+		<div>Radio</div>
+		<div>Poscast</div>
+		<div>Video</div>
         <!--my playlist clone -->
 		<li class="plclone" id="pl-clone" data-pl="">
 			<div id="playlist_controls">	
