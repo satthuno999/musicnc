@@ -1238,6 +1238,15 @@ body[data-themes=dark] div#app-content * {
 body[data-themes=dark] #individual-playlist li span.interpret, body[data-themes=dark] #individual-playlist li span.album-indi, body[data-themes=dark] #individual-playlist li span.time {
   color: #dbdbdb;
 }
+body[data-themes=dark] #app-settings-header .settings-button {
+  color: #fff;
+}
+body[data-themes=dark] #app-settings-header .settings-button:hover {
+  color: var(--color-main-text);
+}
+body[data-themes=dark] #app-settings-header .settings-button:hover > ::before {
+  background-image: var(--icon-settings-dark);
+}
 
 body[data-themes=light] .text-sun {
   color: #000;

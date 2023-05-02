@@ -1287,10 +1287,23 @@ body[data-themes=dark] {
 
   #individual-playlist {
     li span {
+
       &.interpret,
       &.album-indi,
-      &.time{
+      &.time {
         color: #dbdbdb;
+      }
+    }
+  }
+
+  #app-settings-header .settings-button {
+    color: #fff;
+
+    &:hover {
+      color: var(--color-main-text);
+
+      > ::before{
+        background-image: var(--icon-settings-dark);
       }
     }
   }
