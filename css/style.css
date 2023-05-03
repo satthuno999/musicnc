@@ -1091,9 +1091,11 @@ li.activeHover {
   position: sticky !important;
 }
 
+/*playing icon*/
 .bar-c {
   display: flex;
   align-items: center;
+  justify-content: center;
   overflow: hidden;
   height: 30px;
   width: 40px;
@@ -1103,43 +1105,44 @@ li.activeHover {
 }
 
 .bar {
+  -webkit-animation: none;
+  -webkit-animation-name: none;
   height: 1px;
   width: 3px;
   display: inline-block;
   background-color: #ffffd2;
   margin-left: 1px;
   border-radius: 3px;
+}
+
+.playing .bar {
   -webkit-animation-duration: 500ms;
   -webkit-animation-play-state: running;
   -webkit-animation-direction: alternate;
   -webkit-animation-timing-function: linear;
   -webkit-animation-iteration-count: infinite;
 }
-.bar.noAnim {
-  -webkit-animation: none;
-  -webkit-animation-name: none;
-}
-.bar#bar-1 {
+.playing .bar#bar-1 {
   -webkit-animation-name: danceHeight1;
   -webkit-animation-delay: 0ms;
 }
-.bar#bar-2 {
+.playing .bar#bar-2 {
   -webkit-animation-name: danceHeight2;
   -webkit-animation-delay: 300ms;
 }
-.bar#bar-3 {
+.playing .bar#bar-3 {
   -webkit-animation-name: danceHeight3;
   -webkit-animation-delay: 600ms;
 }
-.bar#bar-4 {
+.playing .bar#bar-4 {
   -webkit-animation-name: danceHeight4;
   -webkit-animation-delay: 900ms;
 }
-.bar#bar-5 {
+.playing .bar#bar-5 {
   -webkit-animation-name: danceHeight5;
   -webkit-animation-delay: 1200ms;
 }
-.bar#bar-6 {
+.playing .bar#bar-6 {
   -webkit-animation-name: danceHeight6;
   -webkit-animation-delay: 1500ms;
 }
@@ -1192,6 +1195,7 @@ li.activeHover {
     height: 15px;
   }
 }
+/*end playing icon*/
 @media only screen and (max-width: 768px) {
   #app-navigation-toggle_alternative {
     display: none;
@@ -1356,6 +1360,9 @@ body[data-themes=light] .text-sun {
 }
 body[data-themes=light] .text-moon {
   color: #ddd;
+}
+body[data-themes=light] .bar {
+  background-color: #ffffd2;
 }
 
 /*# sourceMappingURL=style.css.map */

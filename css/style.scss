@@ -1096,9 +1096,11 @@ li.activeHover {
   }
 }
 
+/*playing icon*/
 .bar-c {
   display: flex;
   align-items: center;
+  justify-content: center;
   overflow: hidden;
   height: 30px;
   width: 40px;
@@ -1108,6 +1110,9 @@ li.activeHover {
 }
 
 .bar {
+  -webkit-animation: none;
+  -webkit-animation-name: none;
+
   height: 1px;
   width: 3px;
   display: inline-block;
@@ -1115,46 +1120,47 @@ li.activeHover {
   margin-left: 1px;
   border-radius: 3px;
 
-  &.noAnim {
-    -webkit-animation: none;
-    -webkit-animation-name: none;
-  }
+}
 
-  &#bar-1 {
-    -webkit-animation-name: danceHeight1;
-    -webkit-animation-delay: 0ms;
-  }
+.playing {
+  .bar {
 
-  &#bar-2 {
-    -webkit-animation-name: danceHeight2;
-    -webkit-animation-delay: 300ms;
-  }
+    &#bar-1 {
+      -webkit-animation-name: danceHeight1;
+      -webkit-animation-delay: 0ms;
+    }
 
-  &#bar-3 {
-    -webkit-animation-name: danceHeight3;
-    -webkit-animation-delay: 600ms;
-  }
+    &#bar-2 {
+      -webkit-animation-name: danceHeight2;
+      -webkit-animation-delay: 300ms;
+    }
 
-  &#bar-4 {
-    -webkit-animation-name: danceHeight4;
-    -webkit-animation-delay: 900ms;
-  }
+    &#bar-3 {
+      -webkit-animation-name: danceHeight3;
+      -webkit-animation-delay: 600ms;
+    }
 
-  &#bar-5 {
-    -webkit-animation-name: danceHeight5;
-    -webkit-animation-delay: 1200ms;
-  }
+    &#bar-4 {
+      -webkit-animation-name: danceHeight4;
+      -webkit-animation-delay: 900ms;
+    }
 
-  &#bar-6 {
-    -webkit-animation-name: danceHeight6;
-    -webkit-animation-delay: 1500ms;
-  }
+    &#bar-5 {
+      -webkit-animation-name: danceHeight5;
+      -webkit-animation-delay: 1200ms;
+    }
 
-  -webkit-animation-duration: 500ms;
-  -webkit-animation-play-state: running;
-  -webkit-animation-direction: alternate;
-  -webkit-animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
+    &#bar-6 {
+      -webkit-animation-name: danceHeight6;
+      -webkit-animation-delay: 1500ms;
+    }
+
+    -webkit-animation-duration: 500ms;
+    -webkit-animation-play-state: running;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+  }
 }
 
 @-webkit-keyframes danceHeight1 {
@@ -1217,6 +1223,7 @@ li.activeHover {
   }
 }
 
+/*end playing icon*/
 @media only screen and (max-width: 768px) {
 
   #app-navigation-toggle_alternative {
@@ -1426,7 +1433,7 @@ body[data-themes=dark] {
     &:hover {
       color: var(--color-main-text);
 
-      > ::before{
+      > ::before {
         background-image: var(--icon-settings-dark);
       }
     }
@@ -1440,5 +1447,9 @@ body[data-themes=light] {
 
   .text-moon {
     color: #ddd;
+  }
+
+  .bar {
+    background-color: #ffffd2;
   }
 }
