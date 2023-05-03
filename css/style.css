@@ -1333,7 +1333,7 @@ body[data-themes=dark] #app-navigation {
 body[data-themes=dark] #sm2-bar-ui {
   background-color: rgba(17, 23, 39, 0.9);
 }
-body[data-themes=dark] div#sm2-bar-ui * {
+body[data-themes=dark] div#sm2-bar-ui .sm2-inline-gradient {
   background-color: transparent;
 }
 body[data-themes=dark] #app-content {

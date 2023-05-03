@@ -1404,8 +1404,10 @@ body[data-themes=dark] {
     background-color: rgba(17, 23, 39, 0.9);
   }
 
-  div#sm2-bar-ui * {
-    background-color: transparent;
+  div#sm2-bar-ui {
+    .sm2-inline-gradient {
+      background-color: transparent;
+    }
   }
 
   #app-content {
