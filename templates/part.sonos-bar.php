@@ -20,22 +20,35 @@
                      style="float: left; box-sizing: border-box;"></div>
             </div>
         </div> -->
-
-        <div class="sm2-inline-element sm2-button-element toolTipx" data-placement="right" title="<?php p($l->t('Previous track')); ?>">
+        <div class="sm2-inline-element">
+            <div class="bar-c">
+                <div id="bar-1" class="bar"></div>
+                <div id="bar-2" class="bar"></div>
+                <div id="bar-3" class="bar"></div>
+                <div id="bar-4" class="bar"></div>
+                <div id="bar-5" class="bar"></div>
+                <div id="bar-6" class="bar"></div>
+            </div>
+        </div>
+        <div class="sm2-inline-element sm2-button-element toolTipx" data-placement="right"
+            title="<?php p($l->t('Previous track')); ?>">
             <div class="sm2-button-bd" id="sonos_prev">
                 <div class="sm2-inline-button previous">previous</div>
             </div>
         </div>
 
-        <div class="sm2-inline-element sm2-button-element toolTipx" data-placement="right" title="<?php p($l->t('Play/Pause')); ?>">
+        <div class="sm2-inline-element sm2-button-element toolTipx" data-placement="right"
+            title="<?php p($l->t('Play/Pause')); ?>">
             <div class="sm2-button-bd" id="sonos_play">
                 <div class="sm2-inline-button play-pause">play</div>
             </div>
         </div>
 
-        <div class="sm2-inline-element sm2-button-element toolTipx" data-placement="right" title="<?php p($l->t('Next track')); ?>">
+        <div class="sm2-inline-element sm2-button-element toolTipx" data-placement="right"
+            title="<?php p($l->t('Next track')); ?>">
             <div class="sm2-button-bd" id="sonos_next">
-                <div class="sm2-inline-button next" data-placement="right" title="<?php p($l->t('Next track')); ?>">next</div>
+                <div class="sm2-inline-button next" data-placement="right" title="<?php p($l->t('Next track')); ?>">next
+                </div>
             </div>
         </div>
 
@@ -47,13 +60,15 @@
             SONOS Mode
         </div>
 
-        <div class="sm2-inline-element sm2-button-element sm2-repeat toolTipx" data-placement="left" title="<?php p($l->t('Volume up')); ?>">
+        <div class="sm2-inline-element sm2-button-element sm2-repeat toolTipx" data-placement="left"
+            title="<?php p($l->t('Volume up')); ?>">
             <div class="sm2-button-bd" id="sonos_up">
                 <div class="sm2-inline-button sonos_up">up</div>
             </div>
         </div>
 
-        <div class="sm2-inline-element sm2-button-element sm2-repeat toolTipx" data-placement="left" title="<?php p($l->t('Volume down')); ?>">
+        <div class="sm2-inline-element sm2-button-element sm2-repeat toolTipx" data-placement="left"
+            title="<?php p($l->t('Volume down')); ?>">
             <div class="sm2-button-bd" id="sonos_down">
                 <div class="sm2-inline-button sonos_down">down</div>
             </div>
