@@ -24,7 +24,7 @@
             </div>
         </div> -->
 
-        <div class="sm2-inline-element sm2-button-element">
+        <div class="sm2-inline-element">
             <div class="bar-c">
                 <div id="bar-1" class="bar"></div>
                 <div id="bar-2" class="bar"></div>

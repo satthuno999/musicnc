@@ -18,7 +18,16 @@
                          style="float: left; box-sizing: border-box;"></div>
                 </div>
 			</div> -->
-
+<div class="sm2-inline-element">
+            <div class="bar-c">
+                <div id="bar-1" class="bar"></div>
+                <div id="bar-2" class="bar"></div>
+                <div id="bar-3" class="bar"></div>
+                <div id="bar-4" class="bar"></div>
+                <div id="bar-5" class="bar"></div>
+                <div id="bar-6" class="bar"></div>
+            </div>
+        </div>
 			<div class="sm2-inline-element sm2-button-element" data-placement="right" title="<?php p($l->t('Previous track')); ?>">
 				<div class="sm2-button-bd">
 					<a href="#prev" class="sm2-inline-button previous">previous</a>
