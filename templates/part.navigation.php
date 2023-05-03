@@ -10,7 +10,7 @@
  */
 ?>
 <div class="view-nav">
-	<div id="view-toggle" class="icon-toggle-<?php p($_['musicnc_view']); ?>">
+	<div id="view-toggle" title="<?php p($l->t('Type View')); ?>" class="icon-toggle-<?php p($_['musicnc_view']); ?>">
 		<?php $_['musicnc_view'] === 'pictures' ? p($l->t('Album Covers')) : p($l->t('List View')); ?>
 	</div>
 	<div class="theme-toggle-cl">
