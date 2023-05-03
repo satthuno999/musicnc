@@ -25,6 +25,7 @@ OC.L10N.register(
     "Welcome to ": "Chào mừng đến với",
     "Album Covers": "Khối",
     "List View": "Danh sách",
+    "Type View": "Kiểu xem"
   },
   "nplurals=1; plural=0;"
 );

@@ -107,6 +107,7 @@
     "Cyrillic support" : "Cyrillic support",
     "Activate this setting if cyrillic characters are not recognized correctly. This makes the indexing slower!" : "Activate this setting if cyrillic characters are not recognised correctly. This makes the indexing slower!",
     "Formats supported by the browser" : "Formats supported by the browser",
-    "Formats not supported by the browser" : "Formats not supported by the browser"
+    "Formats not supported by the browser" : "Formats not supported by the browser",
+    "Type View": "View Type"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

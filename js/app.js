@@ -35,7 +35,11 @@ OCA.musicnc.Core = {
     OCA.musicnc.UI.PlaylistContainer = $("#playlist-container"); //keep for bar-ui as it is still using jquery
     OCA.musicnc.UI.getAudiostreamUrl =
       OC.generateUrl("apps/musicnc/getaudiostream") + "?t=";
-
+    const theme = localStorage.getItem("themes");
+    //themes
+    if (theme == "dark") {
+      document.getElementById("theme-toggle").checked = true;
+    }
     if (decodeURI(location.hash).length > 1) {
       OCA.musicnc.Core.processSearchResult();
     } else {
@@ -853,7 +857,7 @@ OCA.musicnc.UI = {
     if (classes.contains("icon-toggle-filelist")) {
       classes.remove("icon-toggle-filelist");
       classes.add("icon-toggle-pictures");
-      div.innerText = "Khối Ảnh";
+      div.innerText = "Dạng ảnh";
       //t("musicnc", "Album Covers")
       OCA.musicnc.Backend.setUserValue("view", "pictures");
     } else {
@@ -867,15 +871,15 @@ OCA.musicnc.UI = {
       OCA.musicnc.Category.handleCategoryClicked();
     }
   },
-  handleThemeToggleClicked: function (){
+  handleThemeToggleClicked: function () {
     let el = document.getElementById("theme-toggle").checked;
     let body = document.body;
-    if(el){
-        body.setAttribute("data-themes","dark");
-    }
-    else{
-        body.setAttribute("data-themes", "light");
-
+    if (el) {
+      body.setAttribute("data-themes", "dark");
+      localStorage.setItem("themes", "dark");
+    } else {
+      body.setAttribute("data-themes", "light");
+      localStorage.setItem("themes", "light");
     }
   },
   handleTitleClicked: function (coverUrl, playlist, element) {
