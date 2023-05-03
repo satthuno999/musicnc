@@ -17,27 +17,37 @@
         <div class="sm2-inline-texture"></div>
         <div class="sm2-inline-gradient"></div>
 
-        <div class="sm2-inline-element sm2-button-element">
+        <!-- <div class="sm2-inline-element sm2-button-element">
             <div class="sm2-button-bd" id="toggle_alternative">
                 <div id="app-navigation-toggle_alternative" class="icon-menu"
                      style="float: left; box-sizing: border-box;"></div>
             </div>
-        </div>
+        </div> -->
 
+        <div class="sm2-inline-element sm2-button-element">
+            <div class="bar-c">
+                <div id="bar-1" class="bar"></div>
+                <div id="bar-2" class="bar"></div>
+                <div id="bar-3" class="bar"></div>
+                <div id="bar-4" class="bar"></div>
+                <div id="bar-5" class="bar"></div>
+                <div id="bar-6" class="bar"></div>
+            </div>
+        </div>
         <div class="sm2-inline-element sm2-button-element" data-placement="right"
-             title="<?php p($l->t('Previous track')); ?>">
+            title="<?php p($l->t('Previous track')); ?>">
             <div id="playerPrev" class="sm2-button-bd sm2-inline-button previous">
             </div>
         </div>
 
         <div class="sm2-inline-element sm2-button-element" data-placement="right"
-             title="<?php p($l->t('Play/Pause')); ?>">
+            title="<?php p($l->t('Play/Pause')); ?>">
             <div id="playerPlay" class="sm2-button-bd sm2-inline-button play-pause">
             </div>
         </div>
 
         <div class="sm2-inline-element sm2-button-element" data-placement="right"
-             title="<?php p($l->t('Next track')); ?>">
+            title="<?php p($l->t('Next track')); ?>">
             <div id="playerNext" class="sm2-button-bd sm2-inline-button next">
             </div>
         </div>
@@ -66,19 +76,19 @@
         </div>
 
         <div class="sm2-inline-element sm2-button-element sm2-volume" data-placement="left"
-             title="<?php p($l->t('Volume')); ?>">
+            title="<?php p($l->t('Volume')); ?>">
             <input id="playerVolume" type="range" class="sm2-button-bd sm2-inline-button volume-slider" min="0" max="1"
-                   step="0.02" value="1">
+                step="0.02" value="1">
         </div>
 
         <div class="sm2-inline-element sm2-button-element sm2-repeat" style="left: 7px;" data-placement="left"
-             title="<?php p($l->t('Repeat title/list')); ?>">
+            title="<?php p($l->t('Repeat title/list')); ?>">
             <div id="playerRepeat" class="sm2-button-bd sm2-inline-button repeat">
             </div>
         </div>
 
         <div class="sm2-inline-element sm2-button-element sm2-shuffle" data-placement="left"
-             title="<?php p($l->t('Shuffle playlist')); ?>">
+            title="<?php p($l->t('Shuffle playlist')); ?>">
             <div id="playerShuffle" class="sm2-button-bd sm2-inline-button shuffle">
             </div>
         </div>

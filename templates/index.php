@@ -41,9 +41,16 @@ if ($_['musicnc_sonos'] !== 'checked') {
     <div id="loading">
         <i class="ioc-spinner ioc-spin"></i>
     </div>
+    <!-- searchbar -->
+    <div class="searchbar">
+        <div class="sm2-inline-element sm2-button-element">
+            <div class="sm2-button-bd" id="toggle_alternative">
+                <div id="app-navigation-toggle_alternative" class="icon-menu"
+                    style="float: left; box-sizing: border-box;"></div>
+            </div>
+        </div>
+    </div>
 
-
- 
     <div id="searchresults" class="hidden" data-appfilter="audioplayer"></div>
 
     <?php print_unescaped($this->inc('part.container')); ?>

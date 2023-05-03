@@ -14,12 +14,12 @@
         <div class="sm2-inline-texture"></div>
         <div class="sm2-inline-gradient"></div>
 
-        <div class="sm2-inline-element sm2-button-element">
+        <!-- <div class="sm2-inline-element sm2-button-element">
             <div class="sm2-button-bd" id="toggle_alternative">
                 <div id="app-navigation-toggle_alternative" class="icon-menu"
                      style="float: left; box-sizing: border-box;"></div>
             </div>
-        </div>
+        </div> -->
 
         <div class="sm2-inline-element sm2-button-element toolTipx" data-placement="right" title="<?php p($l->t('Previous track')); ?>">
             <div class="sm2-button-bd" id="sonos_prev">
