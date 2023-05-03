@@ -1405,7 +1405,19 @@ body[data-themes=dark] {
   }
 
   div#sm2-bar-ui {
-    .sm2-inline-gradient,.sm2-main-controls,.sm2-playlist-drawer {
+    .sm2-inline-gradient {
+      background-color: transparent;
+    }
+
+    .sm2-main-controls {
+      background-color: transparent;
+
+      .volume-slider {
+        background-color: transparent;
+      }
+    }
+
+    .sm2-playlist-drawer {
       background-color: transparent;
     }
   }
