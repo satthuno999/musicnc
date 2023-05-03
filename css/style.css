@@ -1333,7 +1333,7 @@ body[data-themes=dark] #app-navigation {
 body[data-themes=dark] #sm2-bar-ui {
   background-color: rgba(17, 23, 39, 0.9);
 }
-body[data-themes=dark] div#sm2-bar-ui .sm2-inline-gradient {
+body[data-themes=dark] div#sm2-bar-ui .sm2-inline-gradient, body[data-themes=dark] div#sm2-bar-ui .sm2-main-controls, body[data-themes=dark] div#sm2-bar-ui .sm2-playlist-drawer {
   background-color: transparent;
 }
 body[data-themes=dark] #app-content {
@@ -1354,15 +1354,15 @@ body[data-themes=dark] #app-settings-header .settings-button:hover {
 body[data-themes=dark] #app-settings-header .settings-button:hover > ::before {
   background-image: var(--icon-settings-dark);
 }
+body[data-themes=dark] .bar {
+  background-color: #ffffd2;
+}
 
 body[data-themes=light] .text-sun {
   color: #000;
 }
 body[data-themes=light] .text-moon {
   color: #ddd;
-}
-body[data-themes=light] .bar {
-  background-color: #ffffd2;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1405,7 +1405,7 @@ body[data-themes=dark] {
   }
 
   div#sm2-bar-ui {
-    .sm2-inline-gradient {
+    .sm2-inline-gradient,.sm2-main-controls,.sm2-playlist-drawer {
       background-color: transparent;
     }
   }
@@ -1440,6 +1440,10 @@ body[data-themes=dark] {
       }
     }
   }
+
+  .bar {
+    background-color: #ffffd2;
+  }
 }
 
 body[data-themes=light] {
@@ -1451,7 +1455,4 @@ body[data-themes=light] {
     color: #ddd;
   }
 
-  .bar {
-    background-color: #ffffd2;
-  }
 }
