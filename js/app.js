@@ -39,6 +39,7 @@ OCA.musicnc.Core = {
     //themes
     if (theme == "dark") {
       document.getElementById("theme-toggle").checked = true;
+      document.body.setAttribute("data-themes", "dark");
     }
     if (decodeURI(location.hash).length > 1) {
       OCA.musicnc.Core.processSearchResult();
