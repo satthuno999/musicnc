@@ -3,6 +3,12 @@
 namespace OCA\musicnc\AppInfo;
 
 return [
+    'resources' => [
+        'favoriteradio' => ['url' => '/api/favoritesradio'],
+        'recentradio' => ['url' => '/api/recentradio'],
+        'exportradio' => ['url' => '/exportradio'],
+        'stationradio' => ['url' => '/stationradio'],
+    ],
     'routes' => [
 	['name' => 'page#index', 'url' => '/', 'verb' => 'GET'],
     ['name' => 'playlist#addTrackToPlaylist', 'url' => '/addtracktoplaylist', 'verb' => 'POST'],

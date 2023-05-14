@@ -7,9 +7,7 @@ declare(strict_types=1);
  * later. See the LICENSE.md file.
  *
  * @author S P A R K <binh9aqktk@gmail.com>
- * @author Arthur Schiwon <blizzz@arthur-schiwon.de>
- * @author Christoph Wurst <christoph@winzerhof-wurst.at>
- * @copyright 2020 S P A R K
+ * @copyright 2023 S P A R K
  */
 
 namespace OCA\musicnc\WhatsNew;

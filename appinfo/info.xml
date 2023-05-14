@@ -51,4 +51,7 @@ See [README](https://github.com/satthuno999/musicnc/blob/master/README.md) file 
 			<order>6</order>
 		</navigation>
 	</navigations>
+	<menu>
+		<appmenu id="radioview" />
+	</menu>
 </info>
