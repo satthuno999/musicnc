@@ -1674,7 +1674,12 @@ document.addEventListener("DOMContentLoaded", function () {
         OCA.musicnc.Category.load();
       }
     });
-
+  document
+    .getElementById("radioview")
+    .addEventListener("click", function(){
+      document.getElementById("newPlaylist").classList.add("ap_hidden");
+      document.getElementById("myCategory").innerHTML = "";
+    });
   document
     .querySelector(".header-title")
     .addEventListener("click", OCA.musicnc.UI.sortPlaylist);
