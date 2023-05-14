@@ -33,6 +33,31 @@ return [
     ['name' => 'sidebar#getAudioInfo', 'url' => '/getaudioinfo', 'verb' => 'GET'],
     ['name' => 'sidebar#getPlaylists', 'url' => '/getplaylists', 'verb' => 'POST'],
 
+        // radio API
+        ['name' => 'radioApi#getAll', 'url' => '/api/radio', 'verb' => 'GET'],
+        ['name' => 'radioApi#create', 'url' => '/api/radio', 'verb' => 'POST'],
+        ['name' => 'radioApi#exportAllToFile', 'url' => '/api/radio/export', 'verb' => 'POST'],
+        ['name' => 'radioApi#importFromFile', 'url' => '/api/radio/import', 'verb' => 'POST'],
+        ['name' => 'radioApi#resetAll', 'url' => '/api/radio/reset', 'verb' => 'POST'],
+        ['name' => 'radioApi#resolveStreamUrl', 'url' => '/api/radio/streamurl', 'verb' => 'GET'],
+        ['name' => 'radioApi#hlsManifest', 'url' => '/api/radio/hls/manifest', 'verb' => 'GET'],
+        ['name' => 'radioApi#hlsSegment', 'url' => '/api/radio/hls/segment', 'verb' => 'GET'],
+        ['name' => 'radioApi#get', 'url' => '/api/radio/{id}', 'verb' => 'GET'],
+        ['name' => 'radioApi#delete', 'url' => '/api/radio/{id}', 'verb' => 'DELETE'],
+        ['name' => 'radioApi#update', 'url' => '/api/radio/{id}', 'verb' => 'PUT'],
+        ['name' => 'radioApi#getChannelInfo', 'url' => '/api/radio/{id}/info', 'verb' => 'GET'],
+        ['name' => 'radioApi#stationStreamUrl', 'url' => '/api/radio/{id}/streamurl', 'verb' => 'GET'],
+
+        // podcast API
+        ['name' => 'podcastApi#getAll', 'url' => '/api/podcasts', 'verb' => 'GET'],
+        ['name' => 'podcastApi#subscribe', 'url' => '/api/podcasts', 'verb' => 'POST'],
+        ['name' => 'podcastApi#get', 'url' => '/api/podcasts/{id}', 'verb' => 'GET'],
+        ['name' => 'podcastApi#channelDetails', 'url' => '/api/podcasts/{id}/details', 'verb' => 'GET'],
+        ['name' => 'podcastApi#episodeDetails', 'url' => '/api/podcasts/episodes/{id}/details', 'verb' => 'GET'],
+        ['name' => 'podcastApi#unsubscribe', 'url' => '/api/podcasts/{id}', 'verb' => 'DELETE'],
+        ['name' => 'podcastApi#updateChannel', 'url' => '/api/podcasts/{id}/update', 'verb' => 'POST'],
+        ['name' => 'podcastApi#resetAll', 'url' => '/api/podcasts/reset', 'verb' => 'POST'],
+
     // whatsnew
     ['name' => 'whatsNew#get', 'url' => '/whatsnew', 'verb' => 'GET'],
     ['name' => 'whatsNew#dismiss', 'url' => '/whatsnew', 'verb' => 'POST'],
