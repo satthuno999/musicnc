@@ -38,7 +38,9 @@ return [
     ['name' => 'category#getTracks', 'url' => '/gettracks', 'verb' => 'GET'],
     ['name' => 'sidebar#getAudioInfo', 'url' => '/getaudioinfo', 'verb' => 'GET'],
     ['name' => 'sidebar#getPlaylists', 'url' => '/getplaylists', 'verb' => 'POST'],
-
+        
+        //radio view
+        ['name' => 'radio#index', 'url' => '/radioview', 'verb' => 'GET'],
         // radio API
         ['name' => 'radioApi#getAll', 'url' => '/api/radio', 'verb' => 'GET'],
         ['name' => 'radioApi#create', 'url' => '/api/radio', 'verb' => 'POST'],
