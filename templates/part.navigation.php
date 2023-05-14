@@ -57,7 +57,7 @@
 
 <ul id="myCategory">
 </ul>
-<div id="radio">Radio</div>
+<div id="radioview">Radio</div>
 <div>Poscast</div>
 <div>Video</div>
 <!--my playlist clone -->

@@ -4,6 +4,6 @@ theme: jekyll-theme-cayman
 timezone: Europe/Berlin
 name: "Music"
 title: "Music"
-description: "Audio Player for Nextcloud and ownCloud"
+description: "Music Player for Nextcloud"
 url: "https://cloudkma.online"
 author: "S P A R K"

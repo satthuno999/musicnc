@@ -15,6 +15,6 @@ class MyController extends Controller
 
     public function index()
     {
-        return new TemplateResponse('musicnc', 'radio');
+        return new TemplateResponse('musicnc', 'radioview');
     }
 }
