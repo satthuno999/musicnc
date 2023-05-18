@@ -17,4 +17,18 @@ class MyController extends Controller
     {
         return new TemplateResponse('musicnc', 'radioview');
     }
+
+    public function getRadioAPI(){
+        $url = "http://de1.api.radio-browser.info/json/stations";
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $data = curl_exec($ch);
+        curl_close($ch);
+
+        $params = [
+            'data' => $data,
+        ];
+
+        return new TemplateResponse('musicnc', 'radioview', $params);
+    }
 }

@@ -42,6 +42,7 @@ return [
         //radio view
         ['name' => 'radio#index', 'url' => '/radioview', 'verb' => 'GET'],
         // radio API
+        ['name' => 'radioApi#getAllByApi', 'url' => '/api/getRadioAPI', 'verb' => 'GET'],
         ['name' => 'radioApi#getAll', 'url' => '/api/radio', 'verb' => 'GET'],
         ['name' => 'radioApi#create', 'url' => '/api/radio', 'verb' => 'POST'],
         ['name' => 'radioApi#exportAllToFile', 'url' => '/api/radio/export', 'verb' => 'POST'],

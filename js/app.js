@@ -1625,6 +1625,30 @@ OCA.musicnc.Playlists = {
   },
 };
 
+/**
+ * @namespace OCA.musicnc.RenderPartialUI
+ */
+OCA.musicnc.RenderPartialUI = {
+  AjaxCallStatus:null,
+
+  renderRadio: function () {
+     if (OCA.musicnc.RenderPartialUI.AjaxCallStatus !== null) {
+       OCA.musicnc.RenderPartialUI.AjaxCallStatus.abort();
+     }
+
+     OCA.musicnc.RenderPartialUI.AjaxCallStatus = $.ajax({
+       type: "GET",
+       url: OC.generateUrl("apps/musicnc/api/getRadioAPI"),
+       data: {},
+       success: function (jsondata) {
+        var parser = new DOMParser();
+        var responseDoc = parser.parseFromString(jsondata, "text/html");
+       },
+     });
+  },
+  renderPodcast: function () {},
+  renderVideo: function () {},
+};
 document.addEventListener("DOMContentLoaded", function () {
   OCA.musicnc.Core.init();
   OCA.musicnc.Core.initKeyListener();
