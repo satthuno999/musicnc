@@ -31,10 +31,10 @@
                     <?php p($l->t('Reset library')); ?>
                 </a>
             </li>
-            <li class="audio-settings-item">
+            <!-- <li class="audio-settings-item">
                 <input class="checkbox" type="checkbox" id="sonos" <?php p($_['musicnc_sonos']) ?>/>
                 <label for="sonos">&nbsp;<?php p($l->t('SONOS Playback')); ?></label>
-            </li>
+            </li> -->
             <li class="audio-settings-item icon-settings">
                 <a href="#" style="padding: 0 20px;" id="audioplayerSettings">
                     <?php p($l->t('Advanced Settings')); ?>
@@ -45,11 +45,11 @@
                     <?php p($l->t('Do you like this app?')); ?>
                 </a>
             </li>
-            <li class="audio-settings-item icon-info">
+            <!-- <li class="audio-settings-item icon-info">
                 <a href="https://github.com/satthuno999/musicnc/wiki" target="_blank" style="padding: 0 20px;">
                     <?php p($l->t('More information …')); ?>
                 </a>
-            </li>
+            </li> -->
         </ul>
     </div>
 </div>
