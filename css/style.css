@@ -1198,6 +1198,44 @@ li.activeHover {
 }
 /*end playing icon*/
 /*Nav Action*/
+.nav-action {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  border-radius: 8px;
+}
+.nav-action .item .title-nav-action {
+  font-weight: bold;
+}
+.nav-action .item .itembtn {
+  padding: 5px 10px;
+  border: 1px solid black;
+  cursor: pointer;
+  margin: 10px;
+  border-radius: 10px;
+}
+.nav-action .item .itembtn:hover {
+  background-color: lightgray;
+}
+.nav-action .item .itembtn > svg {
+  width: 15px;
+  margin-right: 5px;
+}
+.nav-action .line {
+  position: relative;
+}
+.nav-action .line::after {
+  content: "";
+  position: absolute;
+  width: 90%;
+  height: 1px;
+  background-color: lightgray;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 @media only screen and (max-width: 768px) {
   #app-navigation-toggle_alternative {
     display: none;
