@@ -29,6 +29,6 @@ class MyController extends Controller
             'data' => $data,
         ];
 
-        return new TemplateResponse('musicnc', 'radioview', $params);
+        return new TemplateResponse('musicnc', 'partials/radioview', $params);
     }
 }
