@@ -1699,10 +1699,12 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   document
-    .getElementById("radioview")
-    .addEventListener("click", function(){
+    .getElementById("radioviewBtn")
+    .addEventListener("click", function () {
       document.getElementById("newPlaylist").classList.add("ap_hidden");
       document.getElementById("myCategory").innerHTML = "";
+
+      OCA.musicnc.RenderPartialUI.renderRadio();
     });
   document
     .querySelector(".header-title")
