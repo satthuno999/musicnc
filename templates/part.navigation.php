@@ -57,9 +57,18 @@
 
 <ul id="myCategory">
 </ul>
-<div id="radioview">Radio</div>
-<div>Poscast</div>
-<div>Video</div>
+<div class="nav-action">
+	<div class="item">
+		<div class="title-nav-action">RADIO & PODCAST</div>
+		<div class="itembtn" id="radioviewBtn">Radio</div>
+		<div class="itembtn" id="podcastBtn">Poscast</div>
+	</div>
+	<div class="line"></div>
+	<div class="item">
+		<div class="title-nav-action">MEDIA</div>
+		<div class="itembtn" id="radioviewBtn">Video</div>
+	</div>
+</div>
 <!--my playlist clone -->
 <li class="plclone" id="pl-clone" data-pl="">
 	<div id="playlist_controls">

@@ -198,6 +198,7 @@ i#scanAudiosFirst {
   opacity: 1;
   height: 40px;
   width: 45px;
+  z-index: 500;
 }
 
 #app-navigation {
@@ -1196,6 +1197,7 @@ li.activeHover {
   }
 }
 /*end playing icon*/
+/*Nav Action*/
 @media only screen and (max-width: 768px) {
   #app-navigation-toggle_alternative {
     display: none;
