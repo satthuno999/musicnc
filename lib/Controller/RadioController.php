@@ -32,8 +32,15 @@ class RadioController extends Controller
         $url = "http://de1.api.radio-browser.info/json/stations";
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $qrStr = "offset=".$page."&limit=".$limit."&hidebroken=".$hidebroken."&order=".$order;
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $qrStr);
+        $queryParams = http_build_query(
+            array(
+                'offset' => $page,
+                'limit' => $limit,
+                'hidebroken' => $hidebroken,
+                'order' => $order
+            )
+        );
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $queryParams);
         $dataServer = curl_exec($ch);
         curl_close($ch);
 
