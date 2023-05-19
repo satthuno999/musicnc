@@ -1533,7 +1533,18 @@ body[data-themes=dark] {
       }
     } 
   }
- 
+  
+  #app-navigation:not(.vue) > ul > li.active, 
+  #app-navigation:not(.vue) > ul > li.active > a, 
+  #app-navigation:not(.vue) > ul > li a:active, 
+  #app-navigation:not(.vue) > ul > li a:active > a,
+   #app-navigation:not(.vue) > ul > li a.selected, 
+   #app-navigation:not(.vue) > ul > li a.selected > a, 
+   #app-navigation:not(.vue) > ul > li a.active, 
+   #app-navigation:not(.vue) > ul > li a.active > a{
+    color: #fff;
+    background-color: #e5edf475;
+  }
 }
 
 body[data-themes=light] {

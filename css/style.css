@@ -1419,6 +1419,17 @@ body[data-themes=dark] #videoViewBtn svg {
 body[data-themes=dark] .nav-action .item .itembtn:hover {
   background-color: #0b1320;
 }
+body[data-themes=dark] #app-navigation:not(.vue) > ul > li.active,
+body[data-themes=dark] #app-navigation:not(.vue) > ul > li.active > a,
+body[data-themes=dark] #app-navigation:not(.vue) > ul > li a:active,
+body[data-themes=dark] #app-navigation:not(.vue) > ul > li a:active > a,
+body[data-themes=dark] #app-navigation:not(.vue) > ul > li a.selected,
+body[data-themes=dark] #app-navigation:not(.vue) > ul > li a.selected > a,
+body[data-themes=dark] #app-navigation:not(.vue) > ul > li a.active,
+body[data-themes=dark] #app-navigation:not(.vue) > ul > li a.active > a {
+  color: #fff;
+  background-color: rgba(229, 237, 244, 0.4588235294);
+}
 
 body[data-themes=light] .text-sun {
   color: #000;
