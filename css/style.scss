@@ -1309,6 +1309,7 @@ li.activeHover {
 #category_selector:hover {
   background-color: #eaeaea;
 }
+
 #category_selector:focus {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   border: 1px solid #ccc;
@@ -1563,33 +1564,39 @@ body[data-themes=dark] {
 
   #videoViewBtn {
     svg {
-      filter: invert(27%) sepia(110%) saturate(1267%) hue-rotate(277deg) brightness(119%) contrast(119%) ;
+      filter: invert(27%) sepia(110%) saturate(1267%) hue-rotate(277deg) brightness(119%) contrast(119%);
     }
   }
+
   .nav-action {
-    .item{
-      .itembtn{
-        &:hover{
+    .item {
+      .itembtn {
+        &:hover {
           background-color: #0b1320
         }
       }
-    } 
+    }
   }
-  
-  #app-navigation:not(.vue) > ul > li.active, 
-  #app-navigation:not(.vue) > ul > li.active > a, 
-  #app-navigation:not(.vue) > ul > li a:active, 
-  #app-navigation:not(.vue) > ul > li a:active > a,
-   #app-navigation:not(.vue) > ul > li a.selected, 
-   #app-navigation:not(.vue) > ul > li a.selected > a, 
-   #app-navigation:not(.vue) > ul > li a.active, 
-   #app-navigation:not(.vue) > ul > li a.active > a{
+
+  #app-navigation:not(.vue)>ul>li.active,
+  #app-navigation:not(.vue)>ul>li.active>a,
+  #app-navigation:not(.vue)>ul>li a:active,
+  #app-navigation:not(.vue)>ul>li a:active>a,
+  #app-navigation:not(.vue)>ul>li a.selected,
+  #app-navigation:not(.vue)>ul>li a.selected>a,
+  #app-navigation:not(.vue)>ul>li a.active,
+  #app-navigation:not(.vue)>ul>li a.active>a {
     color: #fff;
     background-color: #e5edf475;
   }
 
-  #myCategory li{
+  #myCategory li {
     opacity: 0.8;
+  }
+
+  .nav-action {
+    border-top: 1px solid WHITE;
+    border-bottom: 1px solid WHITE;
   }
 }
 
