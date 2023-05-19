@@ -17,7 +17,10 @@ class RadioApiController extends Controller
     {
         return new TemplateResponse('musicnc', 'radioview');
     }
-
+    /**
+     * @NoAdminRequired
+     * @NoCSRFRequired
+     */
     public function getAllByApi(){
         $url = "http://de1.api.radio-browser.info/json/stations";
         $ch = curl_init($url);
