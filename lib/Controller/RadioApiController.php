@@ -22,7 +22,7 @@ class RadioApiController extends Controller
      * @NoCSRFRequired
      */
     public function getAllByApi(){
-        $url = "http://de1.api.radio-browser.info/json/stations";
+        $url = "http://all.api.radio-browser.info/json/servers";
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $data = curl_exec($ch);
