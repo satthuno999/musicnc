@@ -1649,7 +1649,8 @@ OCA.musicnc.RenderPartialUI = {
         var parser = new DOMParser();
         var responseDoc = parser.parseFromString(jsondata, "text/html");
         var content = responseDoc.getElementById("content-view");
-        console.log(content);
+        document.getElementById("playlist-container").html = '';
+        $("#partial-wrapper").html(content);
       },
       error: function (xhr, status, error) {
         console.log("AJAX request error:", error);

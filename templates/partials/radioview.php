@@ -8,7 +8,8 @@
  * @copyright 2022-2023 S P A R K
  */
 $responseData = json_decode($data, true);
+$station = $responseData[0];
 ?>
 <div id="content-view">
-    <?php echo "$responseData" ?>
+    <?php echo "$station" ?>
 </div>
