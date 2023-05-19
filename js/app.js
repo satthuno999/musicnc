@@ -1636,6 +1636,9 @@ OCA.musicnc.Playlists = {
 OCA.musicnc.RenderPartialUI = {
   AjaxCallStatus: null,
 
+  handleRadioClicked: function(e){
+      console.log($(e).find(a).data("href"));
+  },
   renderRadio: function () {
     if (OCA.musicnc.RenderPartialUI.AjaxCallStatus !== null) {
       OCA.musicnc.RenderPartialUI.AjaxCallStatus.abort();
@@ -1651,6 +1654,8 @@ OCA.musicnc.RenderPartialUI = {
         var content = responseDoc.getElementById("content-view");
         $("#playlist-container").html("");
         $("#partial-wrapper").html(content);
+
+        responseDoc.getElementsByClassName("item").addEventListener("clicl",OCA.musicnc.handleRadioClicked());
       },
       error: function (xhr, status, error) {
         console.log("AJAX request error:", error);

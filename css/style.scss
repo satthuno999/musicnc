@@ -1501,6 +1501,9 @@ li.isActive {
     width: 100%;
     will-change: transform;
 
+    max-width: 100%;
+    overflow: auto;
+
     li {
       margin-left: 16px;
       margin-right: 16px;
@@ -1521,6 +1524,8 @@ li.isActive {
             border-radius: 4px;
 
             .lazyload-wrapper {
+              height: 100%;
+
               img {
                 color: transparent;
                 border-radius: 4px;
@@ -1528,6 +1533,7 @@ li.isActive {
                 height: 100%;
                 box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 4px 0px;
                 transition: box-shadow 0.1s linear 0s;
+                object-fit: contain;
               }
             }
           }
@@ -1559,6 +1565,7 @@ li.isActive {
     }
   }
 }
+
 /*End radio*/
 @media only screen and (max-width: 768px) {
 

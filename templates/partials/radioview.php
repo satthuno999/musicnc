@@ -17,7 +17,7 @@ $podcasts = json_decode($data, true);
                 echo '
                 <li class="item">
                 <a title="' . $podcast["name"] . '"
-                    href="' . $podcast["url"] . '">
+                    href="#" data-href="' . $podcast["url"] . '">
                     <div class=" card">
                         <div class="cover">
                             <div class="lazyload-wrapper ">
@@ -30,7 +30,7 @@ $podcasts = json_decode($data, true);
                         <div class="title">
                             ' . $podcast["name"] . '
                         </div>
-                        <div class="locate">' . $podcast["country"] . ' ' . $podcast["state"] . '
+                        <div class="locate">' . $podcast["country"] . ', ' . $podcast["state"] . '
                         </div>
                     </div>
                 </a>

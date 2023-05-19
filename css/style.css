@@ -1457,6 +1457,8 @@ li.isActive {
   white-space: nowrap;
   width: 100%;
   will-change: transform;
+  max-width: 100%;
+  overflow: auto;
 }
 .list-stream ul li {
   margin-left: 16px;
@@ -1477,6 +1479,9 @@ li.isActive {
   height: 120px;
   border-radius: 4px;
 }
+.list-stream ul li a .card .cover .lazyload-wrapper {
+  height: 100%;
+}
 .list-stream ul li a .card .cover .lazyload-wrapper img {
   color: transparent;
   border-radius: 4px;
@@ -1484,6 +1489,7 @@ li.isActive {
   height: 100%;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 4px 0px;
   transition: box-shadow 0.1s linear 0s;
+  object-fit: contain;
 }
 .list-stream ul li a .card .title {
   white-space: normal;
