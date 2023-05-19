@@ -1701,6 +1701,11 @@ document.addEventListener("DOMContentLoaded", function () {
       if (OCA.musicnc.Core.CategorySelectors[0] !== "") {
         OCA.musicnc.Category.load();
       }
+      var ulElement = document.getElementById('myCategory');
+      var liElements = ulElement.getElementsByTagName('li');
+      if (liElements.length > 0) {
+        liElements[0].click();
+      }
     });
   document
     .getElementById("radioviewBtn")
