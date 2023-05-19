@@ -1806,15 +1806,18 @@ body[data-themes=dark] {
   }
 
   .sm2-inline-button {
-    &.next {
-      filter: invert(1);
-      opacity: 1;
-    }
 
-    &.previous {
+    &.next,
+    &.previous,
+    &.repeat,
+    &.shuffle {
       filter: invert(1);
       opacity: 1;
     }
+  }
+
+  .bar {
+    background-color: #fff;
   }
 }
 
