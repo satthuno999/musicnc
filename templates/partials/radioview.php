@@ -16,21 +16,21 @@ $podcasts = json_decode($data, true);
             foreach ($podcasts as $podcast) {
                 echo '
                 <li class="item">
-                <a title="Listen to the station WFAN 66 AM - 101.9 FM online now" id="station_top100_0"
-                    href="' . $podcast->url . '">
-                    <div class="sc-jd7lhi-4 cteXZw card">
-                        <div class="sc-jd7lhi-1 hTzxHt cover">
+                <a title="' . $podcast["name"] . '"
+                    href="' . $podcast["url"] . '">
+                    <div class=" card">
+                        <div class="cover">
                             <div class="lazyload-wrapper ">
-                                <img alt="' . $podcast->name . '" loading="lazy"
+                                <img alt="' . $podcast["name"] . '" loading="lazy"
                                     width="150" height="150" decoding="async" 
-                                    src="' . $podcast->favicon . '"
+                                    src="' . $podcast["favicon"] . '"
                                     style="color: transparent; border-radius: 4px; width: 100%; height: 100%;">
                             </div>
                         </div>
                         <div class="title">
-                            ' . $podcast->name . '
+                            ' . $podcast["name"] . '
                         </div>
-                        <div class="locate">' . $podcast->country . ' ' . $podcast->state . '
+                        <div class="locate">' . $podcast["country"] . ' ' . $podcast["state"] . '
                         </div>
                     </div>
                 </a>
