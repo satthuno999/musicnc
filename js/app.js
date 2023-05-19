@@ -483,6 +483,7 @@ OCA.musicnc.Category = {
           }
         } else {
           OCA.musicnc.UI.showInitScreen();
+          document.getElementById('playlist-container').html("")
         }
         var ulElement = document.getElementById('myCategory');
         var liElements = ulElement.getElementsByTagName('li');
