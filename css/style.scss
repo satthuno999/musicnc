@@ -1320,6 +1320,66 @@ li.activeHover {
 
 /*END Category selector*/
 
+/**/
+#playlist-container {
+  display: block;
+}
+
+#individual-playlist-info,
+#individual-playlist-header {
+  display: block;
+}
+
+.header-indi {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.header-indi > span {
+  flex: 1;
+  cursor: pointer;
+}
+
+.header-indi > span:not(.header-opt) {
+  margin-right: 10px;
+}
+
+.albumwrapper {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.albumwrapper li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #ffffff;
+}
+
+.albumwrapper li span {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.actionsSong {
+  margin-right: 10px;
+}
+
+.edit-song {
+  cursor: pointer;
+}
+
+li.isActive {
+  background-color: #f2f2f2;
+}
+/*END LIST MUSIC*/
+
 @media only screen and (max-width: 768px) {
 
   #app-navigation-toggle_alternative {
@@ -1612,8 +1672,6 @@ body[data-themes=dark] {
   #category_area {
     border-top: 1px solid black;
   }
-
-  #app-settings-header {}
 }
 
 body[data-themes=light] {
