@@ -41,6 +41,7 @@ return [
         
         //radio view
         ['name' => 'radio#index', 'url' => '/radioview', 'verb' => 'GET'],
+        ['name' => 'radioapi#getAllByApi', 'url' => '/getradioapi', 'verb' => 'GET'],
         // radio API
         ['name' => 'radioapi#getAllByApi', 'url' => '/api/getradioapi', 'verb' => 'GET'],
         ['name' => 'radioApi#getAll', 'url' => '/api/radio', 'verb' => 'GET'],
