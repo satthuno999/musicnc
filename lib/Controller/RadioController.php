@@ -10,7 +10,7 @@ use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\IRequest;
 
-class RadioapiController extends Controller
+class RadioController extends Controller
 {
     public function __construct(IRequest $request)
     {
