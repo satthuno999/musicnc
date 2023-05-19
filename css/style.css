@@ -404,7 +404,6 @@ i#scanAudiosFirst {
 
 #individual-playlist > li,
 #individual-playlist-header span {
-  height: 24px;
   line-height: 24px;
 }
 
@@ -427,7 +426,6 @@ i#scanAudiosFirst {
   width: 100%;
   display: block;
   float: left;
-  height: 26px;
   font-size: 12px;
 }
 
@@ -484,6 +482,7 @@ i#scanAudiosFirst {
   display: block;
   line-height: 20px;
   width: 22px;
+  flex: 0 0 18px;
 }
 
 .albumwrapper li .ioc {
@@ -1014,6 +1013,7 @@ li.activeHover {
 #app-sidebar {
   height: 90% !important;
   flex: 1 1 20%;
+  top: 0;
 }
 
 #app-sidebar .thumbnail.larger {
@@ -1327,6 +1327,7 @@ li.activeHover {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-right: 10px;
 }
 
 .actionsSong {
@@ -1341,7 +1342,106 @@ li.isActive {
   background-color: #f2f2f2;
 }
 
+#individual-playlist-info {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+.app-sidebar .large .thumbnail .stretcher {
+  padding-bottom: 0;
+}
+
 /*END LIST MUSIC*/
+/**/
+.thumbnail {
+  display: block;
+  width: 100%;
+  height: auto;
+  background-size: cover;
+}
+
+#sidebarTitle {
+  font-size: 20px;
+  color: #333;
+}
+
+#sidebarFavorite {
+  color: #ffcc00;
+}
+
+#sidebarMime {
+  font-style: italic;
+  color: #777;
+}
+
+.tabHeaders {
+  margin-top: 20px;
+  list-style-type: none;
+  padding: 0;
+}
+
+.tabHeader {
+  display: inline-block;
+  margin-right: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #777;
+}
+
+.tabHeader.selected {
+  color: #333;
+}
+
+.tabsContainer {
+  margin-top: 20px;
+}
+
+.table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.key,
+.value {
+  display: table-cell;
+  padding: 5px 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.key {
+  font-weight: bold;
+}
+
+.value a {
+  color: #333;
+  text-decoration: none;
+}
+
+.value a:hover {
+  text-decoration: underline;
+}
+
+.hidden {
+  display: none;
+}
+
+#sidebarClose {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #777;
+  font-size: 18px;
+}
+
+#sidebarClose:hover {
+  color: #333;
+}
+
+/*END  Slider bar ringht*/
 @media only screen and (max-width: 768px) {
   #app-navigation-toggle_alternative {
     display: none;
