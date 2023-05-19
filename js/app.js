@@ -1649,7 +1649,7 @@ OCA.musicnc.RenderPartialUI = {
         var parser = new DOMParser();
         var responseDoc = parser.parseFromString(jsondata, "text/html");
         var content = responseDoc.getElementById("content-view");
-        document.getElementById("playlist-container").html = '';
+        $("#playlist-container").html("");
         $("#partial-wrapper").html(content);
       },
       error: function (xhr, status, error) {
