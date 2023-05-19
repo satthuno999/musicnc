@@ -1645,6 +1645,9 @@ OCA.musicnc.RenderPartialUI = {
         var parser = new DOMParser();
         var responseDoc = parser.parseFromString(jsondata, "text/html");
        },
+       error: function (xhr, status, error) {
+        console.log("AJAX request error:", error);
+      },
      });
   },
   renderPodcast: function () {},
