@@ -1,4 +1,7 @@
 <?php
+declare(strict_types=1);
+// SPDX-FileCopyrightText: SPARK <binh9aqktk@gmail.com>
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 namespace OCA\musicnc\Controller;
 
@@ -8,9 +11,12 @@ use OCP\IRequest;
 
 class RadioApiController extends Controller
 {
-    public function __construct($appName, IRequest $request)
+    private $userId;
+
+    public function __construct($appName, IRequest $request,$userId)
     {
         parent::__construct($appName, $request);
+        $this->userId = $userId;
     }
 
     public function index()
@@ -32,6 +38,7 @@ class RadioApiController extends Controller
             'data' => $data,
         ];
 
-        return new TemplateResponse('musicnc', 'partials/radioview', $params);
+        $response = new TemplateResponse('musicnc', 'partials/radioview', $params);
+		return $response;
     }
 }
