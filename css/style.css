@@ -1407,6 +1407,18 @@ body[data-themes=dark] #app-settings-header .settings-button:hover > ::before {
 body[data-themes=dark] .bar {
   background-color: #ffffd2;
 }
+body[data-themes=dark] #radioviewBtn svg {
+  filter: invert(100%) sepia(95%) saturate(1352%) hue-rotate(87deg) brightness(119%) contrast(119%);
+}
+body[data-themes=dark] #podcastBtn svg {
+  filter: invert(60%) sepia(16%) saturate(1352%) hue-rotate(87deg) brightness(119%) contrast(119%);
+}
+body[data-themes=dark] #radioviewBtn svg {
+  filter: invert(27%) sepia(110%) saturate(1267%) hue-rotate(277deg) brightness(119%) contrast(119%);
+}
+body[data-themes=dark] .nav-action .item .itembtn:hover {
+  background-color: #0b1320;
+}
 
 body[data-themes=light] .text-sun {
   color: #000;

@@ -1649,25 +1649,6 @@ OCA.musicnc.RenderPartialUI = {
         console.log("AJAX request error:", error);
       },
     });
-    var username = 'admin';
-    var password = 'admin';
-
-    OCA.Request.request({
-      url: OC.generateUrl("apps/musicnc/getradioapi"),
-      method: 'GET',
-      data: {},
-      beforeSend: function (xhr) {
-        xhr.setRequestHeader('Authorization', 'Basic ' + btoa(username + ':' + password));
-      },
-      success: function (response) {
-        // Request was successful, handle the response
-        console.log(response);
-      },
-      error: function (jqXHR, textStatus, errorThrown) {
-        // Request failed, handle the error
-        console.log('Error:', errorThrown);
-      }
-    });
   },
   renderPodcast: function () { },
   renderVideo: function () { },
