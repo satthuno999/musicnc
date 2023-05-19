@@ -1783,7 +1783,7 @@ body[data-themes=dark] {
     color: #fff;
   }
 
-  .songlist{
+  .songlist {
     ul {
       li {
         border: 1px solid;
@@ -1791,10 +1791,31 @@ body[data-themes=dark] {
       }
     }
   }
+
   #app-sidebar {
     background: #0b1320;
     border-left: 1px solid var(--color-border);
-}
+  }
+
+  .play-pause,
+  .play-pause:hover,
+  .paused .play-pause:hover,
+  .playerNext {
+    filter: invert(1);
+    opacity: 1;
+  }
+
+  .sm2-inline-button {
+    &.next {
+      filter: invert(1);
+      opacity: 1;
+    }
+
+    &.previous {
+      filter: invert(1);
+      opacity: 1;
+    }
+  }
 }
 
 body[data-themes=light] {
