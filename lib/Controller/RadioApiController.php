@@ -6,7 +6,7 @@ use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\IRequest;
 
-class MyController extends Controller
+class RadioApiController extends Controller
 {
     public function __construct($appName, IRequest $request)
     {

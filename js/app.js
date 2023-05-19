@@ -1638,9 +1638,10 @@ OCA.musicnc.RenderPartialUI = {
 
      OCA.musicnc.RenderPartialUI.AjaxCallStatus = $.ajax({
        type: "GET",
-       url: OC.generateUrl("apps/musicnc/api/getRadioAPI"),
+       url: OC.generateUrl("apps/musicnc/api/getradioapi"),
        data: {},
        success: function (jsondata) {
+        console.log(jsondata)
         var parser = new DOMParser();
         var responseDoc = parser.parseFromString(jsondata, "text/html");
        },
