@@ -1646,9 +1646,10 @@ OCA.musicnc.RenderPartialUI = {
       url: OC.generateUrl("apps/musicnc/getradioapi"),
       data: {},
       success: function (jsondata) {
-        console.log(jsondata)
         var parser = new DOMParser();
         var responseDoc = parser.parseFromString(jsondata, "text/html");
+        var content = responseDoc.getElementById("content-view");
+        console.log(content);
       },
       error: function (xhr, status, error) {
         console.log("AJAX request error:", error);

@@ -9,6 +9,6 @@
  */
 $responseData = json_decode($data, true);
 ?>
-<div id="radioview">
+<div id="content-view">
     <?php echo "$responseData" ?>
 </div>
