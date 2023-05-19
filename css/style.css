@@ -1661,6 +1661,10 @@ body[data-themes=dark] .songlist ul li {
   border: 1px solid;
   border-radius: 10px;
 }
+body[data-themes=dark] #app-sidebar {
+  background: #0b1320;
+  border-left: 1px solid var(--color-border);
+}
 
 body[data-themes=light] .text-sun {
   color: #000;
