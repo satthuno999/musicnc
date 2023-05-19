@@ -1274,6 +1274,53 @@ li.activeHover {
   }
 }
 
+/*Category selector*/
+/* Style for the select element */
+#category_selector {
+  appearance: none;
+  background-color: #f2f2f2;
+  border: none;
+  padding: 10px;
+  font-size: 14px;
+  width: 200px;
+  border-radius: 5px;
+  color: #333;
+  outline: none;
+  transition: background-color 0.3s, border-color 0.3s;
+  cursor: pointer;
+}
+
+/* Style for the selected option */
+#category_selector option:checked {
+  background-color: #eaeaea;
+  color: #333;
+}
+
+/* Style for the dropdown arrow */
+#category_selector::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  border-top: 6px solid #333;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  pointer-events: none;
+}
+
+/* Add animation on hover */
+#category_selector:hover {
+  background-color: #eaeaea;
+}
+
+/* Add animation on focus */
+#category_selector:focus {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  border: 1px solid #ccc;
+}
+
+
 @media only screen and (max-width: 768px) {
 
   #app-navigation-toggle_alternative {
@@ -1544,6 +1591,10 @@ body[data-themes=dark] {
    #app-navigation:not(.vue) > ul > li a.active > a{
     color: #fff;
     background-color: #e5edf475;
+  }
+
+  #myCategory li{
+    opacity: 0.8;
   }
 }
 
