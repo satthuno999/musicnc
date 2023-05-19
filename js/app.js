@@ -484,6 +484,11 @@ OCA.musicnc.Category = {
         } else {
           OCA.musicnc.UI.showInitScreen();
         }
+        var ulElement = document.getElementById('myCategory');
+        var liElements = ulElement.getElementsByTagName('li');
+        if (liElements.length > 0) {
+          liElements[0].click();
+        }
       },
     });
     if (category === "Playlist") {
@@ -927,7 +932,6 @@ OCA.musicnc.UI = {
   },
 
   showInitScreen: function (mode) {
-    document.getElementById("sm2-bar-ui").style.display = "none";
     document.getElementById("content").style.display = "none";
     OCA.musicnc.UI.EmptyContainer.style.display = "block";
     OCA.musicnc.UI.EmptyContainer.innerHTML = "";
@@ -1701,11 +1705,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (OCA.musicnc.Core.CategorySelectors[0] !== "") {
         OCA.musicnc.Category.load();
       }
-      var ulElement = document.getElementById('myCategory');
-      var liElements = ulElement.getElementsByTagName('li');
-      if (liElements.length > 0) {
-        liElements[0].click();
-      }
+
     });
   document
     .getElementById("radioviewBtn")
