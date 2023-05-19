@@ -186,6 +186,8 @@ i#scanAudiosFirst {
   display: flex;
   margin: 0 6px 6px 6px;
   min-height: 40px;
+  padding-top: 10px;
+  border-top: 1px solid black;
 }
 
 #category_selector {
@@ -204,7 +206,7 @@ i#scanAudiosFirst {
 #app-navigation {
   overflow-y: auto;
   height: 90% !important;
-  flex: 1 1 20%;
+  flex: 1 1 17%;
 }
 
 #app-navigation .plclone {
@@ -1234,7 +1236,8 @@ li.activeHover {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   border-radius: 8px;
-  margin-top: auto;
+  width: 90%;
+  margin: auto;
 
   .item {
     .title-nav-action {
@@ -1537,17 +1540,24 @@ body[data-themes=dark] {
   #app-settings-header .settings-button {
     color: #fff;
 
-    &:hover {
+    &:hover,
+    .opened {
       color: var(--color-main-text);
 
       > ::before {
-        background-image: var(--icon-settings-dark);
+        background-image: var(--icon-settings-white);
       }
     }
+
   }
 
-  .bar {
-    background-color: #ffffd2;
+  #audio-settings li.audio-settings-item {
+    background-size: 15px 15px;
+    background-position: 0 center;
+    opacity: 1;
+    a{
+      color: white !important;
+    }
   }
 
   #radioviewBtn {
@@ -1598,6 +1608,12 @@ body[data-themes=dark] {
     border-top: 1px solid WHITE;
     border-bottom: 1px solid WHITE;
   }
+
+  #category_area {
+    border-top: 1px solid black;
+  }
+
+  #app-settings-header {}
 }
 
 body[data-themes=light] {

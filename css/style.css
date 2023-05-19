@@ -186,6 +186,8 @@ i#scanAudiosFirst {
   display: flex;
   margin: 0 6px 6px 6px;
   min-height: 40px;
+  padding-top: 10px;
+  border-top: 1px solid black;
 }
 
 #category_selector {
@@ -204,7 +206,7 @@ i#scanAudiosFirst {
 #app-navigation {
   overflow-y: auto;
   height: 90% !important;
-  flex: 1 1 20%;
+  flex: 1 1 17%;
 }
 
 #app-navigation .plclone {
@@ -1205,7 +1207,8 @@ li.activeHover {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   border-radius: 8px;
-  margin-top: auto;
+  width: 90%;
+  margin: auto;
 }
 .nav-action .item .title-nav-action {
   font-weight: bold;
@@ -1440,14 +1443,21 @@ body[data-themes=dark] #individual-playlist li span.interpret, body[data-themes=
 body[data-themes=dark] #app-settings-header .settings-button {
   color: #fff;
 }
-body[data-themes=dark] #app-settings-header .settings-button:hover {
+body[data-themes=dark] #app-settings-header .settings-button:hover,
+body[data-themes=dark] #app-settings-header .settings-button .opened {
   color: var(--color-main-text);
 }
-body[data-themes=dark] #app-settings-header .settings-button:hover > ::before {
-  background-image: var(--icon-settings-dark);
+body[data-themes=dark] #app-settings-header .settings-button:hover > ::before,
+body[data-themes=dark] #app-settings-header .settings-button .opened > ::before {
+  background-image: var(--icon-settings-white);
 }
-body[data-themes=dark] .bar {
-  background-color: #ffffd2;
+body[data-themes=dark] #audio-settings li.audio-settings-item {
+  background-size: 15px 15px;
+  background-position: 0 center;
+  opacity: 1;
+}
+body[data-themes=dark] #audio-settings li.audio-settings-item a {
+  color: white !important;
 }
 body[data-themes=dark] #radioviewBtn svg {
   filter: invert(100%) sepia(95%) saturate(1352%) hue-rotate(87deg) brightness(119%) contrast(119%);
@@ -1479,7 +1489,9 @@ body[data-themes=dark] .nav-action {
   border-top: 1px solid WHITE;
   border-bottom: 1px solid WHITE;
 }
-
+body[data-themes=dark] #category_area {
+  border-top: 1px solid black;
+}
 body[data-themes=light] .text-sun {
   color: #000;
 }

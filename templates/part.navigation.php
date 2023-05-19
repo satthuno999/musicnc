@@ -57,6 +57,23 @@
 
 <ul id="myCategory">
 </ul>
+<!--my playlist clone -->
+<li class="plclone" id="pl-clone" data-pl="">
+	<div id="playlist_controls">
+		<input type="text" name="playlist" id="playlist" value="" />
+		<button class="icon-checkmark"></button>
+		<button class="icon-close"></button>
+	</div>
+</li>
+<!--my playlist clone -->
+<div class="ap_hidden" id="newPlaylist">
+	<div id="newPlaylist_controls">
+		<input type="text" name="newPlaylistTxt" id="newPlaylistTxt"
+			placeholder="<?php p($l->t('Create new playlist')); ?>" />
+		<button class="icon-checkmark" id="newPlaylistBtn_ok"></button>
+		<button class="icon-close" id="newPlaylistBtn_cancel"></button>
+	</div>
+</div>
 <div class="nav-action">
 	<div class="item">
 		<div class="title-nav-action">RADIO & PODCAST</div>
@@ -88,22 +105,5 @@
 			</svg>
 			Video
 		</div>
-	</div>
-</div>
-<!--my playlist clone -->
-<li class="plclone" id="pl-clone" data-pl="">
-	<div id="playlist_controls">
-		<input type="text" name="playlist" id="playlist" value="" />
-		<button class="icon-checkmark"></button>
-		<button class="icon-close"></button>
-	</div>
-</li>
-<!--my playlist clone -->
-<div class="ap_hidden" id="newPlaylist">
-	<div id="newPlaylist_controls">
-		<input type="text" name="newPlaylistTxt" id="newPlaylistTxt"
-			placeholder="<?php p($l->t('Create new playlist')); ?>" />
-		<button class="icon-checkmark" id="newPlaylistBtn_ok"></button>
-		<button class="icon-close" id="newPlaylistBtn_cancel"></button>
 	</div>
 </div>
