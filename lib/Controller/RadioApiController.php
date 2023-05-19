@@ -5,28 +5,29 @@ declare(strict_types=1);
 
 namespace OCA\musicnc\Controller;
 
+use OCA\musicnc\AppInfo\Application;
 use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\IRequest;
 
 class RadioApiController extends Controller
 {
-    private $userId;
-
-    public function __construct($appName, IRequest $request,$userId)
+    public function __construct(IRequest $request)
     {
-        parent::__construct($appName, $request);
-        $this->userId = $userId;
+        parent::__construct(Application::APP_ID, $request);
     }
-
+    /**
+	 * @NoAdminRequired
+	 * @NoCSRFRequired
+	 */
     public function index()
     {
         return new TemplateResponse('musicnc', 'radioview');
     }
     /**
-     * @NoAdminRequired
-     * @NoCSRFRequired
-     */
+	 * @NoAdminRequired
+	 * @NoCSRFRequired
+	 */
     public function getAllByApi(){
         $url = "http://all.api.radio-browser.info/json/servers";
         $ch = curl_init($url);
