@@ -1672,13 +1672,12 @@ body[data-themes=dark] .playerNext {
   filter: invert(1);
   opacity: 1;
 }
-body[data-themes=dark] .sm2-inline-button.next {
+body[data-themes=dark] .sm2-inline-button.next, body[data-themes=dark] .sm2-inline-button.previous, body[data-themes=dark] .sm2-inline-button.repeat, body[data-themes=dark] .sm2-inline-button.shuffle {
   filter: invert(1);
   opacity: 1;
 }
-body[data-themes=dark] .sm2-inline-button.previous {
-  filter: invert(1);
-  opacity: 1;
+body[data-themes=dark] .bar {
+  background-color: #fff;
 }
 
 body[data-themes=light] .text-sun {

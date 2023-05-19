@@ -28,15 +28,17 @@ class RadioController extends Controller
 	 * @NoAdminRequired
 	 * @NoCSRFRequired
 	 */
-    public function getAllByApi(){
-        $url = "http://all.api.radio-browser.info/json/servers";
+    public function getAllByApi($page = 1,$limit=100,$hidebroken=true,$order="clickcount"){
+        $url = "http://de1.api.radio-browser.info/json/stations";
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $data = curl_exec($ch);
+        $qrStr = "offset=".$page."&limit=".$limit."&hidebroken=".$hidebroken."&order=".$order;
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $qrStr);
+        $dataServer = curl_exec($ch);
         curl_close($ch);
 
         $params = [
-            'data' => $data,
+            'data' => $dataServer,
         ];
 
         $response = new TemplateResponse('musicnc', 'partials/radioview', $params);
