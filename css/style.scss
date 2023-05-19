@@ -206,7 +206,7 @@ i#scanAudiosFirst {
 #app-navigation {
   overflow-y: auto;
   height: 90% !important;
-  flex: 1 1 17%;
+  flex: 1 1 15%;
 }
 
 #app-navigation .plclone {
@@ -425,10 +425,10 @@ i#scanAudiosFirst {
 #individual-playlist-header .header-indi {
   border-bottom: 1px solid #E7E7E7;
   width: 100%;
-  display: block;
   float: left;
   // height: 26px;
   font-size: 12px;
+  display: flex;
 }
 
 #individual-playlist-header span.header-num {
@@ -438,6 +438,7 @@ i#scanAudiosFirst {
   width: 18px;
   text-align: right;
   padding-right: 5px;
+  flex: 0 0 18px;
 }
 
 #individual-playlist-header span.header-title {
@@ -1292,6 +1293,7 @@ li.activeHover {
   outline: none;
   transition: background-color 0.3s, border-color 0.3s;
   cursor: pointer;
+  flex: 1;
 }
 
 #category_selector option:checked {
@@ -1340,12 +1342,12 @@ li.activeHover {
   font-weight: bold;
 }
 
-.header-indi > span {
+.header-indi>span {
   flex: 1;
   cursor: pointer;
 }
 
-.header-indi > span:not(.header-opt) {
+.header-indi>span:not(.header-opt) {
   margin-right: 10px;
 }
 
@@ -1381,6 +1383,7 @@ li.activeHover {
 li.isActive {
   background-color: #f2f2f2;
 }
+
 #individual-playlist-info {
   display: block;
   font-size: 14px;
@@ -1388,9 +1391,11 @@ li.isActive {
   color: #333333;
   margin-bottom: 10px;
 }
-.app-sidebar .large .thumbnail .stretcher{
+
+.app-sidebar .large .thumbnail .stretcher {
   padding-bottom: 0;
 }
+
 /*END LIST MUSIC*/
 
 /**/
@@ -1478,6 +1483,7 @@ li.isActive {
 #sidebarClose:hover {
   color: #333;
 }
+
 /*END  Slider bar ringht*/
 @media only screen and (max-width: 768px) {
 
@@ -1714,7 +1720,8 @@ body[data-themes=dark] {
     background-size: 15px 15px;
     background-position: 0 center;
     opacity: 1;
-    a{
+
+    a {
       color: white !important;
     }
   }
@@ -1770,6 +1777,19 @@ body[data-themes=dark] {
 
   #category_area {
     border-top: 1px solid black;
+  }
+
+  .songcontainer-inner * {
+    color: #fff;
+  }
+
+  .songlist{
+    ul {
+      li {
+        border: 1px solid;
+        border-radius: 10px;
+      }
+    }
   }
 }
 

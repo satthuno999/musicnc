@@ -206,7 +206,7 @@ i#scanAudiosFirst {
 #app-navigation {
   overflow-y: auto;
   height: 90% !important;
-  flex: 1 1 17%;
+  flex: 1 1 15%;
 }
 
 #app-navigation .plclone {
@@ -424,9 +424,9 @@ i#scanAudiosFirst {
 #individual-playlist-header .header-indi {
   border-bottom: 1px solid #E7E7E7;
   width: 100%;
-  display: block;
   float: left;
   font-size: 12px;
+  display: flex;
 }
 
 #individual-playlist-header span.header-num {
@@ -436,6 +436,7 @@ i#scanAudiosFirst {
   width: 18px;
   text-align: right;
   padding-right: 5px;
+  flex: 0 0 18px;
 }
 
 #individual-playlist-header span.header-title {
@@ -1253,6 +1254,7 @@ li.activeHover {
   outline: none;
   transition: background-color 0.3s, border-color 0.3s;
   cursor: pointer;
+  flex: 1;
 }
 
 #category_selector option:checked {
@@ -1651,6 +1653,13 @@ body[data-themes=dark] .nav-action {
 }
 body[data-themes=dark] #category_area {
   border-top: 1px solid black;
+}
+body[data-themes=dark] .songcontainer-inner * {
+  color: #fff;
+}
+body[data-themes=dark] .songlist ul li {
+  border: 1px solid;
+  border-radius: 10px;
 }
 
 body[data-themes=light] .text-sun {
