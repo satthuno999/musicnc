@@ -1413,7 +1413,7 @@ body[data-themes=dark] #radioviewBtn svg {
 body[data-themes=dark] #podcastBtn svg {
   filter: invert(60%) sepia(16%) saturate(1352%) hue-rotate(87deg) brightness(119%) contrast(119%);
 }
-body[data-themes=dark] #radioviewBtn svg {
+body[data-themes=dark] #videoViewBtn svg {
   filter: invert(27%) sepia(110%) saturate(1267%) hue-rotate(277deg) brightness(119%) contrast(119%);
 }
 body[data-themes=dark] .nav-action .item .itembtn:hover {

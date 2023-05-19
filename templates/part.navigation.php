@@ -80,7 +80,7 @@
 	<div class="line"></div>
 	<div class="item">
 		<div class="title-nav-action">MEDIA</div>
-		<div class="itembtn" id="radioviewBtn">
+		<div class="itembtn" id="videoViewBtn">
 			<svg xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 640 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
 				<path
