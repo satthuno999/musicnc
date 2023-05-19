@@ -33,7 +33,6 @@ OCA.musicnc.Core = {
     OCA.musicnc.Core.initialDocumentTitle = document.title;
     OCA.musicnc.UI.EmptyContainer = document.getElementById("empty-container");
     OCA.musicnc.UI.PlaylistContainer = $("#playlist-container"); //keep for bar-ui as it is still using jquery
-    $("#playlist-container").html("")
     OCA.musicnc.UI.getAudiostreamUrl =
       OC.generateUrl("apps/musicnc/getaudiostream") + "?t=";
     const theme = localStorage.getItem("themes");
