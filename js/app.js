@@ -937,7 +937,7 @@ OCA.musicnc.UI = {
         '<span class="no-songs-found">' +
         t("musicnc", "Welcome to") +
         " " +
-        t("musicnc", "Audio Player") +
+        "KMA Player" +
         "</span>";
     } else if (mode === "playlist") {
       OCA.musicnc.UI.EmptyContainer.innerHTML =
@@ -949,7 +949,7 @@ OCA.musicnc.UI = {
         '<span class="no-songs-found">' +
         t("musicnc", "Welcome to") +
         " " +
-        t("musicnc", "Audio Player") +
+        "KMA Player" +
         "</span>";
       html +=
         '<span class="no-songs-found"><i class="ioc ioc-refresh" title="' +

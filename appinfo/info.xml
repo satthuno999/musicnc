@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <info xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
 	<id>musicnc</id>
-	<name>Nghe Thôi</name>
+	<name>KMA PLAYER</name>
 	<summary>play / stream / organize</summary>
 	<description><![CDATA[A music player for FLAC, MP3, MP4, AIF, AAC, streams, … with playlist support and SONOS integration.
 
@@ -45,7 +45,7 @@ See [README](https://github.com/satthuno999/musicnc/blob/master/README.md) file 
 	<navigations>
 		<navigation>
 			<id>musicnc</id>
-			<name>Nghe Thôi</name>
+			<name>KMA PLAYER</name>
 			<route>musicnc.page.index</route>
 			<icon>app.svg</icon>
 			<order>6</order>
