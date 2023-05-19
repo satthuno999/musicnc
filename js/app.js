@@ -159,8 +159,8 @@ OCA.musicnc.Core = {
     if (OCA.musicnc.Core.CategorySelectors[1]) {
       let activeItem = document.querySelector(
         '#myCategory li[data-id="' +
-          OCA.musicnc.Core.CategorySelectors[1] +
-          '"]'
+        OCA.musicnc.Core.CategorySelectors[1] +
+        '"]'
       );
       activeItem.classList.add("active");
       activeItem.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -170,16 +170,16 @@ OCA.musicnc.Core = {
         if (OCA.musicnc.Core.CategorySelectors[2]) {
           let item = $(
             '#individual-playlist li[data-trackid="' +
-              OCA.musicnc.Core.CategorySelectors[2] +
-              '"]'
+            OCA.musicnc.Core.CategorySelectors[2] +
+            '"]'
           );
           //item.find('.icon').hide();
           //item.find('.ioc').removeClass('ioc-volume-up').addClass('ioc-volume-off').show();
           document
             .querySelector(
               '#individual-playlist li[data-trackid="' +
-                OCA.musicnc.Core.CategorySelectors[2] +
-                '"]'
+              OCA.musicnc.Core.CategorySelectors[2] +
+              '"]'
             )
             .scrollIntoView({
               behavior: "smooth",
@@ -767,9 +767,9 @@ OCA.musicnc.UI = {
 
       // reset all playing icons
       let iocIcon = document.querySelectorAll(".albumwrapper li i.ioc");
-      for (let i = 0; i < iocIcon.length; ++i) {}
+      for (let i = 0; i < iocIcon.length; ++i) { }
       let iconIcon = document.querySelectorAll(".albumwrapper li i.icon");
-      for (let j = 0; j < iconIcon.length; ++j) {}
+      for (let j = 0; j < iconIcon.length; ++j) { }
 
       document.getElementById("nowPlayingText").innerHTML =
         iocIcon[
@@ -777,13 +777,13 @@ OCA.musicnc.UI = {
         ].parentElement.parentElement.dataset.title;
       document
         .querySelectorAll(".albumwrapper li")
-        [OCA.musicnc.Player.currentTrackIndex].classList.add("isActive");
+      [OCA.musicnc.Player.currentTrackIndex].classList.add("isActive");
       document
         .querySelectorAll(".albumwrapper li")
-        [OCA.musicnc.Player.currentTrackIndex].scrollIntoView({
-          behavior: "smooth",
-          block: "center",
-        });
+      [OCA.musicnc.Player.currentTrackIndex].scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
     }
 
     //in every case, update the playbar and medaservices
@@ -1223,7 +1223,7 @@ OCA.musicnc.Backend = {
           type: user_type,
           value: user_value,
         },
-        success: function () {},
+        success: function () { },
       });
     }
   },
@@ -1235,15 +1235,15 @@ OCA.musicnc.Backend = {
         type: "GET",
         url: OC.generateUrl("apps/musicnc/setstatistics"),
         data: { track_id: track_id },
-        success: function () {},
+        success: function () { },
       });
       OCA.musicnc.Backend.setUserValue(
         "category",
         OCA.musicnc.Core.CategorySelectors[0] +
-          "-" +
-          OCA.musicnc.Core.CategorySelectors[1] +
-          "-" +
-          track_id
+        "-" +
+        OCA.musicnc.Core.CategorySelectors[1] +
+        "-" +
+        track_id
       );
     }
   },
@@ -1629,29 +1629,48 @@ OCA.musicnc.Playlists = {
  * @namespace OCA.musicnc.RenderPartialUI
  */
 OCA.musicnc.RenderPartialUI = {
-  AjaxCallStatus:null,
+  AjaxCallStatus: null,
 
   renderRadio: function () {
-     if (OCA.musicnc.RenderPartialUI.AjaxCallStatus !== null) {
-       OCA.musicnc.RenderPartialUI.AjaxCallStatus.abort();
-     }
-     OCP.Toast.info("Redirect to radio");
-     OCA.musicnc.RenderPartialUI.AjaxCallStatus = $.ajax({
-       type: "GET",
-       url: OC.generateUrl("apps/musicnc/getradioapi"),
-       data: {},
-       success: function (jsondata) {
+    if (OCA.musicnc.RenderPartialUI.AjaxCallStatus !== null) {
+      OCA.musicnc.RenderPartialUI.AjaxCallStatus.abort();
+    }
+    OCP.Toast.info("Redirect to radio");
+    OCA.musicnc.RenderPartialUI.AjaxCallStatus = $.ajax({
+      type: "GET",
+      url: OC.generateUrl("apps/musicnc/getradioapi"),
+      data: {},
+      success: function (jsondata) {
         console.log(jsondata)
         var parser = new DOMParser();
         var responseDoc = parser.parseFromString(jsondata, "text/html");
-       },
-       error: function (xhr, status, error) {
+      },
+      error: function (xhr, status, error) {
         console.log("AJAX request error:", error);
       },
-     });
+    });
+    var username = 'admin';
+    var password = 'admin';
+
+    OCA.Request.request({
+      url: OC.generateUrl("apps/musicnc/getradioapi"),
+      method: 'GET',
+      data: {},
+      beforeSend: function (xhr) {
+        xhr.setRequestHeader('Authorization', 'Basic ' + btoa(username + ':' + password));
+      },
+      success: function (response) {
+        // Request was successful, handle the response
+        console.log(response);
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+        // Request failed, handle the error
+        console.log('Error:', errorThrown);
+      }
+    });
   },
-  renderPodcast: function () {},
-  renderVideo: function () {},
+  renderPodcast: function () { },
+  renderVideo: function () { },
 };
 document.addEventListener("DOMContentLoaded", function () {
   OCA.musicnc.Core.init();
