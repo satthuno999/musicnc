@@ -11,5 +11,5 @@ $responseData = json_decode($data, true);
 $station = $responseData[0];
 ?>
 <div id="content-view">
-    <?php echo "$station" ?>
+    <?php echo $station["name"] ?>
 </div>
