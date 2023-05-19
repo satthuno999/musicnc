@@ -1635,7 +1635,7 @@ OCA.musicnc.RenderPartialUI = {
      if (OCA.musicnc.RenderPartialUI.AjaxCallStatus !== null) {
        OCA.musicnc.RenderPartialUI.AjaxCallStatus.abort();
      }
-
+     OCP.Toast.info("Redirect to radio");
      OCA.musicnc.RenderPartialUI.AjaxCallStatus = $.ajax({
        type: "GET",
        url: OC.generateUrl("apps/musicnc/getradioapi"),
