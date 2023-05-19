@@ -1655,7 +1655,12 @@ OCA.musicnc.RenderPartialUI = {
         $("#playlist-container").html("");
         $("#partial-wrapper").html(content);
 
-        responseDoc.getElementsByClassName("item").addEventListener("clicl",OCA.musicnc.handleRadioClicked());
+        responseDoc
+          .getElementsByClassName("item")
+          .addEventListener(
+            "click",
+            OCA.musicnc.RenderPartialUI.handleRadioClicked()
+          );
       },
       error: function (xhr, status, error) {
         console.log("AJAX request error:", error);
