@@ -1667,7 +1667,7 @@ OCA.musicnc.RenderPartialUI = {
         var responseDoc = parser.parseFromString(jsondata, "text/html");
         var content = responseDoc.getElementById("content-view");
         document.getElementById("playlist-container").innerHTML = "";
-        document.getElementById("partial-wrapper").innerHTML = content;
+        document.getElementById("partial-wrapper").append(content);
 
         responseDoc.getElementsByClassName("item");
 
