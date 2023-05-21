@@ -1640,7 +1640,7 @@ OCA.musicnc.RenderPartialUI = {
       console.log($(e).find("a").data("href"));
       if (OCA.musicnc.Player) {
         OCA.musicnc.Player.stop();
-        OCA.musicnc.Player.html5Audio.playRadio($(e).find(a).data("href"));
+        OCA.musicnc.Player.html5Audio.playRadio($(e).find("a").data("href"));
       }
   },
   renderRadio: function () {

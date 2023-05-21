@@ -82,7 +82,7 @@ OCA.musicnc.Player = {
    * set the track to the selected track index and check if it can be played at all
    * play/pause when the same track is selected or get a new one
    */
-  setTrack: function (streamUrl) {
+  setTrackRadio: function (streamUrl) {
     
     // new track to be played
     if (trackToPlay.src !== this.html5Audio.getAttribute("src")) {
