@@ -159,8 +159,8 @@ OCA.musicnc.Core = {
     if (OCA.musicnc.Core.CategorySelectors[1]) {
       let activeItem = document.querySelector(
         '#myCategory li[data-id="' +
-        OCA.musicnc.Core.CategorySelectors[1] +
-        '"]'
+          OCA.musicnc.Core.CategorySelectors[1] +
+          '"]'
       );
       activeItem.classList.add("active");
       activeItem.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -170,16 +170,16 @@ OCA.musicnc.Core = {
         if (OCA.musicnc.Core.CategorySelectors[2]) {
           let item = $(
             '#individual-playlist li[data-trackid="' +
-            OCA.musicnc.Core.CategorySelectors[2] +
-            '"]'
+              OCA.musicnc.Core.CategorySelectors[2] +
+              '"]'
           );
           //item.find('.icon').hide();
           //item.find('.ioc').removeClass('ioc-volume-up').addClass('ioc-volume-off').show();
           document
             .querySelector(
               '#individual-playlist li[data-trackid="' +
-              OCA.musicnc.Core.CategorySelectors[2] +
-              '"]'
+                OCA.musicnc.Core.CategorySelectors[2] +
+                '"]'
             )
             .scrollIntoView({
               behavior: "smooth",
@@ -483,10 +483,10 @@ OCA.musicnc.Category = {
           }
         } else {
           OCA.musicnc.UI.showInitScreen();
-          $('playlist-container').html("");
+          $("playlist-container").html("");
         }
-        var ulElement = document.getElementById('myCategory');
-        var liElements = ulElement.getElementsByTagName('li');
+        var ulElement = document.getElementById("myCategory");
+        var liElements = ulElement.getElementsByTagName("li");
         if (liElements.length > 0) {
           liElements[0].click();
         }
@@ -773,9 +773,9 @@ OCA.musicnc.UI = {
 
       // reset all playing icons
       let iocIcon = document.querySelectorAll(".albumwrapper li i.ioc");
-      for (let i = 0; i < iocIcon.length; ++i) { }
+      for (let i = 0; i < iocIcon.length; ++i) {}
       let iconIcon = document.querySelectorAll(".albumwrapper li i.icon");
-      for (let j = 0; j < iconIcon.length; ++j) { }
+      for (let j = 0; j < iconIcon.length; ++j) {}
 
       document.getElementById("nowPlayingText").innerHTML =
         iocIcon[
@@ -783,13 +783,13 @@ OCA.musicnc.UI = {
         ].parentElement.parentElement.dataset.title;
       document
         .querySelectorAll(".albumwrapper li")
-      [OCA.musicnc.Player.currentTrackIndex].classList.add("isActive");
+        [OCA.musicnc.Player.currentTrackIndex].classList.add("isActive");
       document
         .querySelectorAll(".albumwrapper li")
-      [OCA.musicnc.Player.currentTrackIndex].scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-      });
+        [OCA.musicnc.Player.currentTrackIndex].scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
     }
 
     //in every case, update the playbar and medaservices
@@ -1228,7 +1228,7 @@ OCA.musicnc.Backend = {
           type: user_type,
           value: user_value,
         },
-        success: function () { },
+        success: function () {},
       });
     }
   },
@@ -1240,15 +1240,15 @@ OCA.musicnc.Backend = {
         type: "GET",
         url: OC.generateUrl("apps/musicnc/setstatistics"),
         data: { track_id: track_id },
-        success: function () { },
+        success: function () {},
       });
       OCA.musicnc.Backend.setUserValue(
         "category",
         OCA.musicnc.Core.CategorySelectors[0] +
-        "-" +
-        OCA.musicnc.Core.CategorySelectors[1] +
-        "-" +
-        track_id
+          "-" +
+          OCA.musicnc.Core.CategorySelectors[1] +
+          "-" +
+          track_id
       );
     }
   },
@@ -1636,19 +1636,19 @@ OCA.musicnc.Playlists = {
 OCA.musicnc.RenderPartialUI = {
   AjaxCallStatus: null,
 
-  handleRadioClicked: function(e){
-      console.log($(e).find("a").data("href"));
-      if (OCA.musicnc.Player) {
-        OCA.musicnc.Player.html5Audio.pause();
-        document
-          .getElementById("playerPlay")
-          .classList.replace("icon-loading", "play-pause");
-        document
-          .getElementById("playerPlay")
-          .classList.replace("play", "play-pause");
-        document.getElementById("sm2-bar-ui").classList.remove("playing");
-        OCA.musicnc.Player.playRadio($(e).find("a").data("href"));
-      }
+  handleRadioClicked: function (e) {
+    console.log($(e).find("a").data("href"));
+    if (OCA.musicnc.Player) {
+      OCA.musicnc.Player.html5Audio.pause();
+      document
+        .getElementById("playerPlay")
+        .classList.replace("icon-loading", "play-pause");
+      document
+        .getElementById("playerPlay")
+        .classList.replace("play", "play-pause");
+      document.getElementById("sm2-bar-ui").classList.remove("playing");
+      OCA.musicnc.Player.playRadio($(e).find("a").data("href"));
+    }
   },
   renderRadio: function () {
     if (OCA.musicnc.RenderPartialUI.AjaxCallStatus !== null) {
@@ -1665,22 +1665,26 @@ OCA.musicnc.RenderPartialUI = {
         var content = responseDoc.getElementById("content-view");
         $("#playlist-container").html("");
         $("#partial-wrapper").html(content);
-        
-        responseDoc
-          .getElementsByClassName("item")
-          .addEventListener(
+
+        responseDoc.getElementsByClassName("item").addEventListener("click");
+
+        var items = responseDoc.getElementsByClassName("item");
+
+        for (var i = 0; i < items.length; i++) {
+          items[i].addEventListener(
             "click",
-            OCA.musicnc.RenderPartialUI.handleRadioClicked()
+            OCA.musicnc.RenderPartialUI.handleRadioClicked(),
+            false
           );
+        }
       },
       error: function (xhr, status, error) {
         console.log("AJAX request error:", error);
       },
     });
   },
-  renderPodcast: function () { },
-  renderVideo: function () { },
-
+  renderPodcast: function () {},
+  renderVideo: function () {},
 };
 document.addEventListener("DOMContentLoaded", function () {
   OCA.musicnc.Core.init();
@@ -1730,7 +1734,6 @@ document.addEventListener("DOMContentLoaded", function () {
       if (OCA.musicnc.Core.CategorySelectors[0] !== "") {
         OCA.musicnc.Category.load();
       }
-
     });
   document
     .getElementById("radioviewBtn")
