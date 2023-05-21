@@ -85,7 +85,7 @@ OCA.musicnc.Player = {
   setTrackRadio: function (streamUrl) {
     
     // new track to be played
-    if (trackToPlay.src !== this.html5Audio.getAttribute("src")) {
+    if (this.html5Audio.getAttribute("src")) {
       document
         .getElementById("playerPlay")
         .classList.replace("play-pause", "icon-loading");
