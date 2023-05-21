@@ -1647,7 +1647,7 @@ OCA.musicnc.RenderPartialUI = {
           .getElementById("playerPlay")
           .classList.replace("play", "play-pause");
         document.getElementById("sm2-bar-ui").classList.remove("playing");
-        OCA.musicnc.Player.html5Audio.playRadio($(e).find("a").data("href"));
+        OCA.musicnc.Player.playRadio($(e).find("a").data("href"));
       }
   },
   renderRadio: function () {
