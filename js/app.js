@@ -1666,7 +1666,7 @@ OCA.musicnc.RenderPartialUI = {
         $("#playlist-container").html("");
         $("#partial-wrapper").html(content);
 
-        responseDoc.getElementsByClassName("item").addEventListener("click");
+        responseDoc.getElementsByClassName("item");
 
         var items = responseDoc.getElementsByClassName("item");
 
