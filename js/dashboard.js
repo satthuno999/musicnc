@@ -22,164 +22,218 @@ if (!OCA.musicnc) {
     OCA.musicnc = {};
 }
 OCA.musicnc.Player = {
-    html5Audio: null,
-    currentTrackIndex: 0,   // the index of the <source> list to be played
-    currentPlaylist: 0,     // ID of the current playlist. Needed to recognize UI list changes
-    repeatMode: null,       // repeat mode null/single/list
-    shuffleHistory: [],     // array to store the track ids which were already played. Avoid multi playback in shuffle
-    shuffle: false,         // shuffle mode false/true
-    trackStartPosition: 0,  // start position of a track when the player is reopened and the playback should continue
-    lastSavedSecond: 0,     // last autosaved second
+  html5Audio: null,
+  currentTrackIndex: 0, // the index of the <source> list to be played
+  currentPlaylist: 0, // ID of the current playlist. Needed to recognize UI list changes
+  repeatMode: null, // repeat mode null/single/list
+  shuffleHistory: [], // array to store the track ids which were already played. Avoid multi playback in shuffle
+  shuffle: false, // shuffle mode false/true
+  trackStartPosition: 0, // start position of a track when the player is reopened and the playback should continue
+  lastSavedSecond: 0, // last autosaved second
 
-    /**
-     * set track and play it
-     */
-    play: function () {
+  /**
+   * set track and play it
+   */
+  play: function () {
+    OCA.musicnc.Player.setTrack();
+  },
+
+  /**
+   * stop the playback and update the UI with the paused track
+   */
+  stop: function () {
+    this.html5Audio.pause();
+    document.getElementById("playerPlay").classList.remove("playing");
+    document.getElementById("audioplayerTitle").innerHTML = "";
+  },
+
+  /**
+   * select the next track and play it
+   * it is dependent on shuffle mode, repeat mode and possible end of playlist
+   */
+  next: function () {
+    OCA.musicnc.Player.trackStartPosition = 0;
+    OCA.musicnc.Player.lastSavedSecond = 0;
+    var numberOfTracks = OCA.musicnc.Player.html5Audio.childElementCount - 1; // index stats counting at 0
+    if (OCA.musicnc.Player.shuffle === true) {
+      // shuffle => get random track index
+      var minimum = 0;
+      var maximum = numberOfTracks;
+      var randomIndex = 0;
+      var foundPlayedTrack = false;
+
+      if (
+        OCA.musicnc.Player.shuffleHistory.length ===
+        OCA.musicnc.Player.html5Audio.childElementCount
+      ) {
+        OCA.musicnc.Player.stop();
+        OCA.musicnc.Player.shuffleHistory = [];
+        return;
+      }
+
+      do {
+        randomIndex =
+          Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+        foundPlayedTrack =
+          OCA.musicnc.Player.shuffleHistory.includes(randomIndex);
+      } while (foundPlayedTrack === true);
+
+      OCA.musicnc.Player.currentTrackIndex = randomIndex;
+      OCA.musicnc.Player.shuffleHistory.push(randomIndex);
+      OCA.musicnc.Player.setTrack();
+    } else if (OCA.musicnc.Player.currentTrackIndex === numberOfTracks) {
+      // if end is reached, either stop or restart the list
+      if (OCA.musicnc.Player.repeatMode === "list") {
+        OCA.musicnc.Player.currentTrackIndex = 0;
         OCA.musicnc.Player.setTrack();
-    },
+      } else {
+        OCA.musicnc.Player.stop();
+      }
+    } else {
+      OCA.musicnc.Player.currentTrackIndex++;
+      OCA.musicnc.Player.setTrack();
+    }
+  },
 
-    /**
-     * stop the playback and update the UI with the paused track
-     */
-    stop: function () {
-        this.html5Audio.pause();
-        document.getElementById('playerPlay').classList.remove('playing');
-        document.getElementById('audioplayerTitle').innerHTML = '';
-    },
+  /**
+   * select the previous track and play it
+   */
+  prev: function () {
+    OCA.musicnc.Player.trackStartPosition = 0;
+    OCA.musicnc.Player.lastSavedSecond = 0;
+    OCA.musicnc.Player.currentTrackIndex--;
+    OCA.musicnc.Player.setTrack();
+  },
 
-    /**
-     * select the next track and play it
-     * it is dependent on shuffle mode, repeat mode and possible end of playlist
-     */
-    next: function () {
-        OCA.musicnc.Player.trackStartPosition = 0;
-        OCA.musicnc.Player.lastSavedSecond = 0;
-        var numberOfTracks = OCA.musicnc.Player.html5Audio.childElementCount - 1; // index stats counting at 0
-        if (OCA.musicnc.Player.shuffle === true) {
-            // shuffle => get random track index
-            var minimum = 0;
-            var maximum = numberOfTracks;
-            var randomIndex = 0;
-            var foundPlayedTrack = false;
+  /**
+   * set the track to the selected track index and check if it can be played at all
+   * play/pause when the same track is selected or get a new one
+   */
+  setTrack: function () {
+    var trackToPlay = this.html5Audio.children[this.currentTrackIndex];
+    if (trackToPlay.dataset.canPlayMime === "false") {
+      this.next();
+      return;
+    }
+    // new track to be played
+    if (trackToPlay.src !== this.html5Audio.getAttribute("src")) {
+      document
+        .getElementById("playerPlay")
+        .classList.replace("APplay-pause", "icon-loading");
+      this.lastSavedSecond = 0;
+      this.html5Audio.setAttribute("src", trackToPlay.src);
+      this.html5Audio.load();
+    } else if (!this.html5Audio.paused) {
+      OCA.musicnc.Player.stop();
+      return;
+    }
 
-            if (OCA.musicnc.Player.shuffleHistory.length === OCA.musicnc.Player.html5Audio.childElementCount) {
-                OCA.musicnc.Player.stop();
-                OCA.musicnc.Player.shuffleHistory = [];
-                return;
-            }
+    let playPromise = this.html5Audio.play();
+    if (playPromise !== undefined) {
+      playPromise
+        .then((_) => {
+          document
+            .getElementById("playerPlay")
+            .classList.replace("icon-loading", "APplay-pause");
+          document.getElementById("playerPlay").classList.add("playing");
+          OCA.musicnc.Player.indicateCurrentPlayingTrack();
+        })
+        .catch((error) => {
+          OCA.musicnc.Player.stop();
+          document
+            .getElementById("playerPlay")
+            .classList.replace("icon-loading", "icon-loading");
+          //document.getElementById('playerPlay').classList.replace('APplay-pause','play');
+        });
+    }
+  },
+  /**
+   * set the track to the selected track index and check if it can be played at all
+   * play/pause when the same track is selected or get a new one
+   */
+  setTrackRadio: function (streamUrl) {
+    
+    // new track to be played
+    if (this.html5Audio.getAttribute("src")) {
+      document
+        .getElementById("playerPlay")
+        .classList.replace("APplay-pause", "icon-loading");
+      this.lastSavedSecond = 0;
+      this.html5Audio.setAttribute("src", streamUrl);
+      this.html5Audio.load();
+    } else if (!this.html5Audio.paused) {
+      OCA.musicnc.Player.stop();
+      return;
+    }
 
-            do {
-                randomIndex = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
-                foundPlayedTrack = OCA.musicnc.Player.shuffleHistory.includes(randomIndex);
-            } while (foundPlayedTrack === true);
+    let playPromise = this.html5Audio.play();
+    if (playPromise !== undefined) {
+      playPromise
+        .then((_) => {
+          document
+            .getElementById("playerPlay")
+            .classList.replace("icon-loading", "APplay-pause");
+          document.getElementById("playerPlay").classList.add("playing");
+          OCA.musicnc.Player.indicateCurrentPlayingTrack();
+        })
+        .catch((error) => {
+          OCA.musicnc.Player.stop();
+          document
+            .getElementById("playerPlay")
+            .classList.replace("icon-loading", "icon-loading");
+          //document.getElementById('playerPlay').classList.replace('APplay-pause','play');
+        });
+    }
+  },
 
-            OCA.musicnc.Player.currentTrackIndex = randomIndex;
-            OCA.musicnc.Player.shuffleHistory.push(randomIndex);
-            OCA.musicnc.Player.setTrack();
-        } else if (OCA.musicnc.Player.currentTrackIndex === numberOfTracks) {
-            // if end is reached, either stop or restart the list
-            if (OCA.musicnc.Player.repeatMode === 'list') {
-                OCA.musicnc.Player.currentTrackIndex = 0;
-                OCA.musicnc.Player.setTrack();
-            } else {
-                OCA.musicnc.Player.stop();
-            }
-        } else {
-            OCA.musicnc.Player.currentTrackIndex++;
-            OCA.musicnc.Player.setTrack();
+  indicateCurrentPlayingTrack: function () {
+    //in every case, update the playbar and medaservices
+    var coverUrl = OC.generateUrl("apps/musicnc/getcover/");
+    var currentTrack = this.html5Audio.children[this.currentTrackIndex];
+
+    if (currentTrack) {
+      var addCss;
+      var addDescr;
+      var coverID = currentTrack.dataset.cover;
+      if (coverID === "null") {
+        addCss = "background-color: #D3D3D3;color: #333333;";
+        addDescr = currentTrack.dataset.title[0];
+        if ("mediaSession" in navigator) {
+          navigator.mediaSession.metadata = new MediaMetadata({
+            title: currentTrack.dataset.title,
+            artist: currentTrack.dataset.artist,
+            album: currentTrack.dataset.album,
+          });
         }
-    },
-
-    /**
-     * select the previous track and play it
-     */
-    prev: function () {
-        OCA.musicnc.Player.trackStartPosition = 0;
-        OCA.musicnc.Player.lastSavedSecond = 0;
-        OCA.musicnc.Player.currentTrackIndex--;
-        OCA.musicnc.Player.setTrack();
-    },
-
-    /**
-     * set the track to the selected track index and check if it can be played at all
-     * play/pause when the same track is selected or get a new one
-     */
-    setTrack: function () {
-        var trackToPlay = this.html5Audio.children[this.currentTrackIndex];
-        if (trackToPlay.dataset.canPlayMime === 'false') {
-            this.next();
-            return;
+      } else {
+        addCss =
+          "background-image:url(" + coverUrl + coverID + ");height: 180px;";
+        addDescr = "";
+        if ("mediaSession" in navigator) {
+          navigator.mediaSession.metadata = new MediaMetadata({
+            title: currentTrack.dataset.title,
+            artist: currentTrack.dataset.artist,
+            album: currentTrack.dataset.album,
+            artwork: [
+              { src: coverUrl + coverID, sizes: "192x192", type: "image/png" },
+            ],
+          });
         }
-        // new track to be played
-        if (trackToPlay.src !== this.html5Audio.getAttribute('src')) {
-            document.getElementById('playerPlay').classList.replace('APplay-pause', 'icon-loading')
-            this.lastSavedSecond = 0;
-            this.html5Audio.setAttribute('src', trackToPlay.src);
-            this.html5Audio.load();
-        } else if (!this.html5Audio.paused) {
-            OCA.musicnc.Player.stop();
-            return;
-        }
+      }
+      document.getElementById("audioplayerCover").setAttribute("style", addCss);
+      document.getElementById("audioplayerCover").innerText = addDescr;
 
-        let playPromise = this.html5Audio.play();
-        if (playPromise !== undefined) {
-            playPromise.then(_ => {
-                document.getElementById('playerPlay').classList.replace('icon-loading', 'APplay-pause');
-                document.getElementById('playerPlay').classList.add('playing');
-                OCA.musicnc.Player.indicateCurrentPlayingTrack();
-            })
-                .catch(error => {
-                    OCA.musicnc.Player.stop();
-                    document.getElementById('playerPlay').classList.replace('icon-loading','icon-loading');
-                    //document.getElementById('playerPlay').classList.replace('APplay-pause','play');
-                });
-        }
-
-    },
-
-    indicateCurrentPlayingTrack: function () {
-        //in every case, update the playbar and medaservices
-        var coverUrl = OC.generateUrl('apps/musicnc/getcover/');
-        var currentTrack = this.html5Audio.children[this.currentTrackIndex];
-
-        if (currentTrack) {
-            var addCss;
-            var addDescr;
-            var coverID = currentTrack.dataset.cover;
-            if (coverID === 'null') {
-                addCss = 'background-color: #D3D3D3;color: #333333;';
-                addDescr = currentTrack.dataset.title[0];
-                if ('mediaSession' in navigator) {
-                    navigator.mediaSession.metadata = new MediaMetadata({
-                        title: currentTrack.dataset.title,
-                        artist: currentTrack.dataset.artist,
-                        album: currentTrack.dataset.album,
-                    });
-                }
-            } else {
-                addCss = 'background-image:url(' + coverUrl + coverID + ');height: 180px;';
-                addDescr = '';
-                if ('mediaSession' in navigator) {
-                    navigator.mediaSession.metadata = new MediaMetadata({
-                        title: currentTrack.dataset.title,
-                        artist: currentTrack.dataset.artist,
-                        album: currentTrack.dataset.album,
-                        artwork: [
-                            {src: coverUrl + coverID, sizes: '192x192', type: 'image/png'},
-                        ]
-                    });
-                }
-            }
-            document.getElementById('audioplayerCover').setAttribute('style', addCss);
-            document.getElementById('audioplayerCover').innerText = addDescr;
-
-            let currentCount = this.currentTrackIndex+1 + '/' + this.html5Audio.childElementCount + ': ';
-            document.getElementById('audioplayerTitle').innerHTML = currentCount + currentTrack.dataset.title;
-        }
-    },
-
-
-}
+      let currentCount =
+        this.currentTrackIndex +
+        1 +
+        "/" +
+        this.html5Audio.childElementCount +
+        ": ";
+      document.getElementById("audioplayerTitle").innerHTML =
+        currentCount + currentTrack.dataset.title;
+    }
+  },
+};
 
 /**
  * @namespace OCA.musicnc.Dashboard

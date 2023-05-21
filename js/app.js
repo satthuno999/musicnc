@@ -1638,6 +1638,10 @@ OCA.musicnc.RenderPartialUI = {
 
   handleRadioClicked: function(e){
       console.log($(e).find(a).data("href"));
+      if (OCA.musicnc.Player) {
+        OCA.musicnc.Player.stop();
+        OCA.musicnc.Player.html5Audio.playRadio($(e).find(a).data("href"));
+      }
   },
   renderRadio: function () {
     if (OCA.musicnc.RenderPartialUI.AjaxCallStatus !== null) {
@@ -1654,7 +1658,7 @@ OCA.musicnc.RenderPartialUI = {
         var content = responseDoc.getElementById("content-view");
         $("#playlist-container").html("");
         $("#partial-wrapper").html(content);
-
+        
         responseDoc
           .getElementsByClassName("item")
           .addEventListener(
@@ -1669,6 +1673,7 @@ OCA.musicnc.RenderPartialUI = {
   },
   renderPodcast: function () { },
   renderVideo: function () { },
+
 };
 document.addEventListener("DOMContentLoaded", function () {
   OCA.musicnc.Core.init();
