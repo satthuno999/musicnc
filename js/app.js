@@ -1637,7 +1637,7 @@ OCA.musicnc.RenderPartialUI = {
   AjaxCallStatus: null,
 
   handleRadioClicked: function(e){
-      console.log($(e).find(a).data("href"));
+      console.log($(e).find("a").data("href"));
       if (OCA.musicnc.Player) {
         OCA.musicnc.Player.stop();
         OCA.musicnc.Player.html5Audio.playRadio($(e).find(a).data("href"));
