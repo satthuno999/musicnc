@@ -1637,7 +1637,10 @@ OCA.musicnc.RenderPartialUI = {
   AjaxCallStatus: null,
 
   handleRadioClicked: function (e) {
-    console.log($(e).find("a").data("href"));
+    var target = e.target;
+    var anchorElement = target.querySelector("a");
+    var hrefValue = anchorElement.getAttribute("data-href");
+    console.log(hrefValue)
     if (OCA.musicnc.Player) {
       OCA.musicnc.Player.html5Audio.pause();
       document
@@ -1647,7 +1650,7 @@ OCA.musicnc.RenderPartialUI = {
         .getElementById("playerPlay")
         .classList.replace("play", "play-pause");
       document.getElementById("sm2-bar-ui").classList.remove("playing");
-      OCA.musicnc.Player.playRadio($(e).find("a").data("href"));
+      OCA.musicnc.Player.playRadio(hrefValue);
     }
   },
   renderRadio: function () {
@@ -1663,8 +1666,8 @@ OCA.musicnc.RenderPartialUI = {
         var parser = new DOMParser();
         var responseDoc = parser.parseFromString(jsondata, "text/html");
         var content = responseDoc.getElementById("content-view");
-        $("#playlist-container").html("");
-        $("#partial-wrapper").html(content);
+        document.getElementById("playlist-container").innerHTML = "";
+        document.getElementById("partial-wrapper").innerHTML = content;
 
         responseDoc.getElementsByClassName("item");
 
@@ -1673,7 +1676,9 @@ OCA.musicnc.RenderPartialUI = {
         for (var i = 0; i < items.length; i++) {
           items[i].addEventListener(
             "click",
-            OCA.musicnc.RenderPartialUI.handleRadioClicked(),
+            function(event){
+              OCA.musicnc.RenderPartialUI.handleRadioClicked(event);
+            },
             false
           );
         }
