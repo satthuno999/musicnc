@@ -1639,7 +1639,14 @@ OCA.musicnc.RenderPartialUI = {
   handleRadioClicked: function(e){
       console.log($(e).find("a").data("href"));
       if (OCA.musicnc.Player) {
-        OCA.musicnc.Player.stop();
+        OCA.musicnc.Player.html5Audio.pause();
+        document
+          .getElementById("playerPlay")
+          .classList.replace("icon-loading", "play-pause");
+        document
+          .getElementById("playerPlay")
+          .classList.replace("play", "play-pause");
+        document.getElementById("sm2-bar-ui").classList.remove("playing");
         OCA.musicnc.Player.html5Audio.playRadio($(e).find("a").data("href"));
       }
   },
