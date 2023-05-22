@@ -17,18 +17,19 @@ class RadioController extends Controller
         parent::__construct(Application::APP_ID, $request);
     }
     /**
-	 * @NoAdminRequired
-	 * @NoCSRFRequired
-	 */
+     * @NoAdminRequired
+     * @NoCSRFRequired
+     */
     public function index()
     {
         return new TemplateResponse('musicnc', 'radioview');
     }
     /**
-	 * @NoAdminRequired
-	 * @NoCSRFRequired
-	 */
-    public function getAllByApi($page = 1,$limit=100,$hidebroken=true,$order="clickcount"){
+     * @NoAdminRequired
+     * @NoCSRFRequired
+     */
+    public function getAllByApi($page = 1, $limit = 100, $hidebroken = true, $order = "clickcount", $language)
+    {
         $url = "http://de1.api.radio-browser.info/json/stations";
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -44,12 +45,26 @@ class RadioController extends Controller
         $dataServer = curl_exec($ch);
         curl_close($ch);
 
+        if ($language !== "") {
+            $url = "http://de1.api.radio-browser.info/json/languages";
+            $ch = curl_init($url);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $queryParams = http_build_query(
+                array(
+                    'order' => 'name'
+                )
+            );
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $queryParams);
+            $dataCountrys = curl_exec($ch);
+            curl_close($ch);
+        }
 
         $params = [
             'data' => $dataServer,
+            'dataCountrys' => $dataCountrys
         ];
 
         $response = new TemplateResponse('musicnc', 'partials/radioview', $params);
-		return $response;
+        return $response;
     }
 }
