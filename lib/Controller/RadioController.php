@@ -52,6 +52,7 @@ class RadioController extends Controller
             array(
                 'order' => 'stationcount',
                 'limit' => $limit,
+                'reverse' => true
             )
         );
         curl_setopt($chLang, CURLOPT_POSTFIELDS, $queryParamsLang);
