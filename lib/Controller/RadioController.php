@@ -28,7 +28,7 @@ class RadioController extends Controller
      * @NoAdminRequired
      * @NoCSRFRequired
      */
-    public function getAllByApi($page = 1, $limit = 100, $hidebroken = true, $order = "clickcount")
+    public function getAllByApi($page = 1, $limit = 100, $hidebroken = 'true', $order = "clickcount")
     {
         $url = "http://de1.api.radio-browser.info/json/stations";
         $ch = curl_init($url);
@@ -52,7 +52,7 @@ class RadioController extends Controller
             array(
                 'order' => 'stationcount',
                 'limit' => $limit,
-                'reverse' => true
+                'reverse' => 'true'
             )
         );
         curl_setopt($chLang, CURLOPT_POSTFIELDS, $queryParamsLang);
