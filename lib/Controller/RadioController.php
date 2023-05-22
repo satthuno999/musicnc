@@ -28,7 +28,7 @@ class RadioController extends Controller
      * @NoAdminRequired
      * @NoCSRFRequired
      */
-    public function getAllByApi($page = 1, $limit = 100, $hidebroken = true, $order = "clickcount", $language)
+    public function getAllByApi($page = 1, $limit = 100, $hidebroken = true, $order = "clickcount")
     {
         $url = "http://de1.api.radio-browser.info/json/stations";
         $ch = curl_init($url);
@@ -45,19 +45,17 @@ class RadioController extends Controller
         $dataServer = curl_exec($ch);
         curl_close($ch);
 
-        if ($language !== "") {
-            $url = "http://de1.api.radio-browser.info/json/languages";
-            $ch = curl_init($url);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            $queryParams = http_build_query(
-                array(
-                    'order' => 'name'
-                )
-            );
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $queryParams);
-            $dataCountrys = curl_exec($ch);
-            curl_close($ch);
-        }
+        $urlLang = "http://de1.api.radio-browser.info/json/languages";
+        $chLang = curl_init($urlLang);
+        curl_setopt($chLang, CURLOPT_RETURNTRANSFER, true);
+        $queryParamsLang = http_build_query(
+            array(
+                'order' => 'name'
+            )
+        );
+        curl_setopt($chLang, CURLOPT_POSTFIELDS, $queryParamsLang);
+        $dataCountrys = curl_exec($chLang);
+        curl_close($chLang);
 
         $params = [
             'data' => $dataServer,
