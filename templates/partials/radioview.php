@@ -12,7 +12,7 @@ $countrys = json_decode($dataCountrys, true);
 ?>
 <div id="content-view">
     <div class="list-stream">
-        <div class="list-stream-category">Lượt xem</div>
+        <div class="category">Lượt xem</div>
         <ul>
             <?php
             foreach ($podcasts as $podcast) {
@@ -44,7 +44,7 @@ $countrys = json_decode($dataCountrys, true);
         </ul>
     </div>
     <div class="list-station">
-        <div class="list-stream-category">Languages</div>
+        <div class="category">Languages</div>
         <ul>
             <?php
             foreach ($countrys as $country) {
@@ -52,8 +52,8 @@ $countrys = json_decode($dataCountrys, true);
                 <li class="item">
                 <a title="' . $country["name"]. '"
                     href="#" data-href="' . $country["name"] . '">
-                    <div class=" country-card">
-                        <div class="country-cover">
+                    <div class=" card">
+                        <div class="cover">
                             <div class="lazyload-wrapper ">
                                 <img alt="' . $country["name"] . '" loading="lazy"
                                     width="150" height="150" decoding="async" 
@@ -61,10 +61,10 @@ $countrys = json_decode($dataCountrys, true);
                                     style="color: transparent; border-radius: 4px; width: 100%; height: 100%;">
                             </div>
                         </div>
-                        <div class="country-title">
+                        <div class="title">
                             Số lượng trạm: ' . $country["stationcount"] . '
                         </div>
-                        <div class="country-locate">'. $podcast["name"] . '
+                        <div class="locate">'. $podcast["name"] . '
                         </div>
                     </div>
                 </a>

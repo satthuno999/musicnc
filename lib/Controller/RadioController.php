@@ -50,7 +50,7 @@ class RadioController extends Controller
         curl_setopt($chLang, CURLOPT_RETURNTRANSFER, true);
         $queryParamsLang = http_build_query(
             array(
-                'order' => 'name'
+                'order' => 'stationcount'
             )
         );
         curl_setopt($chLang, CURLOPT_POSTFIELDS, $queryParamsLang);
