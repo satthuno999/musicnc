@@ -64,7 +64,7 @@ $countrys = json_decode($dataCountrys, true);
                         <div class="title">
                             Số lượng trạm: ' . $country["stationcount"] . '
                         </div>
-                        <div class="locate">'. $podcast["name"] . '
+                        <div class="locate">'. $country["name"] . '
                         </div>
                     </div>
                 </a>
