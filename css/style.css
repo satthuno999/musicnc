@@ -1445,6 +1445,25 @@ li.isActive {
 
 /*END  Slider bar ringht*/
 /**/
+.list-stream {
+  margin: 10px 0;
+}
+.list-stream .category {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.list-stream .category::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 2px;
+  background-color: #7dbfe2;
+  bottom: 0;
+  left: 10px;
+}
 .list-stream ul {
   backface-visibility: hidden;
   display: flex;

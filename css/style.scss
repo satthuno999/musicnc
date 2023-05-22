@@ -1488,6 +1488,24 @@ li.isActive {
 
 /**/
 .list-stream {
+  margin: 10px 0;
+  .category{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    margin-bottom: 10px;
+    position: relative;
+
+    &::after{
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 2px;
+      background-color: #7dbfe2;
+      bottom: 0;
+      left: 10px;
+    }
+  }
   ul {
     backface-visibility: hidden;
     display: flex;
