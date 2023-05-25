@@ -1640,6 +1640,7 @@ OCA.musicnc.RenderPartialUI = {
     var target = e.target;
     var anchorElement = target.querySelector("a");
     var hrefValue = anchorElement.getAttribute("data-href");
+    console.log(hrefValue);
     if (OCA.musicnc.Player) {
       OCA.musicnc.Player.html5Audio.pause();
       document
