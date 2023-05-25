@@ -1654,12 +1654,6 @@ OCA.musicnc.RenderPartialUI = {
         .attr("title");
       document.getElementById("progressBar").style.backgroundColor =
         "#e91e63d9";
-      setTimeout(function(){
-        document.getElementById("endTime").innerHTML = "Infinity";
-        $(".sm2-playlist-cover").each(function () {
-          $(this).append(`<img src="${$(e).find("img").attr("src")}"/>`);
-        });
-      },3000);
     }
   },
   renderRadio: function () {
@@ -1686,6 +1680,34 @@ OCA.musicnc.RenderPartialUI = {
 
         $("#partial-wrapper").on("click", ".item", function () {
           OCA.musicnc.RenderPartialUI.handleRadioClicked($(this));
+        });
+        $("#partial-wrapper").on("click", ".item-language", function () {
+          $.ajax({
+            type: "GET",
+            url: OC.generateUrl("apps/musicnc/getradiolang"),
+            data: {language: $(this).find("a").data("href")},
+            success: function (jsondata) {
+              var parser = new DOMParser();
+              var responseDoc = parser.parseFromString(jsondata, "text/html");
+              var content = responseDoc.getElementById("content-view");
+              if (content) {
+                document.getElementById("playlist-container").style.display =
+                  "none";
+                document.getElementById("partial-wrapper").innerHTML = "";
+                document.getElementById("partial-wrapper").appendChild(content);
+                document.getElementById("partial-wrapper").style.display =
+                  "block";
+              }
+              responseDoc.getElementsByClassName("item");
+
+              $("#partial-wrapper").on("click", ".item", function () {
+                OCA.musicnc.RenderPartialUI.handleRadioClicked($(this));
+              });
+            },
+            error: function (xhr, status, error) {
+              console.log("AJAX request error:", error);
+            },
+          });
         });
       },
       error: function (xhr, status, error) {

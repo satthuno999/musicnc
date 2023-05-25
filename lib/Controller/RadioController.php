@@ -72,4 +72,24 @@ class RadioController extends Controller
         $response->setContentSecurityPolicy($csp);
         return $response;
     }
+    public function getAllByLang($language = "vietnamese")
+    {
+        $url = "https://de1.api.radio-browser.info/json/stations/bylanguage/".$language;
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $dataLang = curl_exec($ch);
+        curl_close($ch);
+
+        $params = [
+            'data' => $dataLang,
+            'lang' => $language,
+        ];
+
+        $response = new TemplateResponse('musicnc', 'partials/radioviewlang', $params);
+        $csp = new ContentSecurityPolicy();
+        $csp->addAllowedMediaDomain('*');
+        $csp->addAllowedScriptDomain("'unsafe-inline'");
+        $response->setContentSecurityPolicy($csp);
+        return $response;
+    }
 }

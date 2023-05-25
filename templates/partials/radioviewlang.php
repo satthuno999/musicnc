@@ -8,15 +8,21 @@
  * @copyright 2022-2023 S P A R K
  */
 $podcasts = json_decode($data, true);
-$countrys = json_decode($dataCountrys, true);
+$language = json_decode($lang, true);
+
+$totalItems = count($podcasts);
+$halfItems = ceil($totalItems / 2);
 ?>
 <div id="content-view">
     <div class="list-stream">
-        <div class="category">Lượt xem</div>
+        <div class="category">
+            <?php echo "$language" ?>
+        </div>
         <ul>
             <?php
-            foreach ($podcasts as $podcast) {
-                echo '
+            foreach ($podcasts as $index => $podcast) {
+                if ($index <= $halfItems) {
+                    echo '
                 <li class="item">
                 <a title="' . $podcast["name"] . '"
                     href="#" data-href="' . $podcast["url"] . '">
@@ -39,39 +45,44 @@ $countrys = json_decode($dataCountrys, true);
                 </a>
             </li>
       ';
+                }
             }
             ?>
 
         </ul>
     </div>
-    <div class="list-station">
-        <div class="category">Languages</div>
+    <div class="list-stream">
+        <div class="category">
+            <?php echo "$language" ?> PAGE 2
+        </div>
         <ul>
             <?php
-            foreach ($countrys as $country) {
-                echo '
-                <li class="item-language">
-                <a title="' . $country["name"]. '"
-                    href="#" data-href="' . $country["name"] . '">
+            foreach ($podcasts as $index => $podcast) {
+                if ($index > $halfItems) {
+                    echo '
+                <li class="item">
+                <a title="' . $podcast["name"] . '"
+                    href="#" data-href="' . $podcast["url"] . '">
                     <div class=" card">
                         <div class="cover">
                             <div class="lazyload-wrapper ">
-                                <img alt="' . $country["name"] . '" loading="lazy"
-                                    onerror="this.onerror=null;this.src='."https://cloudkma.online/apps/musicnc/img/app.svg".'"
+                                <img alt="' . $podcast["name"] . '" loading="lazy"
+                                    onerror="this.onerror=null;this.src=' . "https://cloudkma.online/apps/musicnc/img/app.svg" . '"
                                     width="150" height="150" decoding="async" 
-                                    src="https://flagsapi.com/'. $country["iso_639"] . '/flat/64.png"
+                                    src="' . $podcast["favicon"] . '"
                                     style="color: transparent; border-radius: 4px; width: 100%; height: 100%;">
                             </div>
                         </div>
                         <div class="title">
-                            Số lượng trạm: ' . $country["stationcount"] . '
+                            ' . $podcast["name"] . '
                         </div>
-                        <div class="locate">'. $country["name"] . '
+                        <div class="locate">' . $podcast["country"] . ', ' . $podcast["state"] . '
                         </div>
                     </div>
                 </a>
             </li>
       ';
+                }
             }
             ?>
 
