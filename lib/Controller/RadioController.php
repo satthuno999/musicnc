@@ -8,6 +8,7 @@ namespace OCA\musicnc\Controller;
 use OCA\musicnc\AppInfo\Application;
 use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http\TemplateResponse;
+use OCP\AppFramework\Http\ContentSecurityPolicy;
 use OCP\IRequest;
 
 class RadioController extends Controller
@@ -66,7 +67,7 @@ class RadioController extends Controller
 
         $response = new TemplateResponse('musicnc', 'partials/radioview', $params);
         $csp = new ContentSecurityPolicy();
-        $csp->addAllowedMediaDomain('*'); //required for external m3u playlists
+        $csp->addAllowedMediaDomain('*');
         $csp->addAllowedScriptDomain("'unsafe-inline'");
         $response->setContentSecurityPolicy($csp);
         return $response;
