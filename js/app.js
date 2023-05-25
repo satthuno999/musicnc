@@ -1655,7 +1655,7 @@ OCA.musicnc.RenderPartialUI = {
       document.getElementById("progressBar").style.backgroundColor =
         "#e91e63d9";
       document.getElementById("endTime").innerHTML = "Infinity";
-      var cover = tempContainer.getElementsByClassName("sm2-playlist-cover");
+      var cover = document.getElementsByClassName("sm2-playlist-cover");
       while (cover.length > 0) {
         cover.appendChild(`<img src="${$(e).find("img").attr("src")}"/>`);
       }
