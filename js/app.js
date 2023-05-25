@@ -1669,6 +1669,7 @@ OCA.musicnc.RenderPartialUI = {
          document.getElementById("playlist-container").style.display = "none";
          document.getElementById("partial-wrapper").innerHTML = "";
          document.getElementById("partial-wrapper").appendChild(content);
+         document.getElementById("partial-wrapper").style.display = "block";
        }
 
         responseDoc.getElementsByClassName("item");
