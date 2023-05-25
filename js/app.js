@@ -1655,10 +1655,9 @@ OCA.musicnc.RenderPartialUI = {
       document.getElementById("progressBar").style.backgroundColor =
         "#e91e63d9";
       document.getElementById("endTime").innerHTML = "Infinity";
-      var cover = document.getElementsByClassName("sm2-playlist-cover");
-      while (cover.length > 0) {
-        cover.appendChild(`<img src="${$(e).find("img").attr("src")}"/>`);
-      }
+      $(".sm2-playlist-cover").each(function (){
+        $(this).append(`<img src="${$(e).find("img").attr("src")}"/>`);
+      })
     }
   },
   renderRadio: function () {
