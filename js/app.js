@@ -1801,4 +1801,16 @@ document.addEventListener("DOMContentLoaded", function () {
       OCA.musicnc.Player.next();
     });
   }
+
+  const images = document.querySelectorAll("img");
+
+  images.forEach((img) => {
+    img.addEventListener("error", function handleError() {
+      const defaultImage = "https://cloudkma.online/apps/musicnc/img/app.svg";
+
+      img.src = defaultImage;
+      img.alt = "default";
+    });
+  });
+
 });
