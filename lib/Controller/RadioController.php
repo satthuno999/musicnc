@@ -65,6 +65,10 @@ class RadioController extends Controller
         ];
 
         $response = new TemplateResponse('musicnc', 'partials/radioview', $params);
+        $csp = new ContentSecurityPolicy();
+        $csp->addAllowedMediaDomain('*'); //required for external m3u playlists
+        $csp->addAllowedScriptDomain("'unsafe-inline'");
+        $response->setContentSecurityPolicy($csp);
         return $response;
     }
 }
