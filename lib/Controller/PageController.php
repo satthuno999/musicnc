@@ -71,6 +71,7 @@ class PageController extends Controller
         $response = new TemplateResponse('musicnc', 'index');
         $csp = new ContentSecurityPolicy();
         $csp->addAllowedMediaDomain('*'); //required for external m3u playlists
+        $csp->addAllowedScriptDomain("'unsafe-inline'");
         $response->setContentSecurityPolicy($csp);
         $response->setParams([
             'musicnc_navigationShown' => $this->configManager->getUserValue($this->userId, $this->appName, 'navigation'),
