@@ -1676,9 +1676,7 @@ OCA.musicnc.RenderPartialUI = {
         responseDoc.getElementsByClassName("item");
 
         $("#partial-wrapper").on("click", ".item", function () {
-          // Handle the click event here
-          console.log("Element clicked!");
-          // Add your desired functionality
+          OCA.musicnc.RenderPartialUI.handleRadioClicked($(this));
         });
       },
       error: function (xhr, status, error) {
