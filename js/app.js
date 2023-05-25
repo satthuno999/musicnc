@@ -1649,6 +1649,13 @@ OCA.musicnc.RenderPartialUI = {
         .classList.replace("play", "play-pause");
       document.getElementById("sm2-bar-ui").classList.remove("playing");
       OCA.musicnc.Player.playRadio(hrefValue);
+      document.getElementById("nowPlayingText").innerHTML = $(e).find("a").attr("title");
+      document.getElementById("progressBar").style.backgroundColor =
+        "#e91e63d9";
+         document.getElementById("endTime").innerHTML = "Infinity";
+         document
+           .getElementsByClassName("sm2-playlist-cover")
+           .append(`<img src="${$(e).find("img").attr("src")}"/>`);
     }
   },
   renderRadio: function () {
