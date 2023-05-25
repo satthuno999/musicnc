@@ -24,7 +24,7 @@ $countrys = json_decode($dataCountrys, true);
                         <div class="cover">
                             <div class="lazyload-wrapper ">
                                 <img alt="' . $podcast["name"] . '" loading="lazy"
-                                    onerror="this.onerror=null;this.src=`https://cloudkma.online/apps/musicnc/img/app.svg`"
+                                    onerror="this.onerror=null;this.src=' . "https://cloudkma.online/apps/musicnc/img/app.svg" . '"
                                     width="150" height="150" decoding="async" 
                                     src="' . $podcast["favicon"] . '"
                                     style="color: transparent; border-radius: 4px; width: 100%; height: 100%;">
@@ -57,7 +57,7 @@ $countrys = json_decode($dataCountrys, true);
                         <div class="cover">
                             <div class="lazyload-wrapper ">
                                 <img alt="' . $country["name"] . '" loading="lazy"
-                                    onerror="this.onerror=null;this.src=`https://cloudkma.online/apps/musicnc/img/app.svg`"
+                                    onerror="this.onerror=null;this.src='."https://cloudkma.online/apps/musicnc/img/app.svg".'"
                                     width="150" height="150" decoding="async" 
                                     src="https://flagsapi.com/'. $country["iso_639"] . '/flat/64.png"
                                     style="color: transparent; border-radius: 4px; width: 100%; height: 100%;">
