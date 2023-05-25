@@ -483,7 +483,7 @@ OCA.musicnc.Category = {
           }
         } else {
           OCA.musicnc.UI.showInitScreen();
-          $("playlist-container").html("");
+          document.getElementById("playlist-container").style.display = "none";
         }
         var ulElement = document.getElementById("myCategory");
         var liElements = ulElement.getElementsByTagName("li");
@@ -1640,7 +1640,6 @@ OCA.musicnc.RenderPartialUI = {
     var target = e.target;
     var anchorElement = target.querySelector("a");
     var hrefValue = anchorElement.getAttribute("data-href");
-    console.log(hrefValue)
     if (OCA.musicnc.Player) {
       OCA.musicnc.Player.html5Audio.pause();
       document
@@ -1667,10 +1666,7 @@ OCA.musicnc.RenderPartialUI = {
         var responseDoc = parser.parseFromString(jsondata, "text/html");
         var content = responseDoc.getElementById("content-view");
        if (content) {
-         var container = document.getElementById("playlist-container");
-         while (container.firstChild) {
-           container.removeChild(container.firstChild);
-         }
+         document.getElementById("playlist-container").style.display = "none";
          document.getElementById("partial-wrapper").innerHTML = "";
          document.getElementById("partial-wrapper").appendChild(content);
        }
@@ -1742,6 +1738,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("category_selector").value;
       OCA.musicnc.Core.CategorySelectors[1] = "";
       document.getElementById("myCategory").innerHTML = "";
+      document.getElementById("partial-wrapper").style.display = "none";
       if (OCA.musicnc.Core.CategorySelectors[0] !== "") {
         OCA.musicnc.Category.load();
       }
