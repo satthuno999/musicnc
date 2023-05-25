@@ -1863,6 +1863,26 @@ body[data-themes=dark] .sm2-inline-button.next, body[data-themes=dark] .sm2-inli
 body[data-themes=dark] .bar {
   background-color: #fff;
 }
+body[data-themes=dark] .list-stream ul {
+  scrollbar-color: #e1dddd;
+}
+body[data-themes=dark] .list-stream ul::-webkit-scrollbar-thumb {
+  background-color: #e1dddd;
+}
+body[data-themes=dark] .list-stream ul::-webkit-scrollbar-track {
+  background-color: #202020;
+  border-radius: 20px;
+}
+body[data-themes=dark] .list-station ul {
+  scrollbar-color: #e1dddd;
+}
+body[data-themes=dark] .list-station ul::-webkit-scrollbar-thumb {
+  background-color: #e1dddd;
+}
+body[data-themes=dark] .list-station ul::-webkit-scrollbar-track {
+  background-color: #202020;
+  border-radius: 20px;
+}
 
 body[data-themes=light] .text-sun {
   color: #000;
