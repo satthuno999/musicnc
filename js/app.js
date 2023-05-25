@@ -1678,6 +1678,7 @@ OCA.musicnc.RenderPartialUI = {
         var items = responseDoc.getElementsByClassName("item");
 
         for (var i = 0; i < items.length; i++) {
+          console.log(item[i])
           items[i].addEventListener(
             "click",
             function(event){
