@@ -1675,18 +1675,11 @@ OCA.musicnc.RenderPartialUI = {
 
         responseDoc.getElementsByClassName("item");
 
-        var items = responseDoc.getElementsByClassName("item");
-
-        for (var i = 0; i < items.length; i++) {
-          console.log(item[i])
-          items[i].addEventListener(
-            "click",
-            function(event){
-              OCA.musicnc.RenderPartialUI.handleRadioClicked(event);
-            },
-            false
-          );
-        }
+        $("#partial-wrapper").on("click", ".item", function () {
+          // Handle the click event here
+          console.log("Element clicked!");
+          // Add your desired functionality
+        });
       },
       error: function (xhr, status, error) {
         console.log("AJAX request error:", error);
