@@ -1649,13 +1649,16 @@ OCA.musicnc.RenderPartialUI = {
         .classList.replace("play", "play-pause");
       document.getElementById("sm2-bar-ui").classList.remove("playing");
       OCA.musicnc.Player.playRadio(hrefValue);
-      document.getElementById("nowPlayingText").innerHTML = $(e).find("a").attr("title");
+      document.getElementById("nowPlayingText").innerHTML = $(e)
+        .find("a")
+        .attr("title");
       document.getElementById("progressBar").style.backgroundColor =
         "#e91e63d9";
-         document.getElementById("endTime").innerHTML = "Infinity";
-         document
-           .getElementsByClassName("sm2-playlist-cover")
-           .append(`<img src="${$(e).find("img").attr("src")}"/>`);
+      document.getElementById("endTime").innerHTML = "Infinity";
+      var cover = tempContainer.getElementsByClassName("sm2-playlist-cover");
+      while (cover.length > 0) {
+        cover.appendChild(`<img src="${$(e).find("img").attr("src")}"/>`);
+      }
     }
   },
   renderRadio: function () {
@@ -1671,12 +1674,12 @@ OCA.musicnc.RenderPartialUI = {
         var parser = new DOMParser();
         var responseDoc = parser.parseFromString(jsondata, "text/html");
         var content = responseDoc.getElementById("content-view");
-       if (content) {
-         document.getElementById("playlist-container").style.display = "none";
-         document.getElementById("partial-wrapper").innerHTML = "";
-         document.getElementById("partial-wrapper").appendChild(content);
-         document.getElementById("partial-wrapper").style.display = "block";
-       }
+        if (content) {
+          document.getElementById("playlist-container").style.display = "none";
+          document.getElementById("partial-wrapper").innerHTML = "";
+          document.getElementById("partial-wrapper").appendChild(content);
+          document.getElementById("partial-wrapper").style.display = "block";
+        }
 
         responseDoc.getElementsByClassName("item");
 
@@ -1810,5 +1813,4 @@ document.addEventListener("DOMContentLoaded", function () {
       img.alt = "default";
     });
   });
-
 });
