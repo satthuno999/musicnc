@@ -1654,10 +1654,12 @@ OCA.musicnc.RenderPartialUI = {
         .attr("title");
       document.getElementById("progressBar").style.backgroundColor =
         "#e91e63d9";
-      document.getElementById("endTime").innerHTML = "Infinity";
-      $(".sm2-playlist-cover").each(function (){
-        $(this).append(`<img src="${$(e).find("img").attr("src")}"/>`);
-      })
+      setTimeout(function(){
+        document.getElementById("endTime").innerHTML = "Infinity";
+        $(".sm2-playlist-cover").each(function () {
+          $(this).append(`<img src="${$(e).find("img").attr("src")}"/>`);
+        });
+      },3000);
     }
   },
   renderRadio: function () {
