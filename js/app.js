@@ -1685,7 +1685,7 @@ OCA.musicnc.RenderPartialUI = {
           $.ajax({
             type: "GET",
             url: OC.generateUrl("apps/musicnc/getradiolang"),
-            data: {language: $(this).find("a").data("href")},
+            data: { language: $(this).find("a").data("href") },
             success: function (jsondata) {
               var parser = new DOMParser();
               var responseDoc = parser.parseFromString(jsondata, "text/html");
@@ -1717,14 +1717,17 @@ OCA.musicnc.RenderPartialUI = {
   },
   renderPodcast: function () {},
   renderVideo: function () {},
-  renderSearchApi: function (name){
+  renderSearchApi: function (name) {
+    if (OCA.musicnc.RenderPartialUI.AjaxCallStatus !== null) {
+      OCA.musicnc.RenderPartialUI.AjaxCallStatus.abort();
+    }
     OCP.Toast.info("Search to name: " + name);
-    $.ajax({
+    OCA.musicnc.RenderPartialUI.AjaxCallStatus = $.ajax({
       type: "GET",
       url: OC.generateUrl("apps/musicnc/getmusicapi"),
-      data: {name: name},
+      data: { name: name },
       success: function (jsondata) {
-        console.log(jsondata)
+        console.log(jsondata);
         var parser = new DOMParser();
         var responseDoc = parser.parseFromString(jsondata, "text/html");
         var content = responseDoc.getElementById("content-view");
@@ -1745,7 +1748,7 @@ OCA.musicnc.RenderPartialUI = {
         console.log("AJAX request error:", error);
       },
     });
-  }
+  },
 };
 document.addEventListener("DOMContentLoaded", function () {
   OCA.musicnc.Core.init();
@@ -1822,6 +1825,25 @@ document.addEventListener("DOMContentLoaded", function () {
   document
     .querySelector(".header-album")
     .addEventListener("click", OCA.musicnc.UI.sortPlaylist);
+
+  document
+    .getElementById("filterInput")
+    .addEventListener("keyup", function (event) {
+      var filterValue = event.target.value.toLowerCase();
+      var itemList = document.getElementById("itemList");
+      var items = itemList.getElementsByTagName("li");
+
+      for (var i = 0; i < items.length; i++) {
+        var item = items[i];
+        var text = item.textContent || item.innerText;
+
+        if (text.toLowerCase().indexOf(filterValue) > -1) {
+          item.style.display = "";
+        } else {
+          item.style.display = "none";
+        }
+      }
+    });
 
   window.setTimeout(function () {
     document.getElementById("app-player-audio").style.width =

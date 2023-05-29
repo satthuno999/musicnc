@@ -46,7 +46,8 @@ $countrys = json_decode($dataCountrys, true);
     </div>
     <div class="list-station">
         <div class="category">Languages</div>
-        <ul>
+        <input type="text" id="filterInput" placeholder="Filter items">
+        <ul id="itemList">
             <?php
             foreach ($countrys as $country) {
                 echo '
