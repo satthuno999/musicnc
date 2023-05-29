@@ -1444,6 +1444,16 @@ li.isActive {
 }
 
 /*END  Slider bar ringht*/
+/**/
+#searchAPI input {
+  display: none;
+}
+
+#searchAPI:hover input {
+  display: block;
+  margin: auto;
+}
+
 #partial-wrapper {
   margin-top: 25px;
   height: 100%;

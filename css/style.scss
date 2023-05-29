@@ -1485,6 +1485,17 @@ li.isActive {
 }
 
 /*END  Slider bar ringht*/
+
+/**/
+#searchAPI input {
+  display: none;
+}
+
+#searchAPI:hover input {
+  display: block;
+  margin: auto;
+}
+
 #partial-wrapper {
   margin-top: 25px;
   height: 100%;
@@ -2043,19 +2054,20 @@ body[data-themes=dark] {
       }
     }
   }
-  .list-station{
+
+  .list-station {
     ul {
-        scrollbar-color: #e1dddd;
-    
-        &::-webkit-scrollbar-thumb {
-          background-color: #e1dddd;
-        }
-    
-        &::-webkit-scrollbar-track {
-          background-color: #202020;
-          border-radius: 20px;
-        }
+      scrollbar-color: #e1dddd;
+
+      &::-webkit-scrollbar-thumb {
+        background-color: #e1dddd;
       }
+
+      &::-webkit-scrollbar-track {
+        background-color: #202020;
+        border-radius: 20px;
+      }
+    }
   }
 }
 
