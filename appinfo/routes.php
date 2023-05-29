@@ -45,8 +45,7 @@ return [
         ['name' => 'radio#getAllByLang', 'url' => '/getradiolang', 'verb' => 'GET'],
 
         //musicapi
-
-        ['name' => 'zing#search', 'url' => '/getmusicapi', 'verb' => 'GET'],
+        ['name' => 'zing#searchName', 'url' => '/getmusicapi', 'verb' => 'GET'],
         // radio API
         // ['name' => 'radioapi#getAllByApi', 'url' => '/api/getradioapi', 'verb' => 'GET'],
         // ['name' => 'radioApi#getAll', 'url' => '/api/radio', 'verb' => 'GET'],

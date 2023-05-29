@@ -23,34 +23,39 @@ class ZingController extends Controller
     * @NoCSRFRequired
     * @param string $name
     */
-    public function search(string $name = "khoi")
+    public function searchName(string $name = "khoi")
     {
-        $url = "https://de1.api.radio-browser.info/json/stations/bylanguage/vietnamese";
+        $url = "http://ac.mp3.zing.vn/complete";
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $dataLang = curl_exec($ch);
-        curl_close($ch);
-
+        $queryParams = http_build_query(
+            array(
+                'num' => 500,
+                'query' => $name,
+                'type' => 'artist,song,key,code'
+            )
+        );
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $queryParams);
         $data = curl_exec($ch);
+        curl_close($ch);
         // Check for cURL errors
         if ($data === false) {
             $error = curl_error($ch);
             // Handle the error, return an appropriate response, or log the error
         }
-        curl_close($ch);
         $params = [
-            'data' => $dataLang,
+            'data' => $data,
             'error' => $error,
         ];
 
         $response = new TemplateResponse('musicnc', 'partials/zingview', $params);
-        // $csp = new ContentSecurityPolicy();
-        // $csp->addAllowedMediaDomain('*');
-        // $csp->addAllowedScriptDomain("unsafe-inline");
-        // $csp->allowInlineScript(true);
-        // $csp->allowInlineStyle(true);
-        // $csp->allowEvalScript(true);
-        // $response->setContentSecurityPolicy($csp);
+        $csp = new ContentSecurityPolicy();
+        $csp->addAllowedMediaDomain('*');
+        $csp->addAllowedScriptDomain("unsafe-inline");
+        $csp->allowInlineScript(true);
+        $csp->allowInlineScript(true);
+        $csp->allowInlineScript(true);
+        $response->setContentSecurityPolicy($csp);
         return $response;
     }
 }
