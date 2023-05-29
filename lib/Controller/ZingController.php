@@ -17,15 +17,24 @@ class ZingController extends Controller
     {
         parent::__construct(Application::APP_ID, $request);
     }
+
     /**
      * @NoAdminRequired
      * @NoCSRFRequired
      */
     public function search($name = "khoi")
     {
-        $url = "http://ac.mp3.zing.vn/complete?type=artist,song,key,code&num=500&query=".$name;
+        $url = "http://ac.mp3.zing.vn/complete";
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $queryParams = http_build_query(
+            array(
+                'num' => 500,
+                'query' => $name,
+                'type' => 'artist,song,key,code'
+            )
+        );
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $queryParams);
         $data = curl_exec($ch);
         curl_close($ch);
 
@@ -36,7 +45,7 @@ class ZingController extends Controller
         $response = new TemplateResponse('musicnc', 'partials/zingview', $params);
         $csp = new ContentSecurityPolicy();
         $csp->addAllowedMediaDomain('*');
-        // $csp->addAllowedScriptDomain("'unsafe-inline'");
+        $csp->addAllowedScriptDomain("'unsafe-inline'");
         $response->setContentSecurityPolicy($csp);
         return $response;
     }
