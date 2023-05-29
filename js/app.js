@@ -1718,11 +1718,8 @@ OCA.musicnc.RenderPartialUI = {
   renderPodcast: function () {},
   renderVideo: function () {},
   renderSearchApi: function (name){
-    if (OCA.musicnc.RenderPartialUI.AjaxCallStatus !== null) {
-      OCA.musicnc.RenderPartialUI.AjaxCallStatus.abort();
-    }
     OCP.Toast.info("Search to name: " + name);
-    OCA.musicnc.RenderPartialUI.AjaxCallStatus = $.ajax({
+    $.ajax({
       type: "GET",
       url: OC.generateUrl("apps/musicnc/getmusicapi"),
       data: {name: name},
