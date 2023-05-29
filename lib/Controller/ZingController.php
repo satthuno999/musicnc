@@ -25,17 +25,12 @@ class ZingController extends Controller
     */
     public function search(string $name = "khoi")
     {
-        $url = "http://ac.mp3.zing.vn/complete";
+        $url = "https://de1.api.radio-browser.info/json/stations/bylanguage/vietnamese";
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $queryParams = http_build_query(
-            array(
-                'num' => 500,
-                'query' => $name,
-                'type' => 'artist,song,key,code'
-            )
-        );
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $queryParams);
+        $dataLang = curl_exec($ch);
+        curl_close($ch);
+
         $data = curl_exec($ch);
         // Check for cURL errors
         if ($data === false) {
@@ -44,7 +39,7 @@ class ZingController extends Controller
         }
         curl_close($ch);
         $params = [
-            'data' => $data,
+            'data' => $dataLang,
             'error' => $error,
         ];
 
