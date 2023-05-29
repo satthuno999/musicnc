@@ -23,7 +23,7 @@ class RadioController extends Controller
      */
     public function index()
     {
-        return new TemplateResponse('musicnc', 'zingview');
+        return new TemplateResponse('musicnc', 'radioview');
     }
     /**
      * @NoAdminRequired
