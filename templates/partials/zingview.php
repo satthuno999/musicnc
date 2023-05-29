@@ -8,12 +8,11 @@
  * @copyright 2022-2023 S P A R K
  */
 $podcasts = json_decode($data, true);
+$error = json_decode($error, true);
 $listSearch = $podcast["data"];
 ?>
-<script>
-    console.log('<?php echo "$podcasts" ?>')
-</script>
 <div id="content-view">
+    <p><?php echo "$error" ?></p>
     <div class="list-stream">
         <div class="category">Zing Mp3</div>
         <ul>
