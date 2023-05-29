@@ -16,7 +16,7 @@ $listSearch = $podcast["data"];
         <div class="category">Zing mp3</div>
         <ul>
             <?php
-            foreach ($podcasts as $listSearch["song"]) {
+            foreach ($listSearch["song"] as $podcast) {
                 echo '
                 <li class="item">
                 <a title="' . $podcast["name"] . '"
