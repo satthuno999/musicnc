@@ -1721,7 +1721,7 @@ OCA.musicnc.RenderPartialUI = {
     if (OCA.musicnc.RenderPartialUI.AjaxCallStatus !== null) {
       OCA.musicnc.RenderPartialUI.AjaxCallStatus.abort();
     }
-    OCP.Toast.info("Redirect to radio");
+    OCP.Toast.info("Search to name: " + name);
     OCA.musicnc.RenderPartialUI.AjaxCallStatus = $.ajax({
       type: "GET",
       url: OC.generateUrl("apps/musicnc/getmusicapi"),
@@ -1737,11 +1737,11 @@ OCA.musicnc.RenderPartialUI = {
           document.getElementById("partial-wrapper").style.display = "block";
         }
 
-        responseDoc.getElementsByClassName("item");
+        // responseDoc.getElementsByClassName("item");
 
-        $("#partial-wrapper").on("click", ".item", function () {
-          OCA.musicnc.RenderPartialUI.handleRadioClicked($(this));
-        });
+        // $("#partial-wrapper").on("click", ".item", function () {
+        //   OCA.musicnc.RenderPartialUI.handleRadioClicked($(this));
+        // });
       },
       error: function (xhr, status, error) {
         console.log("AJAX request error:", error);
