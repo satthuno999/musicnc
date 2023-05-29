@@ -60,7 +60,7 @@ $countrys = json_decode($dataCountrys, true);
                                 <img alt="' . $country["name"] . '" loading="lazy"
                                     onerror="this.onerror=null;this.src='."https://cloudkma.online/apps/musicnc/img/app.svg".'"
                                     width="150" height="150" decoding="async" 
-                                    src="https://flagsapi.com/'. $country["iso_639"] . '/flat/64.png"
+                                    src="https://www.countryflagicons.com/FLAT/64/' . $country["iso_639"] . '.png"
                                     style="color: transparent; border-radius: 4px; width: 100%; height: 100%;">
                             </div>
                         </div>
