@@ -1810,8 +1810,10 @@ document.addEventListener("DOMContentLoaded", function () {
   document
     .getElementById("searchAPIInput")
     .addEventListener("keyup", function (event) {
-      var value = event.target.value;
-      OCA.musicnc.RenderPartialUI.renderSearchApi(value);
+      if (event.key === "Enter") {
+        var value = event.target.value;
+        OCA.musicnc.RenderPartialUI.renderSearchApi(value);
+      }
     });
   document
     .querySelector(".header-title")
