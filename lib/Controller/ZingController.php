@@ -23,14 +23,14 @@ class ZingController extends Controller
      */
     public function search($name = "khoi")
     {
-        $url = "    http://ac.mp3.zing.vn/complete?type=artist,song,key,code&num=500&query=".$name;
+        $url = "http://ac.mp3.zing.vn/complete?type=artist,song,key,code&num=500&query=".$name;
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $dataLang = curl_exec($ch);
+        $data = curl_exec($ch);
         curl_close($ch);
 
         $params = [
-            'data' => $dataLang,
+            'data' => $data,
         ];
 
         $response = new TemplateResponse('musicnc', 'partials/zingview', $params);

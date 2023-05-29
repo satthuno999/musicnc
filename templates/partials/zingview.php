@@ -8,13 +8,15 @@
  * @copyright 2022-2023 S P A R K
  */
 $podcasts = json_decode($data, true);
+$listSearch = $podcast["data"];
 ?>
 <div id="content-view">
+    <?php echo "$podcasts"?>
     <div class="list-stream">
         <div class="category">Zing mp3</div>
         <ul>
             <?php
-            foreach ($podcasts as $podcast["song"]) {
+            foreach ($podcasts as $listSearch["song"]) {
                 echo '
                 <li class="item">
                 <a title="' . $podcast["name"] . '"
