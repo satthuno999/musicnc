@@ -36,7 +36,7 @@ class ZingController extends Controller
         $response = new TemplateResponse('musicnc', 'partials/zingview', $params);
         $csp = new ContentSecurityPolicy();
         $csp->addAllowedMediaDomain('*');
-        $csp->addAllowedScriptDomain("'unsafe-inline'");
+        // $csp->addAllowedScriptDomain("'unsafe-inline'");
         $response->setContentSecurityPolicy($csp);
         return $response;
     }
