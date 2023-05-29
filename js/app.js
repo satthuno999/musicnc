@@ -1717,6 +1717,37 @@ OCA.musicnc.RenderPartialUI = {
   },
   renderPodcast: function () {},
   renderVideo: function () {},
+  renderSearchApi: function (name){
+    if (OCA.musicnc.RenderPartialUI.AjaxCallStatus !== null) {
+      OCA.musicnc.RenderPartialUI.AjaxCallStatus.abort();
+    }
+    OCP.Toast.info("Redirect to radio");
+    OCA.musicnc.RenderPartialUI.AjaxCallStatus = $.ajax({
+      type: "GET",
+      url: OC.generateUrl("apps/musicnc/getmusicapi"),
+      data: {name: name},
+      success: function (jsondata) {
+        var parser = new DOMParser();
+        var responseDoc = parser.parseFromString(jsondata, "text/html");
+        var content = responseDoc.getElementById("content-view");
+        if (content) {
+          document.getElementById("playlist-container").style.display = "none";
+          document.getElementById("partial-wrapper").innerHTML = "";
+          document.getElementById("partial-wrapper").appendChild(content);
+          document.getElementById("partial-wrapper").style.display = "block";
+        }
+
+        responseDoc.getElementsByClassName("item");
+
+        $("#partial-wrapper").on("click", ".item", function () {
+          OCA.musicnc.RenderPartialUI.handleRadioClicked($(this));
+        });
+      },
+      error: function (xhr, status, error) {
+        console.log("AJAX request error:", error);
+      },
+    });
+  }
 };
 document.addEventListener("DOMContentLoaded", function () {
   OCA.musicnc.Core.init();
@@ -1775,6 +1806,12 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("myCategory").innerHTML = "";
 
       OCA.musicnc.RenderPartialUI.renderRadio();
+    });
+  document
+    .getElementById("searchAPIInput")
+    .addEventListener("keyup", function (event) {
+      var value = event.target.value;
+      OCA.musicnc.RenderPartialUI.renderSearchApi(value);
     });
   document
     .querySelector(".header-title")

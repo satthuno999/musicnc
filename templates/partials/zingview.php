@@ -14,7 +14,7 @@ $podcasts = json_decode($data, true);
         <div class="category">Zing mp3</div>
         <ul>
             <?php
-            foreach ($podcasts as $podcast) {
+            foreach ($podcasts as $podcast["song"]) {
                 echo '
                 <li class="item">
                 <a title="' . $podcast["name"] . '"
@@ -22,17 +22,17 @@ $podcasts = json_decode($data, true);
                     <div class=" card">
                         <div class="cover">
                             <div class="lazyload-wrapper ">
-                                <img alt="' . $podcast["name"] . '" loading="lazy"
+                                <img alt="' . $podcast["thumb"] . '" loading="lazy"
                                     onerror="this.onerror=null;this.src=' . "https://cloudkma.online/apps/musicnc/img/app.svg" . '"
                                     width="150" height="150" decoding="async" 
-                                    src="' . $podcast["favicon"] . '"
+                                    src="https://photo-resize-zmp3.zmdcdn.me/w500_r1x1_webp' . $podcast["thumb"] . '"
                                     style="color: transparent; border-radius: 4px; width: 100%; height: 100%;">
                             </div>
                         </div>
                         <div class="title">
-                            ' . $podcast["name"] . '
+                            ' . $podcast["artist"] . '
                         </div>
-                        <div class="locate">' . $podcast["country"] . ', ' . $podcast["state"] . '
+                        <div class="locate">' . $podcast["name"] . '
                         </div>
                     </div>
                 </a>
