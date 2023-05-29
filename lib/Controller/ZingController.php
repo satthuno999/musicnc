@@ -17,6 +17,10 @@ class ZingController extends Controller
     {
         parent::__construct(Application::APP_ID, $request);
     }
+    /**
+     * @NoAdminRequired
+     * @NoCSRFRequired
+     */
     public function search($name = "khoi")
     {
         $url = "    http://ac.mp3.zing.vn/complete?type=artist,song,key,code&num=500&query=".$name;
