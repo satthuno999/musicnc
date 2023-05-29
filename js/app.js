@@ -1681,6 +1681,24 @@ OCA.musicnc.RenderPartialUI = {
         $("#partial-wrapper").on("click", ".item", function () {
           OCA.musicnc.RenderPartialUI.handleRadioClicked($(this));
         });
+        responseDoc
+          .getElementById("filterInput")
+          .addEventListener("keyup", function (event) {
+            var filterValue = event.target.value.toLowerCase();
+            var itemList = document.getElementById("itemList");
+            var items = itemList.getElementsByTagName("li");
+
+            for (var i = 0; i < items.length; i++) {
+              var item = items[i];
+              var text = item.textContent || item.innerText;
+
+              if (text.toLowerCase().indexOf(filterValue) > -1) {
+                item.style.display = "";
+              } else {
+                item.style.display = "none";
+              }
+            }
+          });
         $("#partial-wrapper").on("click", ".item-language", function () {
           $.ajax({
             type: "GET",
@@ -1825,25 +1843,6 @@ document.addEventListener("DOMContentLoaded", function () {
   document
     .querySelector(".header-album")
     .addEventListener("click", OCA.musicnc.UI.sortPlaylist);
-
-  document
-    .getElementById("filterInput")
-    .addEventListener("keyup", function (event) {
-      var filterValue = event.target.value.toLowerCase();
-      var itemList = document.getElementById("itemList");
-      var items = itemList.getElementsByTagName("li");
-
-      for (var i = 0; i < items.length; i++) {
-        var item = items[i];
-        var text = item.textContent || item.innerText;
-
-        if (text.toLowerCase().indexOf(filterValue) > -1) {
-          item.style.display = "";
-        } else {
-          item.style.display = "none";
-        }
-      }
-    });
 
   window.setTimeout(function () {
     document.getElementById("app-player-audio").style.width =
