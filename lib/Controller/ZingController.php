@@ -19,10 +19,11 @@ class ZingController extends Controller
     }
 
     /**
-     * @NoAdminRequired
-     * @NoCSRFRequired
-     */
-    public function search($name = "khoi")
+    * @NoAdminRequired
+    * @NoCSRFRequired
+    * @param string $name
+    */
+    public function search(string $name = "khoi")
     {
         $url = "http://ac.mp3.zing.vn/complete";
         $ch = curl_init($url);
@@ -36,22 +37,25 @@ class ZingController extends Controller
         );
         curl_setopt($ch, CURLOPT_POSTFIELDS, $queryParams);
         $data = curl_exec($ch);
-        curl_close($ch);
         // Check for cURL errors
         if ($data === false) {
             $error = curl_error($ch);
             // Handle the error, return an appropriate response, or log the error
         }
+        curl_close($ch);
         $params = [
             'data' => $data,
             'error' => $error,
         ];
 
         $response = new TemplateResponse('musicnc', 'partials/zingview', $params);
-        $csp = new ContentSecurityPolicy();
-        $csp->addAllowedMediaDomain('*');
-        $csp->addAllowedScriptDomain("unsafe-inline");
-        $response->setContentSecurityPolicy($csp);
+        // $csp = new ContentSecurityPolicy();
+        // $csp->addAllowedMediaDomain('*');
+        // $csp->addAllowedScriptDomain("unsafe-inline");
+        // $csp->allowInlineScript(true);
+        // $csp->allowInlineStyle(true);
+        // $csp->allowEvalScript(true);
+        // $response->setContentSecurityPolicy($csp);
         return $response;
     }
 }
