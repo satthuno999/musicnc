@@ -10,10 +10,12 @@
 $podcasts = json_decode($data, true);
 $listSearch = $podcast["data"];
 ?>
+<script>
+    console.log('<?php echo "$podcasts" ?>')
+</script>
 <div id="content-view">
-    <?php echo "$podcasts"?>
     <div class="list-stream">
-        <div class="category">Zing mp3</div>
+        <div class="category">Zing Mp3</div>
         <ul>
             <?php
             foreach ($listSearch["song"] as $podcast) {
