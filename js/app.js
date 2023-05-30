@@ -590,8 +590,10 @@ OCA.musicnc.Category = {
           document.getElementById("sm2-bar-ui").style.display = "block";
           let itemRows = document.createDocumentFragment();
           for (let itemData of jsondata.data) {
-            let tempItem = OCA.musicnc.UI.buildTrackRow(itemData, covers);
-            itemRows.appendChild(tempItem);
+            if(itemData.mim != "video/mp4"){
+              let tempItem = OCA.musicnc.UI.buildTrackRow(itemData, covers);
+              itemRows.appendChild(tempItem);
+            }
           }
 
           document.getElementById("playlist-container").dataset.playlist =
