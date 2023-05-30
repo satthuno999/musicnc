@@ -81,7 +81,7 @@ class CategoryController extends Controller
 						FROM `*PREFIX*musicnc_tracks` `AT`
 						JOIN `*PREFIX*musicnc_artists` `AA`
 						ON `AA`.`id` = `AT`.`artist_id`
-			 			WHERE  `AT`.`user_id` = ? AND `AT`.`mimetype` != "video/mp4"
+			 			WHERE  `AT`.`user_id` = ? AND `AT`.`mimetype` != video/mp4
 			 			ORDER BY LOWER(`AA`.`name`) ASC
 			 			';
         } elseif ($category === 'Genre') {
@@ -139,7 +139,6 @@ class CategoryController extends Controller
 						JOIN `*PREFIX*filecache` `FC`
 						ON `FC`.`fileid` = `AT`.`folder_id`
 			 			WHERE `AT`.`user_id` = ?
-                         AND `AT`.`mimetype` != `video/mp4`
 			 			ORDER BY LOWER(`FC`.`name`) ASC
 			 			';
         } elseif ($category === 'Album') {
