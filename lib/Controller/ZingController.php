@@ -17,12 +17,19 @@ class ZingController extends Controller
     {
         parent::__construct(Application::APP_ID, $request);
     }
-
     /**
-    * @NoAdminRequired
-    * @NoCSRFRequired
-    * @param string $name
-    */
+     * @NoAdminRequired
+     * @NoCSRFRequired
+     */
+    public function index()
+    {
+        return new TemplateResponse('musicnc', 'radioview');
+    }
+    /**
+     * @NoAdminRequired
+     * @NoCSRFRequired
+     * @param string $name
+     */
     public function searchName(string $name = "khoi")
     {
         $url = "http://ac.mp3.zing.vn/complete";
@@ -53,8 +60,6 @@ class ZingController extends Controller
         $csp = new ContentSecurityPolicy();
         $csp->addAllowedMediaDomain('*');
         $csp->addAllowedScriptDomain("unsafe-inline");
-        $csp->allowInlineScript(true);
-        $csp->allowInlineScript(true);
         $csp->allowInlineScript(true);
         $response->setContentSecurityPolicy($csp);
         return $response;
