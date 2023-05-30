@@ -59,7 +59,7 @@ class Version3205Date20211226193332 extends SimpleMigrationStep {
             ]);
             $table->setPrimaryKey(['id']);
             $table->addIndex(['user_id'], 'radios_user_id_idx');
-        } 
+        }
         return $schema;
     }
 

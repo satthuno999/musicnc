@@ -81,6 +81,7 @@ class CategoryController extends Controller
 						JOIN `*PREFIX*musicnc_artists` `AA`
 						ON `AA`.`id` = `AT`.`artist_id`
 			 			WHERE  `AT`.`user_id` = ?
+                         AND `AT`.`minetype` != `video/mp4`
 			 			ORDER BY LOWER(`AA`.`name`) ASC
 			 			';
         } elseif ($category === 'Genre') {
@@ -93,12 +94,14 @@ class CategoryController extends Controller
             $SQL = 'SELECT DISTINCT(`year`) AS `id` ,`year` AS `name`  
 						FROM `*PREFIX*musicnc_tracks`
 			 			WHERE  `user_id` = ?
+                         AND `minetype` != `video/mp4`
 			 			ORDER BY `id` ASC
 			 			';
         } elseif ($category === 'Title') {
             $SQL = "SELECT distinct('0') as `id` ,'" . $this->l10n->t('All Titles') . "' as `name`  
 						FROM `*PREFIX*musicnc_tracks`
 			 			WHERE  `user_id` = ?
+                        AND `minetype` != `video/mp4`
 			 			";
         } elseif ($category === 'Playlist') {
             $aPlaylists[] = array('id' => 'X1', 'name' => $this->l10n->t('Favorites'));
@@ -138,6 +141,7 @@ class CategoryController extends Controller
 						JOIN `*PREFIX*filecache` `FC`
 						ON `FC`.`fileid` = `AT`.`folder_id`
 			 			WHERE `AT`.`user_id` = ?
+                         AND `AT`.`minetype` != `video/mp4`
 			 			ORDER BY LOWER(`FC`.`name`) ASC
 			 			';
         } elseif ($category === 'Album') {
@@ -198,7 +202,7 @@ class CategoryController extends Controller
         $SQL .= ' FROM `*PREFIX*musicnc_tracks` `AT`';
         $SQL .= ' LEFT JOIN `*PREFIX*musicnc_albums` `AB` ON `AB`.`id` = `AT`.`album_id`';
         $SQL .= ' LEFT JOIN `*PREFIX*musicnc_artists` `AA` ON `AA`.`id` = `AB`.`artist_id`';
-        $SQL .= ' WHERE `AT`.`user_id` = ? ';
+        $SQL .= ' WHERE `AT`.`user_id` = ? AND `AT`.`minetype` != `video/mp4`';
         if ($categoryId) $SQL .= 'AND ' . $whereMatching[$category] . '= ?';
         $SQL .= ' GROUP BY `AB`.`id`, `AA`.`id`, `AB`.`name` ORDER BY LOWER(`AB`.`name`) ASC';
 
