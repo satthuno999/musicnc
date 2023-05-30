@@ -1723,7 +1723,7 @@ OCA.musicnc.RenderPartialUI = {
     }
     OCP.Toast.info("Search to name: " + name);
     OCA.musicnc.RenderPartialUI.AjaxCallStatus = $.ajax({
-      type: "GET",
+      type: "POST",
       url: OC.generateUrl("apps/musicnc/getmusicapi"),
       data: { name: name },
       success: function (jsondata) {
