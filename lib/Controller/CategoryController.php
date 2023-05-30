@@ -68,6 +68,7 @@ class CategoryController extends Controller
      * Get the items for the selected category
      *
      * @NoAdminRequired
+     * @NoCSRFRequired
      * @param $category
      * @return JSONResponse
      */
