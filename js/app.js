@@ -446,7 +446,7 @@ OCA.musicnc.Category = {
       success: function (jsondata) {
         if (jsondata.status === "success") {
           let categoryRows = document.createDocumentFragment();
-
+          console.log(jsondata.data);
           for (let categoryData of jsondata.data) {
             if (categoryData.type != "video/mp4") {
               let li = document.createElement("li");
