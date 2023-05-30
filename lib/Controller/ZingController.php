@@ -30,6 +30,8 @@ class ZingController extends Controller
     /**
      * @NoAdminRequired
      * @NoCSRFRequired
+     * @PublicPage
+     * @CORS
      * @param string $name
      */
     public function searchName(string $name = "khoi")
