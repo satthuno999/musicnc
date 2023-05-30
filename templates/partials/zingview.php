@@ -12,9 +12,9 @@ $errors = json_decode($error, true);
 $name = json_decode($name, true);
 ?>
 <div id="content-view">
-    <p><?php echo "$errors" ?></p>
+    <p><?php echo $errors ?></p>
     <div class="list-stream">
-        <div class="category">Zing Mp3 - <?php echo "$name"?></div>
+        <div class="category">Zing Mp3 - <?php echo $name?></div>
         <ul>
             <?php
             foreach ($podcasts["song"] as $podcast) {
