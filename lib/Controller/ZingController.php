@@ -46,6 +46,7 @@ class ZingController extends Controller
         $params = [
             'data' => $data,
             'error' => $error,
+            'name' => $name,
         ];
 
         $response = new TemplateResponse('musicnc', 'partials/zingview', $params);

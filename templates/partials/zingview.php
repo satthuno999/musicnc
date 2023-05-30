@@ -9,12 +9,13 @@
  */
 $podcasts = json_decode($data, true);
 $error = json_decode($error, true);
+$name = json_decode($name, true);
 $listSearch = $podcast["data"];
 ?>
 <div id="content-view">
     <p><?php echo "$error" ?></p>
     <div class="list-stream">
-        <div class="category">Zing Mp3</div>
+        <div class="category">Zing Mp3 - <?php echo "$name"?></div>
         <ul>
             <?php
             foreach ($listSearch["song"] as $podcast) {
