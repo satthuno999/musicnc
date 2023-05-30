@@ -589,16 +589,22 @@ OCA.musicnc.Category = {
         if (jsondata.status === "success") {
           document.getElementById("sm2-bar-ui").style.display = "block";
           let itemRows = document.createDocumentFragment();
+          let itemRows2 = document.createDocumentFragment();
           for (let itemData of jsondata.data) {
             if(itemData.mim != "video/mp4"){
               let tempItem = OCA.musicnc.UI.buildTrackRow(itemData, covers);
               itemRows.appendChild(tempItem);
+            }
+            else  {
+              let tempItem = OCA.musicnc.UI.buildTrackRow(itemData, covers);
+              itemRows2.appendChild(tempItem);
             }
           }
 
           document.getElementById("playlist-container").dataset.playlist =
             category + "-" + categoryItem;
           document.querySelector(".albumwrapper").appendChild(itemRows);
+          document.querySelector("#listvideo").appendChild(itemRows2);
           OCA.musicnc.UI.addTitleClickEvents(callback);
 
           if (albumDirectPlay === true) {
