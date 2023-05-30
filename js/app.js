@@ -448,29 +448,30 @@ OCA.musicnc.Category = {
           let categoryRows = document.createDocumentFragment();
 
           for (let categoryData of jsondata.data) {
-            let li = document.createElement("li");
-            li.dataset.id = categoryData.id;
-            li.dataset.name = categoryData.name;
+            if (categoryData.type != "video/mp4") {
+              let li = document.createElement("li");
+              li.dataset.id = categoryData.id;
+              li.dataset.name = categoryData.name;
 
-            if (
-              category === "Playlist" &&
-              categoryData.id.toString()[0] !== "X" &&
-              categoryData.id.toString()[0] !== "S" &&
-              categoryData.id !== "" &&
-              categoryData.type !== "video/mp4"
-            ) {
-              OCA.musicnc.Playlists.buildCategoryRow(categoryData, li);
-            } else {
-              OCA.musicnc.Category.buildCategoryRow(categoryData, li);
+              if (
+                category === "Playlist" &&
+                categoryData.id.toString()[0] !== "X" &&
+                categoryData.id.toString()[0] !== "S" &&
+                categoryData.id !== ""
+              ) {
+                OCA.musicnc.Playlists.buildCategoryRow(categoryData, li);
+              } else {
+                OCA.musicnc.Category.buildCategoryRow(categoryData, li);
+              }
+
+              let spanCounter = document.createElement("span");
+              spanCounter.classList.add("counter");
+              spanCounter.innerText = categoryData["cnt"]
+                ? categoryData["cnt"]
+                : "";
+              li.appendChild(spanCounter);
+              categoryRows.appendChild(li);
             }
-
-            let spanCounter = document.createElement("span");
-            spanCounter.classList.add("counter");
-            spanCounter.innerText = categoryData["cnt"]
-              ? categoryData["cnt"]
-              : "";
-            li.appendChild(spanCounter);
-            categoryRows.appendChild(li);
           }
 
           let categoryList = document.getElementById("myCategory");
