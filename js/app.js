@@ -1755,7 +1755,9 @@ OCA.musicnc.RenderPartialUI = {
  * @namespace OCA.musicnc.VideoPlayer
  */
 OCA.musicnc.VideoPlayer = {
-  init: function () {},
+  init: function () {
+    
+  },
 };
 document.addEventListener("DOMContentLoaded", function () {
   OCA.musicnc.Core.init();

@@ -521,7 +521,60 @@ class ScannerController extends Controller
         $output->writeln("Final audio files to be processed: " . $this->numOfSongs, OutputInterface::VERBOSITY_VERBOSE);
         return $audios;
     }
+    private function getVideoObjects(OutputInterface $output = null)
+    {
+        $audioPath = $this->configManager->getUserValue($this->userId, $this->appName, 'path');
+        $userView = $this->rootFolder->getUserFolder($this->userId);
 
+        if ($audioPath !== null && $audioPath !== '/' && $audioPath !== '') {
+            try {
+                $userView = $userView->get($audioPath);
+            } catch (InvalidPathException $e) {
+                $output->writeln("!Error: Selected scan folder is not existing");
+                return;
+            } catch (NotFoundException $e) {
+                $output->writeln("!Error: Selected scan folder is not existing");
+                return;
+            }
+        }
+
+        $video_mp4 = $userView->searchByMime('video/mp4');
+        $audios = array_merge($video_mp4);
+
+        $output->writeln("Scanned Folder: " . $userView->getPath(), OutputInterface::VERBOSITY_VERBOSE);
+        $output->writeln("<info>Total video files:</info> " . count($audios), OutputInterface::VERBOSITY_VERBOSE);
+        $output->writeln("Checking audio files to be skipped", OutputInterface::VERBOSITY_VERBOSE);
+
+        // get all fileids which are in an excluded folder
+        $stmt = $this->db->prepare('SELECT `fileid` from `*PREFIX*filecache` WHERE `parent` IN (SELECT `parent` FROM `*PREFIX*filecache` WHERE `name` = ? OR `name` = ? ORDER BY `fileid` ASC)');
+        $stmt->execute(array('.noAudio', '.noaudio'));
+        $results = $stmt->fetchAll();
+        $resultExclude = array_column($results, 'fileid');
+
+        // get all fileids which are already in the Audio Player Database
+        $stmt = $this->db->prepare('SELECT `file_id` FROM `*PREFIX*musicnc_tracks` WHERE `user_id` = ? ');
+        $stmt->execute(array($this->userId));
+        $results = $stmt->fetchAll();
+        $resultExisting = array_column($results, 'file_id');
+
+        foreach ($audios as $key => &$audio) {
+            $current_id = $audio->getID();
+            if (in_array($current_id, $resultExclude)) {
+                $output->writeln("   " . $current_id . " - " . $audio->getPath() . "  => excluded", OutputInterface::VERBOSITY_VERY_VERBOSE);
+                unset($audios[$key]);
+            } elseif (in_array($current_id, $resultExisting)) {
+                if ($this->checkFileChanged($audio)) {
+                    $output->writeln("   " . $current_id . " - " . $audio->getPath() . "  => indexed title changed => reindex", OutputInterface::VERBOSITY_VERY_VERBOSE);
+                } else {
+                    $output->writeln("   " . $current_id . " - " . $audio->getPath() . "  => already indexed", OutputInterface::VERBOSITY_VERY_VERBOSE);
+                    unset($audios[$key]);
+                }
+            }
+        }
+        $this->numOfSongs = count($audios);
+        $output->writeln("Final audio files to be processed: " . $this->numOfSongs, OutputInterface::VERBOSITY_VERBOSE);
+        return $audios;
+    }
     /**
      * check changed timestamps
      *
