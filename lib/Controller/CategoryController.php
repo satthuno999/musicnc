@@ -77,7 +77,7 @@ class CategoryController extends Controller
         $SQL = null;
         $aPlaylists = array();
         if ($category === 'Artist') {
-            $SQL = 'SELECT  DISTINCT(`AT`.`artist_id`) AS `id`, `AA`.`name`, LOWER(`AA`.`name`) AS `lower` 
+            $SQL = 'SELECT  DISTINCT(`AT`.`artist_id`) AS `id`, `AA`.`name`, LOWER(`AA`.`name`) AS `lower` ,(`AT`.`mimetype`) AS `type`
 						FROM `*PREFIX*musicnc_tracks` `AT`
 						JOIN `*PREFIX*musicnc_artists` `AA`
 						ON `AA`.`id` = `AT`.`artist_id`

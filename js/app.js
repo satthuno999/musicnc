@@ -456,7 +456,8 @@ OCA.musicnc.Category = {
               category === "Playlist" &&
               categoryData.id.toString()[0] !== "X" &&
               categoryData.id.toString()[0] !== "S" &&
-              categoryData.id !== ""
+              categoryData.id !== "" &&
+              categoryData.type !== "video/mp4"
             ) {
               OCA.musicnc.Playlists.buildCategoryRow(categoryData, li);
             } else {
@@ -1756,7 +1757,7 @@ OCA.musicnc.RenderPartialUI = {
  */
 OCA.musicnc.VideoPlayer = {
   init: function () {
-    
+
   },
 };
 document.addEventListener("DOMContentLoaded", function () {
