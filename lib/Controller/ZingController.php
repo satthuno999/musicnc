@@ -9,6 +9,8 @@ use OCA\musicnc\AppInfo\Application;
 use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\AppFramework\Http\ContentSecurityPolicy;
+use OCP\AppFramework\Http\Template\PublicTemplateResponse;
+
 use OCP\IRequest;
 
 class ZingController extends Controller
@@ -56,7 +58,7 @@ class ZingController extends Controller
             'name' => $name,
         ];
 
-        $response = new TemplateResponse('musicnc', 'partials/zingview', $params);
+        $response = new PublicTemplateResponse('musicnc', 'partials/zingview', $params);
         $csp = new ContentSecurityPolicy();
         $csp->addAllowedMediaDomain('*');
         $csp->addAllowedScriptDomain("unsafe-inline");
