@@ -34,5 +34,8 @@
 </div>
 <div id="partial-wrapper">
 </div>
+<div id="partial-wrapper-video">
+	<?php print_unescaped($this->inc('part.video')); ?>
+</div>
 <div id="empty-container">
 </div>

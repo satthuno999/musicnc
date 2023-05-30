@@ -479,12 +479,13 @@ class ScannerController extends Controller
 
         $audios_mp3 = $userView->searchByMime('audio/mpeg');
         $audios_m4a = $userView->searchByMime('audio/mp4');
+        $video_mp4 = $userView->searchByMime('video/mp4');
         $audios_ogg = $userView->searchByMime('audio/ogg');
         $audios_wav = $userView->searchByMime('audio/wav');
         $audios_flac = $userView->searchByMime('audio/flac');
         $audios_aif = $userView->searchByMime('audio/x-aiff');
         $audios_aac = $userView->searchByMime('audio/aac');
-        $audios = array_merge($audios_mp3, $audios_m4a, $audios_ogg, $audios_wav, $audios_flac, $audios_aif, $audios_aac);
+        $audios = array_merge($audios_mp3, $audios_m4a, $audios_ogg, $audios_wav, $audios_flac, $audios_aif, $audios_aac, $video_mp4);
 
         $output->writeln("Scanned Folder: " . $userView->getPath(), OutputInterface::VERBOSITY_VERBOSE);
         $output->writeln("<info>Total audio files:</info> " . count($audios), OutputInterface::VERBOSITY_VERBOSE);

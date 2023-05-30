@@ -1750,6 +1750,13 @@ OCA.musicnc.RenderPartialUI = {
     });
   },
 };
+
+/**
+ * @namespace OCA.musicnc.VideoPlayer
+ */
+OCA.musicnc.VideoPlayer = {
+  init: function () {},
+};
 document.addEventListener("DOMContentLoaded", function () {
   OCA.musicnc.Core.init();
   OCA.musicnc.Core.initKeyListener();
@@ -1807,6 +1814,14 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("myCategory").innerHTML = "";
 
       OCA.musicnc.RenderPartialUI.renderRadio();
+    });
+  document
+    .getElementById("videoViewBtn")
+    .addEventListener("click", function () {
+      document.getElementById("newPlaylist").classList.add("ap_hidden");
+      document.getElementById("myCategory").innerHTML = "";
+
+      OCA.musicnc.VideoPlayer.init();
     });
   document
     .getElementById("searchAPIInput")
