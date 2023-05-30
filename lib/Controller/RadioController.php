@@ -68,6 +68,7 @@ class RadioController extends Controller
         $response = new TemplateResponse('musicnc', 'partials/radioview', $params);
         $csp = new ContentSecurityPolicy();
         $csp->addAllowedMediaDomain('*');
+        $csp->addAllowedImageDomain('*');
         $csp->addAllowedScriptDomain("'unsafe-inline'");
         $response->setContentSecurityPolicy($csp);
         return $response;
@@ -88,6 +89,7 @@ class RadioController extends Controller
         $response = new TemplateResponse('musicnc', 'partials/radioviewlang', $params);
         $csp = new ContentSecurityPolicy();
         $csp->addAllowedMediaDomain('*');
+        $csp->addAllowedImageDomain('*');
         $csp->addAllowedScriptDomain("'unsafe-inline'");
         $response->setContentSecurityPolicy($csp);
         return $response;
