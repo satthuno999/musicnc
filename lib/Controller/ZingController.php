@@ -59,11 +59,11 @@ class ZingController extends Controller
         ];
 
         $response = new PublicTemplateResponse('musicnc', 'partials/zingview', $params);
-        $csp = new ContentSecurityPolicy();
-        $csp->addAllowedMediaDomain('*');
-        $csp->addAllowedScriptDomain("unsafe-inline");
-        $csp->allowInlineScript(true);
-        $response->setContentSecurityPolicy($csp);
+        // $csp = new ContentSecurityPolicy();
+        // $csp->addAllowedMediaDomain('*');
+        // $csp->addAllowedScriptDomain("unsafe-inline");
+        // $csp->allowInlineScript(true);
+        // $response->setContentSecurityPolicy($csp);
         return $response;
     }
 }
