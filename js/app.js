@@ -1727,10 +1727,10 @@ OCA.musicnc.RenderPartialUI = {
       url: OC.generateUrl("apps/musicnc/getmusicapi"),
       data: { name: name },
       success: function (jsondata) {
-        console.log(jsondata);
         var parser = new DOMParser();
         var responseDoc = parser.parseFromString(jsondata, "text/html");
         var content = responseDoc.getElementById("content-view");
+        console.log(content);
         if (content) {
           document.getElementById("playlist-container").style.display = "none";
           document.getElementById("partial-wrapper").innerHTML = "";
