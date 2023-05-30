@@ -81,7 +81,8 @@ class CategoryController extends Controller
 						FROM `*PREFIX*musicnc_tracks` `AT`
 						JOIN `*PREFIX*musicnc_artists` `AA`
 						ON `AA`.`id` = `AT`.`artist_id`
-			 			WHERE  `AT`.`user_id` = ? AND `AT`.`mimetype` != `"video/mp4"`
+			 			WHERE  `AT`.`user_id` = ?
+                        AND `AT`.`mimetype` = ?
 			 			ORDER BY LOWER(`AA`.`name`) ASC
 			 			';
         } elseif ($category === 'Genre') {
