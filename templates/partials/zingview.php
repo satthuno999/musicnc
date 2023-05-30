@@ -8,17 +8,16 @@
  * @copyright 2022-2023 S P A R K
  */
 $podcasts = json_decode($data, true);
-$error = json_decode($error, true);
+$errors = json_decode($error, true);
 $name = json_decode($name, true);
-$listSearch = $podcast["data"];
 ?>
 <div id="content-view">
-    <p><?php echo "$error" ?></p>
+    <p><?php echo "$errors" ?></p>
     <div class="list-stream">
         <div class="category">Zing Mp3 - <?php echo "$name"?></div>
         <ul>
             <?php
-            foreach ($listSearch["song"] as $podcast) {
+            foreach ($podcasts["song"] as $podcast) {
                 echo '
                 <li class="item">
                 <a title="' . $podcast["name"] . '"
