@@ -600,7 +600,6 @@ OCA.musicnc.Category = {
               itemRows2.appendChild(tempItem);
             }
           }
-
           document.getElementById("playlist-container").dataset.playlist =
             category + "-" + categoryItem;
           document.querySelector(".albumwrapper").appendChild(itemRows);
@@ -741,13 +740,16 @@ OCA.musicnc.UI = {
 
   addTitleClickEvents: function (callback) {
     let albumWrapper = document.querySelector(".albumwrapper");
+    let albumWrapperVideo = document.querySelector(".albumwrapper-video");
     let getcoverUrl = OC.generateUrl("apps/musicnc/getcover/");
     let category = document
       .getElementById("playlist-container")
       .dataset.playlist.split("-");
-
-    let playlist = albumWrapper.getElementsByTagName("li");
-
+  let playlist = albumWrapper.getElementsByTagName("li");
+  let playlistVideo = albumWrapperVideo.getElementsByTagName("li");
+  let categoryVideo = document
+  .getElementById("partial-wrapper-video")
+  .dataset.playlist.split("-");
     if (
       category[0] === "Playlist" &&
       category[1].toString()[0] !== "X" &&
@@ -763,6 +765,9 @@ OCA.musicnc.UI = {
 
     albumWrapper.addEventListener("click", function (event) {
       OCA.musicnc.UI.handleTitleClicked(getcoverUrl, playlist, event.target);
+    });
+    albumWrapperVideo.addEventListener("click", function (event) {
+      OCA.musicnc.UI.handleTitleClicked(getcoverUrl, playlistVideo, event.target);
     });
     // the callback is used for the the init function to get feedback when all title rows are ready
     if (typeof callback === "function") {
@@ -941,7 +946,48 @@ OCA.musicnc.UI = {
       OCA.musicnc.Backend.setStatistics();
     }
   },
-
+  handleTitleClickedVideo: function (coverUrl, playlist, element) {
+    let canPlayMimeType = OCA.musicnc.Core.canPlayMimeType;
+    let activeLi = element.parentNode;
+    // if enabled, play sonos and skip the rest of the processing
+    if (document.getElementById("musicnc_sonos").value === "checked") {
+      OCA.musicnc.Sonos.playSonos(element);
+      OCA.musicnc.Backend.setStatistics();
+      return;
+    }
+    if (!canPlayMimeType.includes(activeLi.dataset.mimetype)) {
+      console.warn(`can't play ${activeLi.dataset.mimetype}`);
+      return false;
+    }
+    if (activeLi.classList.contains("isActive")) {
+      OCA.musicnc.VideoPlayer.play();
+    } else {
+      if (
+        document.getElementById("partial-wrapper-video").dataset.playlist !==
+        OCA.musicnc.Player.currentPlaylist
+      ) {
+        let playlistItems = document.querySelectorAll(".albumwrapper-video li");
+        OCA.musicnc.Player.addTracksToSourceList(playlistItems);
+        OCA.musicnc.Player.currentPlaylist =
+          document.getElementById("partial-wrapper-video").dataset.playlist;
+      }
+      let k = 0,
+        e = activeLi;
+      while ((e = e.previousSibling)) {
+        ++k;
+      }
+      // when a new title is played, the old playtime will be reset
+      if (
+        parseInt(OCA.musicnc.Core.CategorySelectors[2]) !==
+        parseInt(activeLi.dataset.trackid)
+      ) {
+        OCA.musicnc.VideoPlayer.trackStartPosition = 0;
+      }
+      OCA.musicnc.VideoPlayer.currentTrackIndex = k;
+      OCA.musicnc.VideoPlayer.play();
+      OCA.musicnc.Backend.setStatistics();
+    }
+  },
   showInitScreen: function (mode) {
     document.getElementById("content").style.display = "none";
     OCA.musicnc.UI.EmptyContainer.style.display = "block";
@@ -1765,8 +1811,61 @@ OCA.musicnc.RenderPartialUI = {
  * @namespace OCA.musicnc.VideoPlayer
  */
 OCA.musicnc.VideoPlayer = {
-  init: function () {
+  html5Audio: document.getElementById("html5Video"), // the <audio> element
+  currentTrackIndex: 0, // the index of the <source> list to be played
+  currentPlaylist: 0, // ID of the current playlist. Needed to recognize UI list changes
+  currentTrackId: 0, // current playing track id. Needed to recognize the current playing track in the playlist
+  repeatMode: null, // repeat mode null/single/list
+  trackStartPosition: 0, // start position of a track when the player is reopened and the playback should continue
+  lastSavedSecond: 0, // last autosaved second
 
+  init: function () {
+    html5Audio.style.display = "none";
+    
+  },
+  setTrack: function () {
+    html5Audio.style.display = "block";
+    document.getElementById("playlist-container").style.display="none";
+
+    let trackToPlay = this.html5Audio.children[this.currentTrackIndex];
+    if (trackToPlay.dataset.canPlayMime === "false") {
+      this.next();
+      return;
+    }
+    // new track to be played
+    if (trackToPlay.src !== this.html5Audio.getAttribute("src")) {
+      document
+        .getElementById("playerPlay")
+        .classList.replace("play-pause", "icon-loading");
+      this.currentTrackId = trackToPlay.dataset.trackid;
+      OCA.musicnc.Core.CategorySelectors[2] = trackToPlay.dataset.trackid;
+      this.lastSavedSecond = 0;
+      this.html5Audio.setAttribute("src", trackToPlay.src);
+      this.html5Audio.load();
+    } else if (!OCA.musicnc.Player.isPaused()) {
+      OCA.musicnc.Player.stop();
+      return;
+    }
+    let playPromise = this.html5Audio.play();
+    if (playPromise !== undefined) {
+      playPromise
+        .then(function () {
+          document
+            .getElementById("playerPlay")
+            .classList.replace("icon-loading", "play-pause");
+          document.getElementById("sm2-bar-ui").classList.add("playing");
+          OCA.musicnc.UI.indicateCurrentPlayingTrack();
+        })
+        .catch(function (error) {
+          document
+            .getElementById("playerPlay")
+            .classList.replace("icon-loading", "play-pause");
+          OCP.Toast.error(t("musicnc", "Playback error"));
+        });
+    }
+  },
+  play: function () {
+    OCA.musicnc.VideoPlayer.setTrack();
   },
 };
 document.addEventListener("DOMContentLoaded", function () {

@@ -1739,6 +1739,9 @@ li.isActive {
 }
 
 /*End radio*/
+#app-content{
+  overflow: auto;
+}
 @media only screen and (max-width: 768px) {
 
   #app-navigation-toggle_alternative {
