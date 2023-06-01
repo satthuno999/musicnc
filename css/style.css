@@ -1675,6 +1675,17 @@ li.isActive {
   overflow: auto;
 }
 
+/*HTML % VIDEO*/
+#html5Video {
+  width: 95%;
+  margin-left: 0 auto;
+}
+
+.playerVideo {
+  display: flex;
+  width: 100%;
+}
+
 @media only screen and (max-width: 768px) {
   #app-navigation-toggle_alternative {
     display: none;

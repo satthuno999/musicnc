@@ -747,9 +747,6 @@ OCA.musicnc.UI = {
       .dataset.playlist.split("-");
   let playlist = albumWrapper.getElementsByTagName("li");
   let playlistVideo = albumWrapperVideo.getElementsByTagName("li");
-  let categoryVideo = document
-  .getElementById("partial-wrapper-video")
-  .dataset.playlist.split("-");
     if (
       category[0] === "Playlist" &&
       category[1].toString()[0] !== "X" &&

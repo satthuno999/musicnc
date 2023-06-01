@@ -9,7 +9,7 @@
  * @copyright 2022-2023 S P A R K
  */
 ?>
-<div>
+<div class="playerVideo">
     <video id="html5Video" preload="auto">
     </video>
 
