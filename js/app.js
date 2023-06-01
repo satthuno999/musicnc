@@ -1833,7 +1833,7 @@ OCA.musicnc.VideoPlayer = {
     //   return;
     // }
     //new track to be played
-    if (trackToPlay.getElementsByTagName("a").getAttribute("href") !== this.html5Audio.getAttribute("src")) {
+    if (trackToPlay.getElementsByTagName("a")[0].getAttribute("href") !== this.html5Audio.getAttribute("src")) {
       document
         .getElementById("playerPlay")
         .classList.replace("play-pause", "icon-loading");
