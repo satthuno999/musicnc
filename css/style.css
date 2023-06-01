@@ -397,13 +397,16 @@ i#scanAudiosFirst {
   background-color: var(--color-main-background);
 }
 
-#individual-playlist {
+#individual-playlist,
+#individual-playlist-video {
   margin-left: auto;
   margin-right: auto;
 }
 
 #individual-playlist > li,
-#individual-playlist-header span {
+#individual-playlist-header span,
+#individual-playlist-video > li,
+#individual-playlist-header-video span {
   line-height: 24px;
 }
 
@@ -421,7 +424,8 @@ i#scanAudiosFirst {
   display: block;
 }
 
-#individual-playlist-header .header-indi {
+#individual-playlist-header .header-indi,
+#individual-playlist-header-video .header-indi {
   border-bottom: 1px solid #E7E7E7;
   width: 100%;
   float: left;
@@ -429,7 +433,8 @@ i#scanAudiosFirst {
   display: flex;
 }
 
-#individual-playlist-header span.header-num {
+#individual-playlist-header span.header-num,
+#individual-playlist-header-video span.header-num {
   position: relative;
   float: left;
   display: block;
@@ -439,28 +444,32 @@ i#scanAudiosFirst {
   flex: 0 0 18px;
 }
 
-#individual-playlist-header span.header-title {
+#individual-playlist-header span.header-title,
+#individual-playlist-header-video span.header-title {
   position: relative;
   float: left;
   display: block;
   min-width: 35%;
 }
 
-#individual-playlist-header span.header-artist {
+#individual-playlist-header span.header-artist,
+#individual-playlist-header-video span.header-artist {
   position: relative;
   float: left;
   display: block;
   min-width: 25%;
 }
 
-#individual-playlist-header span.header-album {
+#individual-playlist-header span.header-album,
+#individual-playlist-header-video span.header-album {
   position: relative;
   float: left;
   display: block;
   min-width: 25%;
 }
 
-#individual-playlist-header span.header-time {
+#individual-playlist-header span.header-time,
+#individual-playlist-header-video span.header-time {
   position: absolute;
   float: right;
   display: block;
@@ -469,7 +478,8 @@ i#scanAudiosFirst {
   right: 35px;
 }
 
-#individual-playlist-header span.header-opt {
+#individual-playlist-header span.header-opt,
+#individual-playlist-header-video span.header-opt {
   position: absolute;
   float: right;
   display: block;
@@ -477,7 +487,8 @@ i#scanAudiosFirst {
   right: 0;
 }
 
-.albumwrapper li .actionsSong {
+.albumwrapper li .actionsSong,
+.albumwrapper-video li .actionsSong {
   position: relative;
   float: left;
   display: block;
@@ -486,19 +497,22 @@ i#scanAudiosFirst {
   flex: 0 0 18px;
 }
 
-.albumwrapper li .ioc {
+.albumwrapper li .ioc,
+.albumwrapper-video li .ioc {
   font-size: 16px;
   line-height: 22px;
   display: none;
 }
 
-.albumwrapper li .icon {
+.albumwrapper li .icon,
+.albumwrapper-video li .icon {
   display: inline-block;
   vertical-align: middle;
   background-size: 16px 16px;
 }
 
-.albumwrapper li .icon-star {
+.albumwrapper li .icon-star,
+.albumwrapper-video li .icon-star {
   opacity: 0;
 }
 
@@ -508,12 +522,15 @@ i#scanAudiosFirst {
 
 .albumwrapper .icon:hover,
 .albumwrapper .icon:focus,
+.albumwrapper-video .icon:hover,
+.albumwrapper-video .icon:focus,
 #individual-playlist .edit-song:hover,
 #individual-playlist .edit-song:focus {
   opacity: 1 !important;
 }
 
-#individual-playlist li .number {
+#individual-playlist li .number,
+#individual-playlist-video li .number {
   position: relative;
   float: left;
   display: block;
@@ -523,7 +540,8 @@ i#scanAudiosFirst {
   padding-right: 5px;
 }
 
-#individual-playlist li span.title {
+#individual-playlist li span.title,
+#individual-playlist-video li span.title {
   position: relative;
   float: left;
   display: block;
@@ -533,7 +551,8 @@ i#scanAudiosFirst {
   overflow: hidden;
 }
 
-#individual-playlist li span.interpret {
+#individual-playlist li span.interpret,
+#individual-playlist-video li span.interpret {
   position: relative;
   float: left;
   display: block;
@@ -544,7 +563,8 @@ i#scanAudiosFirst {
   color: var(--color-text-lighter);
 }
 
-#individual-playlist li span.album-indi {
+#individual-playlist li span.album-indi,
+#individual-playlist-video li span.album-indi {
   position: relative;
   float: left;
   display: block;
@@ -555,7 +575,8 @@ i#scanAudiosFirst {
   color: var(--color-text-lighter);
 }
 
-#individual-playlist li span.time {
+#individual-playlist li span.time,
+#individual-playlist-video li span.time {
   position: absolute;
   float: right;
   display: block;
@@ -565,7 +586,8 @@ i#scanAudiosFirst {
   color: var(--color-text-lighter);
 }
 
-#individual-playlist li span.ioc-delete {
+#individual-playlist li span.ioc-delete,
+#individual-playlist-video li span.ioc-delete {
   position: absolute;
   float: right;
   right: 5px;
@@ -579,11 +601,13 @@ i#scanAudiosFirst {
   cursor: pointer;
 }
 
-#individual-playlist li span.ioc-delete:hover {
+#individual-playlist li span.ioc-delete:hover,
+#individual-playlist-video li span.ioc-delete:hover {
   color: #A9302A;
 }
 
-#individual-playlist li span.edit-song {
+#individual-playlist li span.edit-song,
+#individual-playlist-video li span.edit-song {
   float: right;
   position: absolute;
   right: 0;
@@ -1666,18 +1690,32 @@ li.isActive {
   #individual-playlist li span.interpret,
   #individual-playlist li span.album-indi,
   #individual-playlist li span.edit-song,
-  #individual-playlist li span.time {
+  #individual-playlist li span.time,
+  #individual-playlist-header-video span.header-artist,
+  #individual-playlist-header-video span.header-album,
+  #individual-playlist-header-video span.header-time,
+  #individual-playlist-header-video span.header-opt,
+  #individual-playlist-video li span.number,
+  #individual-playlist-video li span.interpret,
+  #individual-playlist-video li span.album-indi,
+  #individual-playlist-video li span.edit-song,
+  #individual-playlist-video li span.time {
     display: none;
   }
   #individual-playlist-header span.actionsSong,
-  #individual-playlist li span.number {
+  #individual-playlist li span.number,
+  #individual-playlist-header-video span.actionsSong,
+  #individual-playlist-video li span.number {
     width: 20px;
   }
   #individual-playlist-header span.header-opt,
-  #individual-playlist li span.title {
+  #individual-playlist li span.title,
+  #individual-playlist-header-video span.header-opt,
+  #individual-playlist-video li span.title {
     width: 80%;
   }
-  #individual-playlist li {
+  #individual-playlist li,
+  #individual-playlist-video li {
     font-weight: 200;
   }
 }
@@ -1803,6 +1841,9 @@ body[data-themes=dark] div#app-content * {
   background-color: transparent;
 }
 body[data-themes=dark] #individual-playlist li span.interpret, body[data-themes=dark] #individual-playlist li span.album-indi, body[data-themes=dark] #individual-playlist li span.time {
+  color: #dbdbdb;
+}
+body[data-themes=dark] #individual-playlist-video li span.interpret, body[data-themes=dark] #individual-playlist-video li span.album-indi, body[data-themes=dark] #individual-playlist-video li span.time {
   color: #dbdbdb;
 }
 body[data-themes=dark] #app-settings-header .settings-button {
