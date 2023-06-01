@@ -1833,15 +1833,15 @@ OCA.musicnc.VideoPlayer = {
     //   return;
     // }
     //new track to be played
-    if (trackToPlay.getElementsByTagName("a")[0].getAttribute("href") !== this.html5Audio.getAttribute("src")) {
+    var srcNew = trackToPlay.getElementsByTagName("a")[0].getAttribute("href");
+    if ( srcNew !== this.html5Audio.getAttribute("src")) {
       document
         .getElementById("playerPlay")
         .classList.replace("play-pause", "icon-loading");
-        debugger
       this.currentTrackId = trackToPlay.dataset.trackid;
       OCA.musicnc.Core.CategorySelectors[2] = trackToPlay.dataset.trackid;
       this.lastSavedSecond = 0;
-      this.html5Audio.setAttribute("src", trackToPlay.src);
+      this.html5Audio.setAttribute("src", srcNew);
       this.html5Audio.load();
     } else if (!OCA.musicnc.Player.isPaused()) {
       OCA.musicnc.Player.stop();
