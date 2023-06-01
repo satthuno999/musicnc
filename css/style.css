@@ -1679,6 +1679,7 @@ li.isActive {
 #html5Video {
   width: 95%;
   margin: 0 auto;
+  max-height: 85vh;
 }
 
 .playerVideo {
