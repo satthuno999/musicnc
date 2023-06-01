@@ -426,7 +426,7 @@ i#scanAudiosFirst {
 }
 
 #individual-playlist-header .header-indi,
-#individual-playlist-header-video .header-indi {
+#individual-playlist-header-video .header-indi-video {
   border-bottom: 1px solid #E7E7E7;
   width: 100%;
   float: left;
@@ -436,7 +436,7 @@ i#scanAudiosFirst {
 }
 
 #individual-playlist-header span.header-num,
-#individual-playlist-header-video span.header-num  {
+#individual-playlist-header-video span.header-num-video  {
   position: relative;
   float: left;
   display: block;
@@ -447,7 +447,7 @@ i#scanAudiosFirst {
 }
 
 #individual-playlist-header span.header-title,
-#individual-playlist-header-video span.header-title {
+#individual-playlist-header-video span.header-title-video {
   position: relative;
   float: left;
   display: block;
@@ -455,7 +455,7 @@ i#scanAudiosFirst {
 }
 
 #individual-playlist-header span.header-artist,
-#individual-playlist-header-video span.header-artist  {
+#individual-playlist-header-video span.header-artist-video  {
   position: relative;
   float: left;
   display: block;
@@ -463,7 +463,7 @@ i#scanAudiosFirst {
 }
 
 #individual-playlist-header span.header-album,
-#individual-playlist-header-video span.header-album {
+#individual-playlist-header-video span.header-album-video {
   position: relative;
   float: left;
   display: block;
@@ -471,7 +471,7 @@ i#scanAudiosFirst {
 }
 
 #individual-playlist-header span.header-time ,
-#individual-playlist-header-video span.header-time {
+#individual-playlist-header-video span.header-time-video {
   position: absolute;
   float: right;
   display: block;
@@ -481,7 +481,7 @@ i#scanAudiosFirst {
 }
 
 #individual-playlist-header span.header-opt,
-#individual-playlist-header-video span.header-opt {
+#individual-playlist-header-video span.header-opt-video {
   position: absolute;
   float: right;
   display: block;
@@ -1764,10 +1764,10 @@ li.isActive {
   #individual-playlist li span.album-indi,
   #individual-playlist li span.edit-song,
   #individual-playlist li span.time,
-  #individual-playlist-header-video span.header-artist,
-  #individual-playlist-header-video span.header-album,
-  #individual-playlist-header-video span.header-time,
-  #individual-playlist-header-video span.header-opt,
+  #individual-playlist-header-video span.header-artist-video,
+  #individual-playlist-header-video span.header-album-video,
+  #individual-playlist-header-video span.header-time-video,
+  #individual-playlist-header-video span.header-opt-video,
   #individual-playlist-video li span.number,
   #individual-playlist-video li span.interpret,
   #individual-playlist-video li span.album-indi,
@@ -1785,7 +1785,7 @@ li.isActive {
 
   #individual-playlist-header span.header-opt,
   #individual-playlist li span.title,
-  #individual-playlist-header-video span.header-opt,
+  #individual-playlist-header-video span.header-opt-video,
   #individual-playlist-video li span.title {
     width: 80%;
   }
