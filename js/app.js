@@ -604,7 +604,7 @@ OCA.musicnc.Category = {
           document.getElementById("playlist-container").dataset.playlist =
             category + "-" + categoryItem;
           document.querySelector(".albumwrapper").appendChild(itemRows);
-          document.querySelector("#listvideo").appendChild(itemRows2);
+          document.querySelector("#individual-playlist-video").appendChild(itemRows2);
           OCA.musicnc.UI.addTitleClickEvents(callback);
 
           if (albumDirectPlay === true) {

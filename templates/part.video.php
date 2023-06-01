@@ -15,5 +15,24 @@
 
     <div id="current-video"></div>
 </div>
-<ul id="listvideo">
-</ul>
+<span id="individual-playlist-info-video">Video | Nhạc hình</span>
+<span id="individual-playlist-header-video">
+    <span class="header-indi-video">
+        <span class="header-num-video">1</span>
+        <span class="header-title-video" style="cursor: pointer;">
+            <?php p($l->t('Title')); ?>
+        </span>
+        <span class="header-artist-video" style="cursor: pointer;">
+            <?php p($l->t('Artist')); ?>
+        </span>
+        <span class="header-album-video" style="cursor: pointer;">
+            <?php p($l->t('Album')); ?>
+        </span>
+        <span class="header-time-video">
+            <?php p($l->t('Length')); ?>
+        </span>
+        <span class="header-opt-video">&nbsp;</span>
+    </span>
+</span>
+<br style="clear:both;" />
+<ul id="individual-playlist-video" class="albumwrapper-video"></ul>
