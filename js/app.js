@@ -1827,10 +1827,10 @@ OCA.musicnc.VideoPlayer = {
     console.log(list)
 
     let trackToPlay = list.children[this.currentTrackIndex];
-    if (trackToPlay.dataset.canPlayMime === "false") {
-      this.next();
-      return;
-    }
+    // if (trackToPlay.dataset.canPlayMime === "false") {
+    //   this.next();
+    //   return;
+    // }
     //new track to be played
     if (trackToPlay.src !== this.html5Audio.getAttribute("src")) {
       document
