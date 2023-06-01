@@ -764,7 +764,7 @@ OCA.musicnc.UI = {
       OCA.musicnc.UI.handleTitleClicked(getcoverUrl, playlist, event.target);
     });
     albumWrapperVideo.addEventListener("click", function (event) {
-      OCA.musicnc.UI.handleTitleClicked(getcoverUrl, playlistVideo, event.target);
+      OCA.musicnc.UI.handleTitleClickedVideo(getcoverUrl, playlistVideo, event.target);
     });
     // the callback is used for the the init function to get feedback when all title rows are ready
     if (typeof callback === "function") {
@@ -952,10 +952,10 @@ OCA.musicnc.UI = {
       OCA.musicnc.Backend.setStatistics();
       return;
     }
-    if (!canPlayMimeType.includes(activeLi.dataset.mimetype)) {
-      console.warn(`can't play ${activeLi.dataset.mimetype}`);
-      return false;
-    }
+    // if (!canPlayMimeType.includes(activeLi.dataset.mimetype)) {
+    //   console.warn(`can't play ${activeLi.dataset.mimetype}`);
+    //   return false;
+    // }
     if (activeLi.classList.contains("isActive")) {
       OCA.musicnc.VideoPlayer.play();
     } else {
