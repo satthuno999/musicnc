@@ -1824,9 +1824,10 @@ OCA.musicnc.VideoPlayer = {
     html5Audio.style.display = "block";
     document.getElementById("playlist-container").style.display="none";
     var list = document.getElementById("individual-playlist-video");
-    console.log(list)
 
     let trackToPlay = list.children[this.currentTrackIndex];
+    console.log(list)
+
     // if (trackToPlay.dataset.canPlayMime === "false") {
     //   this.next();
     //   return;
