@@ -1678,7 +1678,7 @@ li.isActive {
 /*HTML % VIDEO*/
 #html5Video {
   width: 95%;
-  margin-left: 0 auto;
+  margin: 0 auto;
 }
 
 .playerVideo {
