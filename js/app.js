@@ -1837,6 +1837,7 @@ OCA.musicnc.VideoPlayer = {
       document
         .getElementById("playerPlay")
         .classList.replace("play-pause", "icon-loading");
+        debugger
       this.currentTrackId = trackToPlay.dataset.trackid;
       OCA.musicnc.Core.CategorySelectors[2] = trackToPlay.dataset.trackid;
       this.lastSavedSecond = 0;
