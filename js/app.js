@@ -1870,6 +1870,7 @@ OCA.musicnc.VideoPlayer = {
 };
 document.addEventListener("DOMContentLoaded", function () {
   OCA.musicnc.Core.init();
+  OCA.musicnc.VideoPlayer.init();
   OCA.musicnc.Core.initKeyListener();
   OCA.musicnc.Backend.checkNewTracks();
   OCA.musicnc.Playlists.initPlaylistActions();
