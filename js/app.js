@@ -1825,10 +1825,10 @@ OCA.musicnc.VideoPlayer = {
     document.getElementById("playlist-container").style.display="none";
 
     let trackToPlay = this.html5Audio.children[this.currentTrackIndex];
-    if (trackToPlay.dataset.canPlayMime === "false") {
-      this.next();
-      return;
-    }
+    // if (trackToPlay.dataset.canPlayMime === "false") {
+    //   this.next();
+    //   return;
+    // }
     // new track to be played
     if (trackToPlay.src !== this.html5Audio.getAttribute("src")) {
       document

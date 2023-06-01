@@ -10,7 +10,7 @@
  */
 ?>
 <div class="playerVideo">
-    <video id="html5Video" preload="auto">
+    <video id="html5Video" preload="auto" >
     </video>
 
     <div id="current-video"></div>
