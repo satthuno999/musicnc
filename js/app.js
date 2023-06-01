@@ -1809,6 +1809,7 @@ OCA.musicnc.RenderPartialUI = {
  */
 OCA.musicnc.VideoPlayer = {
   html5Audio: document.getElementById("html5Video"), // the <audio> element
+  html5VideoList: document.getElementById("individual-playlist-video"), // the <audio> element
   currentTrackIndex: 0, // the index of the <source> list to be played
   currentPlaylist: 0, // ID of the current playlist. Needed to recognize UI list changes
   currentTrackId: 0, // current playing track id. Needed to recognize the current playing track in the playlist
@@ -1824,12 +1825,12 @@ OCA.musicnc.VideoPlayer = {
     html5Audio.style.display = "block";
     document.getElementById("playlist-container").style.display="none";
 
-    let trackToPlay = this.html5Audio.children[this.currentTrackIndex];
-    // if (trackToPlay.dataset.canPlayMime === "false") {
-    //   this.next();
-    //   return;
-    // }
-    // new track to be played
+    let trackToPlay = this.html5AudioList.children[this.currentTrackIndex];
+    if (trackToPlay.dataset.canPlayMime === "false") {
+      this.next();
+      return;
+    }
+    //new track to be played
     if (trackToPlay.src !== this.html5Audio.getAttribute("src")) {
       document
         .getElementById("playerPlay")
