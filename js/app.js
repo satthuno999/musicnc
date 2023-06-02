@@ -1808,7 +1808,7 @@ OCA.musicnc.RenderPartialUI = {
  * @namespace OCA.musicnc.VideoPlayer
  */
 OCA.musicnc.VideoPlayer = {
-  html5Audio: document.getElementById("html5Video"), // the <audio> element
+  html5Video: document.getElementById("html5Video"), // the <audio> element
   currentTrackIndex: 0, // the index of the <source> list to be played
   currentPlaylist: 0, // ID of the current playlist. Needed to recognize UI list changes
   currentTrackId: 0, // current playing track id. Needed to recognize the current playing track in the playlist
@@ -1817,11 +1817,11 @@ OCA.musicnc.VideoPlayer = {
   lastSavedSecond: 0, // last autosaved second
 
   init: function () {
-    html5Audio.style.display = "none";
+    html5Video.style.display = "none";
     
   },
   setTrack: function () {
-    html5Audio.style.display = "block";
+    html5Video.style.display = "block";
     document.getElementById("playlist-container").style.display="none";
     var list = document.getElementById("individual-playlist-video");
 
@@ -1834,20 +1834,20 @@ OCA.musicnc.VideoPlayer = {
     // }
     //new track to be played
     var srcNew = trackToPlay.getElementsByTagName("a")[0].getAttribute("href");
-    if ( srcNew !== this.html5Audio.getAttribute("src")) {
+    if (srcNew !== this.html5Video.getAttribute("src")) {
       document
         .getElementById("playerPlay")
         .classList.replace("play-pause", "icon-loading");
       this.currentTrackId = trackToPlay.dataset.trackid;
       OCA.musicnc.Core.CategorySelectors[2] = trackToPlay.dataset.trackid;
       this.lastSavedSecond = 0;
-      this.html5Audio.setAttribute("src", srcNew);
-      this.html5Audio.load();
+      this.html5Video.setAttribute("src", srcNew);
+      this.html5Video.load();
     } else if (!OCA.musicnc.Player.isPaused()) {
       OCA.musicnc.Player.stop();
       return;
     }
-    let playPromise = this.html5Audio.play();
+    let playPromise = this.html5Video.play();
     if (playPromise !== undefined) {
       playPromise
         .then(function () {
