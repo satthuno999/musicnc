@@ -1930,6 +1930,96 @@ OCA.musicnc.VideoPlayer = {
     player.currentTime =
       player.duration * (evt.offsetX / progressbar.clientWidth);
   },
+  /**
+   * pause => stop the playback
+   */
+  pause: function () {
+    this.stop();
+  },
+  /**
+   * select the next track and play it
+   * it is dependent on repeat mode and possible end of playlist
+   */
+  next: function () {
+    OCA.musicnc.VideoPlayer.trackStartPosition = 0;
+    OCA.musicnc.VideoPlayer.lastSavedSecond = 0;
+    let numberOfTracks =
+      OCA.musicnc.VideoPlayer.html5Video.childElementCount - 1; // index stats counting at 0
+    if (OCA.musicnc.VideoPlayer.currentTrackIndex === numberOfTracks) {
+      // if end is reached, either stop or restart the list
+      if (OCA.musicnc.VideoPlayer.repeatMode === "list") {
+        OCA.musicnc.VideoPlayer.currentTrackIndex = 0;
+        OCA.musicnc.VideoPlayer.setTrack();
+      } else {
+        OCA.musicnc.VideoPlayer.stop();
+      }
+    } else {
+      OCA.musicnc.VideoPlayer.currentTrackIndex++;
+      OCA.musicnc.VideoPlayer.setTrack();
+    }
+  },
+  /**
+   * select the previous track and play it
+   */
+  prev: function () {
+    OCA.musicnc.VideoPlayer.trackStartPosition = 0;
+    OCA.musicnc.VideoPlayer.lastSavedSecond = 0;
+    OCA.musicnc.VideoPlayer.currentTrackIndex--;
+    OCA.musicnc.VideoPlayer.setTrack();
+  },
+  /**
+   * set the playback volume
+   */
+  setVolume: function () {
+    OCA.musicnc.VideoPlayer.html5Video.volume =
+      document.getElementById("playerVolume").value;
+    OCA.musicnc.Backend.setUserValue(
+      "volume",
+      document.getElementById("playerVolume").value
+    );
+  },
+
+  /**
+   * get the playback volume
+   */
+  getVolume: function () {
+    return OCA.musicnc.VideoPlayer.html5Video.volume;
+  },
+
+  /**
+   * check, if the audio element is currently paused
+   */
+  isPaused: function () {
+    return this.html5Video.paused;
+  },
+  /**
+   * calculate a time in the format of 00:00 for the progress
+   * @param value
+   * @return string
+   */
+  formatSecondsToTime: function (value) {
+    if (value <= 0 || isNaN(value)) {
+      return "0:00";
+    }
+    value = Math.floor(value);
+    let hours = Math.floor(value / 3600),
+      minutes = Math.floor((value / 60) % 60),
+      seconds = value % 60;
+    return (
+      (hours !== 0 ? String(hours) + ":" : "") +
+      (hours !== 0 ? String(minutes).padStart(2, "0") : String(minutes)) +
+      ":" +
+      String(seconds).padStart(2, "0")
+    );
+  },
+
+  /**
+   * get the currently playing track and provide its data (dataset) to e.g. playbar or sidebar
+   * @return Element
+   */
+  getCurrentPlayingTrackInfo: function () {
+    return this.html5Video.children[this.currentTrackIndex];
+  },
 };
 document.addEventListener("DOMContentLoaded", function () {
   OCA.musicnc.Core.init();

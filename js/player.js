@@ -283,10 +283,10 @@ OCA.musicnc.Player = {
     let canvas = document.getElementById("progressBar");
     if (player.currentTime !== 0) {
       document.getElementById("startTime").innerHTML =
-        OCA.musicnc.Player.formatSecondsToTime(player.currentTime) +
+        OCA.musicnc.VideoPlayer.formatSecondsToTime(player.currentTime) +
         "&nbsp;/&nbsp;";
       document.getElementById("endTime").innerHTML =
-        OCA.musicnc.Player.formatSecondsToTime(player.duration) +
+        OCA.musicnc.VideoPlayer.formatSecondsToTime(player.duration) +
         "&nbsp;&nbsp;";
     } else {
       // document.getElementById('startTime').innerHTML = t('musicnc', 'loading');
@@ -297,7 +297,7 @@ OCA.musicnc.Player = {
     if (canvas.getContext) {
       let ctx = canvas.getContext("2d");
       ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
-      ctx.fillStyle = "rgb(0,130,201)";
+      ctx.fillStyle = "#ff7d91";
       let progressValue = elapsedTime / player.duration;
       let fWidth = progressValue * canvas.clientWidth;
       if (fWidth > 0) {
