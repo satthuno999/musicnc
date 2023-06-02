@@ -1849,13 +1849,14 @@ OCA.musicnc.VideoPlayer = {
     }
     let playPromise = this.html5Video.play();
     if (playPromise !== undefined) {
+      console.log(playPromise)
       playPromise
         .then(function () {
           document
             .getElementById("playerPlay")
             .classList.replace("icon-loading", "play-pause");
           document.getElementById("sm2-bar-ui").classList.add("playing");
-          OCA.musicnc.UI.indicateCurrentPlayingTrack();
+          // OCA.musicnc.UI.indicateCurrentPlayingTrack();
         })
         .catch(function (error) {
           document
