@@ -591,11 +591,10 @@ OCA.musicnc.Category = {
           let itemRows = document.createDocumentFragment();
           let itemRows2 = document.createDocumentFragment();
           for (let itemData of jsondata.data) {
-            if(itemData.mim != "video/mp4"){
+            if (itemData.mim != "video/mp4") {
               let tempItem = OCA.musicnc.UI.buildTrackRow(itemData, covers);
               itemRows.appendChild(tempItem);
-            }
-            else  {
+            } else {
               let tempItem = OCA.musicnc.UI.buildTrackRow(itemData, covers);
               itemRows2.appendChild(tempItem);
             }
@@ -603,7 +602,9 @@ OCA.musicnc.Category = {
           document.getElementById("playlist-container").dataset.playlist =
             category + "-" + categoryItem;
           document.querySelector(".albumwrapper").appendChild(itemRows);
-          document.querySelector("#individual-playlist-video").appendChild(itemRows2);
+          document
+            .querySelector("#individual-playlist-video")
+            .appendChild(itemRows2);
           OCA.musicnc.UI.addTitleClickEvents(callback);
 
           if (albumDirectPlay === true) {
@@ -745,8 +746,8 @@ OCA.musicnc.UI = {
     let category = document
       .getElementById("playlist-container")
       .dataset.playlist.split("-");
-  let playlist = albumWrapper.getElementsByTagName("li");
-  let playlistVideo = albumWrapperVideo.getElementsByTagName("li");
+    let playlist = albumWrapper.getElementsByTagName("li");
+    let playlistVideo = albumWrapperVideo.getElementsByTagName("li");
     if (
       category[0] === "Playlist" &&
       category[1].toString()[0] !== "X" &&
@@ -764,7 +765,11 @@ OCA.musicnc.UI = {
       OCA.musicnc.UI.handleTitleClicked(getcoverUrl, playlist, event.target);
     });
     albumWrapperVideo.addEventListener("click", function (event) {
-      OCA.musicnc.UI.handleTitleClickedVideo(getcoverUrl, playlistVideo, event.target);
+      OCA.musicnc.UI.handleTitleClickedVideo(
+        getcoverUrl,
+        playlistVideo,
+        event.target
+      );
     });
     // the callback is used for the the init function to get feedback when all title rows are ready
     if (typeof callback === "function") {
@@ -965,8 +970,9 @@ OCA.musicnc.UI = {
       ) {
         let playlistItems = document.querySelectorAll(".albumwrapper-video li");
         OCA.musicnc.Player.addTracksToSourceList(playlistItems);
-        OCA.musicnc.Player.currentPlaylist =
-          document.getElementById("partial-wrapper-video").dataset.playlist;
+        OCA.musicnc.Player.currentPlaylist = document.getElementById(
+          "partial-wrapper-video"
+        ).dataset.playlist;
       }
       let k = 0,
         e = activeLi;
@@ -1818,16 +1824,14 @@ OCA.musicnc.VideoPlayer = {
 
   init: function () {
     html5Video.style.display = "none";
-    
   },
+  SetTimePlay: function () {},
   setTrack: function () {
     html5Video.style.display = "block";
-    document.getElementById("playlist-container").style.display="none";
+    document.getElementById("playlist-container").style.display = "none";
     var list = document.getElementById("individual-playlist-video");
 
     let trackToPlay = list.children[this.currentTrackIndex];
-    console.log(list)
-
     // if (trackToPlay.dataset.canPlayMime === "false") {
     //   this.next();
     //   return;
@@ -1849,7 +1853,6 @@ OCA.musicnc.VideoPlayer = {
     }
     let playPromise = this.html5Video.play();
     if (playPromise !== undefined) {
-      console.log(playPromise)
       playPromise
         .then(function () {
           document
@@ -1869,6 +1872,64 @@ OCA.musicnc.VideoPlayer = {
   play: function () {
     OCA.musicnc.VideoPlayer.setTrack();
   },
+  initProgressBar: function () {
+    let player = OCA.musicnc.VideoPlayer.html5Video;
+    let canvas = document.getElementById("progressBar");
+    if (player.currentTime !== 0) {
+      document.getElementById("startTime").innerHTML =
+        OCA.musicnc.Player.formatSecondsToTime(player.currentTime) +
+        "&nbsp;/&nbsp;";
+      document.getElementById("endTime").innerHTML =
+        OCA.musicnc.Player.formatSecondsToTime(player.duration) +
+        "&nbsp;&nbsp;";
+    } else {
+      // document.getElementById('startTime').innerHTML = t('musicnc', 'loading');
+      // document.getElementById('endTime').innerHTML = '';
+    }
+
+    let elapsedTime = Math.round(player.currentTime);
+    if (canvas.getContext) {
+      let ctx = canvas.getContext("2d");
+      ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+      ctx.fillStyle = "rgb(0,130,201)";
+      let progressValue = elapsedTime / player.duration;
+      let fWidth = progressValue * canvas.clientWidth;
+      if (fWidth > 0) {
+        ctx.fillRect(0, 0, fWidth, canvas.clientHeight);
+      }
+    }
+
+    // save position every 10 seconds
+    let positionCalc = Math.round(player.currentTime) / 10;
+    if (
+      Math.round(positionCalc) === positionCalc &&
+      positionCalc !== 0 &&
+      this.lastSavedSecond !== positionCalc
+    ) {
+      this.lastSavedSecond = Math.round(positionCalc);
+      OCA.musicnc.Backend.setUserValue(
+        "category",
+        OCA.musicnc.Core.CategorySelectors[0] +
+          "-" +
+          OCA.musicnc.Core.CategorySelectors[1] +
+          "-" +
+          OCA.musicnc.Core.CategorySelectors[2] +
+          "-" +
+          Math.round(player.currentTime)
+      );
+    }
+  },
+
+  /**
+   * set the tracktime when the progressbar is moved
+   * @param evt
+   */
+  seek: function (evt) {
+    let progressbar = document.getElementById("progressBar");
+    let player = OCA.musicnc.VideoPlayer.html5Video;
+    player.currentTime =
+      player.duration * (evt.offsetX / progressbar.clientWidth);
+  },
 };
 document.addEventListener("DOMContentLoaded", function () {
   OCA.musicnc.Core.init();
@@ -1877,6 +1938,16 @@ document.addEventListener("DOMContentLoaded", function () {
   OCA.musicnc.Backend.checkNewTracks();
   OCA.musicnc.Playlists.initPlaylistActions();
   OCA.musicnc.Backend.whatsnew();
+
+  OCA.musicnc.VideoPlayer.html5Video.addEventListener(
+    "timeupdate",
+    OCA.musicnc.VideoPlayer.initProgressBar,
+    true
+  );
+
+  document
+    .getElementById("progressBar")
+    .addEventListener("click", OCA.musicnc.VideoPlayer.seek, true);
 
   OCA.musicnc.UI.resizePlaylist = _.debounce(
     OCA.musicnc.UI.resizePlaylist,
