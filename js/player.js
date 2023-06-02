@@ -35,6 +35,7 @@ OCA.musicnc.Player = {
    */
   setTrack: function () {
     let trackToPlay = this.html5Audio.children[this.currentTrackIndex];
+    OCA.musicnc.VideoPlayer.html5Video.stop();
     if (trackToPlay.dataset.canPlayMime === "false") {
       this.next();
       return;
@@ -83,7 +84,7 @@ OCA.musicnc.Player = {
    * play/pause when the same track is selected or get a new one
    */
   setTrackRadio: function (streamUrl) {
-    
+     OCA.musicnc.VideoPlayer.html5Video.stop();
     // new track to be played
     if (this.html5Audio.getAttribute("src")) {
       document
