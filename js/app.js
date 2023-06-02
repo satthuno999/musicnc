@@ -1891,7 +1891,7 @@ OCA.musicnc.VideoPlayer = {
     if (canvas.getContext) {
       let ctx = canvas.getContext("2d");
       ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
-      ctx.fillStyle = "rgb(0,130,201)";
+      ctx.fillStyle = "#ff7d91";
       let progressValue = elapsedTime / player.duration;
       let fWidth = progressValue * canvas.clientWidth;
       if (fWidth > 0) {

@@ -297,7 +297,7 @@ OCA.musicnc.Player = {
     if (canvas.getContext) {
       let ctx = canvas.getContext("2d");
       ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
-      ctx.fillStyle = "#ff7d91";
+      ctx.fillStyle = "rgb(0,130,201)";
       let progressValue = elapsedTime / player.duration;
       let fWidth = progressValue * canvas.clientWidth;
       if (fWidth > 0) {
