@@ -406,7 +406,7 @@ i#scanAudiosFirst {
 #individual-playlist>li,
 #individual-playlist-header span,
 #individual-playlist-video>li,
-#individual-playlist-header-video span{
+#individual-playlist-header-video span {
   // height: 24px;
   line-height: 24px;
 }
@@ -436,7 +436,7 @@ i#scanAudiosFirst {
 }
 
 #individual-playlist-header span.header-num,
-#individual-playlist-header-video span.header-num-video  {
+#individual-playlist-header-video span.header-num-video {
   position: relative;
   float: left;
   display: block;
@@ -455,7 +455,7 @@ i#scanAudiosFirst {
 }
 
 #individual-playlist-header span.header-artist,
-#individual-playlist-header-video span.header-artist-video  {
+#individual-playlist-header-video span.header-artist-video {
   position: relative;
   float: left;
   display: block;
@@ -470,7 +470,7 @@ i#scanAudiosFirst {
   min-width: 25%;
 }
 
-#individual-playlist-header span.header-time ,
+#individual-playlist-header span.header-time,
 #individual-playlist-header-video span.header-time-video {
   position: absolute;
   float: right;
@@ -499,7 +499,7 @@ i#scanAudiosFirst {
   flex: 0 0 18px;
 }
 
-.albumwrapper li .ioc ,
+.albumwrapper li .ioc,
 .albumwrapper-video li .ioc {
   font-size: 16px;
   line-height: 22px;
@@ -1369,19 +1369,18 @@ li.activeHover {
   font-weight: bold;
 }
 
-.header-indi>span ,
+.header-indi>span,
 .header-indi-video>span {
   flex: 1;
   cursor: pointer;
 }
 
-.header-indi>span:not(.header-opt)
-.header-indi-video>span:not(.header-opt-video) {
+.header-indi>span:not(.header-opt) .header-indi-video>span:not(.header-opt-video) {
   margin-right: 10px;
 }
 
 .albumwrapper,
-.albumwrapper-video{
+.albumwrapper-video {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -1739,20 +1738,26 @@ li.isActive {
 }
 
 /*End radio*/
-#app-content{
+#app-content {
   overflow: auto;
 }
 
 /*HTML % VIDEO*/
-#html5Video{
+#html5Video {
   width: 95%;
-  margin:0 auto;
+  margin: 0 auto;
   max-height: 85vh;
+
+  padding: 5px;
+  border: 1px solid #000;
+  border-radius: 10px;
 }
-.playerVideo{
+
+.playerVideo {
   display: flex;
   width: 100%;
 }
+
 @media only screen and (max-width: 768px) {
 
   #app-navigation-toggle_alternative {
@@ -1984,6 +1989,7 @@ body[data-themes=dark] {
       }
     }
   }
+
   #individual-playlist-video {
     li span {
 
@@ -2142,6 +2148,10 @@ body[data-themes=dark] {
       }
     }
   }
+
+    #html5Video {
+      border: 1px solid #fff;
+    }
 }
 
 body[data-themes=light] {

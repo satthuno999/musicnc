@@ -538,6 +538,19 @@ OCA.musicnc.Category = {
       OCA.musicnc.Category.buildListView(evt);
       OCA.musicnc.Category.getTracks(callback, category, categoryItem, false);
     }
+
+    var listForRemove = [];
+    var listOfUniqe = [];
+    $("#individual-playlist-video li").each(function () {
+      var text = $(this).text().trim();
+
+      if (listOfUniqe.indexOf(text) === -1) listOfUniqe.push(text);
+      else listForRemove.push($(this));
+    });
+
+    $(listForRemove).each(function () {
+      $(this).remove();
+    });
   },
 
   buildListView: function () {
