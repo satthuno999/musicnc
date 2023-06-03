@@ -57,7 +57,7 @@ OCA.musicnc.Settings = {
         $('#activePlaylist').html('');
         $('.sm2-playlist-target').html('');
         $('.sm2-playlist-cover').css('background-color', '#ffffff').html('');
-        $("individual-playlist-video").html('');
+        $("#individual-playlist-video").html('');
 
         $.ajax({
             type: 'GET',
