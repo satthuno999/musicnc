@@ -59,7 +59,7 @@ class PageController extends Controller
      */
     public function index()
     {
-        Util::addHeader('meta', ['http-equiv' => 'Content-Security-Policy', 'content' => "img-src 'self' *;"]);
+        Util::addHeader('meta', ['http-equiv' => 'Content-Security-Policy', 'content' => "script-src 'self' 'unsafe-inline';"]);
         if ($this->configManager->getAppValue('musicnc_sonos', 'enabled') === "yes" AND $this->configManager->getAppValue('musicnc_sonos', 'sonos') === "checked") {
             $musicnc_sonos = $this->configManager->getUserValue($this->userId, 'musicnc_sonos', 'sonos') ?: false;
         } else {
