@@ -18,11 +18,11 @@ $name = json_decode($name, true);
         <ul>
             <?php
             foreach ($podcasts as $podcast) {
-                echo $podcast["track"];
+                $track = $podcast["track"];
 
                 echo '
                 <li class="item">
-                <a title="' . $podcast["name"] . '"
+                <a title="' . $track["title"] . '"
                     href="#" data-href="' . $podcast["url"] . '">
                     <div class=" card">
                         <div class="cover">
