@@ -313,6 +313,8 @@ i#scanAudiosFirst {
   width: 24px;
   text-align: center;
   cursor: inherit;
+  background-color: #fff;
+  border-radius: 100%;
 }
 
 .ui-state-highlight {
@@ -1233,7 +1235,7 @@ li.activeHover {
   border-bottom: 1px solid black;
   border-radius: 8px;
   width: 90%;
-  margin: auto;
+  margin: 20px auto 0 auto;
 }
 .nav-action .item .title-nav-action {
   font-weight: bold;
@@ -1679,8 +1681,8 @@ li.isActive {
 /*HTML % VIDEO*/
 #html5Video {
   width: 95%;
-  margin: 0 auto;
-  max-height: 85vh;
+  margin: 15px auto;
+  max-height: 65vh;
   padding: 5px;
   border: 1px solid #000;
   border-radius: 10px;
@@ -1693,7 +1695,7 @@ li.isActive {
 
 #partial-wrapper-video {
   width: 98%;
-  margin: auto;
+  margin: 20px auto;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1971,6 +1973,9 @@ body[data-themes=dark] .list-station ul::-webkit-scrollbar-track {
 }
 body[data-themes=dark] #html5Video {
   border: 1px solid #fff;
+}
+body[data-themes=dark] #myCategory li span.counter {
+  color: #000;
 }
 
 body[data-themes=light] .text-sun {

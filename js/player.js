@@ -37,8 +37,9 @@ OCA.musicnc.Player = {
     let trackToPlay = this.html5Audio.children[this.currentTrackIndex];
     if (!OCA.musicnc.VideoPlayer.isPaused()) {
       OCA.musicnc.VideoPlayer.html5Video.pause();
-      OCA.musicnc.VideoPlayer.init();
     }
+      OCA.musicnc.VideoPlayer.init();
+
     if (trackToPlay.dataset.canPlayMime === "false") {
       this.next();
       return;
@@ -89,8 +90,9 @@ OCA.musicnc.Player = {
   setTrackRadio: function (streamUrl) {
    if (!OCA.musicnc.VideoPlayer.isPaused()) {
      OCA.musicnc.VideoPlayer.html5Video.pause();
-     OCA.musicnc.VideoPlayer.init();
    }
+     OCA.musicnc.VideoPlayer.init();
+
     // new track to be played
     if (this.html5Audio.getAttribute("src")) {
       document
