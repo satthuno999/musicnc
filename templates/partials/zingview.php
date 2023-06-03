@@ -18,7 +18,7 @@ $name = json_decode($name, true);
         <ul>
             <?php
             foreach ($podcasts as $podcast) {
-                echo "$podcast";
+                echo $podcast["track"];
 
                 echo '
                 <li class="item">
