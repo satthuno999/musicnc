@@ -1799,6 +1799,8 @@ OCA.musicnc.RenderPartialUI = {
       url: OC.generateUrl("apps/musicnc/getmusicapi"),
       data: { name: name },
       success: function (jsondata) {
+        console.log(jsondata);
+
         var parser = new DOMParser();
         var responseDoc = parser.parseFromString(jsondata, "text/html");
         var content = responseDoc.getElementById("content-view");
