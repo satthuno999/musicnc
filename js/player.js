@@ -119,7 +119,7 @@ OCA.musicnc.Player = {
           document
             .getElementById("playerPlay")
             .classList.replace("icon-loading", "play-pause");
-          OCP.Toast.error(t("musicnc", "Playback error"));
+          // OCP.Toast.error(t("musicnc", "Playback error"));
         });
     }
   },
