@@ -778,35 +778,71 @@ OCA.musicnc.UI = {
   },
 
   indicateCurrentPlayingTrack: function () {
-    if (
-      document.getElementById("playlist-container").dataset.playlist ===
-      OCA.musicnc.Player.currentPlaylist
-    ) {
-      if (document.getElementsByClassName("isActive").length === 1) {
+    if (OCA.musicnc.VideoPlayer.isPaused()) {
+      if (
+        document.getElementById("playlist-container").dataset.playlist ===
+        OCA.musicnc.Player.currentPlaylist
+      ) {
+        if (document.getElementsByClassName("isActive").length === 1) {
+          document
+            .getElementsByClassName("isActive")[0]
+            .classList.remove("isActive");
+        }
+
+        // reset all playing icons
+        let iocIcon = document.querySelectorAll(".albumwrapper li i.ioc");
+        for (let i = 0; i < iocIcon.length; ++i) {}
+        let iconIcon = document.querySelectorAll(".albumwrapper li i.icon");
+        for (let j = 0; j < iconIcon.length; ++j) {}
+
+        document.getElementById("nowPlayingText").innerHTML =
+          iocIcon[
+            OCA.musicnc.Player.currentTrackIndex
+          ].parentElement.parentElement.dataset.title;
         document
-          .getElementsByClassName("isActive")[0]
-          .classList.remove("isActive");
+          .querySelectorAll(".albumwrapper li")
+          [OCA.musicnc.Player.currentTrackIndex].classList.add("isActive");
+        document
+          .querySelectorAll(".albumwrapper li")
+          [OCA.musicnc.Player.currentTrackIndex].scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+          });
+      } else {
       }
+    }
+    else{
+      if (
+        document.getElementById("playlist-container").dataset.playlist ===
+        OCA.musicnc.VideoPlayer.currentPlaylist
+      ) {
+        if (document.getElementsByClassName("isActive").length === 1) {
+          document
+            .getElementsByClassName("isActive")[0]
+            .classList.remove("isActive");
+        }
 
-      // reset all playing icons
-      let iocIcon = document.querySelectorAll(".albumwrapper li i.ioc");
-      for (let i = 0; i < iocIcon.length; ++i) {}
-      let iconIcon = document.querySelectorAll(".albumwrapper li i.icon");
-      for (let j = 0; j < iconIcon.length; ++j) {}
+        // reset all playing icons
+        let iocIcon = document.querySelectorAll(".albumwrapper li i.ioc");
+        for (let i = 0; i < iocIcon.length; ++i) {}
+        let iconIcon = document.querySelectorAll(".albumwrapper li i.icon");
+        for (let j = 0; j < iconIcon.length; ++j) {}
 
-      document.getElementById("nowPlayingText").innerHTML =
-        iocIcon[
-          OCA.musicnc.Player.currentTrackIndex
-        ].parentElement.parentElement.dataset.title;
-      document
-        .querySelectorAll(".albumwrapper li")
-        [OCA.musicnc.Player.currentTrackIndex].classList.add("isActive");
-      document
-        .querySelectorAll(".albumwrapper li")
-        [OCA.musicnc.Player.currentTrackIndex].scrollIntoView({
-          behavior: "smooth",
-          block: "center",
-        });
+        document.getElementById("nowPlayingText").innerHTML =
+          iocIcon[
+            OCA.musicnc.VideoPlayer.currentTrackIndex
+          ].parentElement.parentElement.dataset.title;
+        document
+          .querySelectorAll(".albumwrapper li")
+          [OCA.musicnc.VideoPlayer.currentTrackIndex].classList.add("isActive");
+        document
+          .querySelectorAll(".albumwrapper li")
+          [OCA.musicnc.VideoPlayer.currentTrackIndex].scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+          });
+      } else {
+      }
     }
 
     //in every case, update the playbar and medaservices
