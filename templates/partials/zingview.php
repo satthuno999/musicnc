@@ -17,7 +17,9 @@ $name = json_decode($name, true);
         <div class="category">Zing Mp3 - <?php echo $name?></div>
         <ul>
             <?php
-            foreach ($podcasts["song"] as $podcast) {
+            foreach ($podcasts as $podcast) {
+                echo "$podcast";
+
                 echo '
                 <li class="item">
                 <a title="' . $podcast["name"] . '"
