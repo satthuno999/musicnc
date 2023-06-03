@@ -1352,6 +1352,7 @@ li.activeHover {
   align-items: center;
   padding: 10px;
   background-color: #ffffff;
+  cursor: pointer;
 }
 
 .albumwrapper li span,
@@ -1680,11 +1681,19 @@ li.isActive {
   width: 95%;
   margin: 0 auto;
   max-height: 85vh;
+  padding: 5px;
+  border: 1px solid #000;
+  border-radius: 10px;
 }
 
 .playerVideo {
   display: flex;
   width: 100%;
+}
+
+#partial-wrapper-video {
+  width: 98%;
+  margin: auto;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1959,6 +1968,9 @@ body[data-themes=dark] .list-station ul::-webkit-scrollbar-thumb {
 body[data-themes=dark] .list-station ul::-webkit-scrollbar-track {
   background-color: #202020;
   border-radius: 20px;
+}
+body[data-themes=dark] #html5Video {
+  border: 1px solid #fff;
 }
 
 body[data-themes=light] .text-sun {

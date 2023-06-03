@@ -1392,6 +1392,7 @@ li.activeHover {
   align-items: center;
   padding: 10px;
   background-color: #ffffff;
+  cursor: pointer;
 }
 
 .albumwrapper li span,
@@ -1756,6 +1757,11 @@ li.isActive {
 .playerVideo {
   display: flex;
   width: 100%;
+}
+
+#partial-wrapper-video{
+  width: 98%;
+  margin: auto;
 }
 
 @media only screen and (max-width: 768px) {
