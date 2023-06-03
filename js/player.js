@@ -35,7 +35,7 @@ OCA.musicnc.Player = {
    */
   setTrack: function () {
     let trackToPlay = this.html5Audio.children[this.currentTrackIndex];
-    if (!OCA.musicnc.VideoPlayer.html5Video.isPaused()) {
+    if (!OCA.musicnc.VideoPlayer.isPaused()) {
       OCA.musicnc.VideoPlayer.html5Video.stop();
       OCA.musicnc.VideoPlayer.init();
     }
