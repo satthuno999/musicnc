@@ -91,13 +91,13 @@ class CategoryController extends Controller
 			 			ORDER BY LOWER(`name`) ASC
 			 			';
         } elseif ($category === 'Year') {
-            $SQL = 'SELECT DISTINCT(`year`) AS `id` ,`year` AS `name`  
+            $SQL = 'SELECT DISTINCT(`year`) AS `id` ,`year` AS `name` ,`mimetype` AS `type`
 						FROM `*PREFIX*musicnc_tracks`
 			 			WHERE  `user_id` = ?
 			 			ORDER BY `id` ASC
 			 			';
         } elseif ($category === 'Title') {
-            $SQL = "SELECT distinct('0') as `id` ,'" . $this->l10n->t('All Titles') . "' as `name`  
+            $SQL = "SELECT distinct('0') as `id`,`mimetype` as `type` ,'" . $this->l10n->t('All Titles') . "' as `name`  
 						FROM `*PREFIX*musicnc_tracks`
 			 			WHERE  `user_id` = ?
 			 			";
@@ -111,7 +111,7 @@ class CategoryController extends Controller
             $aPlaylists[] = array('id' => '', 'name' => '');
 
             // Stream files are shown directly
-            $SQL = 'SELECT  `file_id` AS `id`, `title` AS `name`, LOWER(`title`) AS `lower` 
+            $SQL = 'SELECT  `file_id` AS `id`, `title` AS `name`, LOWER(`title`) AS `lower` ,`mimetype` as `type`
 						FROM `*PREFIX*musicnc_streams`
 			 			WHERE  `user_id` = ?
 			 			ORDER BY LOWER(`title`) ASC
@@ -134,7 +134,7 @@ class CategoryController extends Controller
 			 			';
 
         } elseif ($category === 'Folder') {
-            $SQL = 'SELECT  DISTINCT(`FC`.`fileid`) AS `id`, `FC`.`name`, LOWER(`FC`.`name`) AS `lower` 
+            $SQL = 'SELECT  DISTINCT(`FC`.`fileid`) AS `id`, `FC`.`name`, LOWER(`FC`.`name`) AS `lower` ,(`AT`.`mimetype`) AS `type`
 						FROM `*PREFIX*musicnc_tracks` `AT`
 						JOIN `*PREFIX*filecache` `FC`
 						ON `FC`.`fileid` = `AT`.`folder_id`

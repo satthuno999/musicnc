@@ -446,7 +446,6 @@ OCA.musicnc.Category = {
       success: function (jsondata) {
         if (jsondata.status === "success") {
           let categoryRows = document.createDocumentFragment();
-          console.log(jsondata.data);
           for (let categoryData of jsondata.data) {
             if (categoryData.type != "video/mp4") {
               let li = document.createElement("li");
@@ -541,16 +540,17 @@ OCA.musicnc.Category = {
 
     var listForRemove = [];
     var listOfUniqe = [];
-    // $("#individual-playlist-video li").each(function () {
-    //   var text = $(this).text().trim();
+    $("#individual-playlist-video li").each(function () {
+      var text = $(this).text().trim();
 
-    //   if (listOfUniqe.indexOf(text) === -1) listOfUniqe.push(text);
-    //   else listForRemove.push($(this));
-    // });
+      if (listOfUniqe.indexOf(text) === -1) listOfUniqe.push(text);
+      else listForRemove.push($(this));
+    });
 
     $(listForRemove).each(function () {
       $(this).remove();
     });
+
   },
 
   buildListView: function () {
