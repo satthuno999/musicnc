@@ -778,71 +778,35 @@ OCA.musicnc.UI = {
   },
 
   indicateCurrentPlayingTrack: function () {
-    if (OCA.musicnc.VideoPlayer.isPaused()) {
-      if (
-        document.getElementById("playlist-container").dataset.playlist ===
-        OCA.musicnc.Player.currentPlaylist
-      ) {
-        if (document.getElementsByClassName("isActive").length === 1) {
-          document
-            .getElementsByClassName("isActive")[0]
-            .classList.remove("isActive");
-        }
-
-        // reset all playing icons
-        let iocIcon = document.querySelectorAll(".albumwrapper li i.ioc");
-        for (let i = 0; i < iocIcon.length; ++i) {}
-        let iconIcon = document.querySelectorAll(".albumwrapper li i.icon");
-        for (let j = 0; j < iconIcon.length; ++j) {}
-
-        document.getElementById("nowPlayingText").innerHTML =
-          iocIcon[
-            OCA.musicnc.Player.currentTrackIndex
-          ].parentElement.parentElement.dataset.title;
+    if (
+      document.getElementById("playlist-container").dataset.playlist ===
+      OCA.musicnc.Player.currentPlaylist
+    ) {
+      if (document.getElementsByClassName("isActive").length === 1) {
         document
-          .querySelectorAll(".albumwrapper li")
-          [OCA.musicnc.Player.currentTrackIndex].classList.add("isActive");
-        document
-          .querySelectorAll(".albumwrapper li")
-          [OCA.musicnc.Player.currentTrackIndex].scrollIntoView({
-            behavior: "smooth",
-            block: "center",
-          });
-      } else {
+          .getElementsByClassName("isActive")[0]
+          .classList.remove("isActive");
       }
-    }
-    else{
-      if (
-        document.getElementById("playlist-container").dataset.playlist ===
-        OCA.musicnc.VideoPlayer.currentPlaylist
-      ) {
-        if (document.getElementsByClassName("isActive").length === 1) {
-          document
-            .getElementsByClassName("isActive")[0]
-            .classList.remove("isActive");
-        }
 
-        // reset all playing icons
-        let iocIcon = document.querySelectorAll(".albumwrapper li i.ioc");
-        for (let i = 0; i < iocIcon.length; ++i) {}
-        let iconIcon = document.querySelectorAll(".albumwrapper li i.icon");
-        for (let j = 0; j < iconIcon.length; ++j) {}
+      // reset all playing icons
+      let iocIcon = document.querySelectorAll(".albumwrapper li i.ioc");
+      for (let i = 0; i < iocIcon.length; ++i) {}
+      let iconIcon = document.querySelectorAll(".albumwrapper li i.icon");
+      for (let j = 0; j < iconIcon.length; ++j) {}
 
-        document.getElementById("nowPlayingText").innerHTML =
-          iocIcon[
-            OCA.musicnc.VideoPlayer.currentTrackIndex
-          ].parentElement.parentElement.dataset.title;
-        document
-          .querySelectorAll(".albumwrapper li")
-          [OCA.musicnc.VideoPlayer.currentTrackIndex].classList.add("isActive");
-        document
-          .querySelectorAll(".albumwrapper li")
-          [OCA.musicnc.VideoPlayer.currentTrackIndex].scrollIntoView({
-            behavior: "smooth",
-            block: "center",
-          });
-      } else {
-      }
+      document.getElementById("nowPlayingText").innerHTML =
+        iocIcon[
+          OCA.musicnc.Player.currentTrackIndex
+        ].parentElement.parentElement.dataset.title;
+      document
+        .querySelectorAll(".albumwrapper li")
+        [OCA.musicnc.Player.currentTrackIndex].classList.add("isActive");
+      document
+        .querySelectorAll(".albumwrapper li")
+        [OCA.musicnc.Player.currentTrackIndex].scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
     }
 
     //in every case, update the playbar and medaservices
@@ -1876,6 +1840,8 @@ OCA.musicnc.VideoPlayer = {
     // }
     //new track to be played
     var srcNew = trackToPlay.getElementsByTagName("a")[0].getAttribute("href");
+    document.getElementById("nowPlayingText").innerHTML =
+      $(trackToPlay).data("title") + " - " + $(trackToPlay).data("artist");
     if (srcNew !== this.html5Video.getAttribute("src")) {
       document
         .getElementById("playerPlay")
