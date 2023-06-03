@@ -1539,6 +1539,7 @@ li.isActive {
 .list-stream ul li {
   margin-left: 16px;
   margin-right: 16px;
+  max-width: 150px;
 }
 .list-stream ul li a {
   color: inherit;
