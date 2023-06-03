@@ -35,7 +35,7 @@ $errors = json_decode($error, true);
                     <div class=" card">
                         <div class="cover">
                             <div class="lazyload-wrapper ">
-                                <img alt="' . $track["share"]["subject"] . '" loading="lazy"
+                                <img class="itemimg" alt="' . $track["share"]["subject"] . '" loading="lazy"
                                     width="150" height="150" decoding="async" 
                                     src="' . $track["images"]["coverart"] . '"
                                     style="color: transparent; border-radius: 4px; width: 100%; height: 100%;">
@@ -70,7 +70,7 @@ $errors = json_decode($error, true);
                     <div class=" card">
                         <div class="cover">
                             <div class="lazyload-wrapper ">
-                                <img alt="' . $item["name"] . '" loading="lazy"
+                                <img  class="itemimg" alt="' . $item["name"] . '" loading="lazy"
                                     width="150" height="150" decoding="async" 
                                     src="'.$item["avatar"].'"
                                     style="color: transparent; border-radius: 4px; width: 100%; height: 100%;">

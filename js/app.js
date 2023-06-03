@@ -1709,7 +1709,7 @@ OCA.musicnc.RenderPartialUI = {
   AjaxCallStatus: null,
 
   fetchImageAsBlob: function (imageUrl) {
-    return  fetch(imageUrl)
+    return fetch(imageUrl)
       .then((response) => response.blob())
       .then((blob) => URL.createObjectURL(blob));
   },
@@ -1804,7 +1804,7 @@ OCA.musicnc.RenderPartialUI = {
       type: "POST",
       url: OC.generateUrl("apps/musicnc/getmusicapi"),
       data: { name: name },
-      success: function (jsondata) {
+      success: async function (jsondata) {
         var parser = new DOMParser();
         var responseDoc = parser.parseFromString(jsondata, "text/html");
         var content = responseDoc.getElementById("content-view");
@@ -1815,8 +1815,12 @@ OCA.musicnc.RenderPartialUI = {
           var listImg = document.getElementsByTagName("img");
           for (var i = 0; i < listImg.length; i++) {
             var imgElement = listImg[i];
-            var blobUrl = OCA.musicnc.RenderPartialUI.fetchImageAsBlob(imgElement.src);
-            imgElement.src = blobUrl;
+            if (imgElement.classList.contains("itemimg")) {
+              var blobUrl = await OCA.musicnc.RenderPartialUI.fetchImageAsBlob(
+                imgElement.src
+              );
+              imgElement.src = blobUrl;
+            }
           }
           document.getElementById("partial-wrapper").appendChild(content);
           document.getElementById("partial-wrapper").style.display = "block";

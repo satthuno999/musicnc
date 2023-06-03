@@ -23,7 +23,7 @@ $countrys = json_decode($dataCountrys, true);
                     <div class=" card">
                         <div class="cover">
                             <div class="lazyload-wrapper ">
-                                <img alt="' . $podcast["name"] . '" loading="lazy"
+                                <img  class="itemimg" alt="' . $podcast["name"] . '" loading="lazy"
                                     width="150" height="150" decoding="async" 
                                     src="' . $podcast["favicon"] . '"
                                     style="color: transparent; border-radius: 4px; width: 100%; height: 100%;">
@@ -56,7 +56,7 @@ $countrys = json_decode($dataCountrys, true);
                     <div class=" card">
                         <div class="cover">
                             <div class="lazyload-wrapper ">
-                                <img alt="' . $country["name"] . '" loading="lazy"
+                                <img  class="itemimg" alt="' . $country["name"] . '" loading="lazy"
                                     width="160" height="120" decoding="async" 
                                     src="https://flagcdn.com/160x120/' . $country["iso_639"] .'.png"
                                     style="color: transparent; border-radius: 4px">
