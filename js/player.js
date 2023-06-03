@@ -8,13 +8,13 @@
  * @copyright 2022-2023 S P A R K
  */
 
-'use strict';
+"use strict";
 
 if (!OCA.musicnc) {
-    /**
-     * @namespace
-     */
-    OCA.musicnc = {};
+  /**
+   * @namespace
+   */
+  OCA.musicnc = {};
 }
 
 /**
@@ -38,7 +38,7 @@ OCA.musicnc.Player = {
     if (!OCA.musicnc.VideoPlayer.isPaused()) {
       OCA.musicnc.VideoPlayer.html5Video.pause();
     }
-      OCA.musicnc.VideoPlayer.init();
+    OCA.musicnc.VideoPlayer.init();
 
     if (trackToPlay.dataset.canPlayMime === "false") {
       this.next();
@@ -88,12 +88,13 @@ OCA.musicnc.Player = {
    * play/pause when the same track is selected or get a new one
    */
   setTrackRadio: function (streamUrl) {
-   if (!OCA.musicnc.VideoPlayer.isPaused()) {
-     OCA.musicnc.VideoPlayer.html5Video.pause();
-   }
-     OCA.musicnc.VideoPlayer.init();
+    if (!OCA.musicnc.VideoPlayer.isPaused()) {
+      OCA.musicnc.VideoPlayer.html5Video.pause();
+    }
+    OCA.musicnc.VideoPlayer.init();
 
     // new track to be played
+    this.html5Audio.setAttribute("src", "");
     if (this.html5Audio.getAttribute("src")) {
       document
         .getElementById("playerPlay")
@@ -376,30 +377,59 @@ OCA.musicnc.Player = {
   },
 };
 
-document.addEventListener('DOMContentLoaded', function () {
-    OCA.musicnc.Player.html5Audio.addEventListener('ended', OCA.musicnc.Player.next, true);
-    OCA.musicnc.Player.html5Audio.addEventListener('timeupdate', OCA.musicnc.Player.initProgressBar, true);
-    OCA.musicnc.Player.html5Audio.addEventListener('canplay', function () {
-        if (parseInt(OCA.musicnc.Player.trackStartPosition) !== 0 && OCA.musicnc.Player.html5Audio.currentTime !== parseInt(OCA.musicnc.Player.trackStartPosition)) {
-            OCA.musicnc.Player.html5Audio.pause();
-            OCA.musicnc.Player.html5Audio.currentTime = parseInt(OCA.musicnc.Player.trackStartPosition);
-            OCA.musicnc.Player.html5Audio.play();
-            OCA.musicnc.Player.trackStartPosition = 0; // reset the time to avoid that is being set again and again when seeking
-        }
-    });
-
-    document.getElementById('progressBar').addEventListener('click', OCA.musicnc.Player.seek, true);
-    document.getElementById('playerPrev').addEventListener('click', OCA.musicnc.Player.prev);
-    document.getElementById('playerNext').addEventListener('click', OCA.musicnc.Player.next);
-    document.getElementById('playerPlay').addEventListener('click', OCA.musicnc.Player.play);
-    document.getElementById('playerRepeat').addEventListener('click', OCA.musicnc.Player.setRepeat);
-    document.getElementById('playerShuffle').addEventListener('click', OCA.musicnc.Player.shuffleTitles);
-    document.getElementById('playerVolume').addEventListener('input', OCA.musicnc.Player.setVolume);
-    document.getElementById('playerVolume').value = document.getElementById('musicnc_volume').value;
-
-    let repeat = document.getElementById('musicnc_repeat').value;
-    if (repeat !== 'none') {
-        OCA.musicnc.Player.setRepeat(repeat);
+document.addEventListener("DOMContentLoaded", function () {
+  OCA.musicnc.Player.html5Audio.addEventListener(
+    "ended",
+    OCA.musicnc.Player.next,
+    true
+  );
+  OCA.musicnc.Player.html5Audio.addEventListener(
+    "timeupdate",
+    OCA.musicnc.Player.initProgressBar,
+    true
+  );
+  OCA.musicnc.Player.html5Audio.addEventListener("canplay", function () {
+    if (
+      parseInt(OCA.musicnc.Player.trackStartPosition) !== 0 &&
+      OCA.musicnc.Player.html5Audio.currentTime !==
+        parseInt(OCA.musicnc.Player.trackStartPosition)
+    ) {
+      OCA.musicnc.Player.html5Audio.pause();
+      OCA.musicnc.Player.html5Audio.currentTime = parseInt(
+        OCA.musicnc.Player.trackStartPosition
+      );
+      OCA.musicnc.Player.html5Audio.play();
+      OCA.musicnc.Player.trackStartPosition = 0; // reset the time to avoid that is being set again and again when seeking
     }
-    OCA.musicnc.Player.setVolume();
+  });
+
+  document
+    .getElementById("progressBar")
+    .addEventListener("click", OCA.musicnc.Player.seek, true);
+  document
+    .getElementById("playerPrev")
+    .addEventListener("click", OCA.musicnc.Player.prev);
+  document
+    .getElementById("playerNext")
+    .addEventListener("click", OCA.musicnc.Player.next);
+  document
+    .getElementById("playerPlay")
+    .addEventListener("click", OCA.musicnc.Player.play);
+  document
+    .getElementById("playerRepeat")
+    .addEventListener("click", OCA.musicnc.Player.setRepeat);
+  document
+    .getElementById("playerShuffle")
+    .addEventListener("click", OCA.musicnc.Player.shuffleTitles);
+  document
+    .getElementById("playerVolume")
+    .addEventListener("input", OCA.musicnc.Player.setVolume);
+  document.getElementById("playerVolume").value =
+    document.getElementById("musicnc_volume").value;
+
+  let repeat = document.getElementById("musicnc_repeat").value;
+  if (repeat !== "none") {
+    OCA.musicnc.Player.setRepeat(repeat);
+  }
+  OCA.musicnc.Player.setVolume();
 });

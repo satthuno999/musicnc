@@ -65,7 +65,7 @@ $errors = json_decode($error, true);
             foreach ($artists as $artist) {
                 $item = $artist["artist"];
                 echo '
-                <li class="item">
+                <li class="itemlist">
                 <a title="' . $item["name"] . '"
                     href="#" data-verified="' . $item["verified"] .'" data-href="' . $item["weburl"] . '">
                     <div class=" card">
