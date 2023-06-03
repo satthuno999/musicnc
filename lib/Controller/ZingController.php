@@ -10,6 +10,7 @@ use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\AppFramework\Http\ContentSecurityPolicy;
 use OCP\AppFramework\Http\Template\PublicTemplateResponse;
+use OCP\AppFramework\Http\JSONResponse;
 
 use OCP\IRequest;
 
@@ -38,7 +39,7 @@ class ZingController extends Controller
     {
         header("Access-Control-Allow-Origin: *");
         header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
-        
+
         $curl = curl_init();
         $url  = "https://shazam.p.rapidapi.com/search?term=".urlencode($name)."&locale=en-US&offset=0&limit=5";
         curl_setopt_array($curl, [
@@ -65,7 +66,8 @@ class ZingController extends Controller
             'name' => $name,
         ];
 
-        $response = new TemplateResponse('musicnc', 'partials/zingview', $params);
+        // $response = new TemplateResponse('musicnc', 'partials/zingview', $params);
+        $response = new JSONResponse($params);
         $csp = new ContentSecurityPolicy();
         $csp->addAllowedImageDomain('*');
         $csp->addAllowedMediaDomain('*');
