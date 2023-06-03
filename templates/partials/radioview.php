@@ -59,9 +59,9 @@ $countrys = json_decode($dataCountrys, true);
                             <div class="lazyload-wrapper ">
                                 <img alt="' . $country["name"] . '" loading="lazy"
                                     onerror="this.onerror=null;this.src='."https://cloudkma.online/apps/musicnc/img/app.svg".'"
-                                    width="150" height="150" decoding="async" 
-                                    src="https://www.countryflagicons.com/FLAT/64/' . $country["iso_639"] . '.png"
-                                    style="color: transparent; border-radius: 4px; width: 100%; height: 100%;">
+                                    width="160" height="120" decoding="async" 
+                                    src="https://flagcdn.com/160x120/' . $country["iso_639"] .'.png"
+                                    style="color: transparent; border-radius: 4px">
                             </div>
                         </div>
                         <div class="title">
