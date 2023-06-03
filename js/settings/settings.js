@@ -44,7 +44,7 @@ OCA.musicnc.Settings = {
         }
 
         OCA.musicnc.UI.showInitScreen();
-
+        OCA.musicnc.VideoPlayer.init();
         $('#category_selector').val('');
         OCA.musicnc.Backend.setUserValue('category', OCA.musicnc.Core.CategorySelectors[0] + '-');
         $('#myCategory').html('');
@@ -57,6 +57,7 @@ OCA.musicnc.Settings = {
         $('#activePlaylist').html('');
         $('.sm2-playlist-target').html('');
         $('.sm2-playlist-cover').css('background-color', '#ffffff').html('');
+        $("individual-playlist-video").html('');
 
         $.ajax({
             type: 'GET',
