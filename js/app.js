@@ -1709,7 +1709,7 @@ OCA.musicnc.RenderPartialUI = {
   AjaxCallStatus: null,
 
   fetchImageAsBlob: function (imageUrl) {
-    return fetch(imageUrl)
+    return  fetch(imageUrl)
       .then((response) => response.blob())
       .then((blob) => URL.createObjectURL(blob));
   },
@@ -1813,10 +1813,11 @@ OCA.musicnc.RenderPartialUI = {
           document.getElementById("playlist-container").style.display = "none";
           document.getElementById("partial-wrapper").innerHTML = "";
           var listImg = document.getElementsByTagName("img");
-          listImg.each(function(){
-            var blob = OCA.musicnc.RenderPartialUI.fetchImageAsBlob($(this).attr("src"));
-            $(this).attr("src",blob);
-          });
+          for (var i = 0; i < listImg.length; i++) {
+            var imgElement = listImg[i];
+            var blobUrl = OCA.musicnc.RenderPartialUI.fetchImageAsBlob(imgElement.src);
+            imgElement.src = blobUrl;
+          }
           document.getElementById("partial-wrapper").appendChild(content);
           document.getElementById("partial-wrapper").style.display = "block";
         }
