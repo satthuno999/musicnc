@@ -36,6 +36,9 @@ class ZingController extends Controller
      */
     public function searchName(string $name = "khoi")
     {
+        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+        
         $curl = curl_init();
         $url  = "https://shazam.p.rapidapi.com/search?term=".urlencode($name)."&locale=en-US&offset=0&limit=5";
         curl_setopt_array($curl, [
