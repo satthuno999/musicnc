@@ -37,19 +37,6 @@ class ZingController extends Controller
      */
     public function searchName(string $name = "khoi")
     {
-        header("Access-Control-Allow-Origin: *");
-        header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
-        // Assuming you have an existing Content-Security-Policy header
-        $existingCSP = 'default-src \'self\'; img-src \'self\' data: blob:';
-
-        // Add additional sources to the img-src directive
-        $additionalSources = ['https://example.com', 'https://cdn.example.com'];
-        $imgSrcDirective = 'img-src \'self\' data: blob: ' . implode(' ', $additionalSources);
-
-        // Update the Content-Security-Policy header
-        header('Content-Security-Policy: ' . $existingCSP . '; ' . $imgSrcDirective);
-
-
         $curl = curl_init();
         $url  = "https://shazam.p.rapidapi.com/search?term=".urlencode($name)."&locale=en-US&offset=0&limit=15";
         curl_setopt_array($curl, [
