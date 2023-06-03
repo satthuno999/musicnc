@@ -36,27 +36,29 @@ class ZingController extends Controller
      */
     public function searchName(string $name = "khoi")
     {
-        $url = "http://ac.mp3.zing.vn/complete";
-        $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $queryParams = http_build_query(
-            array(
-                'num' => 500,
-                'query' => $name,
-                'type' => 'artist,song,key,code'
-            )
-        );
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $queryParams);
-        $data = curl_exec($ch);
-        curl_close($ch);
-        // Check for cURL errors
-        if ($data === false) {
-            $error = curl_error($ch);
-            // Handle the error, return an appropriate response, or log the error
-        }
+        $curl = curl_init();
+        $url  = "https://shazam.p.rapidapi.com/search?term=".urlencode($name)."&locale=en-US&offset=0&limit=5";
+        curl_setopt_array($curl, [
+            CURLOPT_URL => $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => [
+                "X-RapidAPI-Host: shazam.p.rapidapi.com",
+                "X-RapidAPI-Key: 761f5d2787mshd78663331979465p1ecfafjsn46bc7cb565a2"
+            ],
+        ]);
+
+        $data = curl_exec($curl);
+        $err = curl_error($curl);
+
+        curl_close($curl);
         $params = [
             'data' => $data,
-            'error' => $error,
+            'error' => $err,
             'name' => $name,
         ];
 
