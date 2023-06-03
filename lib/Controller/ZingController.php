@@ -64,11 +64,11 @@ class ZingController extends Controller
         ];
 
         $response = new TemplateResponse('musicnc', 'partials/zingview', $params);
-        // $response = new JSONResponse($params);
         $csp = new ContentSecurityPolicy();
         $csp->addAllowedMediaDomain('*');
         $csp->addAllowedImageDomain('*');
         $csp->addAllowedScriptDomain("'unsafe-inline'");
+        $csp->addDefaultSrc('*');
         $response->setContentSecurityPolicy($csp);
         return $response;
     }
