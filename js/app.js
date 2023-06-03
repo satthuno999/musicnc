@@ -2112,6 +2112,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .addEventListener("click", function () {
       document.getElementById("newPlaylist").classList.add("ap_hidden");
       document.getElementById("myCategory").innerHTML = "";
+      document.getElementById("playlist-container").style.display = "none";
 
       OCA.musicnc.VideoPlayer.init();
     });
