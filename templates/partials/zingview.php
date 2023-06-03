@@ -8,13 +8,13 @@
  * @copyright 2022-2023 S P A R K
  */
 $podcasts = json_decode($data,true)["tracks"]["hits"];
+$artists = json_decode($data, true)["artists"]["hits"];
 $errors = json_decode($error, true);
-$name = json_decode($name, true);
+// $name = json_decode($name, true);
 ?>
 <div id="content-view">
-    <p><?php echo $podcasts ?></p>
     <div class="list-stream">
-        <div class="category">Zing Mp3 - <?php echo $name?></div>
+        <div class="category">Bài hát - <?php echo $name?></div>
         <ul>
             <?php
             foreach ($podcasts as $podcast) {
@@ -38,7 +38,7 @@ $name = json_decode($name, true);
                                 <img alt="' . $track["share"]["subject"] . '" loading="lazy"
                                     onerror="this.onerror=null;this.src=' . "https://cloudkma.online/apps/musicnc/img/app.svg" . '"
                                     width="150" height="150" decoding="async" 
-                                    src="https://photo-resize-zmp3.zmdcdn.me/w500_r1x1_webp' . $track["images"]["coverart"] . '"
+                                    src="' . $track["images"]["coverart"] . '"
                                     style="color: transparent; border-radius: 4px; width: 100%; height: 100%;">
                             </div>
                         </div>
@@ -54,6 +54,43 @@ $name = json_decode($name, true);
             }
             ?>
 
+        </ul>
+    </div>
+    <div class="list-stream">
+        <div class="category">
+             Nghệ sĩ
+        </div>
+        <ul>
+            <?php
+            foreach ($artists as $artist) {
+                $item = $artist["artist"];
+                echo '
+                <li class="item">
+                <a title="' . $item["name"] . '"
+                    href="#" data-verified="' . $item["verified"] .'" data-href="' . $item["weburl"] . '">
+                    <div class=" card">
+                        <div class="cover">
+                            <div class="lazyload-wrapper ">
+                                <img alt="' . $item["name"] . '" loading="lazy"
+                                    onerror="this.onerror=null;this.src=' . "https://cloudkma.online/apps/musicnc/img/app.svg" . '"
+                                    width="150" height="150" decoding="async" 
+                                    src="'.$item["avatar"].'"
+                                    style="color: transparent; border-radius: 4px; width: 100%; height: 100%;">
+                            </div>
+                        </div>
+                        <div class="title">
+                            ' . $item["name"] . '
+                        </div>
+                        <div class="locate">
+                            <a href="' . $item["weburl"] . '">WEB URL</a>
+                        </div>
+                    </div>
+                </a>
+            </li>
+      ';
+            }
+            ?>
+        
         </ul>
     </div>
 </div>

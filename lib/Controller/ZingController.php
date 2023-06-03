@@ -41,7 +41,7 @@ class ZingController extends Controller
         header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 
         $curl = curl_init();
-        $url  = "https://shazam.p.rapidapi.com/search?term=".urlencode($name)."&locale=en-US&offset=0&limit=5";
+        $url  = "https://shazam.p.rapidapi.com/search?term=".urlencode($name)."&locale=en-US&offset=0&limit=15";
         curl_setopt_array($curl, [
             CURLOPT_URL => $url,
             CURLOPT_RETURNTRANSFER => true,
@@ -70,6 +70,7 @@ class ZingController extends Controller
         // $response = new JSONResponse($params);
         $csp = new ContentSecurityPolicy();
         $csp->addAllowedImageDomain('*');
+        $csp-
         $csp->addAllowedMediaDomain('*');
         $response->setContentSecurityPolicy($csp);
         return $response;
