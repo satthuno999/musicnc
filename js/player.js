@@ -94,18 +94,17 @@ OCA.musicnc.Player = {
     OCA.musicnc.VideoPlayer.init();
 
     // new track to be played
-    this.html5Audio.setAttribute("src", "");
-    if (this.html5Audio.getAttribute("src")) {
-      document
-        .getElementById("playerPlay")
-        .classList.replace("play-pause", "icon-loading");
-      this.lastSavedSecond = 0;
-      this.html5Audio.setAttribute("src", streamUrl);
-      this.html5Audio.load();
-    } else if (!OCA.musicnc.Player.isPaused()) {
+    if (!OCA.musicnc.Player.isPaused()) {
       OCA.musicnc.Player.stop();
       return;
     }
+    document
+      .getElementById("playerPlay")
+      .classList.replace("play-pause", "icon-loading");
+    this.lastSavedSecond = 0;
+    this.html5Audio.setAttribute("src", streamUrl);
+    this.html5Audio.load();
+
     let playPromise = this.html5Audio.play();
     if (playPromise !== undefined) {
       playPromise
