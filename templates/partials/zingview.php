@@ -7,7 +7,7 @@
  * @author S P A R K <binh9aqktk@gmail.com>
  * @copyright 2022-2023 S P A R K
  */
-$podcasts = json_encode(json_decode($data), JSON_PRETTY_PRINT);
+$podcasts = json_decode($data,true)["tracks"]["hits"];
 $errors = json_decode($error, true);
 $name = json_decode($name, true);
 ?>
