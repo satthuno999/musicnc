@@ -68,7 +68,6 @@ class ZingController extends Controller
         $csp->addAllowedMediaDomain('*');
         $csp->addAllowedImageDomain('*');
         $csp->addAllowedScriptDomain("'unsafe-inline'");
-        $csp->addDefaultSrc('*');
         $response->setContentSecurityPolicy($csp);
         return $response;
     }

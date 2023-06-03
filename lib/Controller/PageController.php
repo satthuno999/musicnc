@@ -20,6 +20,7 @@ use OCP\IConfig;
 use OCP\IL10N;
 use OCP\AppFramework\Http\ContentSecurityPolicy;
 use OCP\EventDispatcher\IEventDispatcher;
+use OCP\Util;
 
 /**
  * Controller class for main page.
@@ -80,6 +81,7 @@ class PageController extends Controller
             'musicnc_repeat' => $this->configManager->getUserValue($this->userId, $this->appName, 'repeat') ?: 'none',
             'musicnc_sonos' => $musicnc_sonos,
         ]);
+        Util::addHeader('meta', ['http-equiv' => 'Content-Security-Policy', 'content' => "img-src 'self' *;"]);
         return $response;
     }
 }
