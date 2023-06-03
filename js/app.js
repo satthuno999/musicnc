@@ -1830,7 +1830,9 @@ OCA.musicnc.VideoPlayer = {
     html5Video.style.display = "block";
     document.getElementById("playlist-container").style.display = "none";
     var list = document.getElementById("individual-playlist-video");
-
+    if (!OCA.musicnc.Player.isPaused()) {
+      OCA.musicnc.Player.html5Audio.pause();
+    }
     let trackToPlay = list.children[this.currentTrackIndex];
     // if (trackToPlay.dataset.canPlayMime === "false") {
     //   this.next();
