@@ -2104,6 +2104,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .addEventListener("click", function () {
       document.getElementById("newPlaylist").classList.add("ap_hidden");
       document.getElementById("myCategory").innerHTML = "";
+      document.getElementById("partial-wrapper-video").style.display = "none";
 
       OCA.musicnc.RenderPartialUI.renderRadio();
     });
@@ -2113,6 +2114,7 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("newPlaylist").classList.add("ap_hidden");
       document.getElementById("myCategory").innerHTML = "";
       document.getElementById("playlist-container").style.display = "none";
+      document.getElementById("partial-wrapper-video").style.display = "block";
 
       OCA.musicnc.VideoPlayer.init();
     });
@@ -2120,6 +2122,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .getElementById("searchAPIInput")
     .addEventListener("keyup", function (event) {
       if (event.key === "Enter") {
+        document.getElementById("partial-wrapper-video").style.display = "none";
         var value = event.target.value;
         OCA.musicnc.RenderPartialUI.renderSearchApi(value);
       }
