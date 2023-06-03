@@ -541,12 +541,12 @@ OCA.musicnc.Category = {
 
     var listForRemove = [];
     var listOfUniqe = [];
-    $("#individual-playlist-video li").each(function () {
-      var text = $(this).text().trim();
+    // $("#individual-playlist-video li").each(function () {
+    //   var text = $(this).text().trim();
 
-      if (listOfUniqe.indexOf(text) === -1) listOfUniqe.push(text);
-      else listForRemove.push($(this));
-    });
+    //   if (listOfUniqe.indexOf(text) === -1) listOfUniqe.push(text);
+    //   else listForRemove.push($(this));
+    // });
 
     $(listForRemove).each(function () {
       $(this).remove();
