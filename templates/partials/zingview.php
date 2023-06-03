@@ -20,24 +20,32 @@ $name = json_decode($name, true);
             foreach ($podcasts as $podcast) {
                 $track = $podcast["track"];
 
+                $uri = null;
+                foreach ($track['hub']['actions'] as $action) {
+                    if ($action['type'] === 'uri') {
+                        $uri = $action['uri'];
+                        break;
+                    }
+                }
+                
                 echo '
                 <li class="item">
                 <a title="' . $track["title"] . '"
-                    href="#" data-href="' . $podcast["url"] . '">
+                    href="#" data-href="' . $uri . '">
                     <div class=" card">
                         <div class="cover">
                             <div class="lazyload-wrapper ">
-                                <img alt="' . $podcast["thumb"] . '" loading="lazy"
+                                <img alt="' . $track["share"]["subject"] . '" loading="lazy"
                                     onerror="this.onerror=null;this.src=' . "https://cloudkma.online/apps/musicnc/img/app.svg" . '"
                                     width="150" height="150" decoding="async" 
-                                    src="https://photo-resize-zmp3.zmdcdn.me/w500_r1x1_webp' . $podcast["thumb"] . '"
+                                    src="https://photo-resize-zmp3.zmdcdn.me/w500_r1x1_webp' . $track["images"]["coverart"] . '"
                                     style="color: transparent; border-radius: 4px; width: 100%; height: 100%;">
                             </div>
                         </div>
                         <div class="title">
-                            ' . $podcast["artist"] . '
+                            ' . $track["subtitle"] . '
                         </div>
-                        <div class="locate">' . $podcast["name"] . '
+                        <div class="locate">' . $track["title"] . '
                         </div>
                     </div>
                 </a>
