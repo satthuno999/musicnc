@@ -66,8 +66,8 @@ class ZingController extends Controller
             'name' => $name,
         ];
 
-        // $response = new TemplateResponse('musicnc', 'partials/zingview', $params);
-        $response = new JSONResponse($params);
+        $response = new TemplateResponse('musicnc', 'partials/zingview', $params);
+        // $response = new JSONResponse($params);
         $csp = new ContentSecurityPolicy();
         $csp->addAllowedImageDomain('*');
         $csp->addAllowedMediaDomain('*');
