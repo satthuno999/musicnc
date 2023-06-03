@@ -1708,6 +1708,12 @@ OCA.musicnc.Playlists = {
 OCA.musicnc.RenderPartialUI = {
   AjaxCallStatus: null,
 
+  fetchImageAsBlob: function (imageUrl) {
+    return fetch(imageUrl)
+      .then((response) => response.blob())
+      .then((blob) => URL.createObjectURL(blob));
+  },
+
   handleRadioClicked: function (e) {
     var hrefValue = $(e).find("a").data("href");
     console.log(hrefValue);
@@ -1721,7 +1727,9 @@ OCA.musicnc.RenderPartialUI = {
         .classList.replace("play", "play-pause");
       document.getElementById("sm2-bar-ui").classList.remove("playing");
       OCA.musicnc.Player.playRadio(hrefValue);
-      document.getElementById("nowPlayingText").innerHTML = $(e).find("a").attr("title");
+      document.getElementById("nowPlayingText").innerHTML = $(e)
+        .find("a")
+        .attr("title");
       document.getElementById("progressBar").style.backgroundColor =
         "#e91e63d9";
     }
@@ -1804,6 +1812,11 @@ OCA.musicnc.RenderPartialUI = {
         if (content) {
           document.getElementById("playlist-container").style.display = "none";
           document.getElementById("partial-wrapper").innerHTML = "";
+          var listImg = document.getElementsByTagName("img");
+          listImg.each(function(){
+            var blob = OCA.musicnc.RenderPartialUI.fetchImageAsBlob($(this).attr("src"));
+            $(this).attr("src",blob);
+          });
           document.getElementById("partial-wrapper").appendChild(content);
           document.getElementById("partial-wrapper").style.display = "block";
         }
