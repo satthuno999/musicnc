@@ -113,7 +113,7 @@ OCA.musicnc.Player = {
             .getElementById("playerPlay")
             .classList.replace("icon-loading", "play-pause");
           document.getElementById("sm2-bar-ui").classList.add("playing");
-          OCA.musicnc.UI.indicateCurrentPlayingTrack();
+          // OCA.musicnc.UI.indicateCurrentPlayingTrack();
         })
         .catch(function (error) {
           document
