@@ -1,0 +1,618 @@
+{
+  "tracks": {
+    "hits": [
+      {
+        "track": {
+          "layout": "5",
+          "type": "MUSIC",
+          "key": "470761093",
+          "title": "Hãy Trao Cho Anh (feat. Snoop Dogg)",
+          "subtitle": "Sơn Tùng M-TP",
+          "share": {
+            "subject": "Hãy Trao Cho Anh (feat. Snoop Dogg) - Sơn Tùng M-TP",
+            "text": "Hãy Trao Cho Anh (feat. Snoop Dogg) by Sơn Tùng M-TP",
+            "href": "https://www.shazam.com/track/470761093/h%C3%A3y-trao-cho-anh-feat-snoop-dogg",
+            "image": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/47/b9/c9/47b9c9b5-d2c8-c263-118d-d32b032fda10/cover.jpg/400x400cc.jpg",
+            "twitter": "I used @Shazam to discover Hãy Trao Cho Anh (feat. Snoop Dogg) by Sơn Tùng M-TP.",
+            "html": "https://www.shazam.com/snippets/email-share/470761093?lang=en-US&country=US",
+            "avatar": "https://is3-ssl.mzstatic.com/image/thumb/AMCArtistImages116/v4/1e/e5/31/1ee5314b-73b1-8aa3-7ef0-8e0873dd6989/ec7bf718-54a3-4d60-918d-231eeb147189_ami-identity-cb2ea5b90abeef8ab06c79f699d66985-2023-05-04T17-19-20.923Z_cropped.png/800x800cc.jpg",
+            "snapchat": "https://www.shazam.com/partner/sc/track/470761093"
+          },
+          "images": {
+            "background": "https://is3-ssl.mzstatic.com/image/thumb/AMCArtistImages116/v4/1e/e5/31/1ee5314b-73b1-8aa3-7ef0-8e0873dd6989/ec7bf718-54a3-4d60-918d-231eeb147189_ami-identity-cb2ea5b90abeef8ab06c79f699d66985-2023-05-04T17-19-20.923Z_cropped.png/800x800cc.jpg",
+            "coverart": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/47/b9/c9/47b9c9b5-d2c8-c263-118d-d32b032fda10/cover.jpg/400x400cc.jpg",
+            "coverarthq": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/47/b9/c9/47b9c9b5-d2c8-c263-118d-d32b032fda10/cover.jpg/400x400cc.jpg",
+            "joecolor": "b:091215p:eef1f6s:faca98t:c0c4c9q:c9a67e"
+          },
+          "hub": {
+            "type": "APPLEMUSIC",
+            "image": "https://images.shazam.com/static/icons/hub/ios/v5/applemusic_{scalefactor}.png",
+            "actions": [
+              { "name": "apple", "type": "applemusicplay", "id": "1470224371" },
+              {
+                "name": "apple",
+                "type": "uri",
+                "uri": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/ad/58/fe/ad58fe25-c59c-84ae-f8ff-fdfad333c0fd/mzaf_4045060866603438103.plus.aac.ep.m4a"
+              }
+            ],
+            "options": [
+              {
+                "caption": "OPEN",
+                "actions": [
+                  {
+                    "name": "hub:applemusic:deeplink",
+                    "type": "applemusicopen",
+                    "uri": "https://music.apple.com/us/album/h%C3%A3y-trao-cho-anh-feat-snoop-dogg/1470224370?i=1470224371&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_ios&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_ios"
+                  },
+                  {
+                    "name": "hub:applemusic:deeplink",
+                    "type": "uri",
+                    "uri": "https://music.apple.com/us/album/h%C3%A3y-trao-cho-anh-feat-snoop-dogg/1470224370?i=1470224371&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_ios&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_ios"
+                  }
+                ],
+                "beacondata": { "type": "open", "providername": "applemusic" },
+                "image": "https://images.shazam.com/static/icons/hub/ios/v5/overflow-open-option_{scalefactor}.png",
+                "type": "open",
+                "listcaption": "Open in Apple Music",
+                "overflowimage": "https://images.shazam.com/static/icons/hub/ios/v5/applemusic-overflow_{scalefactor}.png",
+                "colouroverflowimage": false,
+                "providername": "applemusic"
+              },
+              {
+                "caption": "BUY",
+                "actions": [
+                  {
+                    "type": "uri",
+                    "uri": "https://itunes.apple.com/us/album/h%C3%A3y-trao-cho-anh-feat-snoop-dogg/1470224370?i=1470224371&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_ios&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=itunes&itsct=Shazam_ios"
+                  }
+                ],
+                "beacondata": { "type": "buy", "providername": "itunes" },
+                "image": "https://images.shazam.com/static/icons/hub/ios/v5/itunes-overflow-buy_{scalefactor}.png",
+                "type": "buy",
+                "listcaption": "Buy on iTunes",
+                "overflowimage": "https://images.shazam.com/static/icons/hub/ios/v5/itunes-overflow-buy_{scalefactor}.png",
+                "colouroverflowimage": false,
+                "providername": "itunes"
+              }
+            ],
+            "providers": [
+              {
+                "caption": "Open in Spotify",
+                "images": {
+                  "overflow": "https://images.shazam.com/static/icons/hub/ios/v5/spotify-overflow_{scalefactor}.png",
+                  "default": "https://images.shazam.com/static/icons/hub/ios/v5/spotify_{scalefactor}.png"
+                },
+                "actions": [
+                  {
+                    "name": "hub:spotify:searchdeeplink",
+                    "type": "uri",
+                    "uri": "spotify:search:H%C3%A3y%20Trao%20Cho%20Anh%20%28feat.%20Snoop%20Dogg%29%20S%C6%A1n%20T%C3%B9ng%20M-TP"
+                  }
+                ],
+                "type": "SPOTIFY"
+              },
+              {
+                "caption": "Open in Deezer",
+                "images": {
+                  "overflow": "https://images.shazam.com/static/icons/hub/ios/v5/deezer-overflow_{scalefactor}.png",
+                  "default": "https://images.shazam.com/static/icons/hub/ios/v5/deezer_{scalefactor}.png"
+                },
+                "actions": [
+                  {
+                    "name": "hub:deezer:searchdeeplink",
+                    "type": "uri",
+                    "uri": "deezer-query://www.deezer.com/play?query=%7Btrack%3A%27H%C3%A3y+Trao+Cho+Anh+%28feat.+Snoop+Dogg%29%27%20artist%3A%27S%C6%A1n+T%C3%B9ng+M-TP%27%7D"
+                  }
+                ],
+                "type": "DEEZER"
+              }
+            ],
+            "explicit": false,
+            "displayname": "APPLE MUSIC"
+          },
+          "artists": [{ "id": "42", "adamid": "705007874" }],
+          "url": "https://www.shazam.com/track/470761093/h%C3%A3y-trao-cho-anh-feat-snoop-dogg"
+        }
+      },
+      {
+        "track": {
+          "layout": "5",
+          "type": "MUSIC",
+          "key": "338522721",
+          "title": "Lạc Trôi",
+          "subtitle": "Sơn Tùng M-TP",
+          "share": {
+            "subject": "Lạc Trôi - Sơn Tùng M-TP",
+            "text": "Lạc Trôi by Sơn Tùng M-TP",
+            "href": "https://www.shazam.com/track/338522721/l%E1%BA%A1c-tr%C3%B4i",
+            "image": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/b2/e9/5e/b2e95ef8-0c78-f39a-bb4e-17bec00157ee/cover.jpg/400x400cc.jpg",
+            "twitter": "I used @Shazam to discover Lạc Trôi by Sơn Tùng M-TP.",
+            "html": "https://www.shazam.com/snippets/email-share/338522721?lang=en-US&country=US",
+            "avatar": "https://is3-ssl.mzstatic.com/image/thumb/AMCArtistImages116/v4/1e/e5/31/1ee5314b-73b1-8aa3-7ef0-8e0873dd6989/ec7bf718-54a3-4d60-918d-231eeb147189_ami-identity-cb2ea5b90abeef8ab06c79f699d66985-2023-05-04T17-19-20.923Z_cropped.png/800x800cc.jpg",
+            "snapchat": "https://www.shazam.com/partner/sc/track/338522721"
+          },
+          "images": {
+            "background": "https://is3-ssl.mzstatic.com/image/thumb/AMCArtistImages116/v4/1e/e5/31/1ee5314b-73b1-8aa3-7ef0-8e0873dd6989/ec7bf718-54a3-4d60-918d-231eeb147189_ami-identity-cb2ea5b90abeef8ab06c79f699d66985-2023-05-04T17-19-20.923Z_cropped.png/800x800cc.jpg",
+            "coverart": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/b2/e9/5e/b2e95ef8-0c78-f39a-bb4e-17bec00157ee/cover.jpg/400x400cc.jpg",
+            "coverarthq": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/b2/e9/5e/b2e95ef8-0c78-f39a-bb4e-17bec00157ee/cover.jpg/400x400cc.jpg",
+            "joecolor": "b:d7cdcep:11050cs:241f22t:392d32q:474144"
+          },
+          "hub": {
+            "type": "APPLEMUSIC",
+            "image": "https://images.shazam.com/static/icons/hub/ios/v5/applemusic_{scalefactor}.png",
+            "actions": [
+              { "name": "apple", "type": "applemusicplay", "id": "1380326334" },
+              {
+                "name": "apple",
+                "type": "uri",
+                "uri": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/ec/8b/79/ec8b79ff-d19d-16d3-e6f0-8cf1eaf5a05c/mzaf_18214789010710475760.plus.aac.ep.m4a"
+              }
+            ],
+            "options": [
+              {
+                "caption": "OPEN",
+                "actions": [
+                  {
+                    "name": "hub:applemusic:deeplink",
+                    "type": "applemusicopen",
+                    "uri": "https://music.apple.com/us/album/l%E1%BA%A1c-tr%C3%B4i/1380326325?i=1380326334&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_ios&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_ios"
+                  },
+                  {
+                    "name": "hub:applemusic:deeplink",
+                    "type": "uri",
+                    "uri": "https://music.apple.com/us/album/l%E1%BA%A1c-tr%C3%B4i/1380326325?i=1380326334&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_ios&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_ios"
+                  }
+                ],
+                "beacondata": { "type": "open", "providername": "applemusic" },
+                "image": "https://images.shazam.com/static/icons/hub/ios/v5/overflow-open-option_{scalefactor}.png",
+                "type": "open",
+                "listcaption": "Open in Apple Music",
+                "overflowimage": "https://images.shazam.com/static/icons/hub/ios/v5/applemusic-overflow_{scalefactor}.png",
+                "colouroverflowimage": false,
+                "providername": "applemusic"
+              },
+              {
+                "caption": "BUY",
+                "actions": [
+                  {
+                    "type": "uri",
+                    "uri": "https://itunes.apple.com/us/album/l%E1%BA%A1c-tr%C3%B4i/1380326325?i=1380326334&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_ios&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=itunes&itsct=Shazam_ios"
+                  }
+                ],
+                "beacondata": { "type": "buy", "providername": "itunes" },
+                "image": "https://images.shazam.com/static/icons/hub/ios/v5/itunes-overflow-buy_{scalefactor}.png",
+                "type": "buy",
+                "listcaption": "Buy on iTunes",
+                "overflowimage": "https://images.shazam.com/static/icons/hub/ios/v5/itunes-overflow-buy_{scalefactor}.png",
+                "colouroverflowimage": false,
+                "providername": "itunes"
+              }
+            ],
+            "providers": [
+              {
+                "caption": "Open in Spotify",
+                "images": {
+                  "overflow": "https://images.shazam.com/static/icons/hub/ios/v5/spotify-overflow_{scalefactor}.png",
+                  "default": "https://images.shazam.com/static/icons/hub/ios/v5/spotify_{scalefactor}.png"
+                },
+                "actions": [
+                  {
+                    "name": "hub:spotify:searchdeeplink",
+                    "type": "uri",
+                    "uri": "spotify:search:L%E1%BA%A1c%20Tr%C3%B4i%20S%C6%A1n%20T%C3%B9ng%20M-TP"
+                  }
+                ],
+                "type": "SPOTIFY"
+              },
+              {
+                "caption": "Open in Deezer",
+                "images": {
+                  "overflow": "https://images.shazam.com/static/icons/hub/ios/v5/deezer-overflow_{scalefactor}.png",
+                  "default": "https://images.shazam.com/static/icons/hub/ios/v5/deezer_{scalefactor}.png"
+                },
+                "actions": [
+                  {
+                    "name": "hub:deezer:searchdeeplink",
+                    "type": "uri",
+                    "uri": "deezer-query://www.deezer.com/play?query=%7Btrack%3A%27L%E1%BA%A1c+Tr%C3%B4i%27%20artist%3A%27S%C6%A1n+T%C3%B9ng+M-TP%27%7D"
+                  }
+                ],
+                "type": "DEEZER"
+              }
+            ],
+            "explicit": false,
+            "displayname": "APPLE MUSIC"
+          },
+          "artists": [{ "id": "42", "adamid": "705007874" }],
+          "url": "https://www.shazam.com/track/338522721/l%E1%BA%A1c-tr%C3%B4i"
+        }
+      },
+      {
+        "track": {
+          "layout": "5",
+          "type": "MUSIC",
+          "key": "666207928",
+          "title": "Mtp (REMASTERED)",
+          "subtitle": "Mikey Dior",
+          "share": {
+            "subject": "Mtp (REMASTERED) - Mikey Dior",
+            "text": "Mtp (REMASTERED) by Mikey Dior",
+            "href": "https://www.shazam.com/track/666207928/mtp-remastered",
+            "image": "https://is5-ssl.mzstatic.com/image/thumb/Music126/v4/a0/5d/05/a05d055d-33f0-0951-5a34-c72e1a3c28f9/artwork.jpg/400x400cc.jpg",
+            "twitter": "I used @Shazam to discover Mtp (REMASTERED) by Mikey Dior.",
+            "html": "https://www.shazam.com/snippets/email-share/666207928?lang=en-US&country=US",
+            "avatar": "https://is1-ssl.mzstatic.com/image/thumb/AMCArtistImages116/v4/38/f8/33/38f83311-f856-457a-b277-97377b62ef17/8d5306c8-bf4d-4890-bb00-1911779ec42a_file_cropped.png/800x800cc.jpg",
+            "snapchat": "https://www.shazam.com/partner/sc/track/666207928"
+          },
+          "images": {
+            "background": "https://is1-ssl.mzstatic.com/image/thumb/AMCArtistImages116/v4/38/f8/33/38f83311-f856-457a-b277-97377b62ef17/8d5306c8-bf4d-4890-bb00-1911779ec42a_file_cropped.png/800x800cc.jpg",
+            "coverart": "https://is5-ssl.mzstatic.com/image/thumb/Music126/v4/a0/5d/05/a05d055d-33f0-0951-5a34-c72e1a3c28f9/artwork.jpg/400x400cc.jpg",
+            "coverarthq": "https://is5-ssl.mzstatic.com/image/thumb/Music126/v4/a0/5d/05/a05d055d-33f0-0951-5a34-c72e1a3c28f9/artwork.jpg/400x400cc.jpg",
+            "joecolor": "b:112b87p:f7e5d6s:4dd8e1t:c9bfc6q:41b6cf"
+          },
+          "hub": {
+            "type": "APPLEMUSIC",
+            "image": "https://images.shazam.com/static/icons/hub/ios/v5/applemusic_{scalefactor}.png",
+            "actions": [
+              { "name": "apple", "type": "applemusicplay", "id": "1689599812" },
+              {
+                "name": "apple",
+                "type": "uri",
+                "uri": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/59/06/85/5906852c-5af3-3822-ef20-bfbfa608e8ab/mzaf_16190701841073471237.plus.aac.p.m4a"
+              }
+            ],
+            "options": [
+              {
+                "caption": "OPEN",
+                "actions": [
+                  {
+                    "name": "hub:applemusic:deeplink",
+                    "type": "applemusicopen",
+                    "uri": "https://music.apple.com/us/album/mtp-remastered/1689599644?i=1689599812&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_ios&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_ios"
+                  },
+                  {
+                    "name": "hub:applemusic:deeplink",
+                    "type": "uri",
+                    "uri": "https://music.apple.com/us/album/mtp-remastered/1689599644?i=1689599812&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_ios&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_ios"
+                  }
+                ],
+                "beacondata": { "type": "open", "providername": "applemusic" },
+                "image": "https://images.shazam.com/static/icons/hub/ios/v5/overflow-open-option_{scalefactor}.png",
+                "type": "open",
+                "listcaption": "Open in Apple Music",
+                "overflowimage": "https://images.shazam.com/static/icons/hub/ios/v5/applemusic-overflow_{scalefactor}.png",
+                "colouroverflowimage": false,
+                "providername": "applemusic"
+              },
+              {
+                "caption": "BUY",
+                "actions": [
+                  {
+                    "type": "uri",
+                    "uri": "https://itunes.apple.com/us/album/mtp-remastered/1689599644?i=1689599812&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_ios&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=itunes&itsct=Shazam_ios"
+                  }
+                ],
+                "beacondata": { "type": "buy", "providername": "itunes" },
+                "image": "https://images.shazam.com/static/icons/hub/ios/v5/itunes-overflow-buy_{scalefactor}.png",
+                "type": "buy",
+                "listcaption": "Buy on iTunes",
+                "overflowimage": "https://images.shazam.com/static/icons/hub/ios/v5/itunes-overflow-buy_{scalefactor}.png",
+                "colouroverflowimage": false,
+                "providername": "itunes"
+              }
+            ],
+            "providers": [
+              {
+                "caption": "Open in Spotify",
+                "images": {
+                  "overflow": "https://images.shazam.com/static/icons/hub/ios/v5/spotify-overflow_{scalefactor}.png",
+                  "default": "https://images.shazam.com/static/icons/hub/ios/v5/spotify_{scalefactor}.png"
+                },
+                "actions": [
+                  {
+                    "name": "hub:spotify:searchdeeplink",
+                    "type": "uri",
+                    "uri": "spotify:search:Mtp%20%28REMASTERED%29%20Mikey%20Dior"
+                  }
+                ],
+                "type": "SPOTIFY"
+              },
+              {
+                "caption": "Open in Deezer",
+                "images": {
+                  "overflow": "https://images.shazam.com/static/icons/hub/ios/v5/deezer-overflow_{scalefactor}.png",
+                  "default": "https://images.shazam.com/static/icons/hub/ios/v5/deezer_{scalefactor}.png"
+                },
+                "actions": [
+                  {
+                    "name": "hub:deezer:searchdeeplink",
+                    "type": "uri",
+                    "uri": "deezer-query://www.deezer.com/play?query=%7Btrack%3A%27Mtp+%28REMASTERED%29%27%20artist%3A%27Mikey+Dior%27%7D"
+                  }
+                ],
+                "type": "DEEZER"
+              }
+            ],
+            "explicit": false,
+            "displayname": "APPLE MUSIC"
+          },
+          "artists": [{ "id": "42", "adamid": "1646100442" }],
+          "url": "https://www.shazam.com/track/666207928/mtp-remastered"
+        }
+      },
+      {
+        "track": {
+          "layout": "5",
+          "type": "MUSIC",
+          "key": "662559906",
+          "title": "MTP (feat. h1batchi)",
+          "subtitle": "Lil Rolex",
+          "share": {
+            "subject": "MTP (feat. h1batchi) - Lil Rolex",
+            "text": "MTP (feat. h1batchi) by Lil Rolex",
+            "href": "https://www.shazam.com/track/662559906/mtp-feat-h1batchi",
+            "image": "https://is3-ssl.mzstatic.com/image/thumb/Music126/v4/9d/a2/13/9da21343-619c-947e-3ef8-9505106383f5/artwork.jpg/400x400cc.jpg",
+            "twitter": "I used @Shazam to discover MTP (feat. h1batchi) by Lil Rolex.",
+            "html": "https://www.shazam.com/snippets/email-share/662559906?lang=en-US&country=US",
+            "snapchat": "https://www.shazam.com/partner/sc/track/662559906"
+          },
+          "images": {
+            "background": "https://is3-ssl.mzstatic.com/image/thumb/Music126/v4/9d/a2/13/9da21343-619c-947e-3ef8-9505106383f5/artwork.jpg/400x400cc.jpg",
+            "coverart": "https://is3-ssl.mzstatic.com/image/thumb/Music126/v4/9d/a2/13/9da21343-619c-947e-3ef8-9505106383f5/artwork.jpg/400x400cc.jpg",
+            "coverarthq": "https://is3-ssl.mzstatic.com/image/thumb/Music126/v4/9d/a2/13/9da21343-619c-947e-3ef8-9505106383f5/artwork.jpg/400x400cc.jpg",
+            "joecolor": "b:261406p:f9c9c9s:f65118t:cea5a2q:cc4514"
+          },
+          "hub": {
+            "type": "APPLEMUSIC",
+            "image": "https://images.shazam.com/static/icons/hub/ios/v5/applemusic_{scalefactor}.png",
+            "actions": [
+              { "name": "apple", "type": "applemusicplay", "id": "1681425435" },
+              {
+                "name": "apple",
+                "type": "uri",
+                "uri": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/ff/34/d3/ff34d348-dee3-28cc-a981-84d71c9839b2/mzaf_1671082666592877041.plus.aac.p.m4a"
+              }
+            ],
+            "options": [
+              {
+                "caption": "OPEN",
+                "actions": [
+                  {
+                    "name": "hub:applemusic:deeplink",
+                    "type": "applemusicopen",
+                    "uri": "https://music.apple.com/us/album/mtp-feat-h1batchi/1681425427?i=1681425435&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_ios&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_ios"
+                  },
+                  {
+                    "name": "hub:applemusic:deeplink",
+                    "type": "uri",
+                    "uri": "https://music.apple.com/us/album/mtp-feat-h1batchi/1681425427?i=1681425435&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_ios&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_ios"
+                  }
+                ],
+                "beacondata": { "type": "open", "providername": "applemusic" },
+                "image": "https://images.shazam.com/static/icons/hub/ios/v5/overflow-open-option_{scalefactor}.png",
+                "type": "open",
+                "listcaption": "Open in Apple Music",
+                "overflowimage": "https://images.shazam.com/static/icons/hub/ios/v5/applemusic-overflow_{scalefactor}.png",
+                "colouroverflowimage": false,
+                "providername": "applemusic"
+              },
+              {
+                "caption": "BUY",
+                "actions": [
+                  {
+                    "type": "uri",
+                    "uri": "https://itunes.apple.com/us/album/mtp-feat-h1batchi/1681425427?i=1681425435&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_ios&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=itunes&itsct=Shazam_ios"
+                  }
+                ],
+                "beacondata": { "type": "buy", "providername": "itunes" },
+                "image": "https://images.shazam.com/static/icons/hub/ios/v5/itunes-overflow-buy_{scalefactor}.png",
+                "type": "buy",
+                "listcaption": "Buy on iTunes",
+                "overflowimage": "https://images.shazam.com/static/icons/hub/ios/v5/itunes-overflow-buy_{scalefactor}.png",
+                "colouroverflowimage": false,
+                "providername": "itunes"
+              }
+            ],
+            "providers": [
+              {
+                "caption": "Open in Spotify",
+                "images": {
+                  "overflow": "https://images.shazam.com/static/icons/hub/ios/v5/spotify-overflow_{scalefactor}.png",
+                  "default": "https://images.shazam.com/static/icons/hub/ios/v5/spotify_{scalefactor}.png"
+                },
+                "actions": [
+                  {
+                    "name": "hub:spotify:searchdeeplink",
+                    "type": "uri",
+                    "uri": "spotify:search:MTP%20%28feat.%20h1batchi%29%20Lil%20Rolex"
+                  }
+                ],
+                "type": "SPOTIFY"
+              },
+              {
+                "caption": "Open in Deezer",
+                "images": {
+                  "overflow": "https://images.shazam.com/static/icons/hub/ios/v5/deezer-overflow_{scalefactor}.png",
+                  "default": "https://images.shazam.com/static/icons/hub/ios/v5/deezer_{scalefactor}.png"
+                },
+                "actions": [
+                  {
+                    "name": "hub:deezer:searchdeeplink",
+                    "type": "uri",
+                    "uri": "deezer-query://www.deezer.com/play?query=%7Btrack%3A%27MTP+%28feat.+h1batchi%29%27%20artist%3A%27Lil+Rolex%27%7D"
+                  }
+                ],
+                "type": "DEEZER"
+              }
+            ],
+            "explicit": true,
+            "displayname": "APPLE MUSIC"
+          },
+          "artists": [{ "id": "42", "adamid": "1337442376" }],
+          "url": "https://www.shazam.com/track/662559906/mtp-feat-h1batchi"
+        }
+      },
+      {
+        "track": {
+          "layout": "5",
+          "type": "MUSIC",
+          "key": "567738341",
+          "title": "Muộn Rồi Mà Sao Còn",
+          "subtitle": "Sơn Tùng M-TP",
+          "share": {
+            "subject": "Muộn Rồi Mà Sao Còn - Sơn Tùng M-TP",
+            "text": "Muộn Rồi Mà Sao Còn by Sơn Tùng M-TP",
+            "href": "https://www.shazam.com/track/567738341/mu%E1%BB%99n-r%E1%BB%93i-m%C3%A0-sao-c%C3%B2n",
+            "image": "https://is2-ssl.mzstatic.com/image/thumb/Music115/v4/b3/8a/c2/b38ac228-562d-7f99-0646-4ff2fdac77b5/cover.jpg/400x400cc.jpg",
+            "twitter": "I used @Shazam to discover Muộn Rồi Mà Sao Còn by Sơn Tùng M-TP.",
+            "html": "https://www.shazam.com/snippets/email-share/567738341?lang=en-US&country=US",
+            "avatar": "https://is3-ssl.mzstatic.com/image/thumb/AMCArtistImages116/v4/1e/e5/31/1ee5314b-73b1-8aa3-7ef0-8e0873dd6989/ec7bf718-54a3-4d60-918d-231eeb147189_ami-identity-cb2ea5b90abeef8ab06c79f699d66985-2023-05-04T17-19-20.923Z_cropped.png/800x800cc.jpg",
+            "snapchat": "https://www.shazam.com/partner/sc/track/567738341"
+          },
+          "images": {
+            "background": "https://is3-ssl.mzstatic.com/image/thumb/AMCArtistImages116/v4/1e/e5/31/1ee5314b-73b1-8aa3-7ef0-8e0873dd6989/ec7bf718-54a3-4d60-918d-231eeb147189_ami-identity-cb2ea5b90abeef8ab06c79f699d66985-2023-05-04T17-19-20.923Z_cropped.png/800x800cc.jpg",
+            "coverart": "https://is2-ssl.mzstatic.com/image/thumb/Music115/v4/b3/8a/c2/b38ac228-562d-7f99-0646-4ff2fdac77b5/cover.jpg/400x400cc.jpg",
+            "coverarthq": "https://is2-ssl.mzstatic.com/image/thumb/Music115/v4/b3/8a/c2/b38ac228-562d-7f99-0646-4ff2fdac77b5/cover.jpg/400x400cc.jpg",
+            "joecolor": "b:ffffffp:100400s:211505t:3f3633q:4d4437"
+          },
+          "hub": {
+            "type": "APPLEMUSIC",
+            "image": "https://images.shazam.com/static/icons/hub/ios/v5/applemusic_{scalefactor}.png",
+            "actions": [
+              { "name": "apple", "type": "applemusicplay", "id": "1565185870" },
+              {
+                "name": "apple",
+                "type": "uri",
+                "uri": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/f0/64/36/f0643646-295c-d563-a345-bc34d3d3678f/mzaf_12036319173797336562.plus.aac.ep.m4a"
+              }
+            ],
+            "options": [
+              {
+                "caption": "OPEN",
+                "actions": [
+                  {
+                    "name": "hub:applemusic:deeplink",
+                    "type": "applemusicopen",
+                    "uri": "https://music.apple.com/us/album/mu%E1%BB%99n-r%E1%BB%93i-m%C3%A0-sao-c%C3%B2n/1565185430?i=1565185870&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_ios&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_ios"
+                  },
+                  {
+                    "name": "hub:applemusic:deeplink",
+                    "type": "uri",
+                    "uri": "https://music.apple.com/us/album/mu%E1%BB%99n-r%E1%BB%93i-m%C3%A0-sao-c%C3%B2n/1565185430?i=1565185870&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_ios&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_ios"
+                  }
+                ],
+                "beacondata": { "type": "open", "providername": "applemusic" },
+                "image": "https://images.shazam.com/static/icons/hub/ios/v5/overflow-open-option_{scalefactor}.png",
+                "type": "open",
+                "listcaption": "Open in Apple Music",
+                "overflowimage": "https://images.shazam.com/static/icons/hub/ios/v5/applemusic-overflow_{scalefactor}.png",
+                "colouroverflowimage": false,
+                "providername": "applemusic"
+              },
+              {
+                "caption": "BUY",
+                "actions": [
+                  {
+                    "type": "uri",
+                    "uri": "https://itunes.apple.com/us/album/mu%E1%BB%99n-r%E1%BB%93i-m%C3%A0-sao-c%C3%B2n/1565185430?i=1565185870&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_ios&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=itunes&itsct=Shazam_ios"
+                  }
+                ],
+                "beacondata": { "type": "buy", "providername": "itunes" },
+                "image": "https://images.shazam.com/static/icons/hub/ios/v5/itunes-overflow-buy_{scalefactor}.png",
+                "type": "buy",
+                "listcaption": "Buy on iTunes",
+                "overflowimage": "https://images.shazam.com/static/icons/hub/ios/v5/itunes-overflow-buy_{scalefactor}.png",
+                "colouroverflowimage": false,
+                "providername": "itunes"
+              }
+            ],
+            "providers": [
+              {
+                "caption": "Open in Spotify",
+                "images": {
+                  "overflow": "https://images.shazam.com/static/icons/hub/ios/v5/spotify-overflow_{scalefactor}.png",
+                  "default": "https://images.shazam.com/static/icons/hub/ios/v5/spotify_{scalefactor}.png"
+                },
+                "actions": [
+                  {
+                    "name": "hub:spotify:searchdeeplink",
+                    "type": "uri",
+                    "uri": "spotify:search:Mu%E1%BB%99n%20R%E1%BB%93i%20M%C3%A0%20Sao%20C%C3%B2n%20S%C6%A1n%20T%C3%B9ng%20M-TP"
+                  }
+                ],
+                "type": "SPOTIFY"
+              },
+              {
+                "caption": "Open in Deezer",
+                "images": {
+                  "overflow": "https://images.shazam.com/static/icons/hub/ios/v5/deezer-overflow_{scalefactor}.png",
+                  "default": "https://images.shazam.com/static/icons/hub/ios/v5/deezer_{scalefactor}.png"
+                },
+                "actions": [
+                  {
+                    "name": "hub:deezer:searchdeeplink",
+                    "type": "uri",
+                    "uri": "deezer-query://www.deezer.com/play?query=%7Btrack%3A%27Mu%E1%BB%99n+R%E1%BB%93i+M%C3%A0+Sao+C%C3%B2n%27%20artist%3A%27S%C6%A1n+T%C3%B9ng+M-TP%27%7D"
+                  }
+                ],
+                "type": "DEEZER"
+              }
+            ],
+            "explicit": false,
+            "displayname": "APPLE MUSIC"
+          },
+          "artists": [{ "id": "42", "adamid": "705007874" }],
+          "url": "https://www.shazam.com/track/567738341/mu%E1%BB%99n-r%E1%BB%93i-m%C3%A0-sao-c%C3%B2n"
+        }
+      }
+    ]
+  },
+  "artists": {
+    "hits": [
+      {
+        "artist": {
+          "avatar": "https://is1-ssl.mzstatic.com/image/thumb/AMCArtistImages116/v4/1e/e5/31/1ee5314b-73b1-8aa3-7ef0-8e0873dd6989/ec7bf718-54a3-4d60-918d-231eeb147189_ami-identity-cb2ea5b90abeef8ab06c79f699d66985-2023-05-04T17-19-20.923Z_cropped.png/800x800bb.jpg",
+          "name": "Sơn Tùng M-TP",
+          "verified": false,
+          "weburl": "https://music.apple.com/us/artist/s%C6%A1n-t%C3%B9ng-m-tp/705007874",
+          "adamid": "705007874"
+        }
+      },
+      {
+        "artist": {
+          "avatar": "https://is3-ssl.mzstatic.com/image/thumb/Music116/v4/6d/17/d8/6d17d857-5ff2-e614-2da4-a2e44eb28f31/pr_source.png/800x800bb.jpg",
+          "name": "Mtp",
+          "verified": false,
+          "weburl": "https://music.apple.com/us/artist/mtp/1486738443",
+          "adamid": "1486738443"
+        }
+      },
+      {
+        "artist": {
+          "name": "MTP",
+          "verified": false,
+          "weburl": "https://music.apple.com/us/artist/mtp/1449161028",
+          "adamid": "1449161028"
+        }
+      },
+      {
+        "artist": {
+          "avatar": "https://is5-ssl.mzstatic.com/image/thumb/Music/4e/a1/93/mzi.meahbsel.tif/800x800ac.jpg",
+          "name": "MTP",
+          "verified": false,
+          "weburl": "https://music.apple.com/us/artist/mtp/1561819709",
+          "adamid": "1561819709"
+        }
+      },
+      {
+        "artist": {
+          "avatar": "https://is4-ssl.mzstatic.com/image/thumb/Music125/v4/97/4b/4f/974b4f69-5c8a-6ca8-9518-2bcb8784d865/artwork.jpg/800x800ac.jpg",
+          "name": "MTP",
+          "verified": false,
+          "weburl": "https://music.apple.com/us/artist/mtp/1439624460",
+          "adamid": "1439624460"
+        }
+      }
+    ]
+  }
+}

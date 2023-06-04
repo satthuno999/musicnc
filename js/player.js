@@ -34,6 +34,10 @@ OCA.musicnc.Player = {
    * play/pause when the same track is selected or get a new one
    */
   setTrack: function () {
+    document.getElementById("partial-wrapper").innerHTML = "";
+    document
+      .getElementById("progressBar")
+      .style.backgroundColor("var(--color-background-darker)");
     let trackToPlay = this.html5Audio.children[this.currentTrackIndex];
     if (!OCA.musicnc.VideoPlayer.isPaused()) {
       OCA.musicnc.VideoPlayer.html5Video.pause();
