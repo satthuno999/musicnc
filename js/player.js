@@ -37,7 +37,7 @@ OCA.musicnc.Player = {
     document.getElementById("partial-wrapper").innerHTML = "";
     document
       .getElementById("progressBar")
-      .style.backgroundColor("var(--color-background-darker)");
+      .style.backgroundColor = "var(--color-background-darker)";
     let trackToPlay = this.html5Audio.children[this.currentTrackIndex];
     if (!OCA.musicnc.VideoPlayer.isPaused()) {
       OCA.musicnc.VideoPlayer.html5Video.pause();
