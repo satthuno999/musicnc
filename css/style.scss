@@ -1765,7 +1765,10 @@ li.isActive {
   width: 98%;
   margin: 40px auto;
 }
-
+#individual-playlist-video,
+#individual-playlist-header-video{
+  position: relative;
+}
 @media only screen and (max-width: 768px) {
 
   #app-navigation-toggle_alternative {
