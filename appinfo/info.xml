@@ -35,7 +35,7 @@ See [README](https://github.com/satthuno999/musicnc/blob/master/README.md) file 
 	<screenshot>https://raw.githubusercontent.com/satthuno999/musicnc/master/screenshots/musicnc_logo.png</screenshot>
 	<screenshot>https://raw.githubusercontent.com/satthuno999/musicnc/master/screenshots/musicnc_screen.png</screenshot>
 	<dependencies>
-		<nextcloud min-version="21" max-version="26"/>
+		<nextcloud min-version="21" max-version="25"/>
 	</dependencies>
 	<settings>
 		<admin-section>OCA\musicnc\Settings\AdminSection</admin-section>
