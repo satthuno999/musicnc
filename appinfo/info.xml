@@ -16,7 +16,7 @@
 - Use the Recognize app to classify genres by machine learning
 
 See [README](https://github.com/satthuno999/musicnc/blob/master/README.md) file for all supported MIME types and additional information.]]></description>
-	<version>3.3.1</version>
+	<version>3.3.3</version>
 	<licence>agpl</licence>
 	<author>S P A R K</author>
 	<namespace>musicnc</namespace>
